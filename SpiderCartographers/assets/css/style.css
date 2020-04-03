@@ -1,0 +1,7 @@
+@font-face {
+  font-family: Futura;
+  src: url(Futura Bold font.tff);
+}
+h1 {
+  font-family: Futura;
+}
