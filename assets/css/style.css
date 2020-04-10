@@ -1,50 +1,63 @@
+/* GET FUTURA */
 @font-face {
   font-family: Futura;
   src: url(Futura Bold font.tff);
 }
+
+/* SET FUTURE FOR ALL TEXT */
 h1, .sig, p {
   font-family: Futura;
   color: #ffa372;
 }
 
+/* CENTER HOMEPAGE TEXT */ 
 .groupNameTextHeader, p {
   text-align: center;
 }
 
-/* change background color of homepage */ 
-body {
-  background-color: #1b262c;
+/* ADJUST SPACER SIZE TO MOVE CAR DOWN */ 
+.spacer {
+  height: 150px;
 }
 
-.spacer {
+/* BACKGROUND COLOR OF HOMEPAGE */ 
+body {
+  background-color: #1b262c;
+  background-size: auto;
+  overflow: hidden;
+}
+
+/* SET THE SIZE OF THE CAR ICON */
+#car_icon {
   height: 200px;
 }
 
-/* set size of car icon div */
-#car_icon {
-  height: 100px;
-
+/* APPLY BOUNCE EFFECT TO CAR BODY*/ 
+#car_bounce, #wheel_holes {
+  animation: bounce 1s infinite linear;
 }
 
-
-/* select the dashed lines on the wheels of the car and call animation function */ 
-.cls-3 {
+/* APPLY ROTATION TO CAR WHEELS */ 
+.cls-6 {
   transform-box: fill-box; 
   transform-origin: center; 
   transform: rotate(45deg);
-  animation: rotation 2s infinite linear
+  animation: rotation 4s infinite linear
 }
 
-/* rotate the dashed lines on the wheels of the car */ 
+/* BOUNCING ANIMATION FOR CAR */ 
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(-10px); }
+}
+
+/* BOUNCING ANIMATION FOR CAR WHEELS */ 
 @keyframes rotation {
   to { transform: rotate(360deg); }
 }
 
-
-
-
-
-/* here we go - stuff for the push button */ 
+/* PUSH BUTTON ANIMATION */ 
 .pushme {
   position: relative;
   font-weight: 700;
@@ -53,6 +66,7 @@ body {
   display: inline-block;
   margin: 1em;
 }
+
 .pushme .inner {
   display: inline-block;
   background-color: #1b262c;
@@ -74,7 +88,8 @@ body {
   -webkit-transition-delay: 220ms;
           transition-delay: 220ms;
 }
-.pushme:active .inner, .pushme.click .inner {
+
+.pushme:active .inner, .pushme.click .inner, .pushme:hover .inner {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 120ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -99,5 +114,4 @@ body {
   font-family: Futura;
   color: #ffa372;
 }
-
-/* end of stuff for the push button */
+/* ^ END OF STUFF FOR PUSH BUTTON ANIMATION  */
