@@ -4,7 +4,39 @@
 }
 h1 {
   font-family: Futura;
+  color: #ffa372;
 }
 .groupNameTextHeader {
   text-align: center;
 }
+
+/* change background color of homepage */ 
+body {
+  background-color: #1b262c;
+}
+
+.spacer {
+  height: 200px;
+}
+
+/* set size of car icon div */
+#car_icon {
+  height: 100px;
+
+}
+
+
+/* select the dashed lines on the wheels of the car and call animation function */ 
+.cls-3 {
+  transform-box: fill-box; 
+  transform-origin: center; 
+  transform: rotate(45deg);
+  animation: rotation 2s infinite linear
+}
+
+/* rotate the dashed lines on the wheels of the car */ 
+@keyframes rotation {
+  to { transform: rotate(360deg); }
+}
+
+
