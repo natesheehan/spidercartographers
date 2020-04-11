@@ -103,7 +103,11 @@ figure {
   height: 200px;
 }
 
-/* APPLY BOUNCE EFFECT TO CAR BODY*/ 
+#bike_icon {
+  height: 180px;
+}
+
+/* APPLY BOUNCE EFFECT TO CAR BODY */ 
 #car_bounce, #wheel_holes {
   animation: bounce 1s infinite linear;
 }
@@ -113,17 +117,25 @@ figure {
   transform-box: fill-box; 
   transform-origin: center; 
   transform: rotate(45deg);
-  animation: rotation 4s infinite linear
+  animation: rotation 4s infinite linear;
 }
 
-/* BOUNCING ANIMATION FOR CAR */ 
+/* APPLY ROTATION TO BIKE WHEELS */
+#bike-wheels_medium1, #bike-wheels_medium2  {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(45deg);
+  animation: rotation 4s infinite linear;
+}
+
+/* BOUNCING ANIMATION FOR CAR BODY */ 
 @keyframes bounce {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(15px); }
   100% { transform: translateY(-10px); }
 }
 
-/* BOUNCING ANIMATION FOR CAR WHEELS */ 
+/* ROTATION ANIMATION FOR WHEELS */ 
 @keyframes rotation {
   to { transform: rotate(360deg); }
 }
