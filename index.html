@@ -162,43 +162,59 @@
         var car = document.querySelector("#car_icon");
         var bike = document.querySelector("#bike_icon");
 
-        var xPos = 0;
-        var yPos = 0;
-        var angle = 0;
+        var car_xPos = 0;
+        var car_yPos = 0;
+        var car_angle = 0;
 
-        function animate() {
-            xPos += 2;
-            angle += .1;
+        var bike_xPos = 0;
+        var bike_yPos = 0;
+        var bike_angle = 0;
 
-            yPos = Math.round(50 * Math.sin(angle));
+        function car_animate() {
+            car_xPos += 4;
+            car_angle += .1;
 
-            car.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
-            bike.style.transform= `translate3d(${xPos}px, ${yPos}px, 0)`;
+            car_yPos = Math.round(50 * Math.sin(car_angle));
+
+            car.style.transform = `translate3d(${car_xPos}px, ${car_yPos}px, 0)`;
 
             // adjust starting and ending locations
-            if (Math.abs(xPos) >= 1400) {
-                xPos = -500;
+            if (Math.abs(car_xPos) >= 1400) {
+                car_xPos = -500;
+            }
+            if (car_angle > 2 * Math.PI) {
+                car_angle = 0;
             }
 
-            if (angle > 2 * Math.PI) {
-                angle = 0;
+            requestAnimationFrame(car_animate);
+        }
+
+        function bike_animate() {
+            bike_xPos += 2;
+            bike_angle += .1;
+
+            bike_yPos = Math.round(30 * Math.sin(bike_angle));
+
+            bike.style.transform = `translate3d(${bike_xPos}px, ${bike_yPos}px, 0)`;
+
+            // adjust starting and ending locations
+            if (Math.abs(bike_xPos) >= 1400) {
+                bike_xPos = -500;
             }
 
-            requestAnimationFrame(animate);
+            if (bike_angle > 2 * Math.PI) {
+                bike_angle = 0;
+            }
+
+            requestAnimationFrame(bike_animate);
         }
    
-        animate();
+        car_animate();
+        bike_animate();
+
+
 
     </script>
-
-
-
-
-
-
-
-
-
 
 <body>
 </html>

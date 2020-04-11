@@ -100,11 +100,11 @@ figure {
 
 /* SET THE SIZE OF THE CAR ICON */
 #car_icon {
-  height: 200px;
+  height: 150px;
 }
 
 #bike_icon {
-  height: 180px;
+  height: 140px;
 }
 
 /* APPLY BOUNCE EFFECT TO CAR BODY */ 
@@ -125,7 +125,7 @@ figure {
   transform-box: fill-box;
   transform-origin: center;
   transform: rotate(45deg);
-  animation: rotation 4s infinite linear;
+  animation: rotation 1s infinite linear;
 }
 
 /* BOUNCING ANIMATION FOR CAR BODY */ 
