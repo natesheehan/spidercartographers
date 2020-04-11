@@ -15,22 +15,16 @@ h1, .sig, p {
   text-align: center;
 }
 
-/* change background color of homepage */
+/* BACKGROUND COLOR OF HOMEPAGE */
 body {
   background-color: #1b262c;
   background-size: auto;
   overflow: hidden;
 }
 
-/* SET THE SIZE OF THE CAR ICON */
-#car_icon {
-  height: 200px;
-}
-
-/* APPLY BOUNCE EFFECT TO CAR BODY*/
-#car_bounce, #wheel_holes {
-  animation: bounce 1s infinite linear;
-}
+/*--------------------------------------------------------------*/
+/* PARALLAX SCROLLING */ 
+/*--------------------------------------------------------------*/
 
 * {
  box-sizing: border-box;
@@ -100,20 +94,41 @@ figure {
   float: right;
 }
 
-/* select the dashed lines on the wheels of the car and call animation function */
-.cls-3 {
-  transform-box: fill-box;
-  transform-origin: center;
+/*--------------------------------------------------------------*/
+/* HOME PAGE CAR */ 
+/*--------------------------------------------------------------*/
+
+/* SET THE SIZE OF THE CAR ICON */
+#car_icon {
+  height: 200px;
+}
+
+/* APPLY BOUNCE EFFECT TO CAR BODY*/ 
+#car_bounce, #wheel_holes {
+  animation: bounce 1s infinite linear;
+}
+
+/* APPLY ROTATION TO CAR WHEELS */ 
+.cls-6 {
+  transform-box: fill-box; 
+  transform-origin: center; 
   transform: rotate(45deg);
   animation: rotation 4s infinite linear
 }
 
-/* rotate the dashed lines on the wheels of the car */
+/* BOUNCING ANIMATION FOR CAR */ 
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(-10px); }
+}
+
+/* BOUNCING ANIMATION FOR CAR WHEELS */ 
 @keyframes rotation {
   to { transform: rotate(360deg); }
 }
 
-/* PUSH BUTTON ANIMATION */
+/* PUSH BUTTON ANIMATION */ 
 .pushme {
   position: relative;
   font-weight: 700;
@@ -170,5 +185,4 @@ figure {
   font-family: Futura;
   color: #ffa372;
 }
-
-/* end of stuff for the push button */
+/* ^ END OF STUFF FOR PUSH BUTTON ANIMATION  */
