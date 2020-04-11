@@ -35,10 +35,10 @@
                 <rect class="cls-5" x="757.5" y="338.5" width="77" height="42" rx="21"/></g>
             <g id="tail_light">
                 <polygon class="cls-6" points="26 566 31.56 563.68 36.9 561.85 39.71 560.73 41.26 559.88 44.35 557.64 46.32 555.53 50.5 550.5 55.31 544 60.23 536.13 63.6 529.24 66.41 523.06 69.37 515.61 71.47 510.13 73.86 503.66 74.99 499.73 76.25 495.37 77.52 490.87 78.36 487.64 79.06 484.97 79.63 482.16 80.33 480.05 80.5 478.5 78.5 477.5 75.5 476.5 70.5 474.5 65.5 473.5 62.5 473.5 57.5 473.5 38.5 475.5 32.5 477.5 27.5 480.5 21.5 485.5 17.5 490.5 14.5 495.5 12.5 503.5 12.5 516.5 12.5 545.5 14.5 552.5 17.5 557.5 22.5 562.5 26 566"/>
-                <path class="cls-6" d="M63,828" transform="translate(-4.5 -298.5)"/></g> 
+                <path class="cls-6" d="M63,828" transform="translate(-4.5 -298.5)"/></g>
             <g id="head_light">
                 <path class="cls-7" d="M1440,864" transform="translate(-4.5 -298.5)"/>
-                <path d="M1449,765" transform="translate(-4.5 -298.5)"/> 
+                <path d="M1449,765" transform="translate(-4.5 -298.5)"/>
                 <polygon class="cls-8" points="1450.5 566.5 1452.5 549.35 1451.58 515.65 1448.04 491.96 1444.5 480.5 1441.5 471.5 1438.5 463.5 1460.5 465.5 1474.5 470.5 1484.5 479.5 1491.5 491.5 1494.5 507.5 1494.5 525.5 1492.5 537.5 1488.5 547.5 1483.5 554.5 1477.5 559.5 1467.5 563.5 1460.5 565.5 1450.5 566.5"/></g>
         </svg>
     </div>
@@ -46,11 +46,11 @@
     <!-- spacer - delete later-->
     <div class="spacer">
     </div>
-    
+
 
     <!-- sample menu item -->
     <!-- source code: https://codepen.io/nathantaylor/details/woKbqX-->
-    <div class="center"><a class="pushme"> <span class="inner">story</span></a>
+    <div class="center"><a href="story.html" class="pushme"> <span class="inner">story</span></a>
 
 
     <!-- JAVASCRIPT TIME - ALLOWS FOR THE BOUNCING AND MOVING EFFECT OF THE CAR -->
@@ -63,7 +63,7 @@
         function animate() {
             xPos += 5;
             angle += .1;
-  
+
             yPos = Math.round(50 * Math.sin(angle));
 
             car_icon.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;

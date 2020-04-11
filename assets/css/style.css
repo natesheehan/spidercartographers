@@ -11,7 +11,7 @@ h1, .sig, p {
   text-align: center;
 }
 
-/* change background color of homepage */ 
+/* change background color of homepage */
 body {
   background-color: #1b262c;
 }
@@ -26,16 +26,68 @@ body {
 
 }
 
+* {
+ box-sizing: border-box;
+}
 
-/* select the dashed lines on the wheels of the car and call animation function */ 
+main {
+ height: 100vh;
+ overflow-x: hidden;
+ overflow-y: scroll;
+ scroll-snap-type: y mandatory;
+}
+
+figure {
+ scroll-snap-align: start;
+ width: 100vw;
+ height: 100vh;
+ margin: 0;
+
+ background-size: cover;
+ background-position: center;
+
+ &:first-of-type {
+
+ }
+}
+
+.screenTitle {
+  text-align:center;
+}
+
+#s1 {
+ background-color: white;
+}
+
+#s2 {
+ background-color: #ed6663;
+}
+
+#s3 {
+ background-color: white;
+}
+
+#s4 {
+ background-color: #ed6663;
+}
+
+#s5 {
+ background-color: white;
+}
+
+#s6 {
+ background-color: #ed6663;
+}
+
+/* select the dashed lines on the wheels of the car and call animation function */
 .cls-3 {
-  transform-box: fill-box; 
-  transform-origin: center; 
+  transform-box: fill-box;
+  transform-origin: center;
   transform: rotate(45deg);
   animation: rotation 2s infinite linear
 }
 
-/* rotate the dashed lines on the wheels of the car */ 
+/* rotate the dashed lines on the wheels of the car */
 @keyframes rotation {
   to { transform: rotate(360deg); }
 }
@@ -44,7 +96,7 @@ body {
 
 
 
-/* here we go - stuff for the push button */ 
+/* here we go - stuff for the push button */
 .pushme {
   position: relative;
   font-weight: 700;
