@@ -42,7 +42,7 @@ main {
  overflow-y: scroll;
  scroll-snap-type: y mandatory;
 }
-
+/* Scroll snap effect*/
 figure {
  scroll-snap-align: start;
  width: 100vw;
@@ -60,7 +60,7 @@ figure {
 .screenTitle {
   text-align:center;
 }
-
+/* Different screen backgrounds*/
 #s1 {
  background-color: white;
 }
@@ -83,6 +83,21 @@ figure {
 
 #s6 {
  background-color: #ed6663;
+}
+
+.screen1Text{
+  background-color: white;
+     border: 15px solid #1b262c;
+     float:left;
+     padding: 50px;
+     margin-bottom: 20px;
+     margin-left: 20px;
+     width: 40%;
+}
+
+.screen1Image{
+  width: 50%;
+  float: right;
 }
 
 /* select the dashed lines on the wheels of the car and call animation function */
