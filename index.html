@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+
     <p>the spider cartographers present</p>
     <h1 class="groupNameTextHeader">PROJECT NAME TBD</h1>
 
-    <!-- spacer - delete later-->
-    <div class="spacer">
-    </div>
+    <div class="spacer"></div>
 
-    <!-- SVG code for the car icon -->
+    <!-- CAR ICON - SVG -->
     <div id="car_icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1494.5 794.5" height=100%>
             <defs>
@@ -41,19 +40,15 @@
                 <path d="M1449,765" transform="translate(-4.5 -298.5)"/>
                 <polygon class="cls-8" points="1450.5 566.5 1452.5 549.35 1451.58 515.65 1448.04 491.96 1444.5 480.5 1441.5 471.5 1438.5 463.5 1460.5 465.5 1474.5 470.5 1484.5 479.5 1491.5 491.5 1494.5 507.5 1494.5 525.5 1492.5 537.5 1488.5 547.5 1483.5 554.5 1477.5 559.5 1467.5 563.5 1460.5 565.5 1450.5 566.5"/></g>
         </svg>
+        </g>
     </div>
 
-    <!-- spacer - delete later-->
-    <div class="spacer">
-    </div>
+    <!-- SAMPLE MENU ITEM -->
+    <!-- SOURCE CODE: https://codepen.io/nathantaylor/details/woKbqX-->
+    <div class="center"><a class="pushme" href="story.html"> <span class="inner">story</span></a>
 
 
-    <!-- sample menu item -->
-    <!-- source code: https://codepen.io/nathantaylor/details/woKbqX-->
-    <div class="center"><a href="story.html" class="pushme"> <span class="inner">story</span></a>
-
-
-    <!-- JAVASCRIPT TIME - ALLOWS FOR THE BOUNCING AND MOVING EFFECT OF THE CAR -->
+    <!-- JAVASCRIPT TIME - ALLOWS FOR THE ARC AND MOVING EFFECT OF THE CAR -->
     <script>
         var circle = document.querySelector("#car_icon");
         var xPos = 0;
@@ -61,14 +56,14 @@
         var angle = 0;
 
         function animate() {
-            xPos += 5;
+            xPos += 2;
             angle += .1;
 
             yPos = Math.round(50 * Math.sin(angle));
 
             car_icon.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
-
-            if (Math.abs(xPos) >= 1500) {
+            // adjust starting and ending locations
+            if (Math.abs(xPos) >= 1400) {
                 xPos = -500;
             }
 
@@ -80,9 +75,6 @@
         }
         animate();
     </script>
-
-
-
 
 <body>
 </html>
