@@ -1,9 +1,330 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-<h1 class="groupNameTextHeader"> Spider Cartographers. Test 2 AK </h1>
+
+    <p class="groupNameTextHeader">the spider cartographers present</p>
+    <h1 class="groupNameTextHeader">TRANSPORT MODE ANALYSIS</h1>
+
+    <div class="spacer" style="height:60px;"></div></div>
+
+    <!-- CAR ICON - SVG -->
+    <div id="car_icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1449 751.19" height=75%>
+            <defs>
+                <style>.cls-1{fill:#333;}.cls-2{fill:#c1272d;}.cls-3{fill:#666;}.cls-12,.cls-4,.cls-7{fill:#fff;}.cls-11,.cls-13,.cls-14,.cls-16,.cls-17,.cls-18,.cls-5,.cls-6{fill:none;}.cls-5{stroke:#999;}.cls-11,.cls-12,.cls-13,.cls-16,.cls-17,.cls-18,.cls-5,.cls-6,.cls-7{stroke-miterlimit:10;}.cls-11,.cls-5{stroke-width:20px;}.cls-11,.cls-16,.cls-6{stroke:#333;}.cls-11,.cls-16,.cls-17,.cls-18,.cls-6{stroke-linecap:round;}.cls-6{stroke-width:18px;stroke-dasharray:29.21 29.21;}.cls-7{stroke:#000;}.cls-8{fill:#f7931e;}.cls-9{fill:#ed6663;}.cls-10{fill:#bf5151;}.cls-12,.cls-13{stroke:#534741;}.cls-12,.cls-16,.cls-17,.cls-18{stroke-width:10px;}.cls-13{stroke-width:5px;}.cls-15{fill:#bdccd4;}.cls-17{stroke:#f78484;}.cls-18{stroke:#bf5151;}.cls-19{fill:#999;}</style>
+            </defs>
+            <!-- CAR WHEELS -->
+            <g id="wheel_holes">
+                <rect class="cls-1" x="129" y="475.19" width="301" height="179"/>
+                <rect class="cls-1" x="1047" y="475.19" width="301" height="179"/></g>
+            <g id="wheels_big">
+                <circle class="cls-3" cx="279" cy="618.19" r="133"/>
+                <circle class="cls-3" cx="1199" cy="618.19" r="133"/></g>
+            <g id="wheels_inner">
+                <circle class="cls-4" cx="279" cy="618.19" r="93"/>
+                <circle class="cls-4" cx="1199" cy="618.19" r="93"/></g>
+            <g id="wheels_ring_base">
+                <circle class="cls-5" cx="279" cy="618.19" r="46.5"/>
+                <circle class="cls-5" cx="1199" cy="618.19" r="46.5"/></g>
+            <g id="wheels_ring_dash">
+                <circle class="cls-6" cx="279" cy="618.19" r="46.5"/>
+                <circle class="cls-6" cx="1199" cy="618.19" r="46.5"/></g>
+            <!-- CAR BODY - SELECTION FOR BOUNCE EFFECT -->
+            <g id="car_bounce">
+            <g id="tail_light">
+                <rect class="cls-2" x="11" y="413.19" width="35" height="72" rx="12.32"/></g>
+            <g id="car_body">
+                <path class="cls-9" d="M1466,812.7V725c0-3.38-.16-7.22-.48-11.42a163,163,0,0,0-2.58-18.91,158.62,158.62,0,0,0-8.33-28.22,163.21,163.21,0,0,0-15.11-29c-19.54-29.23-142.23-68-313.5-85.5a840.8,840.8,0,0,0-112-126c-41.29-37.91-71.68-65.32-119-85-48.9-20.33-90.74-22-126-23-72.93-2.15-173.16-3.46-296.29-.34a148.88,148.88,0,0,0-25.86,2.94C408.57,328.4,333,347,272,407c-62.11,61.08-74.74,134-83,165-16.6,3.35-37.05,16.88-71.5,51.5-48.66,48.91-70,246-70,246-1.39,22.21-.21,61.23,25.44,88.38,26,27.51,64.6,29.68,99.59,29.33a5,5,0,0,0,4.69-6.52,144.32,144.32,0,0,1-7.16-49.25c2.13-77.56,66-140,143.62-140.44A144.6,144.6,0,0,1,451.55,981.41,5,5,0,0,0,456.3,988c261.48-.23,479.4-1.25,637-1.22a5,5,0,0,0,4.76-6.52,144.41,144.41,0,0,1-7-49c2.25-77.47,66.13-139.79,143.64-140.21a144.58,144.58,0,0,1,141,179.46,5,5,0,0,0,6.51,6c18-6.53,35.49-16.62,49.94-32.16C1458,916.58,1468.85,874.15,1466,812.7Z" transform="translate(-36 -315.81)"/>
+            <g id="car_body_shadow">
+                <path class="cls-10" d="M172.53,987.37a5,5,0,0,0,4.69-6.53A144.24,144.24,0,0,1,193.41,857H49c-1,8-1.53,12.65-1.53,12.65-1.39,22.21-.21,61.23,25.44,88.38C98.91,985.54,137.54,987.72,172.53,987.37Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-10" d="M1356.73,857a144.75,144.75,0,0,1,19,113.61,5,5,0,0,0,6.51,6c18-6.53,35.49-16.62,49.94-32.15,19.08-20.51,30-49.08,33.23-87.44Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-10" d="M1114.41,857H435.73a144.77,144.77,0,0,1,15.82,124.56,5,5,0,0,0,4.75,6.59c261.48-.23,479.4-1.25,637-1.22a5,5,0,0,0,4.76-6.52A144.17,144.17,0,0,1,1114.41,857Z" transform="translate(-36 -315.81)"/></g>
+            <g id="handle_shadow">
+                <ellipse class="cls-10" cx="619.5" cy="357.69" rx="33.5" ry="24.5"/></g>
+            <g id="door_handle">
+                <line class="cls-11" x1="590" y1="357.19" x2="648" y2="357.19"/></g>
+            <g id="windows_base">
+                <path class="cls-12" d="M284.79,571.5H521c13.51,0,24.46-14.62,24.46-32.65V383.31c0-17.53-10.37-31.92-23.5-32.62-39.68-2.1-110.26-2.57-169.62,33.57-62.1,37.81-81.56,101.41-91.11,145.64C256.77,550.74,268.55,571.5,284.79,571.5Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-12" d="M617.5,530.46V391.11c0-23.3,22-41.93,48.41-41,58.41,2,156,10.34,216.66,43.4,63.56,34.66,103.29,79.57,127.43,116.42,17.93,27.38-4.46,61.58-40.34,61.58H664.09C638.36,571.5,617.5,553.13,617.5,530.46Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-13" d="M284.79,571.5H521c13.51,0,24.46-14.62,24.46-32.65V383.31c0-17.53-10.37-31.92-23.5-32.62-39.68-2.1-110.26-2.57-169.62,33.57-62.1,37.81-81.56,101.41-91.11,145.64C256.77,550.74,268.55,571.5,284.79,571.5Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-13" d="M617.5,530.46V391.11c0-23.3,22-41.93,48.41-41,58.41,2,156,10.34,216.66,43.4,63.56,34.66,103.29,79.57,127.43,116.42,17.93,27.38-4.46,61.58-40.34,61.58H664.09C638.36,571.5,617.5,553.13,617.5,530.46Z" transform="translate(-36 -315.81)"/></g>
+            <g id="window_reflections">
+                <path class="cls-14" d="M545,538.85v-.51L377.68,371c-6.05,2.6-12.06,5.51-18,8.75L539.47,559.53A39.76,39.76,0,0,0,545,538.85Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-14" d="M545,383.31c0-17.53-10.37-31.92-23.5-32.62-28.52-1.51-73-2.18-117.82,11L545,503Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-14" d="M280.31,467.65c-9.83,21.93-15.55,43.78-19.54,62.25-4.5,20.84,7.28,41.6,23.52,41.6h99.87Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-15" d="M520.54,571.5c7.63,0,14.44-4.66,18.93-12L359.71,379.77c-2.63,1.44-5.24,2.92-7.83,4.49-36.16,22-57.86,52.79-71.57,83.39L384.16,571.5Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-15" d="M545,503,403.68,361.68a231.49,231.49,0,0,0-26,9.34L545,538.34Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-14" d="M947.13,571.5l-217-217c-11.21-1.17-22.09-2.06-32.38-2.75L917.5,571.5Z" transform="translate(-36 -315.81)"/><path class="cls-14" d="M617,438.28v92.18c0,22.67,20.86,41,46.59,41h86.63Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-14" d="M1009.5,509.92c-24.14-36.85-63.87-81.76-127.43-116.42-30.86-16.83-71.3-27.24-111.28-33.68L981.13,570.16C1009.71,563.6,1025.34,534.1,1009.5,509.92Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-15" d="M917.5,571.5,697.74,351.74c-11.64-.78-22.54-1.3-32.33-1.64-26.43-.92-48.41,17.71-48.41,41v47.17L750.22,571.5Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-15" d="M969.16,571.5a53.28,53.28,0,0,0,12-1.34L770.79,359.82c-13.75-2.21-27.44-4-40.67-5.33l217,217Z" transform="translate(-36 -315.81)"/></g><g id="window_frames">
+                <path class="cls-16" d="M284.79,571.5H521c13.51,0,24.46-14.62,24.46-32.65V383.31c0-17.53-10.37-31.92-23.5-32.62-39.68-2.1-110.26-2.57-169.62,33.57-62.1,37.81-81.56,101.41-91.11,145.64C256.77,550.74,268.55,571.5,284.79,571.5Z" transform="translate(-36 -315.81)"/>
+                <path class="cls-16" d="M617.52,530.53l0-139.35c0-23.3,22-41.94,48.39-41,58.41,2,156,10.29,216.68,43.33C946.12,428.11,985.86,473,1010,509.86c17.94,27.36-4.45,61.57-40.32,61.59l-305.57.1C638.4,571.56,617.53,553.2,617.52,530.53Z" transform="translate(-36 -315.81)"/></g>
+            <g id="wheel_cap_lines"><path class="cls-17" d="M444.37,818.9a174,174,0,0,0-245.14-21.45" transform="translate(-36 -315.81)"/>
+                <path class="cls-17" d="M1368.09,812A174,174,0,0,0,1123,790.55" transform="translate(-36 -315.81)"/>
+                <path class="cls-17" d="M683.61,953" transform="translate(-36 -315.81)"/></g><g id="highlight_lines">
+                <line class="cls-17" x1="366" y1="311.19" x2="508" y2="311.19"/><line class="cls-17" x1="741" y1="311.19" x2="695" y2="311.19"/>
+                <line class="cls-17" x1="799" y1="311.19" x2="980" y2="311.19"/><line class="cls-17" x1="473" y1="637.19" x2="550" y2="637.19"/>
+                <line class="cls-17" x1="590" y1="637.19" x2="952" y2="637.19"/></g><g id="door_line"><line class="cls-18" x1="550" y1="34.19" x2="550" y2="577.19"/></g>
+            <g id="bumpers">
+                <rect class="cls-19" x="1397" y="502.19" width="52" height="77" rx="20"/>
+                <rect class="cls-19" y="502.19" width="77" height="77" rx="20"/></g>
+            <g id="headlight_1">
+                <path class="cls-8" d="M1466,749.25v52.5c9-1.75,16-12.83,16-26.25S1475,751,1466,749.25Z" transform="translate(-36 -315.81)"/></g>
+                <path class="cls-4" d="M1466,738c.59-8.48-.58-21-2.11-33-1.07-8.37-7.15-32.75-8.89-39l22.56,7.76c5.61,1.92,4.44,8.64,4.44,15.24v27c0,6.73,1,14.25-4.74,16.07Z" transform="translate(-36 -315.81)"/></g>
+            <g id="mirror">
+                <path class="cls-1" d="M997.24,584.74c.29,14.54,15.1,24.66,28.44,19.35,17.6-7,30.56-20.37,34.42-35.88,5.61-22.55-7.72-51-33.47-66.18A20.12,20.12,0,0,0,996,519.61Z" transform="translate(-36 -315.81)"/></g>
+            </g>
+        </svg>    
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- BIKE ICON - SVG -->
+    <div id="bike_icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1288 1309.38" height=100%>
+            <defs>
+                <style>.bike-cls-1,.bike-cls-15,.bike-cls-18,.bike-cls-19{fill:none;}.bike-cls-1,.bike-cls-11{stroke:#534741;}.bike-cls-1,.bike-cls-11,.bike-cls-15,.bike-cls-18,.bike-cls-19,.bike-cls-3,.bike-cls-9{stroke-miterlimit:10;}.bike-cls-1{stroke-width:30px;}.bike-cls-2{fill:#b3b3b3;}.bike-cls-11,.bike-cls-3{fill:#fff;}.bike-cls-3{stroke:#4d4d4d;}.bike-cls-15,.bike-cls-3{stroke-width:10px;}.bike-cls-4{fill:#8c6239;}.bike-cls-5{fill:#0f4c81;}.bike-cls-6{fill:#bf5151;}.bike-cls-7{fill:#fcceb9;}.bike-cls-8{fill:#37a583;}.bike-cls-10,.bike-cls-9{fill:#333;}.bike-cls-9{stroke:#333;}.bike-cls-18,.bike-cls-19,.bike-cls-9{stroke-width:5px;}.bike-cls-11{stroke-width:20px;}.bike-cls-12{fill:#998675;}.bike-cls-13{fill:#186da0;}.bike-cls-14{fill:#a67c52;}.bike-cls-15{stroke:#90e0c6;}.bike-cls-15,.bike-cls-18,.bike-cls-19{stroke-linecap:round;}.bike-cls-16{fill:#ffa372;}.bike-cls-17{fill:#ed6663;}.bike-cls-18{stroke:#bf5151;}.bike-cls-19{stroke:#006c34;}.bike-cls-20{fill:#42210b;}.bike-cls-21{fill:#603813;}</style>
+            </defs>
+            <g id="bike-wheels_big">
+                <circle class="bike-cls-1" cx="236" cy="1073.38" r="221"/>
+                <circle class="bike-cls-1" cx="1052" cy="1073.38" r="221"/></g>
+            <g id="bike-wheels_medium">
+                <g id="bike-wheels_medium1">
+                    <path class="bike-cls-2" d="M515.2,1166l-168.45-2.23,80.09-153.1c13.3,6.26,46.28,24,68.6,62.63C518.33,1113,516.61,1151.43,515.2,1166Z" transform="translate(-113.5 -90.12)"/>
+                    <path class="bike-cls-2" d="M264.12,1016.54l82.29,147-172.62,7.19c-1.24-14.65-2.38-52.07,19.94-90.73C216.62,1040.35,250.8,1022.61,264.12,1016.54Z" transform="translate(-113.5 -90.12)"/>
+                    <path class="bike-cls-2" d="M256.69,1305.74,342.85,1161l92.54,145.91c-12.07,8.39-43.91,28.09-88.54,28.09C301.06,1335,268.61,1314.24,256.69,1305.74Z" transform="translate(-113.5 -90.12)"/>
+                </g>
+                <g id="bike-wheels_medium2">
+                    <path class="bike-cls-2" d="M1085.29,1013.54l82.29,147L995,1167.73c-1.24-14.65-2.38-52.07,19.94-90.73C1037.79,1037.35,1072,1019.61,1085.29,1013.54Z" transform="translate(-113.5 -90.12)"/>
+                    <path class="bike-cls-2" d="M1081,1305.76,1167.17,1161l92.54,145.9c-12.07,8.4-43.91,28.1-88.54,28.1C1125.38,1335,1092.93,1314.27,1081,1305.76Z" transform="translate(-113.5 -90.12)"/>
+                    <path class="bike-cls-2" d="M1336.37,1163l-168.45-2.23,80.09-153.1c13.3,6.26,46.28,24,68.6,62.63C1339.5,1110,1337.78,1148.43,1336.37,1163Z" transform="translate(-113.5 -90.12)"/></g>
+                </g>
+            <g id="bike-small_wheels">
+                <circle class="bike-cls-3" cx="233" cy="1074.38" r="47.5"/>
+                <circle class="bike-cls-3" cx="1054" cy="1074.38" r="47.5"/></g>
+            <g id="bike-leg_back">
+                <path class="bike-cls-4" d="M887.27,882.77l-58.21-29.24c-9.27,9-19.53,21-32.68,41-20.83,31.66-26.52,55.6-38.67,85.53a442.65,442.65,0,0,1-43.93,81.79,25.91,25.91,0,0,0,6.47,35.49c.39.28.79.56,1.2.83a35.67,35.67,0,0,0,29.78,3.9A25.59,25.59,0,0,0,766,1090.39Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-pant_back">
+                <path class="bike-cls-5" d="M892.32,801.84,740,595l7.81,218.76L828,863l47,41,20.82-35.54A60.67,60.67,0,0,0,892.32,801.84Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-shoe_back">
+                <path class="bike-cls-6" d="M698.53,1081.87h66.73a40,40,0,0,1,40,40v8.47a20.91,20.91,0,0,1-20.91,20.91H698.53a20.91,20.91,0,0,1-20.91-20.91v-27.57a20.91,20.91,0,0,1,20.91-20.91Z" transform="translate(380.08 -290.75) rotate(22.93)"/></g>
+            <g id="bike-arm_back">
+                <path class="bike-cls-4" d="M839.68,508.11l52.79-20,44.72,167.66a15.2,15.2,0,0,1-9.3,18.15h0a15.22,15.22,0,0,1-19.35-8.14Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-sleeve_back">
+                <path class="bike-cls-7" d="M892.41,489.55l-52,22-30-101.16a32,32,0,0,1,6.52-30.09l69.56-80.06A40,40,0,0,1,941.34,295l8.95,7a40,40,0,0,1,7.91,54.72l-59.08,82.86a32,32,0,0,0-5.94,17.82Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike_frame">
+                <path class="bike-cls-8" d="M1193.05,1147.05,1047.5,792.5h-61L800.78,1116.08a28.72,28.72,0,0,1-24.91,14.42H741.75a28.72,28.72,0,0,1-26-16.52L541.5,742.5l-57,14,51.36,110.56a28.72,28.72,0,0,1-3.92,30.41l-204.51,247c-15.5,18.71-2.23,43,22.07,43h447c18,0,35.49-5.65,44.38-21.28l169.21-297.48a2.39,2.39,0,0,1,4.29.26l125.63,300a28.71,28.71,0,0,0,38.51,15l0,.47a29.46,29.46,0,0,0,14.55-37.45ZM390.63,1133.5l171-202,106,202Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-seat">
+                <path class="bike-cls-9" d="M439.25,753.45,428.93,731.9l-10.78-22.53c-.26-.53-4.12-9,1-17.09a17.56,17.56,0,0,1,15-8.28H631.56a17.72,17.72,0,0,1,17.72,17.44h0a17.72,17.72,0,0,1-13.42,17.47L459.53,763A17.72,17.72,0,0,1,439.25,753.45Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-handle">
+                <path class="bike-cls-10" d="M1047,793,987,652.94A23,23,0,0,0,965.83,639H878a23,23,0,0,0-23,23h0c0,12.7,10,31,23,31h46c9.22,0,18.34-2.49,22,6l40,94h61" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-pedals">
+                <circle class="bike-cls-11" cx="586.75" cy="1117.13" r="50.25"/>
+                <rect class="bike-cls-12" x="650.51" y="1181.37" width="14.11" height="125" rx="7.05" transform="translate(958.64 -190.76) rotate(45)"/>
+                <rect x="549.59" y="1264.61" width="124.76" height="31.94" rx="6.38" transform="translate(433.75 -227.35) rotate(22.93)"/></g>
+            <g id="bike-pant_front">
+                <path class="bike-cls-13" d="M731,987l-63-8,3.87-28.65a28.63,28.63,0,0,0-2.44-16L534.79,646.43a90,90,0,0,1,20.29-104.07L577,522l163,73,11.8,330.27a28.8,28.8,0,0,1-1.81,11.1Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-leg_front">
+                <path class="bike-cls-14" d="M732.46,983.47,670,965c-7.47,10.23-15.39,23.39-24.69,44.77-14.73,33.89-16,57.84-22.51,88.62a420,420,0,0,1-28.36,85.9c-5.51,12.24,0,27,12.78,33l1.33.59a36.31,36.31,0,0,0,30-1.17,24.8,24.8,0,0,0,12.35-13.62Z" transform="translate(-113.5 -90.12)"/>
+                <path class="bike-cls-14" d="M1076,1963" transform="translate(-113.5 -90.12)"/></g><g id="head"><circle class="bike-cls-14" cx="875" cy="100.38" r="85.5"/><path class="bike-cls-14" d="M988.5,105A85.5,85.5,0,0,0,903,190.5" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike_details">
+                <line class="bike-cls-15" x1="225.5" y1="1063.88" x2="433.5" y2="807.88"/>
+                <line class="bike-cls-15" x1="704.5" y1="1026.88" x2="877.5" y2="719.88"/>
+                <line class="bike-cls-15" x1="1043.5" y1="1074.88" x2="909.5" y2="759.88"/></g>
+            <g id="bike-shirt">
+                <path class="bike-cls-16" d="M740,595,547,509,851,259.14a72.37,72.37,0,0,1,89.46-1.92h0a72.37,72.37,0,0,1,10,106.55Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-arm_front"><path class="bike-cls-14" d="M820,493l47.33-24.1,39.86,149a13.52,13.52,0,0,1-8.29,16.13h0a13.57,13.57,0,0,1-17.24-7.23Z" transform="translate(-113.5 -90.12)"/>
+                <circle class="bike-cls-14" cx="785" cy="552.38" r="23.5"/></g><g id="sleeve_front"><path class="bike-cls-7" d="M867.79,472.52,820,493l-34.22-99.65a32,32,0,0,1,6.52-30.09l69.56-80.06a40,40,0,0,1,54.85-5.26l8.95,7a40,40,0,0,1,7.91,54.73l-59.08,82.85a32,32,0,0,0-5.94,17.82Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-shoe_front">
+                <path class="bike-cls-17" d="M586.43,1199.75H653.8a49.59,49.59,0,0,1,49.59,49.59v0a20.91,20.91,0,0,1-20.91,20.91h-117a0,0,0,0,1,0,0v-49.59a20.91,20.91,0,0,1,20.91-20.91Z" transform="translate(417.77 -239.71) rotate(22.93)"/>
+                <line class="bike-cls-18" x1="459.5" y1="1142.88" x2="555.5" y2="1182.88"/></g>
+            <g id="bike-shoe_detail">
+                <path class="bike-cls-19" d="M664,1273" transform="translate(-113.5 -90.12)"/>
+                <path class="bike-cls-19" d="M568,1233" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-hair_detail">
+                <path class="bike-cls-20" d="M928.7,145.61c-1.83-23.32-19-44.69-41.31-51.56s-48.53,1.19-63.13,19.46c-3.62,4.52-6.58,9.59-10.58,13.78-14.06,14.75-40.86,14.29-54.41-1,5.74,10.71,13,20.79,22.39,28.47a63.76,63.76,0,0,0,37.87,14.49c36.94,1.12,68.15-32,105.11-31.78" transform="translate(-113.5 -90.12)"/>
+                <path class="bike-cls-20" d="M930.2,145.61A61.5,61.5,0,0,0,912,107.24a58.57,58.57,0,0,0-38.73-17.08,62.86,62.86,0,0,0-40.71,13.12,56.69,56.69,0,0,0-7.93,7.48c-2.81,3.24-5.17,6.82-7.7,10.27-4.27,5.81-9.41,10.48-16.22,13.06-12,4.55-26.77,2.91-36.8-5.39a33.74,33.74,0,0,1-3.55-3.42c-1.17-1.3-3.14.36-2.35,1.82,6.33,11.77,14.44,22.78,25.26,30.81a64.68,64.68,0,0,0,37,12.9c23.93.44,45.15-12.81,66.32-22.14,12-5.31,24.76-9.67,38-9.65a1.5,1.5,0,0,0,0-3C900.91,136,880,148.92,859,158.2c-10.4,4.59-21.36,8.57-32.79,9.44a61.15,61.15,0,0,1-36.52-9c-12.79-7.84-22-20-29.07-33l-2.36,1.81c8.85,9.85,22.83,13.67,35.68,11.6a38,38,0,0,0,17.71-7.76c6.37-5.11,10-12.58,15.36-18.63a58.86,58.86,0,0,1,37.56-19.15,55.36,55.36,0,0,1,40.19,11.36,59.57,59.57,0,0,1,21.78,35.47,52.68,52.68,0,0,1,.71,5.32c.15,1.91,3.15,1.93,3,0Z" transform="translate(-113.5 -90.12)"/>
+                <path class="bike-cls-21" d="M895.92,107.86c-11-6.21-25.15-7.6-36.7-2.15-5.79,2.74-9.18,7.86-13.11,12.64a119.63,119.63,0,0,1-12.46,12.91c-2.5,2.25-5.09,4.4-7.74,6.48l-.3.23-1.05.8c-.7.53-1.4,1.06-2.11,1.58-1.41,1-2.84,2.05-4.29,3.05-1.92,1.34-3,4-1.61,6.16,1.24,1.92,4.09,3.05,6.16,1.62a152.91,152.91,0,0,0,26.77-23c1.94-2.17,3.78-4.43,5.57-6.74.84-1.08,1.68-2.17,2.58-3.2.43-.49.86-1,1.32-1.43.3-.3.61-.6.93-.89.12-.11,1.07-.89.42-.39a18.73,18.73,0,0,1,3.27-2c.06,0,1.35-.57.49-.23l.8-.3c.74-.27,1.49-.5,2.25-.7a31.35,31.35,0,0,1,4-.8c-.82.11-.09,0,.07,0l1.26-.11q1.07-.08,2.13-.09a42.64,42.64,0,0,1,4.66.22c1.38.13-.88-.17.49.06l1.26.22c.69.14,1.38.29,2.07.46a36.45,36.45,0,0,1,4.65,1.49c.18.07,1,.45.3.12l1.15.53c.77.38,1.52.78,2.26,1.2a4.5,4.5,0,0,0,4.54-7.78Z" transform="translate(-113.5 -90.12)"/></g>
+            <g id="bike-hair_main">
+                <path class="bike-cls-20" d="M969.25,99.14a79.89,79.89,0,0,0-65.81,49.37c-10.68,26.7-10.79,60.57,6.93,83.19a6.68,6.68,0,0,0,8.32,1.77A137,137,0,0,0,969.4,189a133.74,133.74,0,0,0,18.39-39.75,6.72,6.72,0,0,1,7.69-4.84l66.07,12.15a6.71,6.71,0,0,0,7.14-9.75,93.66,93.66,0,0,0-29.14-32.64C1009,93.07,976.14,98,969.25,99.14Z" transform="translate(-113.5 -90.12)"/></g>
+        </svg>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- BUS ICON - SVG -->
+    <div id="bus_icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1468 715.5" height=100%>
+            <defs>
+                <style>.bus-cls-1{fill:#1a1a1a;}.bus-cls-2{fill:#4d4d4d;}.bus-cls-3{fill:#fff;}.bus-cls-11,.bus-cls-13,.bus-cls-4{fill:none;stroke-linecap:round;}.bus-cls-12,.bus-cls-4{stroke:gray;}.bus-cls-11,.bus-cls-12,.bus-cls-13,.bus-cls-4,.bus-cls-5,.bus-cls-9{stroke-miterlimit:10;}.bus-cls-13,.bus-cls-4{stroke-width:10px;}.bus-cls-4{stroke-dasharray:30.78 30.78;}.bus-cls-14,.bus-cls-5{fill:#99222e;}.bus-cls-5{stroke:#99222e;}.bus-cls-11,.bus-cls-12,.bus-cls-5{stroke-width:5px;}.bus-cls-6{fill:#f15a24;}.bus-cls-12,.bus-cls-7{fill:#333;}.bus-cls-8{fill:#fbb03b;}.bus-cls-9{fill:#c1272d;stroke:#c1272d;}.bus-cls-10{fill:gray;}.bus-cls-11{stroke:#fbb03b;}.bus-cls-13{stroke:#ff1d25;}.bus-cls-15{fill:#bdccd4;}</style>
+            </defs>
+            <!-- BIKE WHEELS -->
+            <g id="bus_wheel_holes">
+                <path class="bus-cls-1" d="M472.45,1052.58a106.37,106.37,0,1,0-208.93-28.22,108.61,108.61,0,0,0,1,14.85Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-1" d="M1414.2,1022.16a106.37,106.37,0,1,0-209.86,20.11,105.25,105.25,0,0,0,4.39,14.22Z" transform="translate(-14 -404.5)"/></g>
+            <g id="bus_wheels_large">
+                <circle class="bus-cls-2" cx="356.5" cy="625" r="90.5"/>
+                <circle class="bus-cls-2" cx="1297.5" cy="625" r="90.5"/></g>
+            <g id="bus_wheels_medium">
+                <circle class="bus-cls-3" cx="356.5" cy="625" r="70.5"/>
+                <circle class="bus-cls-3" cx="1297.5" cy="625" r="70.5"/></g>
+            <g id="bus_wheels_ring">
+                <circle class="bus-cls-3" cx="355" cy="625.5" r="49"/>
+                <circle class="bus-cls-4" cx="355" cy="625.5" r="49"/>
+                <circle class="bus-cls-3" cx="1297" cy="624.5" r="49"/>
+                <circle class="bus-cls-4" cx="1297" cy="624.5" r="49"/></g>
+            <!-- BIKE BODY -->
+            <g id="bus_no_wheels">
+            <g id="bus_roof_details">
+                <rect class="bus-cls-5" x="256" y="2.5" width="184" height="16" rx="7.5"/>
+                <rect class="bus-cls-5" x="1051" y="2.5" width="184" height="16" rx="7.5"/>
+                <ellipse class="bus-cls-6" cx="183" cy="11.5" rx="17" ry="9"/>
+                <ellipse class="bus-cls-6" cx="1364" cy="11.5" rx="17" ry="9"/></g>
+            <g id="bus_door_hole">
+                <rect class="bus-cls-7" x="51" y="320.5" width="139" height="290"/></g>
+            <g id="bus_pole">
+                <rect class="bus-cls-8" x="113" y="322.5" width="9" height="299"/>
+                <path class="bus-cls-8" d="M205.67,857.33" transform="translate(-14 -404.5)"/></g>
+            <g id="bus_body">
+                <path class="bus-cls-9" d="M1468.5,683.5l-35.26-242.32a30,30,0,0,0-29.69-25.68H176.5c-55.23,0-118,49-131,101l-20,202,28,4.85V1015.5h-28v22H241c-.31-3.63-.47-7.29-.47-11a130,130,0,0,1,130-130l2,0,0,0,0,0a130.08,130.08,0,0,1,125.3,156.33,1.33,1.33,0,0,0,.27,1.12h0a1.36,1.36,0,0,0,1.07.52H1183.5l.64-.78A130.14,130.14,0,0,1,1311.5,897.5h1.17l.83-1,1.13,1a130,130,0,0,1,125.75,112.87l28.12-.91-3.62-88.67a26.92,26.92,0,0,0-6.46-16.42L1440.5,883.5l-7-163h35Zm-1264,332H65.5V725.43l110,19a35,35,0,0,1,29,34.49Z" transform="translate(-14 -404.5)"/></g>
+            <g id="bus_wheel_cap1">
+                <path class="bus-cls-7" d="M370.5,897.05A129.5,129.5,0,0,0,241,1026.55q0,6.06.56,12l29.56,1.9a100.5,100.5,0,1,1,196.56,12.65l29.19,1.88A129.59,129.59,0,0,0,370.5,897.05Z" transform="translate(-14 -404.5)"/></g>
+            <g id="bus_wheel_cap2">
+                <path class="bus-cls-7" d="M1311.37,896.63c-72,0-130.37,58-130.37,129.5a128.72,128.72,0,0,0,2.9,27.24l29.15-5.09a99.88,99.88,0,0,1-1.85-19.15c0-55.5,45.3-100.5,101.18-100.5,50.53,0,92.39,36.81,99.95,84.89l27.82-4.85,1.1,6.22C1435.52,948.64,1379.56,896.63,1311.37,896.63Z" transform="translate(-14 -404.5)"/></g>
+            <g id="bus_grey_line">
+                <rect class="bus-cls-7" x="453" y="636.5" width="747" height="30" rx="15"/>
+                <rect class="bus-cls-7" x="1398" y="595.5" width="70" height="30" rx="15"/>
+                <rect class="bus-cls-7" y="633.5" width="258" height="15" rx="7.5"/></g>
+            <g id="bus_door_floor">
+                <rect class="bus-cls-10" x="11" y="605.5" width="179" height="5"/></g>
+            <g id="bus_handles">
+                <path class="bus-cls-11" d="M211.75,862H203c-3.87,0-7,4.19-7,9.35v69.3c0,5.16,3.14,9.35,7,9.35h8.74" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-11" d="M61.5,799h8.6c3.81,0,6.9,7,6.9,15.51v115c0,8.56-3.09,15.51-6.9,15.51H61.5" transform="translate(-14 -404.5)"/></g>
+            <g id="bus_signage">
+                <rect class="bus-cls-3" x="246" y="190.5" width="1082" height="86"/>
+                <polygon class="bus-cls-8" points="1455 288.5 13 288.5 11 311.5 1455 311.5 1455 288.5"/>
+                <ellipse class="bus-cls-6" cx="1429" cy="299.5" rx="17" ry="9"/>
+                <ellipse class="bus-cls-6" cx="36" cy="299.5" rx="17" ry="9"/>
+                <rect class="bus-cls-12" x="72.5" y="216" width="145" height="59"/></g>
+            <g id="bus_body_details">
+                <path class="bus-cls-13" d="M1300.91,882.17c12.51-.58,66.62-1.79,108.87,36.19A131.8,131.8,0,0,1,1443,965.14" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-13" d="M365,881.6c12.51-.58,66.61-1.79,108.87,36.19A131.62,131.62,0,0,1,507,964.57" transform="translate(-14 -404.5)"/>
+                <line class="bus-cls-13" x1="653" y1="33.5" x2="747" y2="33.5"/>
+                <line class="bus-cls-13" x1="306" y1="33.5" x2="606" y2="33.5"/>
+                <line class="bus-cls-13" x1="1066" y1="33.5" x2="1366" y2="33.5"/>
+                <line class="bus-cls-13" x1="822" y1="608.5" x2="1122" y2="608.5"/>
+                <rect class="bus-cls-14" x="743" y="469.5" width="206" height="109" rx="30"/>
+                <rect class="bus-cls-14" x="972" y="469.5" width="206" height="109" rx="30"/>
+                <rect class="bus-cls-14" x="515" y="469.5" width="206" height="109" rx="30"/></g>
+            <g id="bus_windows_base">
+                <rect class="bus-cls-3" x="286" y="72.5" width="206" height="102" rx="15.02"/>
+                <rect class="bus-cls-3" x="515" y="72.5" width="206" height="102" rx="15.02"/>
+                <rect class="bus-cls-3" x="743" y="72.5" width="206" height="102" rx="15.02"/>
+                <rect class="bus-cls-3" x="972" y="72.5" width="206" height="102" rx="15.02"/>
+                <path class="bus-cls-3" d="M1218,72.5h121a70,70,0,0,1,70,70v17a15,15,0,0,1-15,15H1218a15,15,0,0,1-15-15v-72A15,15,0,0,1,1218,72.5Z"/>
+                <path class="bus-cls-3" d="M126,72.5H247a15,15,0,0,1,15,15v72a15,15,0,0,1-15,15H71a15,15,0,0,1-15-15v-17A70,70,0,0,1,126,72.5Z"/>
+                <rect class="bus-cls-3" x="286" y="339.5" width="206" height="102" rx="15.02"/>
+                <rect class="bus-cls-3" x="515" y="339.5" width="206" height="102" rx="15.02"/>
+                <rect class="bus-cls-3" x="743" y="339.5" width="206" height="102" rx="15.02"/>
+                <rect class="bus-cls-3" x="972" y="339.5" width="206" height="102" rx="15.02"/>
+                <path class="bus-cls-3" d="M1230,831.11V764.73a14.87,14.87,0,0,1,10.18-14.12l59.53-19.85a15.08,15.08,0,0,1,4.71-.76h107.31a14.89,14.89,0,0,1,14.88,14.25l3.72,86.21A14.89,14.89,0,0,1,1415.45,846H1244.89A14.89,14.89,0,0,1,1230,831.11Z" transform="translate(-14 -404.5)"/></g>
+            <g id="bus_window_reflections">
+                <path class="bus-cls-15" d="M506,547.36,435.64,477H315a15,15,0,0,0-5.58,1.08L410.36,579H491a15,15,0,0,0,15-15Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M735,551.36,660.64,477H544a15,15,0,0,0-8.21,2.45L635.36,579H720a15,15,0,0,0,15-15Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M963,564V540.36L899.64,477H772.36l102,102H948A15,15,0,0,0,963,564Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M1192,564V540.36L1128.64,477H1001.36l102,102H1177A15,15,0,0,0,1192,564Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M1423,564V547q0-3.54-.35-7L1360,477.35q-3.45-.35-7-.35H1232.36l102,102H1408A15,15,0,0,0,1423,564Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M89.7,498.34,170.36,579H261a15,15,0,0,0,15-15v-6.62L195.64,477H140A69.79,69.79,0,0,0,89.7,498.34Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M506,812.36,437.64,744H315a14.84,14.84,0,0,0-4.08.58L412.36,846H491a15,15,0,0,0,15-15Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M735,811.36,667.64,744H544a15.5,15.5,0,0,0-3.29.37L642.36,846H720a15,15,0,0,0,15-15Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M963,812.36,894.64,744H772a14.84,14.84,0,0,0-4.08.58L869.36,846H948a15,15,0,0,0,15-15Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M1192,818.36,1117.64,744H1001a15,15,0,0,0-8.21,2.45L1092.36,846H1177a15,15,0,0,0,15-15Z" transform="translate(-14 -404.5)"/>
+                <path class="bus-cls-15" d="M1237.93,751.57,1332.36,846h83.09a14.89,14.89,0,0,0,14.88-15.54l-.62-14.39L1343.64,730h-39.22a15.08,15.08,0,0,0-4.71.76l-59.53,19.85A14.92,14.92,0,0,0,1237.93,751.57Z" transform="translate(-14 -404.5)"/></g>
+            </g>
+        </svg>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- SAMPLE MENU ITEM -->
+    <!-- SOURCE CODE: https://codepen.io/nathantaylor/details/woKbqX-->
+    <div class="homepage_menu">
+        <div class="button"><a class="pushme" href="story.html"> <span class="inner">story</span></a></div>
+        <div class="button"><a class="pushme" href="story.html"> <span class="inner">map</span></a></div>
+        <div class="button"><a class="pushme" href="story.html"> <span class="inner">about</span></a></div>
+    </div>
+
+    <script>
+        // ARC AND MOVING EFFECT OF THE CAR
+        var car = document.querySelector("#car_icon");
+        var bike = document.querySelector("#bike_icon");
+        var bus = document.querySelector("#bus_icon");
+
+        var car_xPos = 0;
+        var car_yPos = 0;
+        var car_angle = 0;
+
+        var bike_xPos = 0;
+        var bike_yPos = 0;
+        var bike_angle = 0;
+
+        var bus_xPos = 0;
+        var bus_yPos = 0;
+        var bus_angle = 0;
+
+        function car_animate() {
+            car_xPos += 4;
+            car_angle += .1;
+            car_yPos = Math.round(50 * Math.sin(car_angle));
+            car.style.transform = `translate3d(${car_xPos}px, ${car_yPos}px, 0)`;
+            // adjust starting and ending locations
+            if (Math.abs(car_xPos) >= 1400) {
+                car_xPos = -500;
+            }
+            if (car_angle > 2 * Math.PI) {
+                car_angle = 0;
+            }
+            requestAnimationFrame(car_animate);
+        }
+
+        function bike_animate() {
+            bike_xPos += 2;
+            bike_angle += .1;
+            bike_yPos = Math.round(30 * Math.sin(bike_angle));
+            bike.style.transform = `translate3d(${bike_xPos}px, ${bike_yPos}px, 0)`;
+            // adjust starting and ending locations
+            if (Math.abs(bike_xPos) >= 1400) {
+                bike_xPos = -500;
+            }
+            if (bike_angle > 2 * Math.PI) {
+                bike_angle = 0;
+            }
+            requestAnimationFrame(bike_animate);
+        }
+
+        function bus_animate() {
+            bus_xPos += 3;
+            bus_angle += .1;
+            bus_yPos = Math.round(28 * Math.sin(bus_angle));
+            bus.style.transform = `translate3d(${bus_xPos}px, ${bus_yPos}px, 0)`;
+            // adjust starting and ending locations
+            if (Math.abs(bus_xPos) >= 1400) {
+                bus_xPos = -500;
+            }
+            if (bus_angle > 2 * Math.PI) {
+                bus_angle = 0;
+            }
+            requestAnimationFrame(bus_animate);
+        }
+   
+        car_animate();
+        bike_animate();
+        bus_animate();
+    </script>
+
 <body>
 </html>

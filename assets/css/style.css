@@ -1,10 +1,234 @@
+/* GET FUTURA */
 @font-face {
   font-family: Futura;
   src: url(Futura Bold font.tff);
 }
-h1 {
+
+/* SET FUTURE FOR ALL TEXT */
+h1, .sig, p {
   font-family: Futura;
+  color: #ffa372;
 }
+
+/* CENTER HOMEPAGE TEXT */
 .groupNameTextHeader {
   text-align: center;
 }
+
+
+/* BACKGROUND COLOR OF HOMEPAGE */
+body {
+  background-color: #1b262c;
+  background-size: auto;
+  overflow: hidden;
+}
+
+/*--------------------------------------------------------------*/
+/* PARALLAX SCROLLING */ 
+/*--------------------------------------------------------------*/
+
+* {
+ box-sizing: border-box;
+}
+
+main {
+ height: 100vh;
+ overflow-x: hidden;
+ overflow-y: scroll;
+ scroll-snap-type: y mandatory;
+}
+/* Scroll snap effect*/
+figure {
+ scroll-snap-align: start;
+ width: 100vw;
+ height: 100vh;
+ margin: 0;
+
+ background-size: cover;
+ background-position: center;
+
+ &:first-of-type {
+
+ }
+}
+
+.screenTitle {
+  text-align:center;
+}
+/* Different screen backgrounds*/
+#s1 {
+ background-color: white;
+}
+
+#s2 {
+ background-color: #ed6663;
+}
+
+#s3 {
+ background-color: white;
+}
+
+#s4 {
+ background-color: #ed6663;
+}
+
+#s5 {
+ background-color: white;
+}
+
+#s6 {
+ background-color: #ed6663;
+}
+
+.screen1Text{
+  background-color: white;
+     border: 15px solid #1b262c;
+     float:left;
+     padding: 50px;
+     margin-bottom: 20px;
+     margin-left: 20px;
+     width: 40%;
+}
+
+.screen1Image{
+  width: 50%;
+  float: right;
+}
+
+/*--------------------------------------------------------------*/
+/* HOME PAGE TRANSPORT MODES */ 
+/*--------------------------------------------------------------*/
+
+.spacer {
+  height: 15px;
+}
+
+/* SET THE SIZE OF THE CAR ICON */
+#car_icon {
+  height: 140px;
+}
+
+#bike_icon {
+  height: 120px;
+}
+
+#bus_icon {
+  height: 160px;
+}
+
+/* APPLY BOUNCE EFFECT TO CAR BODY */ 
+#car_bounce, #wheel_holes {
+  animation: bounce 1s infinite linear;
+}
+
+/* APPLY BOUNCE EFFECT TO BUS BODY */ 
+#bus_no_wheels, #bus_wheel_holes {
+  animation: bounce 1s infinite linear;
+}
+
+/* APPLY ROTATION TO CAR WHEELS */ 
+.cls-6 {
+  transform-box: fill-box; 
+  transform-origin: center; 
+  transform: rotate(45deg);
+  animation: rotation 4s infinite linear;
+}
+
+/* APPLY ROTATION TO BIKE WHEELS */
+#bike-wheels_medium1, #bike-wheels_medium2  {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(45deg);
+  animation: rotation 1s infinite linear;
+}
+
+/* APPLY ROTATION TO BUS WHEELS */ 
+#bus_wheels_ring .bus-cls-4 {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(45deg);
+  animation: rotation 2s infinite linear;
+}
+
+/* BOUNCING ANIMATION FOR CAR BODY */ 
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(-10px); }
+}
+
+/* ROTATION ANIMATION FOR WHEELS */ 
+@keyframes rotation {
+  to { transform: rotate(360deg); }
+}
+
+/*--------------------------------------------------------------*/
+/* HOMEPAGE MENU */
+/*--------------------------------------------------------------*/
+
+/* HOMEPAGE MENU PLACEMENT */
+.homepage_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-right: 18%;
+  margin-left: 32%;
+  margin-top: 100px;
+}
+
+/* PUSH BUTTON ANIMATION */ 
+.pushme {
+  position: relative;
+  font-weight: 700;
+  background-color: #ffa372;
+  border-radius: 0.6em;
+  display: inline-block;
+  margin: 1em;
+}
+
+.pushme .inner {
+  display: inline-block;
+  background-color: #1b262c;
+  border-radius: 0.6em;
+  border: 0.3em solid #ffa372;
+  padding: 1em;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transform: translate3d(0.6em, -0.6em, 0);
+          transform: translate3d(0.6em, -0.6em, 0);
+  -webkit-transition: -webkit-transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition-delay: 220ms;
+          transition-delay: 220ms;
+}
+
+.pushme:active .inner, .pushme.click .inner, .pushme:hover .inner {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 120ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: -webkit-transform 120ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 120ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button {
+  width: 200px;
+  text-align: center;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+
+.pushme {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: Futura;
+  color: #ffa372;
+}
+
