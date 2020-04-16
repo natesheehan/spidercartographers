@@ -17,13 +17,22 @@ jQuery(document).ready(function(){
   });
 
   //variety chart
-  const margin = 60;
-  const width = 680;
-  const height = 400;
+
+  const data=[
+    {Mode:"walking", Value:7},
+    {Mode:"cycling", Value:13},
+    {Mode:"car", Value:15},
+    {Mode:"bus", Value:5},
+    {Mode:"train", Value:60},
+  ];
+  console.log(data)
+  const margin ={left:30, top:25};
+  const width = 600;
+  const height = 350;
 
   const svg = d3.select('svg');
   const chart = svg.append('g')
-    .attr('transform',`translate(${margin}, ${margin})`);
+    .attr('transform',`translate(${margin.left}, ${margin.top})`);
 
   const yScale = d3.scaleLinear()
     .range([height, 0])
@@ -34,12 +43,76 @@ jQuery(document).ready(function(){
 
   const xScale = d3.scaleBand()
     .range([0, width])
-    .domain(['a','b','c'].map((s)=>s))
+    .domain(data.map(function(d){
+      return d.Mode
+    }))
     .padding(0.2)
 
   chart.append('g')
     .attr('transform',`translate(0, ${height})`)
     .call(d3.axisBottom(xScale));
+
+    chart.selectAll()
+    .data(data)
+    .enter()
+    .append('rect')
+    .attr('x', (s) => xScale(s.Mode))
+    .attr('y', (s) => yScale(s.Value))
+    .attr('height', (s) => height - yScale(s.Value))
+    .attr('width', xScale.bandwidth())
+
+    chart.append('g')
+    .attr('class', 'grid')
+    .call(d3.axisLeft()
+        .scale(yScale)
+        .tickSize(-width, 0, 0)
+        .tickFormat(''))
+
+        svg.append('text')
+        .attr('x', width / 2)
+        .attr('y', 15)
+        .attr('text-anchor', 'middle')
+        .text('Hackney')
+
+    // svg
+    //   .on('mouseenter', function (actual, i) {
+    //       d3.select(this).attr('opacity', 0.5)
+    //   })
+    //   .on('mouseleave', function (actual, i) {
+    //     d3.select(this).attr('opacity', 1)
+    // })
+
+    .on('mouseenter', function (s, i) {
+      d3.select(this)
+          .transition()
+          .duration(300)
+          .attr('opacity', 0.6)
+          .attr('x', (a) => xScale(a.Mode) - 5)
+          .attr('width', xScale.bandwidth() + 10)
+  
+      chart.append('line')
+          .attr('x1', 0)
+          .attr('y1', y)
+          .attr('x2', width)
+          .attr('y2', y)
+          .attr('stroke', 'red')
+
+    const barGroups = chart.selectAll()
+      .data(data)
+      .enter()
+      .append('g')
+
+      //it works up till here
+
+            
+        
+  
+      // this is only part of the implementation, check the source code
+  })
+
+
+    
+      
 
   
 
