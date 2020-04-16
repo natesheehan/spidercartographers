@@ -5,9 +5,14 @@
 }
 
 /* SET FUTURE FOR ALL TEXT */
-h1, .sig, p {
+h1, .sig, p, .percText {
   font-family: Futura;
   color: #ffa372;
+}
+
+.percText{
+  font-weight: bold;
+  font-size: larger;
 }
 
 /* CENTER HOMEPAGE TEXT */
@@ -83,10 +88,9 @@ div#bg-3-3{
  right:140px;
 }
 div#bg-3-4{
-
  width:1104px;
  height:684px;
- top:2800px;
+ top:3500px;
  right:0px;
 }
 /* middle layer clouds */
@@ -100,28 +104,58 @@ div#parallax-bg-2 div{
 }
 
 div#bg-2-1{
- top:100px;
- left:-310px;
+ top:1100px;
+ left:30px;
 }
+
+div#bg-2-1-1{
+  left:50px;
+ }
+
 div#bg-2-2{
- top:270px;
- right:-70px;
-}
-div#bg-2-3{
- top:870px;
- left:-300px;
-}
-div#bg-2-4{
- top:1120px;
- right:-130px;
-}
-div#bg-2-5{
- top:1620px;
+ top:1100px;
  left:140px;
 }
+
+div#bg-2-2-1{
+  left:150px;
+}
+
+div#bg-2-3{
+ top:1100px;
+ left:240px;
+}
+
+div#bg-2-3-1{
+  left:280px;
+}
+
+div#bg-2-4{
+ top:1100px;
+ left:370px;
+}
+
+div#bg-2-4-1{
+  left:410px;
+}
+
+div#bg-2-5{
+ top:1100px;
+ left:520px;
+}
+div#bg-2-5-1{
+  left:550px;
+}
+
 div#bg-2-6{
- top:720px;
- left:340px;
+  top:1500px;
+  left:20px;
+  height:900px;
+  width:500
+ }
+
+.percText{
+  top:1200px;
 }
 
 /*background layer clouds */
@@ -141,16 +175,16 @@ div#bg-1-2{
  left:0px;
 }
 div#bg-1-3{
- top:850px;
- right:-290px;
+ top:700px;
+ right:-5px;
 }
 div#bg-1-4{
-top:1350px;
+top:2350px;
  left:200px;
 }
 div#bg-1-5{
 top:1200px;
- left:-200px;
+right:-5px;
 }
 /*--------------------------------------------------------------*/
 /* SNAP SCROLLING */
@@ -223,6 +257,16 @@ figure {
   width: 50%;
   float: right;
 }
+
+/*--------------------------------------------------------------*/
+/* STORY CONTENT */
+/*--------------------------------------------------------------*/
+
+#storyBike {
+  height:20%;
+  width:20%;
+}
+
 
 /*--------------------------------------------------------------*/
 /* HOME PAGE TRANSPORT MODES */
