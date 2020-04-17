@@ -16,16 +16,15 @@ jQuery(document).ready(function(){
     time: 1000
   });
 
-  //variety chart
+  //MSOA variety of modes use chart
 
   const data=[
-    {Mode:"walking", Value:7},
-    {Mode:"cycling", Value:13},
-    {Mode:"car", Value:15},
-    {Mode:"bus", Value:5},
-    {Mode:"train", Value:60},
+    {msoa:"MSOA 1", walking: 30, cycling: 25, car: 50, bus: 36, train: 70},
+    {msoa:"MSOA 2", walking: 5, cycling: 10, car: 90, bus: 5, train: 5},
+    {msoa:"MSOA 3", walking: 25, cycling: 25, car: 50, bus: 10, train: 15},
+    {msoa:"MSOA 4", walking: 5, cycling: 7, car: 15, bus: 40, train: 80}
   ];
-  console.log(data)
+  
   const margin ={left:30, top:25};
   const width = 600;
   const height = 350;
@@ -40,11 +39,12 @@ jQuery(document).ready(function(){
   
   chart.append('g')
     .call(d3.axisLeft(yScale));
+    
 
   const xScale = d3.scaleBand()
     .range([0, width])
     .domain(data.map(function(d){
-      return d.Mode
+      return d.msoa
     }))
     .padding(0.2)
 
@@ -72,7 +72,7 @@ jQuery(document).ready(function(){
         .attr('x', width / 2)
         .attr('y', 15)
         .attr('text-anchor', 'middle')
-        .text('Hackney')
+        .text('Variety chart - MSOAs')
 
     // svg
     //   .on('mouseenter', function (actual, i) {
@@ -87,7 +87,7 @@ jQuery(document).ready(function(){
           .transition()
           .duration(300)
           .attr('opacity', 0.6)
-          .attr('x', (a) => xScale(a.Mode) - 5)
+          .attr('x', (a) => xScale(a.msoa) - 5)
           .attr('width', xScale.bandwidth() + 10)
   
       chart.append('line')

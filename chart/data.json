@@ -1,0 +1,124 @@
+[
+    {
+        "categorie": "MSOA 1", 
+        "values": [
+            {
+                "value": 5, 
+                "rate": "Walking"
+            }, 
+            {
+                "value": 14, 
+                "rate": "Cycling"
+            }, 
+            {
+                "value": 20, 
+                "rate": "Car"
+            }, 
+            {
+                "value": 6, 
+                "rate": "Bus"
+            }, 
+            {
+                "value": 70, 
+                "rate": "Train"
+            }
+        ]
+    }, 
+    {
+        "categorie": "MSOA 2", 
+        "values": [
+            {
+                "value": 30, 
+                "rate": "Walking"
+            }, 
+            {
+                "value": 50, 
+                "rate": "Cycling"
+            }, 
+            {
+                "value": 60, 
+                "rate": "Car"
+            }, 
+            {
+                "value": 10, 
+                "rate": "Bus"
+            }, 
+            {
+                "value": 3, 
+                "rate": "Train"
+            }
+        ]
+    },     {
+        "categorie": "MSOA 3", 
+        "values": [
+            {
+                "value": 3, 
+                "rate": "Walking"
+            }, 
+            {
+                "value": 7, 
+                "rate": "Cycling"
+            }, 
+            {
+                "value": 40, 
+                "rate": "Car"
+            }, 
+            {
+                "value": 40, 
+                "rate": "Bus"
+            }, 
+            {
+                "value": 36, 
+                "rate": "Train"
+            }
+        ]
+    },     {
+        "categorie": "MSOA 4", 
+        "values": [
+            {
+                "value": 5, 
+                "rate": "Walking"
+            }, 
+            {
+                "value": 14, 
+                "rate": "Cycling"
+            }, 
+            {
+                "value": 50, 
+                "rate": "Car"
+            }, 
+            {
+                "value": 20, 
+                "rate": "Bus"
+            }, 
+            {
+                "value": 40, 
+                "rate": "Train"
+            }
+        ]
+    },     {
+        "categorie": "MSOA 5", 
+        "values": [
+            {
+                "value": 5, 
+                "rate": "Walking"
+            }, 
+            {
+                "value": 20, 
+                "rate": "Cycling"
+            }, 
+            {
+                "value": 80, 
+                "rate": "Car"
+            }, 
+            {
+                "value": 15, 
+                "rate": "Bus"
+            }, 
+            {
+                "value": 10, 
+                "rate": "Train"
+            }
+        ]
+    }
+]
