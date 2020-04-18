@@ -229,20 +229,20 @@ figure {
 /*--------------------------------------------------------------*/
 
 .spacer {
-  height: 15px;
+  height: 5vh;
 }
 
 /* SET THE SIZE OF THE CAR ICON */
 #car_icon {
-  height: 140px;
+  height: 14vh;
 }
 
 #bike_icon {
-  height: 120px;
+  height: 12vh;
 }
 
 #bus_icon {
-  height: 160px;
+  height: 16vh;
 }
 
 /* APPLY BOUNCE EFFECT TO CAR BODY */
@@ -297,13 +297,14 @@ figure {
 
 /* HOMEPAGE MENU PLACEMENT */
 .homepage_menu {
+  position: absolute;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 50%;
-  margin-right: 18%;
+  height: 12vh;
   margin-left: 32%;
-  margin-top: 100px;
+  bottom: 0vh;
 }
 
 /* PUSH BUTTON ANIMATION */
