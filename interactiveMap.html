@@ -29,109 +29,13 @@
        <div id="map_container">
        </div>
 
-
-<script type="text/javascript">
-
-// MOVE THIS TO ITS OWN FILE (SORRY, IM BEING LAZY RIGHT NOW)
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2hleW5lLWNhbXBiZWxsIiwiYSI6ImNrOHMxYW9wYTA0OWkzZXBhenJyemFsbnIifQ.cXgp6qu6dAmDTAh-ID2M3g';
-
-var map = new mapboxgl.Map({
-    container: 'map_container',
-    style: 'mapbox://styles/cheyne-campbell/ck966jun93urx1iqlhlheiknl',
-    center: [-4.0, 55],
-    zoom: 5.5
-});
+       <div class='msoaInfo'>
+        <div><strong>MSOA id:</strong> <span id='msoaId'></span></div>
+        <div><strong>Name:</strong> <span id='msoaName'></span></div>
+        </div>
 
 
-// variable to store MSOA geojson
-var msoas;
-
-// fetch the geojson data directly - may not work on some browsers but that is a problem for another day
-fetch('https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson')
-  .then(response => response.json())
-  .then(data => msoas = data)
-  // can remove console.log step - used for checking what's going on
-  .then(() => console.log(msoas))
-
-
-var hoveredStateId = null;
- 
-map.on('load', function() {
-    // load the MSOA geojson data
-    map.addSource('states', {
-        'type': 'geojson',
-        'data': msoas
-    });
-    
-    // the feature-state dependent fill-opacity expression will render the hover effect
-    // when a feature's hover state is set to true
-    map.addLayer({
-        'id': 'state-fills',
-        'type': 'fill',
-        'source': 'states',
-        'layout': {},
-        'paint': {
-        'fill-color': '#627BC1',
-        'fill-opacity': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            1,
-            0.5
-            ]
-        }
-    });
-
-    map.addLayer({
-        'id': 'state-borders',
-        'type': 'line',
-        'source': 'states',
-        'layout': {},
-        'paint': {
-            'line-color': '#627BC1',
-            'line-width': 2
-        }
-    });
- 
-    // when the user moves their mouse over the state-fill layer, we'll update the
-    // feature state for the feature under the mouse
-    map.on('mousemove', 'state-fills', function(e) {
-        console.log(e);
-        if (e.features.length > 0) {
-            if (hoveredStateId) {
-                map.setFeatureState(
-                    { source: 'states', id: hoveredStateId },
-                    { hover: false }
-                );
-            }
-            //  this needs to changed!
-            // we need to figure out how to add top-level id to the geojson, so the below like will look like:  
-            // hoveredStateId = e.features[0].id;
-            hoveredStateId = e.features[0].properties.objectid;
-            map.setFeatureState(
-                { source: 'states', id: hoveredStateId },
-                { hover: true }
-            );
-        }
-    });
-    
-    // when the mouse leaves the state-fill layer, update the feature state of the
-    // previously hovered feature
-    map.on('mouseleave', 'state-fills', function() {
-        if (hoveredStateId) {
-            map.setFeatureState(
-                { source: 'states', id: hoveredStateId },
-                { hover: false }
-            );
-        }
-        hoveredStateId = null;
-    });
-
-
-});
-
-
-
+<script type="text/javascript" src="assets/scripts/map.js">
 </script>
 
    </body>
