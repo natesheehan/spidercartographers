@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1587743055889.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4156338761",
+    "id" : "78F17834",
+    "lastKnownWriteTime" : 1587742846,
+    "last_content_update" : 1587742846,
+    "path" : "~/Documents/Code Repos/spidercartographers/Scripts/mapping clusters.R",
+    "project_path" : "mapping clusters.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
