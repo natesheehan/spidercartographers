@@ -88,3 +88,56 @@ write.csv(train_df, "Train locations.csv", row.names = FALSE)
 write.csv(bus_df, "Data/Bus_locations.csv", row.names = FALSE)
 
 write.csv(metro_df, "Data/Metro_locations.csv", row.names = FALSE)
+
+
+#getting centroids as lat and lon values
+
+#plot msoa
+plot(msoa)
+
+#change msoa to st
+MSOA_ST <- st_as_sf(msoa)
+#use the st_centroid function to get the centroids
+msoa_centroids <- st_centroid(MSOA_ST)
+#import the msoa flows
+msoa_flows <- read.csv(file = "C:/Users/cex/Documents/Smart Cities and Urban Analytics/Term 2/SDC/Assessment/Data/wu03ew_msoa.csv")
+
+#extract the geometry as a set of x and y coordinates
+msoa_coords = as.data.frame(st_coordinates(msoa_centroids))
+#check the resulting dataframe
+msoa_coords
+#merge the new datafareme and the original
+merged = merge(msoa_centroids, msoa_coords, by.x = 0, by.y = 0 )
+#drop the geometry so that it is no longer an st dataframe
+msoa_centroids1 <- merged %>% st_set_geometry(NULL)
+#drop unnecssary columns
+msoa_centroids1 <- select(msoa_centroids1, -c(1,2,6,7))
+
+#merge flow data with coordinates for origin and destination
+origin_merged <- merge(msoa_flows,           msoa_centroids1,
+      by.x = "Area.of.residence",
+      by.y = "msoa11cd",
+      sort = TRUE)
+#change the names of x and y to lon and lat
+names(origin_merged)[names(origin_merged) == "X"] <- "Orig_Lon"
+names(origin_merged)[names(origin_merged) == "Y"] <- "Orig_Lat"
+#remove the repeated column
+origin_merged <- select(origin_merged, -c(16))
+#change the code to name
+names(origin_merged)[names(origin_merged) == "msoa11nm"] <- "Origin name"
+
+#merge the flow data with the x and y for destination
+overall_merged <- merge(origin_merged,
+                        msoa_centroids1,
+                        by.x = "Area.of.workplace",
+                        by.y = "msoa11cd",
+                        sort = TRUE)
+#change the name of the X and Y to that for the destionation
+names(overall_merged)[names(overall_merged) == "X"] <- "Dest_Lon"
+names(overall_merged)[names(overall_merged) == "Y"] <- "Dest_Lat"
+#get rid of the repeated column
+overall_merged <- select(overall_merged, -c(19))
+#change the name to the destination name
+names(overall_merged)[names(overall_merged) == "msoa11nm"] <- "Destination name"
+#output the resulting dataframe to a file
+write.csv(overall_merged,"C:/Users/cex/Documents/Smart Cities and Urban Analytics/Term 2/SDC/Assessment/Data/msoa_flows.csv", row.names = FALSE)
