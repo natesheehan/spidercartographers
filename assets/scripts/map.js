@@ -7,6 +7,22 @@ var map = new mapboxgl.Map({
     zoom: 5.5
 });
 
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyBB8J3_bgG7AYKrmYthHqzD3gAHNUk925A",
+  authDomain: "spidercartographers.firebaseapp.com",
+  databaseURL: "https://spidercartographers.firebaseio.com",
+  projectId: "spidercartographers",
+  storageBucket: "spidercartographers.appspot.com",
+  messagingSenderId: "1018443119846",
+  appId: "1:1018443119846:web:2edfb7354e138727694f27",
+  measurementId: "G-RQHR5T16XR"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 
 // variable to store MSOA geojson
 var msoas;
@@ -17,6 +33,9 @@ fetch('https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.g
   .then(data => msoas = data)
   // can remove console.log step - used for checking what's going on
   .then(() => console.log(msoas))
+
+
+
 
 
 var hoveredStateId = null;
