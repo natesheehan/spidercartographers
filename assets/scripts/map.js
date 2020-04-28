@@ -23,6 +23,25 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
+var db = firebase.database();
+var ref = db.ref("/");
+ref.on('value', getData, errData);
+
+function getData(data){
+  console.log(data.val());
+}
+
+function errData(data){
+  console.log("ERROR");
+  console.log(err);
+
+}
+
+
+// the code I just pasted from map.js
+
+
+
 
 // variable to store MSOA geojson
 var msoas;
@@ -32,14 +51,10 @@ fetch('https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.g
   .then(response => response.json())
   .then(data => msoas = data)
   // can remove console.log step - used for checking what's going on
-  .then(() => console.log(msoas))
+  
 
 
 
-
-
-var hoveredStateId = null;
- 
 map.on('load', function() {
     // load the MSOA geojson data
     map.addSource('states', {
@@ -145,3 +160,11 @@ map.on('load', function() {
 
 
 });
+
+
+
+
+
+
+
+
