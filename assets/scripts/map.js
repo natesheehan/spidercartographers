@@ -24,24 +24,6 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 var db = firebase.database();
-var ref = db.ref("/");
-ref.on('value', getData, errData);
-
-function getData(data){
-  console.log(data.val());
-}
-
-function errData(data){
-  console.log("ERROR");
-  console.log(err);
-
-}
-
-
-// the code I just pasted from map.js
-
-
-
 
 // variable to store MSOA geojson
 var msoas;
@@ -65,6 +47,8 @@ map.on('load', function() {
 
     var idDisplay = document.getElementById('msoaId');
     var nameDisplay = document.getElementById('msoaName');
+    var clusterNumberDisplay = document.getElementById('clusterNumber');
+    var bikeUsageDisplay = document.getElementById('bikeUsage');
     
     
     // the feature-state dependent fill-opacity expression will render the hover effect
@@ -98,19 +82,40 @@ map.on('load', function() {
 
     var msoasID = null;
 
+    // map.on('click', 'state-fills', (e) => {
+      
+    // });
+
     map.on('mousemove', 'state-fills', (e) => {
 
     map.getCanvas().style.cursor = 'pointer';
     // Set variables equal to the current feature's magnitude, location, and time
     var idOfMsoa = e.features[0].properties.objectid;
     var nameOfMsoa = e.features[0].properties.msoa11nm;
+    var ref = db.ref(e.features[0].properties.msoa11cd);
     
+    ref.on('value', getData, errData);
+
+    var currentObj;
+    function getData(data){
+      currentObj = data.val();
+    }
+    
+    function errData(data){
+      console.log("ERROR");
+      console.log(err);    
+    }
+    // console.log(currentObj)
+      
 
     // Check whether features exist
     if (e.features.length > 0) {
         // Display the magnitude, location, and time in the sidebar
         idDisplay.textContent = idOfMsoa;
         nameDisplay.textContent = nameOfMsoa;
+        clusterNumberDisplay.textContent = currentObj.log_zscore_kmeans_cluster;
+        bikeUsageDisplay.textContent = currentObj.bicycle_perc;
+        console.log(currentObj);
         
 
         // If quakeID for the hovered feature is not null,
