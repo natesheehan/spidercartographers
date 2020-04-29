@@ -1,3 +1,5 @@
+import { drawChart } from './mapBoxChart.js';
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2hleW5lLWNhbXBiZWxsIiwiYSI6ImNrOHMxYW9wYTA0OWkzZXBhenJyemFsbnIifQ.cXgp6qu6dAmDTAh-ID2M3g';
 
 var map = new mapboxgl.Map({
@@ -124,6 +126,15 @@ map.on('load', function() {
         bikeUsageDisplay.textContent = currentObj.bicycle_perc;
         console.log(currentObj);
 
+        const a = currentObj.work_from_home_perc;
+        const b = currentObj.on_foot_perc;
+        const c = currentObj.bicycle_perc;
+        const d = currentObj.car_perc;
+        const e = currentObj.bus_perc;
+        const f = currentObj.train_perc;
+        const g = currentObj.underground_metro_perc;
+        drawChart(a,b,c,d,e,f,g)
+
 
         // If quakeID for the hovered feature is not null,
         // use removeFeatureState to reset to the default behavior
@@ -166,6 +177,15 @@ map.on('load', function() {
           });
 
     }
+
+
+    
+
+
+
+
+
+
 });
 
 
