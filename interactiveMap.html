@@ -5,55 +5,41 @@
       <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+      <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+      <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
       <!-- FIREBASE STUFF -->
-
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-
       <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
-
-      <style>
-        #map { margin: 0; padding: 0; display: flex; flex-direction: row; }
-        #map_container { position: absolute; left: 30%; width: 70%; height: 100%; }
-        #map_sidebar { position: absolute; width: 30%; height: 100%; padding: 2%;}
-    </style>
-
    </head>
-
-
-   <body id="map">
-
-       <div id="map_sidebar">
-           <h1>let's make this mapp y'all</h1>
-           <p>maybe a drop down menu to highlight certain clusers</p>
-           <p>maybe a lil thing of instructions so that people know wut to do - such as 'click on an MSOA if you would like to view the transport flows'</p>
-           <p>like a chart or something</p>
-           <p>much data very analysis</p>
-           <p>button to return to homepage</p>
-        </div>
-
-       <div id="map_container">
-       </div>
-
-       <div class='msoaInfo'>
-        <div><strong>MSOA id:</strong> <span id='msoaId'></span></div>
-        <div><strong>Name:</strong> <span id='msoaName'></span></div>
-        <div><strong>Bike usage:</strong> <span id='bikeUsage'></span><span>%</span></div>
-        <div><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
-        </div>
-
-
-<script type="text/javascript" src="assets/scripts/map.js">
-</script>
-
-
-
-
-
-
+   <body>
+     <!-- MapBox Gecoder -->
+      <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+      <link
+         rel="stylesheet"
+         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+         type="text/css"
+         />
+      <body id="map">
+         <div id="map_sidebar">
+            <h1>let's make this mapp y'all</h1>
+            <p>maybe a drop down menu to highlight certain clusers</p>
+            <p>maybe a lil thing of instructions so that people know wut to do - such as 'click on an MSOA if you would like to view the transport flows'</p>
+            <p>like a chart or something</p>
+            <p>much data very analysis</p>
+            <p>button to return to homepage</p>
+         </div>
+         <div id="map_container">
+         </div>
+         <div class='msoaInfo'>
+            <div><strong>MSOA id:</strong> <span id='msoaId'></span></div>
+            <div><strong>Name:</strong> <span id='msoaName'></span></div>
+            <div><strong>Bike usage:</strong> <span id='bikeUsage'></span><span>%</span></div>
+            <div><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
+         </div>
+         <script type="text/javascript" src="assets/scripts/map.js"></script>
    </body>
 </html>
-
