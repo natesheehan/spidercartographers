@@ -10,6 +10,10 @@ var map = new mapboxgl.Map({
 map.addControl(
 new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
+
+// limit results to GB
+countries: 'gb',
+
 mapboxgl: mapboxgl
 })
 );
