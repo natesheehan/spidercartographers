@@ -1,3 +1,5 @@
+import { drawChart } from './mapBoxChart.js';
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2hleW5lLWNhbXBiZWxsIiwiYSI6ImNrOHMxYW9wYTA0OWkzZXBhenJyemFsbnIifQ.cXgp6qu6dAmDTAh-ID2M3g';
 
 var map = new mapboxgl.Map({
@@ -8,10 +10,11 @@ var map = new mapboxgl.Map({
 });
 
 map.addControl(
-new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
+    new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        countries: 'gb'
+    })
 );
 
 // Your web app's Firebase configuration
@@ -55,7 +58,7 @@ map.on('load', function() {
     var idDisplay = document.getElementById('msoaId');
     var nameDisplay = document.getElementById('msoaName');
     var clusterNumberDisplay = document.getElementById('clusterNumber');
-    var bikeUsageDisplay = document.getElementById('bikeUsage');
+    // var bikeUsageDisplay = document.getElementById('bikeUsage');
 
 
     // the feature-state dependent fill-opacity expression will render the hover effect
@@ -117,12 +120,22 @@ map.on('load', function() {
 
     // Check whether features exist
     if (e.features.length > 0) {
-        // Display the magnitude, location, and time in the sidebar
+        // Display the id, name and cluster in the sidebar
         idDisplay.textContent = idOfMsoa;
         nameDisplay.textContent = nameOfMsoa;
         clusterNumberDisplay.textContent = currentObj.log_zscore_kmeans_cluster;
-        bikeUsageDisplay.textContent = currentObj.bicycle_perc;
+        // bikeUsageDisplay.textContent = currentObj.bicycle_perc;
         console.log(currentObj);
+
+        //data for the chart
+        const a = currentObj.work_from_home_perc;
+        const b = currentObj.on_foot_perc;
+        const c = currentObj.bicycle_perc;
+        const d = currentObj.car_perc;
+        const e = currentObj.bus_perc;
+        const f = currentObj.train_perc;
+        const g = currentObj.underground_metro_perc;
+        drawChart(a,b,c,d,e,f,g)
 
 
         // If quakeID for the hovered feature is not null,
@@ -166,6 +179,15 @@ map.on('load', function() {
           });
 
     }
+
+
+
+
+
+
+
+
+
 });
 
 

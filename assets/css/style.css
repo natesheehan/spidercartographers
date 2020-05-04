@@ -3,6 +3,10 @@
      font-family: Futura;
      src: url(Futura Bold font.tff);
 }
+/* Links color */
+a {
+  color: #ed6663;
+}
 /* SET FUTURE FOR ALL TEXT */
  h1, .sig, p {
      font-family: Futura;
@@ -334,17 +338,17 @@
 /*--------------------------------------------------------------*/
  .msoaInfo {
      position: absolute;
-     font-family: sans-serif;
-     margin-top: 5px;
+     font-family: futura;
      top: 0;
      left: 0;
-     margin-left: 35%;
      padding: 5px;
-     width: 20%;
-     border: 2px solid black;
+     width: 30%;
+     height: 50%;
      font-size: 14px;
      color: #222;
-     background-color: #fff;
+     /* background-color: #fff; */
+     background-color:rgba(255,255,255,0.75);
+     /* opacity: 0.75; */
      border-radius: 3px;
      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
@@ -365,13 +369,17 @@
      width: 30%;
      height: 100%;
      padding: 2%;
+     background-color: #1b262c;
 }
- #searchInput {
-     background-position: 10px 12px;
-     background-repeat: no-repeat;
-     width: 100%;
-     font-size: 16px;
-     padding: 12px 20px 12px 40px;
-     border: 1px solid #ddd;
-     margin-bottom: 12px;
+
+.DataSources {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  background-color:#37a583;
+}
+.DataSourcesText {
+  color:#fff3e0;
+  margin-left: 20px;
 }
