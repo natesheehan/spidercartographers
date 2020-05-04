@@ -3,6 +3,10 @@
      font-family: Futura;
      src: url(Futura Bold font.tff);
 }
+/* Links color */
+a {
+  color: #ed6663;
+}
 /* SET FUTURE FOR ALL TEXT */
  h1, .sig, p {
      font-family: Futura;
@@ -365,6 +369,7 @@
      width: 30%;
      height: 100%;
      padding: 2%;
+     background-color: #1b262c;
 }
  #searchInput {
      background-position: 10px 12px;
@@ -374,4 +379,32 @@
      padding: 12px 20px 12px 40px;
      border: 1px solid #ddd;
      margin-bottom: 12px;
+}
+.geocoder {
+position: absolute;
+z-index: 1;
+width: 100%;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  width: 100%
+}
+#searchText {
+  text-align: left;
+  color: #fff3e0;
+}
+#controlText {
+  text-align: center;
+}
+.DataSources {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  background-color:#37a583;
+}
+.DataSourcesText {
+  color:#fff3e0;
+  margin-left: 20px;
 }

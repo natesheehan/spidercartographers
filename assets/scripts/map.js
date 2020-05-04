@@ -7,16 +7,13 @@ var map = new mapboxgl.Map({
     zoom: 5.5
 });
 
-map.addControl(
-new MapboxGeocoder({
+var geocoder = new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl,
+countries: 'gb'
+});
 
-// limit results to GB
-countries: 'gb',
-
-mapboxgl: mapboxgl
-})
-);
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
