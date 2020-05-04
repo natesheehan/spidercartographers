@@ -62,51 +62,48 @@ const barGroups = chart.selectAll()
     .enter()
     .append('g')
 
+//average transport modes usage, dont think we should keep any data here, but its so small so its here for now xd
+const avgValsMap = {
+    "work at home": 10.38,
+    "on foot": 9.77,
+    "bicycle":2.68,
+    "car":60,
+    "bus":7.3,
+    "train":4.7,
+    "underground":3.37
+}
+
+
 barGroups
     .append('rect')
     .style('fill', 'ffa372')
     .style('opacity', 1)
     .attr('x', (s) => xScale(s.mode))
+    .attr('mode', (s) => s.mode)
     .attr('y', (s) => yScale(s.value))
     .attr('height', (s) => innerHeight - yScale(s.value))
     .attr('width', xScale.bandwidth())
-    .on('mouseenter', function(actual, i){
+    .on('mouseenter', function(data, i){
+        
+        const y = yScale(avgValsMap[data.mode])
+        const line = chart.append("svg:line")
+                        .attr("id","averageLine")
+                        .attr("x1", 0)
+                        .attr("x2", innerWidth)
+                        .attr("y1", y)
+                        .attr("y2", y)
+                        .style("stroke", "fff059")
+                        .style('stroke-dasharray','5 6');
 
-        d3.selectAll('.value')
-        .attr('opacity', 0)
-
-      const y = yScale(actual.value)
-
-      line = chart.append('line')
-        .attr('id', 'limit')
-        .attr('x1', 0)
-        .attr('y1', y)
-        .attr('x2', innerWidth)
-        .attr('y2', y)
-
-      barGroups.append('text')
-        .attr('class', 'divergence')
-        .attr('x', (a) => xScale(a.mode) + xScale.bandwidth() / 2)
-        .attr('y', (a) => yScale(a.value) + 30)
-        .attr('fill', 'white')
-        .attr('text-anchor', 'middle')
-        .text((a, idx) => {
-          const divergence = (a.value - actual.value).toFixed(1)
-          
-          let text = ''
-          if (divergence > 0) text += '+'
-          text += `${divergence}%`
-
-          return idx !== i ? text : '';
-        })
-
+      
+    })
+    .on('mouseleave', function(){
+        chart.selectAll('#averageLine').remove()
     })
 
 function decimalCut(x){
     return d3.format(".0f")(x)
 };
-
-console.log(decimalCut(12.8656787656));
 
 barGroups // adds percentage value to a bar
     .append('text')
@@ -133,7 +130,7 @@ barGroups // adds percentage value to a bar
 chart.append('g')
     .attr('class', 'grid')
     .style('opacity', 0.2)
-    .style('stroke-dasharray','1 6') // the first number is the size of a line or and the second is spacing
+    .style('stroke-dasharray','1 6') // the first number is the size of a line/dot and the second is spacing
     .call(d3.axisLeft()
         .scale(yScale)
         .tickSize(-innerWidth, 0, 0)
