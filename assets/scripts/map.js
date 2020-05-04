@@ -57,7 +57,7 @@ map.on('load', function() {
     var idDisplay = document.getElementById('msoaId');
     var nameDisplay = document.getElementById('msoaName');
     var clusterNumberDisplay = document.getElementById('clusterNumber');
-    var bikeUsageDisplay = document.getElementById('bikeUsage');
+    // var bikeUsageDisplay = document.getElementById('bikeUsage');
 
 
     // the feature-state dependent fill-opacity expression will render the hover effect
@@ -119,13 +119,14 @@ map.on('load', function() {
 
     // Check whether features exist
     if (e.features.length > 0) {
-        // Display the magnitude, location, and time in the sidebar
+        // Display the id, name and cluster in the sidebar
         idDisplay.textContent = idOfMsoa;
         nameDisplay.textContent = nameOfMsoa;
         clusterNumberDisplay.textContent = currentObj.log_zscore_kmeans_cluster;
-        bikeUsageDisplay.textContent = currentObj.bicycle_perc;
+        // bikeUsageDisplay.textContent = currentObj.bicycle_perc;
         console.log(currentObj);
 
+        //data for the chart
         const a = currentObj.work_from_home_perc;
         const b = currentObj.on_foot_perc;
         const c = currentObj.bicycle_perc;
