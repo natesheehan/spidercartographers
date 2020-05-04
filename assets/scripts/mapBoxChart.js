@@ -16,9 +16,9 @@ const data = [
     "value":g}
 ];
 
-const margin ={left:25, top:25, bottom:25, right:25};
+const margin ={left:25, top:25, bottom:25, right:65};
 const width = 400;
-const height = 250;
+const height = 300;
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right;
 
@@ -38,6 +38,7 @@ const yScale = d3.scaleLinear()
     .domain([0, 100]);
 
 chart.append('g')
+    .attr('class','axis')
     .call(d3.axisLeft(yScale))
     .attr('transform',`translate(0,0)`)
     .attr('stroke-width',0)
@@ -52,10 +53,24 @@ const xScale = d3.scaleBand()
     .padding(0.2)
 
 chart.append('g')
+    .attr('class','axis')
     .attr('transform',`translate(0, ${innerHeight})`)
     .call(d3.axisBottom(xScale))
     .attr('stroke-width',0);
     // .call(wrap, xScale.bandwidth());
+
+
+//grid lines  
+const grid = chart.append('g')
+
+const gridLines = grid.append('g')
+    .attr('class','gridLines')
+    .style('stroke-dasharray','1 6') // the first number is the size of a line/dot and the second is spacing
+    .style('stroke', 'fff3e0')
+    .call(d3.axisLeft()
+        .scale(yScale)
+        .tickSize(-innerWidth, 0, 0)
+        .tickFormat(''))
 
 const barGroups = chart.selectAll()
     .data(data)
@@ -74,10 +89,11 @@ const avgValsMap = {
 }
 
 
+
+
 barGroups
     .append('rect')
     .style('fill', 'ffa372')
-    .style('opacity', 1)
     .attr('x', (s) => xScale(s.mode))
     .attr('mode', (s) => s.mode)
     .attr('y', (s) => yScale(s.value))
@@ -86,19 +102,38 @@ barGroups
     .on('mouseenter', function(data, i){
         
         const y = yScale(avgValsMap[data.mode])
+        //thats the average national usage of transport modes lines
         const line = chart.append("svg:line")
                         .attr("id","averageLine")
                         .attr("x1", 0)
                         .attr("x2", innerWidth)
                         .attr("y1", y)
                         .attr("y2", y)
-                        .style("stroke", "fff059")
+                        .style("stroke", "37a583")
                         .style('stroke-dasharray','5 6');
+
+        const lineText = barGroups.append('g');
+
+
+        lineText // adds percentage value to the average line
+            .append('text')
+            // .attr('class', 'value')
+            // .attr('x', (a) => xScale(a.mode) + xScale.bandwidth() / 2)
+            // .attr('y', (a) => yScale(a.value))
+            // .attr('text-anchor', 'middle')
+            // .style('fill', 'fff3e0')
+            .attr('id', 'averageLineText')
+            .attr('text-anchor', 'start')
+            .attr("x", innerWidth)
+            .attr("y", y)
+            .text(avgValsMap[data.mode]+"%")
+            .style('fill','37a583')
 
       
     })
     .on('mouseleave', function(){
         chart.selectAll('#averageLine').remove()
+        chart.selectAll('#averageLineText').remove()
     })
 
 function decimalCut(x){
@@ -111,30 +146,28 @@ barGroups // adds percentage value to a bar
     .attr('x', (a) => xScale(a.mode) + xScale.bandwidth() / 2)
     .attr('y', (a) => yScale(a.value))
     .attr('text-anchor', 'middle')
+    .style('fill', 'fff3e0')
     .text((a) => `${decimalCut(a.value)}%`)
 
-    
+// Legend
+chart.append('text')
+    .attr('id', 'Legend')
+    .attr('text-anchor', 'end')
+    .attr("x", innerWidth)
+    .attr("y", 0)
+    .text('national average')
+    .style('fill','fff3e0')
 
-// chart.selectAll("text.chartBars")
-//     .data(data)
-//     .enter().append("text")
-//     .attr("class", "bar")
-//     .attr("text-anchor", "middle")
-//     .attr("x", function(d) { return x(d.mode) + x.rangeBand()/2; })
-//     .attr("y", function(d) { return y(d.value); })
-//     .text(function(d) { return d.value; });
+chart.append("svg:line")
+    .attr("id","averageLineLegend")
+    .attr("x1", innerWidth -50)
+    .attr("x2", innerWidth)
+    .attr("y1", 10)
+    .attr("y2", 10)
+    .style("stroke", "37a583")
+    .style('stroke-dasharray','5 6');
 
 
-
-
-chart.append('g')
-    .attr('class', 'grid')
-    .style('opacity', 0.2)
-    .style('stroke-dasharray','1 6') // the first number is the size of a line/dot and the second is spacing
-    .call(d3.axisLeft()
-        .scale(yScale)
-        .tickSize(-innerWidth, 0, 0)
-        .tickFormat(''))
 
     // svg.append('text')
     //     .attr('x', innerWidth / 2)
