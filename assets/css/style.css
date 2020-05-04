@@ -338,13 +338,12 @@ a {
 /*--------------------------------------------------------------*/
  .msoaInfo {
      position: absolute;
-     font-family: sans-serif;
-     margin-top: 5px;
+     font-family: futura;
      top: 0;
      left: 0;
-     margin-left: 35%;
      padding: 5px;
      width: 30%;
+     height: 40%;
      font-size: 14px;
      color: #222;
      /* background-color: #fff; */
@@ -353,8 +352,6 @@ a {
      border-radius: 3px;
      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
-
-
  #map {
      margin: 0;
      padding: 0;
@@ -374,32 +371,7 @@ a {
      padding: 2%;
      background-color: #1b262c;
 }
- #searchInput {
-     background-position: 10px 12px;
-     background-repeat: no-repeat;
-     width: 100%;
-     font-size: 16px;
-     padding: 12px 20px 12px 40px;
-     border: 1px solid #ddd;
-     margin-bottom: 12px;
-}
-.geocoder {
-position: absolute;
-z-index: 1;
-width: 100%;
-    margin-left: 1%;
-    margin-top: 2%;
-}
-.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
-  width: 100%
-}
-#searchText {
-  text-align: left;
-  color: #fff3e0;
-}
-#controlText {
-  text-align: center;
-}
+
 .DataSources {
   position:absolute;
   bottom: 0;
