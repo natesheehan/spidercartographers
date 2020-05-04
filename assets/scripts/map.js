@@ -10,10 +10,11 @@ var map = new mapboxgl.Map({
 });
 
 map.addControl(
-new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
+    new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        countries: 'gb'
+    })
 );
 
 // Your web app's Firebase configuration
@@ -180,7 +181,7 @@ map.on('load', function() {
     }
 
 
-    
+
 
 
 
