@@ -344,14 +344,17 @@ a {
      left: 0;
      margin-left: 35%;
      padding: 5px;
-     width: 20%;
-     border: 2px solid black;
+     width: 30%;
      font-size: 14px;
      color: #222;
-     background-color: #fff;
+     /* background-color: #fff; */
+     background-color:rgba(255,255,255,0.75);
+     /* opacity: 0.75; */
      border-radius: 3px;
      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
+
+
  #map {
      margin: 0;
      padding: 0;

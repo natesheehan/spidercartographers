@@ -7,6 +7,7 @@
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+      <script src="https://d3js.org/d3.v5.js"></script>
       <!-- FIREBASE STUFF -->
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
@@ -37,14 +38,19 @@
        </div>
        </div>
          </div>
-         <div id="map_container">
-         </div>
+         <div id="map_container"></div>       
+
          <div class='msoaInfo'>
+   
             <div><strong>MSOA id:</strong> <span id='msoaId'></span></div>
-            <div><strong>Name:</strong> <span id='msoaName'></span></div>
-            <div><strong>Bike usage:</strong> <span id='bikeUsage'></span><span>%</span></div>
+            <div><strong>MSOA Name:</strong> <span id='msoaName'></span></div>
             <div><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
+            <div><strong>How do people commute?</strong> <span id='msoaName'></span></div>            
+            <div class='interactiveChart'>
+               <script type="module" src="assets/scripts/mapBoxChart.js"></script>
+            </div>
          </div>
-         <script type="text/javascript" src="assets/scripts/map.js"></script>
+         <script type="module" src="assets/scripts/map.js"></script>
+         
    </body>
 </html>
