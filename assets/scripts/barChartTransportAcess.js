@@ -14,7 +14,13 @@
                 "translate(" + marginBar.left + "," + marginBar.top + ")");
 
       // Parse the Data
-      d3.csv("assets/barTest.csv", function(data) {
+       data = [
+          {"mode":"Bus Stops",
+          "share":38.47993334},
+          {"mode":"Train Stations",
+          "share":0.320094431},
+          {"mode":"Metro Stations",
+          "share":0.124843772}];
 
         // Add X axis
         var x = d3.scaleLinear()
@@ -30,7 +36,7 @@
         // Y axis
         var y = d3.scaleBand()
           .range([ 0, heightBar ])
-          .domain(data.map(function(d) { return d.Mode; }))
+          .domain(data.map(function(d) { return d.mode; }))
           .padding(.1);
         svgBar.append("g")
           .call(d3.axisLeft(y))
@@ -41,9 +47,7 @@
           .enter()
           .append("rect")
           .attr("x", x(0) )
-          .attr("y", function(d) { return y(d.Mode); })
-          .attr("width", function(d) { return x(d.Share); })
+          .attr("y", function(d) { return y(d.mode); })
+          .attr("width", function(d) { return x(d.share); })
           .attr("height", y.bandwidth() )
           .attr("fill", "#1b262c")
-
-        })
