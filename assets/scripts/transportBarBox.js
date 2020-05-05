@@ -3,8 +3,6 @@
         			addedCount = 0,
         		   color = Chart.helpers.color;
 
-        	var months = ["MIN","25%","50%","75%","MAX"];
-
         	var chartColors = {
         		orange: '#ffa372',
         		black: '#1b262c',
@@ -12,8 +10,8 @@
         	};
 
         var barData = {
-        			labels: ["MIN","25%","50%","75%","MAX"],
-        			datasets: [{
+        			  labels: ["MIN","25%","50%","75%","MAX"],
+        			  datasets: [{
         				label: 'Metro',
         				backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
         				borderColor: chartColors.grey,
@@ -52,7 +50,7 @@
         			}]
 
         		};
-        var index = 11;
+        var index = 5;
         var ctx = document.getElementById("barChart").getContext("2d");
         		var	myNewChartB = new Chart(ctx, {
         				type: 'bar',

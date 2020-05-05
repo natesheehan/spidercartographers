@@ -3,8 +3,6 @@
         			addedCount = 0,
         		   color = Chart.helpers.color;
 
-        	var months = ["MIN","25%","50%","75%","MAX", "MEAN"];
-
         	var chartColors = {
         		orange: '#ffa372',
         		black: '#1b262c',
