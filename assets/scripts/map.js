@@ -52,13 +52,13 @@ var msoaData = $.ajax({
 
     /////////////////////////////////// CLUSTER LOOK UP ARRAY //////////////////////////////
     // Check that it worked 
-    console.log(msoas);
+    // console.log(msoas);
 
     async function findClusters() {
       // Create array for looking up clusters
       var clusterLookUp = {}; 
     
-      msoas.features.forEach(function (entry) {
+      msoas.features.forEach(entry => {
           
           // Get MSOA ID of feature
           var msoaID = entry.properties.msoa11cd;
@@ -69,14 +69,15 @@ var msoaData = $.ajax({
 
           msoaRef.once('value', function(data) {
               var clusterID = data.val().log_zscore_kmeans_cluster; 
-              clusterLookUp[msoaID] = clusterID;
-              console.log(clusterLookUp);
+              // clusterLookUp[msoaID] = clusterID;
+              entry.properties = {...entry.properties, clusterID: clusterID} //that adds another property of clusterID to msoas
+              // console.log(clusterLookUp);
           });
     
-          
       })
- 
+      // console.log(msoas)
     }
+   
     /////////////////////////////////// ^ CLUSTER LOOK UP ARRAY ^ //////////////////////////////
   
     findClusters();
@@ -104,7 +105,16 @@ var msoaData = $.ajax({
             'source': 'states',
             'layout': {},
             'paint': {
-            'fill-color': '#627BC1',
+            'fill-color': {
+              'property': 'clusterID',
+              'stops': [
+                [1, 'white'],
+                [2, 'orange'],
+                [3, 'firebrick'],
+                [4, 'blue'],
+                [0, 'grey']
+              ]
+            },
             'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -113,6 +123,19 @@ var msoaData = $.ajax({
                 ]
             }
         });
+
+       // another attempt with choropleth
+        let c = new MapboxChoropleth({
+            tableUrl: 'http://127.0.0.1:8887/data/test.csv',
+            tableNumericField: 'cluster',
+            tableIdField: 'msoa',
+            geometryUrl: 'https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson',
+            geometryIdField: 'msoa11cd',
+            sourceLayer: 'state-fills',
+            binCount: 5,
+            colorScheme: 'Spectral',
+            legendElement: '#legend'
+        }).addTo(map);
 
         map.addLayer({
             'id': 'state-borders',
