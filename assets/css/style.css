@@ -337,7 +337,7 @@ a {
 /* INTERACTIVE MAP PAGE*/
 /*--------------------------------------------------------------*/
  .msoaInfo {
-     position: absolute;
+     position: relative;
      font-family: futura;     
      top: 0;
      left: 0;
@@ -348,7 +348,6 @@ a {
      color: #222;
      background-color:#1b262c;
      border-radius: 3px;
-     
 }
 
 .msoaInfoText{
@@ -356,6 +355,9 @@ a {
 }
 
 /*chart*/
+
+
+
 .axis{
     color:#fff3e0
 }
@@ -376,8 +378,8 @@ a {
 }
  #map_container {
      position: absolute;
-     left: 30%;
-     width: 70%;
+     left: 35%;
+     width: 65%;
      height: 100%;
 }
  #map_sidebar {
@@ -386,6 +388,11 @@ a {
      height: 100%;
      padding: 2%;
      background-color: #1b262c;
+}
+
+#sidebarInstructions {
+    width: 100%;
+    position: absolute;
 }
 
 .DataSources {
@@ -398,4 +405,70 @@ a {
 .DataSourcesText {
   color:#fff3e0;
   margin-left: 20px;
+}
+
+
+/*--------------------------------------------------------------*/
+/* FLOWS BUTTON */
+/*--------------------------------------------------------------*/
+
+#flowsSwitch {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 100px;
+	height: 50px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	border-radius: 90px;
+}
+
+input:checked + label {
+	background: #37a583;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 90px;
+}
+
+
+/*--------------------------------------------------------------*/
+/* EVERYTHING */
+/*--------------------------------------------------------------*/
+// centering
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
