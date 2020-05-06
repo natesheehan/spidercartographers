@@ -4,11 +4,8 @@
      src: url(Futura Bold font.tff);
 }
 /* Links color */
- a {
-     color: #ed6663;
-}
- p {
-     font-size: 18px;
+a {
+  color: #ed6663;
 }
 /* SET FUTURE FOR ALL TEXT */
  h1, .sig, p {
@@ -26,119 +23,8 @@
      overflow: hidden;
 }
  body#story {
-     background-color:#fff3e0;
+     background:rgba(230,231,232,1);
      height:4600px;
-}
-/*Spider animation */
- .spider {
-     position: absolute;
-     display: inline-block;
-     top: 0;
-     left: 15%;
-    /* 4. Animatie */
-     animation: swing 2s infinite;
-     transform-origin: top;
-    /* Bonus */
-     transition: 0.8s ease-in-out;
-}
- .spider .spiderweb {
-     width: 2px;
-     height: 100px;
-     margin-left: 49px;
-     background: rgba(255, 255, 255, 0.7);
-}
- .spider .body {
-     width: 100px;
-     height: 80px;
-     background: #222;
-     position: relative;
-     border-radius: 50%;
-}
- .spider .body .eye {
-     width: 25px;
-     height: 25px;
-     position: absolute;
-     bottom: 20px;
-     background: #fff;
-     border-radius: 50%;
-}
- .spider .body .eye.left {
-     left: 20px;
-}
- .spider .body .eye.right {
-     right: 20px;
-}
- .spider .body .eye:after {
-     background: #222;
-     width: 7px;
-     height: 7px;
-     content: "";
-     display: block;
-     margin: 55%;
-     border-radius: 50%;
-    /* 3. Animatie */
-     animation: look 4s infinite;
-}
- .spider .legs .leg {
-     width: 80px;
-     height: 40px;
-     margin-top: -20px;
-     border: 5px solid transparent;
-     border-top-color: #333;
-     border-radius: 40px 40px 0 0;
-}
- .spider .legs {
-     position: absolute;
-     bottom: -10%;
-     z-index: -1;
-}
- .spider .legs.left {
-     left: -70%;
-}
- .spider .legs.right {
-     right: -60%;
-}
- .legs.left .leg:nth-child(1) {
-     transform: rotate(10deg);
-     margin-left: 10px;
-}
- .legs.right .leg:nth-child(1) {
-     transform: rotate(-10deg);
-     margin-left: -10px;
-}
- .legs.left .leg:nth-child(2) {
-     transform: rotate(-20deg);
-     margin-left: 20px;
-}
- .legs.right .leg:nth-child(2) {
-     transform: rotate(20deg);
-     margin-left: -20px;
-}
- .legs.left .leg:nth-child(3) {
-     transform: rotate(-50deg);
-     margin-left: 30px;
-}
- .legs.right .leg:nth-child(3) {
-     transform: rotate(50deg);
-     margin-left: -30px;
-}
-/* 1. Animatie */
- @keyframes look {
-     0%, 40%, 100% {
-         transform: translateX(0);
-    }
-     45%, 95% {
-         transform: translateX(-110%);
-    }
-}
-/* 3. Animatie */
- @keyframes swing {
-     0%, 100% {
-         transform: translateY(0);
-    }
-     50% {
-         transform: translateY(-20px);
-    }
 }
 /*--------------------------------------------------------------*/
 /* PARALLAX SCROLLING */
@@ -238,7 +124,6 @@
  div#parallax-bg-1 div{
      background-repeat:no-repeat;
      position:absolute;
-     visibility: hidden;
      display:block;
      width:488px;
      overflow:hidden;
@@ -452,8 +337,8 @@
 /* INTERACTIVE MAP PAGE*/
 /*--------------------------------------------------------------*/
  .msoaInfo {
-     position: absolute;
-     font-family: futura;
+     position: relative;
+     font-family: futura;     
      top: 0;
      left: 0;
      padding: 5px;
@@ -464,19 +349,27 @@
      background-color:#1b262c;
      border-radius: 3px;
 }
- .msoaInfoText{
-     color:#fff3e0
+
+.msoaInfoText{
+    color:#fff3e0
 }
+
 /*chart*/
- .axis{
-     color:#fff3e0
+
+
+
+.axis{
+    color:#fff3e0
 }
- .gridLines{
-     color:#0d1316
+
+.gridLines{
+    color:#0d1316
 }
- #Legend{
-     font-size:0.7em;
+
+#Legend{
+    font-size:0.7em;
 }
+
  #map {
      margin: 0;
      padding: 0;
@@ -485,8 +378,8 @@
 }
  #map_container {
      position: absolute;
-     left: 30%;
-     width: 70%;
+     left: 35%;
+     width: 65%;
      height: 100%;
 }
  #map_sidebar {
@@ -496,102 +389,86 @@
      padding: 2%;
      background-color: #1b262c;
 }
- .DataSources {
-     position:absolute;
-     bottom: 0;
-     left: 0;
-     width:100%;
-     background-color:#37a583;
+
+#sidebarInstructions {
+    width: 100%;
+    position: absolute;
 }
- .DataSourcesText {
-     color:#fff3e0;
-     margin-left: 20px;
+
+.DataSources {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  background-color:#37a583;
 }
-/* Story page */
- .tooltip {
-     background: #eee;
-     box-shadow: 0 0 5px #999999;
-     color: #333;
-     font-size: 12px;
-     left: 130px;
-     padding: 10px;
-     position: absolute;
-     text-align: center;
-     top: 95px;
-     width: 80px;
-     z-index: 10;
-     display: block;
-     opacity: 0;
+.DataSourcesText {
+  color:#fff3e0;
+  margin-left: 20px;
 }
- .legend {
-     font-size: 12px;
+
+
+/*--------------------------------------------------------------*/
+/* FLOWS BUTTON */
+/*--------------------------------------------------------------*/
+
+#flowsSwitch {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
- rect {
-     cursor: pointer;
-    /* NEW */
-     stroke-width: 2;
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
 }
- rect.disabled {
-    /* NEW */
-     fill: transparent !important;
-    /* NEW */
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 100px;
+	height: 50px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+    position: relative;
 }
- #chart {
-     float: left;
-     margin-left: 10%;
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	border-radius: 90px;
 }
- chart-container{
-     position: relative;
+
+input:checked + label {
+	background: #37a583;
 }
- .bar {
-     fill: #1888d6;
-     transition: all 150ms ease;
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+    transform: translateX(-100%);
 }
- .bar:hover {
-     fill: #09163d;
+
+label:active:after {
+	width: 90px;
 }
- .axis--x path {
-     visibility: hidden;
-}
- svg text{
-     fill: black;
-     font-family: futura;
-}
- .background-style{
-     background: #f1f2f3;
-}
-/* tip */
- .tip{
-     width: 3rem;
-     background-color: #eee;
-     text-align: center;
-     box-shadow: 0px 2px 10px -2px #aaa;
-     border: 2px solid #444;
-     transition: all 160ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
- .tip::after{
-     content: " ";
-     position: absolute;
-     bottom: -.5rem;
-     left: 50%;
-     margin-left: -.5rem;
-     border-style: solid;
-     border-width: .5rem .5rem 0 .5rem;
-     border-color: #444 transparent transparent transparent;
-}
- .column {
-     float: left;
-     width: 33.33%;
-     padding: 5px;
-}
-/* Clearfix (clear floats) */
- .row::after {
-     content: "";
-     clear: both;
-     display: table;
-}
- .container {
-     width: 50%;
-     margin: 20px auto;
-     margin-top: 5%;
+
+
+/*--------------------------------------------------------------*/
+/* EVERYTHING */
+/*--------------------------------------------------------------*/
+// centering
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }

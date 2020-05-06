@@ -9,6 +9,7 @@ var map = new mapboxgl.Map({
     zoom: 5.5
 });
 
+// Limit searchable extent to Great Britian
 map.addControl(
     new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -17,7 +18,10 @@ map.addControl(
     })
 );
 
-// Your web app's Firebase configuration
+// Disable zoom on double click
+map.doubleClickZoom.disable();
+
+// Web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyBB8J3_bgG7AYKrmYthHqzD3gAHNUk925A",
   authDomain: "spidercartographers.firebaseapp.com",
@@ -32,165 +36,179 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
 var db = firebase.database();
 
-// variable to store MSOA geojson
-var msoas;
+// Read in MSOA spatial data using ajax call
+var msoaData = $.ajax({
+  url: "https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson"
+  }).done(function(msoas){
 
-// fetch the geojson data directly - may not work on some browsers but that is a problem for another day
-fetch('https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson')
-  .then(response => response.json())
-  .then(data => msoas = data)
-  // can remove console.log step - used for checking what's going on
+    // Check that data was read in correctly 
+    console.log(msoas);
 
+    // When map loads...
+    map.on('load', function() {
 
-
-
-map.on('load', function() {
-    // load the MSOA geojson data
-    map.addSource('states', {
-        'type': 'geojson',
-        'data': msoas,
-        'generateId': true // This ensures that all features have unique IDs
-    });
-
-    var idDisplay = document.getElementById('msoaId');
-    var nameDisplay = document.getElementById('msoaName');
-    var clusterNumberDisplay = document.getElementById('clusterNumber');
-    // var bikeUsageDisplay = document.getElementById('bikeUsage');
-
-
-    // the feature-state dependent fill-opacity expression will render the hover effect
-    // when a feature's hover state is set to true
-    map.addLayer({
-        'id': 'state-fills',
-        'type': 'fill',
-        'source': 'states',
-        'layout': {},
-        'paint': {
-        'fill-color': '#627BC1',
-        'fill-opacity': [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            1,
-            0.5
-            ]
-        }
-    });
-
-    map.addLayer({
-        'id': 'state-borders',
-        'type': 'line',
-        'source': 'states',
-        'layout': {},
-        'paint': {
-            'line-color': '#627BC1',
-            'line-width': 2
-        }
-    });
-
-    var msoasID = null;
-
-    // map.on('click', 'state-fills', (e) => {
-
-    // });
-
-    map.on('mousemove', 'state-fills', (e) => {
-
-    map.getCanvas().style.cursor = 'pointer';
-    // Set variables equal to the current feature's magnitude, location, and time
-    var idOfMsoa = e.features[0].properties.objectid;
-    var nameOfMsoa = e.features[0].properties.msoa11nm;
-    var ref = db.ref(e.features[0].properties.msoa11cd);
-
-    ref.on('value', getData, errData);
-
-    var currentObj;
-    function getData(data){
-      currentObj = data.val();
-    }
-
-    function errData(data){
-      console.log("ERROR");
-      console.log(err);
-    }
-    // console.log(currentObj)
-
-
-    // Check whether features exist
-    if (e.features.length > 0) {
-        // Display the id, name and cluster in the sidebar
-        idDisplay.textContent = idOfMsoa;
-        nameDisplay.textContent = nameOfMsoa;
-        clusterNumberDisplay.textContent = currentObj.log_zscore_kmeans_cluster;
-        // bikeUsageDisplay.textContent = currentObj.bicycle_perc;
-        console.log(currentObj);
-
-        //data for the chart
-        const a = currentObj.work_from_home_perc;
-        const b = currentObj.on_foot_perc;
-        const c = currentObj.bicycle_perc;
-        const d = currentObj.car_perc;
-        const e = currentObj.bus_perc;
-        const f = currentObj.train_perc;
-        const g = currentObj.underground_metro_perc;
-        drawChart(a,b,c,d,e,f,g)
-
-
-        // If quakeID for the hovered feature is not null,
-        // use removeFeatureState to reset to the default behavior
-        if (msoasID) {
-        map.removeFeatureState({
-            source: "states",
-            id: msoasID
-        });
-        }
-
-        msoasID = e.features[0].id;
-
-        // When the mouse moves over the earthquakes-viz layer, update the
-        // feature state for the feature under the mouse
-        map.setFeatureState({
-        source: 'states',
-        id: msoasID,
-        }, {
-        hover: true
+        // Load the MSOA geojson data
+        map.addSource('states', {
+            'type': 'geojson',
+            'data': msoas,
+            'generateId': true 
         });
 
-        //clearing the info
-        map.on("mouseleave", "state-fills", function() {
-            if (msoasID) {
-              map.setFeatureState({
-                source: 'states',
-                id: msoasID
-              }, {
-                hover: false
-              });
+        // Add centroids 
+        map.addSource('centroids', {
+          'type': 'geojson',
+          'data': 'http://127.0.0.1:8887/MSOA_Centroids.geojson'
+        });
+
+        // Add MSOA polygons - opacity changes upon hover 
+        map.addLayer({
+            'id': 'state-fills',
+            'type': 'fill',
+            'source': 'states',
+            'layout': {},
+            'paint': {
+              'fill-color': '#627BC1',
+              'fill-opacity': [
+                  'case',
+                  ['boolean', ['feature-state', 'hover'], false],
+                  1,
+                  0.5
+              ]
             }
+        });
 
-            msoasID = null;
-            // Remove the information from the previously hovered feature from the sidebar
-            idDisplay.textContent = '';
-            nameDisplay.textContent = '';
+        // Add MSOA outlines 
+        map.addLayer({
+            'id': 'state-borders',
+            'type': 'line',
+            'source': 'states',
+            'layout': {},
+            'paint': {
+                'line-color': '#627BC1',
+                'line-width': 2
+            }
+        });
 
-            // Reset the cursor style
-            map.getCanvas().style.cursor = '';
-          });
+        // Get HTML elements that will change when an MSOA is clicked on 
+        var idDisplay = document.getElementById('msoaId');
+        var nameDisplay = document.getElementById('msoaName');
+        var clusterNumberDisplay = document.getElementById('clusterNumber');
 
-    }
+        ///////////////////////////////////////////////////////////////////////////
+         
+        // Global variables
+        var msoaID = null;
+        var msoaIDClick = null;
 
+        // When the mouse hovers over the MSOA, change the opacity
+        map.on('mousemove', 'state-fills', function(e) {
+          
+          map.getCanvas().style.cursor = 'pointer';
+          
+          // Check that the feature exits 
+          if (e.features.length > 0) {
+            if (msoaID) {
+              map.setFeatureState(
+                { source: 'states', id: msoaID },
+                { hover: false }
+              );
+            }
+      
+            msoaID = e.features[0].id;
+            
+            map.setFeatureState(
+              { source: 'states', id: msoaID },
+              { hover: true }
+            );
 
+            ///////////////////////////////////////////////////////////////////////////
 
+            // When the MSOA is clicked on, change data and allow option to display flows  
+            map.on('click', 'state-fills', (e1) => {
 
+              // Check that the feature exits 
+              if (e1.features.length > 0) {
 
+                  if (msoaID) {
+                    console.log("doing the thing");
+                  }
 
+                  // msoaIDClick = e1.features[0].geometry.coordinates;
+                  msoaID = e1.features[0].id;
 
+                  // When a new MSOA is clicked on, turn off flows switch
+                  document.getElementById("switch").checked = false;
 
+                  // Set variables equal to the current, clicked feature's info
+                  var idOfMsoa = e1.features[0].properties.objectid;
+                  var nameOfMsoa = e1.features[0].properties.msoa11nm;
+                  var ref = db.ref(e1.features[0].properties.msoa11cd);
 
-});
+                  // Get Firebase data
+                  ref.on('value', getData, errData);
 
+                  var currentObj;
+                  function getData(data){
+                    currentObj = data.val();
+                  }
 
+                  function errData(data){
+                    console.log("ERROR");
+                    console.log(err);
+                  }
 
+                  // Display the id, name and cluster in the sidebar
+                  idDisplay.textContent = idOfMsoa;
+                  nameDisplay.textContent = nameOfMsoa;
+                  clusterNumberDisplay.textContent = currentObj.log_zscore_kmeans_cluster;
 
-});
+                  // Data for the chart
+                  const a = currentObj.work_from_home_perc;
+                  const b = currentObj.on_foot_perc;
+                  const c = currentObj.bicycle_perc;
+                  const d = currentObj.car_perc;
+                  const e = currentObj.bus_perc;
+                  const f = currentObj.train_perc;
+                  const g = currentObj.underground_metro_perc;
+                  drawChart(a,b,c,d,e,f,g)
+                
+              } // end of feature length - clicked
+            }); // end of on click
+          } // end of feature length - hover
+        }); // end of on hover 
+            
+        ///////////////////////////////////////////////////////////////////////////
+      
+        // When the mouse leaves the MSOA, return opacity to normal
+        map.on('mouseleave', 'state-fills', function() {
+          
+          if (msoaID) {
+            map.setFeatureState(
+              { source: 'states', id: msoaID},
+              { hover: false }
+            );
+          }
+          msoaID = null;
+        });
+
+      ///////////////////////////////////////////////////////////////////////////
+
+        // If flows switch is toggled on 
+        $('#switch').click(function(){
+            if($(this).is(':checked')){
+
+                console.log('It has been checked!');
+                
+                //var polygon = msoaIDClick;
+                // Get MSOA centroid      
+                // var marker = new mapboxgl.Marker(polygon.getBounds().getCenter()).addTo(map);
+
+            } else {
+                console.log('Our checkbox is not checked!');
+            }
+        }); // end of flows switch
+
+    }); // end of on load 
+  }); // end of ajax
