@@ -132,7 +132,6 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
       });
     });
 
-
     legend.append('text')
     .attr('x', legendRectSize + legendSpacing)
     .attr('y', legendRectSize - legendSpacing)

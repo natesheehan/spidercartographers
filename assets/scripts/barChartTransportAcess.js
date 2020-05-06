@@ -67,3 +67,18 @@ svgBar.selectAll("myRect")
   })
   .attr("height", y.bandwidth())
   .attr("fill", "#1b262c")
+
+  svgBar.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", widthBar)
+    .attr("y", heightBar +35)
+    .text("Mean Public Transport Access in MSOA's");
+
+    svgBar.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -80)
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("Transport Type");

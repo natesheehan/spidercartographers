@@ -54,6 +54,13 @@ svg
   .attr("stroke", "black")
   .style("fill", "#ffa372")
 
+svg.append("text")
+  .attr("x", +190)
+  .attr("y", +5)
+  .attr("text-anchor", "middle")
+  .style("font-size", "16px")
+  .text("Car MSOA Box Plot");
+
 // show median, min and max horizontal lines
 svg
   .selectAll("toto")

@@ -8,7 +8,11 @@
 </head>
 
 <body id="story">
-  <h2 style="position:fixed;top:0;left:0;margin-top:1%;margin-left:1"> Back To Home </h2>
+  <div class="button" style="top: 0;
+    left: 0;
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 70px;"><a class="pushme" href="index.html"> <span class="inner">Home</span></a></div>
   <div id="parallax-bg-3" class="parallax-bg">
     <div id="bg-3-1">
       <div class="Quote">
@@ -34,7 +38,7 @@
   </div>
   <div style="marin-left:20px;margin-right:20px;display:block;margin:auto">
     <div id="chart" style="    float: left;
-    margin-top: 1600px;"></div>
+    margin-top: 1600px;"> </div>
     <p style="float: right;
     display: block;
     width: 50%;
@@ -44,7 +48,7 @@
       for National Statistics it is used to understand small areas of the country. The mean population of an MSOA is 7,200, with a minimum population of 5000. The 2011 census reports 7,201 MSOAs in England and Wales. </br> </br> Our analysis shows
       within the average MSOA commute is dominated by car travel. 60% of people travelling to work are travelling by car, this is complemented by 74% of all households in the UK owning cars. The second most popular method for travelling to work is
       10% of people who travel to work on foot (not accounting for those who work from home at 10.4%). This is then followed by bus, train and metro/underground/tram suggesting that public transport compromises around 15% of the journeys to work in
-      England and Wales. </p>
+      England and Wales. </br> </br> Click on the legend labels to see how share would be redistributed (Hovering also shows shares)</p>
     </br>
   </div>
   <script src="https://d3js.org/d3.v3.min.js"> </script>
@@ -120,7 +124,11 @@
       </section>
       <section>
         <div class="container">
-          <canvas id="barChartPeople" style="display: block; height: 500px; width: 50%;" width="3168" height="2000" class="chartjs-render-monitor"></canvas>
+          <canvas id="barChartPeople" style="    display: block;
+    height: 557px;
+    width: 900px;
+    text-align: center;
+    margin: auto;" class="chartjs-render-monitor"></canvas>
         </div>
         <script src="assets/scripts/chart.js/dist/Chart.js"></script>
         <script src="assets/scripts/peopleAndPublicTransport.js"></script>
