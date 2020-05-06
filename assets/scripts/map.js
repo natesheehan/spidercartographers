@@ -46,61 +46,58 @@ var msoaData = $.ajax({
     // Check that data was read in correctly 
     console.log(msoas);
 
-    /////////////////////////////////// CLUSTER LOOK UP ARRAY //////////////////////////////
-    // Check that it worked 
-    // console.log(msoas);
+    // attempt to split data into two parts and load them seperately 
 
-    const msoasPart1 = {
-      "type": "FeatureCollection",
-      "name": "d443bed3-24e4-4541-a1d7-0657a0dfa8492020329-1-16kypme.674w",
-      "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-      "features": []};
-    const msoasPart2 ={
-      "type": "FeatureCollection",
-      "name": "d443bed3-24e4-4541-a1d7-0657a0dfa8492020329-1-16kypme.674w",
-      "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-      "features": []};
+    // const msoasPart1 = {
+    //   "type": "FeatureCollection",
+    //   "name": "d443bed3-24e4-4541-a1d7-0657a0dfa8492020329-1-16kypme.674w",
+    //   "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    //   "features": []};
+
+    // const msoasPart2 ={
+    //   "type": "FeatureCollection",
+    //   "name": "d443bed3-24e4-4541-a1d7-0657a0dfa8492020329-1-16kypme.674w",
+    //   "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    //   "features": []};
 
     async function findClusters() {
+
       // Create array for looking up clusters
-      var clusterLookUp = {}; 
+      // var clusterLookUp = {}; 
       
       msoas.features.forEach(entry => {
           
           // Get MSOA ID of feature
           var msoaID = entry.properties.msoa11cd;
-          // console.log(msoaID);
 
           // Reference Firebase data 
           var msoaRef = db.ref(msoaID);
 
           msoaRef.once('value', function(data) {
               var clusterID = data.val().log_zscore_kmeans_cluster; 
-              clusterLookUp[msoaID] = clusterID;
+              // clusterLookUp[msoaID] = clusterID;
               entry.properties = {...entry.properties, clusterID: clusterID} //that adds another property of clusterID to msoas
-              console.log(clusterLookUp);
-          });       
+
+          }); 
       })
 
+      // attempt to split data into two parts and load them seperately
 
-      for (var i=0; i<msoas.features.length; i++){
-        if (i<4000){
-          msoasPart1.features.push(msoas.features[i]);
-        }
-        else{
-          msoasPart2.features.push(msoas.features[i]);
-        }
-      }
-
-      console.log(msoasPart2)
-      console.log(msoas)
+      // for (var i=0; i<msoas.features.length; i++){
+      //   if (i<4000){
+      //     msoasPart1.features.push(msoas.features[i]);
+      //   }
+      //   else{
+      //     msoasPart2.features.push(msoas.features[i]);
+      //   }
+      // }
 
     }
    
     /////////////////////////////////// ^ CLUSTER LOOK UP ARRAY ^ //////////////////////////////
   
     findClusters();
-
+    // console.log(msoas);
 
     map.on('load', function() {
 
@@ -135,14 +132,14 @@ var msoaData = $.ajax({
                   [5, 'yellow']                  
               ]
           },
-            // ['match',
-            //   ['get', 'clusterID'],
-            //   1,'blue',
-            //   2,'red',
-            //   3,'green',
-            //   4,'yellow',
-            //   5,'pink',
-            //   /* other */ 'black'],
+        //     // ['match',
+        //     //   ['get', 'clusterID'],
+        //     //   1,'blue',
+        //     //   2,'red',
+        //     //   3,'green',
+        //     //   4,'yellow',
+        //     //   5,'pink',
+        //     //   /* other */ 'black'],
             'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -152,18 +149,18 @@ var msoaData = $.ajax({
             }
         }); 
 
-       // another attempt with choropleth
-        // let c = new MapboxChoropleth({
-        //     tableUrl: 'http://127.0.0.1:8887/data/test.csv',
-        //     tableNumericField: 'cluster',
-        //     tableIdField: 'msoa',
-        //     geometryUrl: 'https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson',
-        //     geometryIdField: 'msoa11cd',
-        //     sourceLayer: 'state-fills',
-        //     binCount: 5,
-        //     colorScheme: 'Spectral',
-        //     legendElement: '#legend'
-        // }).addTo(map);
+          //another attempt with choropleth
+          // let c = new MapboxChoropleth({
+          //     tableUrl: 'http://127.0.0.1:8887/data/clusters.csv', // Firebase table
+          //     tableNumericField: 'Clusters',
+          //     tableIdField: 'ID',
+          //     geometryUrl: 'https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson',
+          //     geometryIdField: 'msoacd11', // MSOA geojson
+          //     sourceLayer: 'states',
+          //     binCount: 5,
+          //     colorScheme: 'Spectral',
+          //     legendElement: '#legend'
+          // }).addTo(map);
 
           // Add MSOA outlines         
           map.addLayer({
