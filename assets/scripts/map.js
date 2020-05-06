@@ -46,7 +46,31 @@ var msoaData = $.ajax({
     // Check that data was read in correctly 
     console.log(msoas);
 
-    // When map loads...
+    // attempt to color clusters using array 
+/*  async function findClusters() {
+      // Create array for looking up clusters
+      var clusterLookUp = {}; 
+    
+      msoas.features.forEach(entry => {
+          
+          // Get MSOA ID of feature
+          var msoaID = entry.properties.msoa11cd;
+          // console.log(msoaID);
+
+          // Reference Firebase data 
+          var msoaRef = db.ref(msoaID);
+
+          msoaRef.once('value', function(data) {
+              var clusterID = data.val().log_zscore_kmeans_cluster; 
+              // clusterLookUp[msoaID] = clusterID;
+              entry.properties = {...entry.properties, clusterID: clusterID} //that adds another property of clusterID to msoas
+              // console.log(clusterLookUp);
+          });
+    
+      })
+      // console.log(msoas)
+    } */
+
     map.on('load', function() {
 
         // Load the MSOA geojson data
@@ -79,8 +103,41 @@ var msoaData = $.ajax({
             }
         });
 
-        // Add MSOA outlines 
-        map.addLayer({
+            // potential cluster colors solution
+/*             'fill-color': {
+              'property': 'clusterID',
+              'stops': [
+                [1, 'white'],
+                [2, 'orange'],
+                [3, 'firebrick'],
+                [4, 'blue'],
+                [0, 'grey']
+              ]
+            },
+            'fill-opacity': [
+                'case',
+                ['boolean', ['feature-state', 'hover'], false],
+                1,
+                0.5
+                ]
+            }
+        }); */
+
+       // another attempt to do cluster colors with choropleth
+/*         let c = new MapboxChoropleth({
+            tableUrl: 'http://127.0.0.1:8887/data/test.csv',
+            tableNumericField: 'cluster',
+            tableIdField: 'msoa',
+            geometryUrl: 'https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson',
+            geometryIdField: 'msoa11cd',
+            sourceLayer: 'state-fills',
+            binCount: 5,
+            colorScheme: 'Spectral',
+            legendElement: '#legend'
+        }).addTo(map); */
+
+          // Add MSOA outlines         
+          map.addLayer({
             'id': 'state-borders',
             'type': 'line',
             'source': 'states',
