@@ -39,11 +39,12 @@ firebase.analytics();
 var db = firebase.database();
 
 // Read in MSOA spatial data using ajax call
-var msoaData = $.ajax({
-  url: "https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson"
-  }).done(function(msoas){
+// var msoaData = $.ajax({
+//   url: "https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson"
+//   }).done(function(msoas){
 
     // Check that data was read in correctly 
+    const msoas = "http://127.0.0.1:8887/data/msoas.geojson"
     console.log(msoas);
 
     // When map loads...
@@ -69,12 +70,20 @@ var msoaData = $.ajax({
             'source': 'states',
             'layout': {},
             'paint': {
-              'fill-color': '#627BC1',
+              // its based on a file where cluster numbers are 0-4 not 1-5, so 0 is cluster no 1, 1 is cluster no 2 and so on
+              'fill-color': ['match',
+                    ['get', 'log_zscore_kmeans_cluster'],
+                    0,'#ffa372', 
+                    1,'#ed6663',
+                    2,'#37a583',
+                    3,'#186da0',
+                    4,'#fff059',
+                    /* other */ 'black'],           
               'fill-opacity': [
                   'case',
                   ['boolean', ['feature-state', 'hover'], false],
                   1,
-                  0.5
+                  0.7
               ]
             }
         });
@@ -87,7 +96,7 @@ var msoaData = $.ajax({
             'layout': {},
             'paint': {
                 'line-color': '#627BC1',
-                'line-width': 2
+                'line-width': 0
             }
         });
 
@@ -211,4 +220,4 @@ var msoaData = $.ajax({
         }); // end of flows switch
 
     }); // end of on load 
-  }); // end of ajax
+  // }); // end of ajax
