@@ -43,8 +43,8 @@ var db = firebase.database();
 //   url: "https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson"
 //   }).done(function(msoas){
 
-    // Check that data was read in correctly 
-    const msoas = "http://127.0.0.1:8887/data/msoas.geojson"
+    // Check that data was read in correctly
+    const msoas = "assets/data/msoas.geojson"
     console.log(msoas);
 
     // When map loads...
@@ -54,16 +54,16 @@ var db = firebase.database();
         map.addSource('states', {
             'type': 'geojson',
             'data': msoas,
-            'generateId': true 
+            'generateId': true
         });
 
-        // Add centroids 
+        // Add centroids
         map.addSource('centroids', {
           'type': 'geojson',
-          'data': 'http://127.0.0.1:8887/MSOA_Centroids.geojson'
+          'data': 'assets/MSOA_Centroids.geojson'
         });
 
-        // Add MSOA polygons - opacity changes upon hover 
+        // Add MSOA polygons - opacity changes upon hover
         map.addLayer({
             'id': 'state-fills',
             'type': 'fill',
@@ -73,12 +73,12 @@ var db = firebase.database();
               // its based on a file where cluster numbers are 0-4 not 1-5, so 0 is cluster no 1, 1 is cluster no 2 and so on
               'fill-color': ['match',
                     ['get', 'log_zscore_kmeans_cluster'],
-                    0,'#ffa372', 
+                    0,'#ffa372',
                     1,'#ed6663',
                     2,'#37a583',
                     3,'#186da0',
                     4,'#fff059',
-                    /* other */ 'black'],           
+                    /* other */ 'black'],
               'fill-opacity': [
                   'case',
                   ['boolean', ['feature-state', 'hover'], false],
@@ -88,7 +88,7 @@ var db = firebase.database();
             }
         });
 
-        // Add MSOA outlines 
+        // Add MSOA outlines
         map.addLayer({
             'id': 'state-borders',
             'type': 'line',
@@ -100,23 +100,23 @@ var db = firebase.database();
             }
         });
 
-        // Get HTML elements that will change when an MSOA is clicked on 
+        // Get HTML elements that will change when an MSOA is clicked on
         var idDisplay = document.getElementById('msoaId');
         var nameDisplay = document.getElementById('msoaName');
         var clusterNumberDisplay = document.getElementById('clusterNumber');
 
         ///////////////////////////////////////////////////////////////////////////
-         
+
         // Global variables
         var msoaID = null;
         var msoaIDClick = null;
 
         // When the mouse hovers over the MSOA, change the opacity
         map.on('mousemove', 'state-fills', function(e) {
-          
+
           map.getCanvas().style.cursor = 'pointer';
-          
-          // Check that the feature exits 
+
+          // Check that the feature exits
           if (e.features.length > 0) {
             if (msoaID) {
               map.setFeatureState(
@@ -124,9 +124,9 @@ var db = firebase.database();
                 { hover: false }
               );
             }
-      
+
             msoaID = e.features[0].id;
-            
+
             map.setFeatureState(
               { source: 'states', id: msoaID },
               { hover: true }
@@ -134,10 +134,10 @@ var db = firebase.database();
 
             ///////////////////////////////////////////////////////////////////////////
 
-            // When the MSOA is clicked on, change data and allow option to display flows  
+            // When the MSOA is clicked on, change data and allow option to display flows
             map.on('click', 'state-fills', (e1) => {
 
-              // Check that the feature exits 
+              // Check that the feature exits
               if (e1.features.length > 0) {
 
                   if (msoaID) {
@@ -182,17 +182,17 @@ var db = firebase.database();
                   const f = currentObj.train_perc;
                   const g = currentObj.underground_metro_perc;
                   drawChart(a,b,c,d,e,f,g)
-                
+
               } // end of feature length - clicked
             }); // end of on click
           } // end of feature length - hover
-        }); // end of on hover 
-            
+        }); // end of on hover
+
         ///////////////////////////////////////////////////////////////////////////
-      
+
         // When the mouse leaves the MSOA, return opacity to normal
         map.on('mouseleave', 'state-fills', function() {
-          
+
           if (msoaID) {
             map.setFeatureState(
               { source: 'states', id: msoaID},
@@ -204,14 +204,14 @@ var db = firebase.database();
 
       ///////////////////////////////////////////////////////////////////////////
 
-        // If flows switch is toggled on 
+        // If flows switch is toggled on
         $('#switch').click(function(){
             if($(this).is(':checked')){
 
                 console.log('It has been checked!');
-                
+
                 //var polygon = msoaIDClick;
-                // Get MSOA centroid      
+                // Get MSOA centroid
                 // var marker = new mapboxgl.Marker(polygon.getBounds().getCenter()).addTo(map);
 
             } else {
@@ -219,5 +219,5 @@ var db = firebase.database();
             }
         }); // end of flows switch
 
-    }); // end of on load 
+    }); // end of on load
   // }); // end of ajax

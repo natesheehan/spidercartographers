@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script src="assets/scripts/jquery-3.5.0.min.js"></script>
+		<script src="assets/scripts/parallax.js"></script>
+	</head>
+	<body id="story">
+		<section>
+      <div class="Quote">
+			<h1 style="text-align:center; font-style:italic; font-size: 50px;"> “We might not be able to fix the economy. But we can design the city to give people dignity, to make them feel rich.”
+				</br>Charles Montgomery
+      </div>
+		</section>
+		</h1>
+		<section>
+			<div class="introText" style="z-index: 1000;
+				margin-left: 60px;
+				margin-right: 60px;
+				font-family: futura;
+				font-size: 25px;">
+				<h4>Transportation surrounds us in every facet of life. Pavements lead us to our supermarkets to fill up our hungry bellies. Road and train networks journey us across vast stretches of land to see every corner of our nation and bikes and buses connect us to our family and friends after long days of work and school. We have all become familiar and used to the luxuries of transportation, however now as the world shifts towards more sustainable modes of transport, maybe it's time to see what we have been taking for granted? </br> </br>
+					Transportation has been explored from many different strands of literature, with each researcher's bias emphasising different things. As a group of multidisciplinary data scientists, from various corners of the world, who are bound together by a passion for transportation, we believe it's worth exploring the UK’s transportation characteristics to subsequently inform ways in which policies could be targeted to certain areas to alter transport modes. To understand this, we draw upon what demographic factors are likely to influence transportation choice and where similarities and differences are found within the UK. So join us, for an exploration of transportation usage in the UK….
+				</h4>
+      </div>
+		</section>
+		<section>
+			<div style="marin-left:20px;margin-right:20px;display:block;margin:auto">
+				<div id="chart" style="float:left;"></div>
+				<p style=" float: right;display: block;width: 50%;margin-right: 10%;margin-top:2%;color:#1b262c;">Here we see the transport characteristics of the average Middle Layer Super Output Area. What is that you ask? A Middle Layer Super Output Area (MSOA) is a geospatial statistic used in England and Wales. Created by the Office for National Statistics it is used to understand small areas of the country. The mean population of an MSOA is 7,200, with a minimum population of 5000. The 2011 census reports 7,201 MSOAs in England and Wales. </br> </br> Our analysis shows within the average MSOA commute is dominated by car travel. 60% of people travelling to work are travelling by car, this is complemented by 74% of all households in the UK owning cars. The second most popular method for travelling to work is 10% of people who travel to work on foot (not accounting for those who work from home at 10.4%). This is then followed by bus, train and metro/underground/tram suggesting that public transport compromises around 15% of the journeys to work in England and Wales. </p>
+</br>
+      </div>
+      <script src="https://d3js.org/d3.v3.min.js"> </script>
+      <script src="assets/scripts/pieChart.js"> </script>
+      <script src="assets/scripts/pieChartSetUp.js"></script>
+      <!-- Load d3.js -->
+      <script src="https://d3js.org/d3.v4.js"></script>
+		</section>
+    <section>
+      <div class="row" style="text-align: center;margin-top: 32%;">
+        <h2 style="font-size:40px;font-family:futura;"> Average Travel Time Per Transport Mode </h2>
+        <div class="column">
+          <img src="assets/images/bikeIconFinal.png" alt="Bike" style="width:20%">
+          <h4 style="font-family:futura;"> 67 Minutes (Train) </h4>
+        </div>
+        <div class="column">
+          <img src="assets/images/busIconFinal.png" alt="Bus" style="width:20%">
+          <h4 style="font-family:futura;"> 28 Minutes </h4>
+        </div>
+        <div class="column">
+          <img src="assets/images/carIconFinal.png" alt="Car" style="width:20%">
+          <h4 style="font-family:futura;"> 12 Minutes </h4>
+        </div>
+      </div>
+      <p style="margin-left:10%;margin-right:10%;color:#1b262c;"> Then we can explore travel times from each MSOA to reach all others and the travel times of those who do travel via that mode. It is clear from these that traveling by car has the most accessibility and for those that do travel by car on average travel for 12 minutes to their workplace. While bus may be the slowest for travelling to other MSOAs, those that do travel by bus to work spend an average of 28 minutes to work, followed by those travelling by rail to work who spend an average of 68 minutes. </p>
+    </section>
+		<section>
+      <div id="my_dataviz" style="display: block;
+    margin: auto;
+    text-align: center;"></div>
+      <p style="display: block;margin-left: 10%;margin-right: 10%;margin-top:2%;color:#1b262c;">This of course can depend on access to different modes of transport within MSOAs. Therefore, in terms of stations, bus stops are by far the most common with the mean number of bus stops of 38.5 for a total of 277,094 bus stations in the England and Wales. In terms of train stations, out of 7,201 MSOAs in England and Wales only 1,811 MSOAs have train stations, for a total of 2,305 train stations meaning an average MSOA has 0.32 train stations. This is even lower for metro, tram or underground stations as only 535 MSOAs have these stations for a total of 899 stations in England and Wales. This means that the average MSOA has only 0.128 stations. </p>
+	<script src="assets/scripts/barChartTransportAcess.js"></script>
+		</section>
+		<section>
+			<!-- Create a div where the graph will take place -->
+			<div id="my_dataviz1" style="    margin-top: 2%;
+    display: block;
+    margin: auto;
+    text-align: center;"></div>
+			<script src="assets/scripts/boxplot.js"> </script>
+			<p style="
+				display: block;
+				margin-right: 10%;
+        margin-left: 10%;color:#1b262c;"> If there is significant variation in car usage then this should also show up in other modes of transport which can compensate for this different such as by exploring public transport usage. While the averages for England and Wales MSOAs for underground/tram/metro, train and bus usage for travel to work is 3.4%, 4.7% and 7.3% respectively we can see that there is considerable variation and the MSOA who use these types of transport. In the MSOAs with the lowest values percentage usage for each of these modes of transport is less than 1% which is associated with considerable reliance on private vehicle travel. However, some MSOAs show significant usage of each of these travel modes, with the largest for underground/tram/metro, train and bus usage being 55.7%, 46% and 45.5% respectively. </p>
+		</section>
+		<section>
+			<div class="container">
+				<canvas id="barChart" style="display: block; height: 500px; width: 50%;" width="3168" height="2000" class="chartjs-render-monitor"></canvas>
+			</div>
+			<script src="assets/scripts/chart.js/dist/Chart.js"></script>
+			<script src="assets/scripts/transportBarBox.js"></script>
+			<p style="
+				margin-right: 10%;
+				margin-left: 10%;
+				margin-top: 5%;
+				color: #1b262c;"> Furthermore, looking at the distribution of bus stops, train stations and metro stations, there is variation across England and Wales. This includes where they are located and their concentration. For example, looking at the
+				bus stops picture it can be seen that there are a significant number of bus stops across the map, with the maximum in an MSOA of 189 and the lowest of 0 (although there are only two MSOAs with no bus stops). However, the distribution is more
+				clearly spread across the UK compared to that of metro/underground and tram stations and train stations. For metro/underground and tram stations it can be seen that these are highly concentrated in certain areas, with most being found in large
+				MSOAs such as London. The highest for this is 12 stations in a single MSOA with only 535 MSOAs having these types of stations. Then we have train stations for which the we can see they are more of them across England and Wales, mostly
+				surrounding cities and towns and showing the train transport corridors across the UK. 1811 MSOAs have train stations, with the highest again being 12, with the lowest being 0.</p>
+			</section>
+			<section>
+				<div class="container">
+					<canvas id="barChartPeople" style="display: block; height: 500px; width: 50%;" width="3168" height="2000" class="chartjs-render-monitor"></canvas>
+				</div>
+				<script src="assets/scripts/chart.js/dist/Chart.js"></script>
+				<script src="assets/scripts/peopleAndPublicTransport.js"></script>
+				<p style="
+				margin-right: 10%;
+				margin-left: 10%;
+				margin-top: 5%;
+				color: #1b262c;"> Combining these methods of transport as public transport also shows variation across MSOA, as well as combing bicycle usage and walking to work as people powered transport as seen in the bar chart below. This shows that while
+					the minimum for public and people powered transport in MSOAs is 0.7% and 2.0% respectively, the maximum for these ranges all the way up to 74.6% and 53.8%. These are significantly different to the average MSOA in which 60% travel to work by
+					car. The mean and median for this is also shown with the medians of 10% and 10.3%, and the mean of 15.4% and 12.4% respectively, showing that the values near to the max positively affect the mean of the distributions and as such these areas
+					are significantly different to the rest of the county.</p>
+			</section>
+		<div id="parallax-bg-3" class="parallax-bg">
+			<div id="bg-3-1">
+			</div>
+			<div id="bg-3-2"></div>
+			<div id="bg-3-3"></div>
+			<div id="bg-3-4">
+			</div>
+		</div>
+		<div id="parallax-bg-2" class="parallax-bg">
+			<div id="bg-2-1"></div>
+			<div id="bg-2-2"></div>
+			<div id="bg-2-3"></div>
+			<div id="bg-2-4"></div>
+			<div id="bg-2-5"></div>
+			<div id="bg-2-6"></div>
+		</div>
+		<div id="parallax-bg-1" class="parallax-bg">
+			<div id="bg-1-1"> <img src="assets/images/bikeIconFinal.png" style="height:100px">
+			</div>
+			<div id="bg-1-2"></div>
+			<div id="bg-1-3"></div>
+			<div id="bg-1-4"></div>
+			<div id="bg-1-5"></div>
+		</div>
+	</body>
+</html>
