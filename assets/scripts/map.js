@@ -56,12 +56,6 @@ var msoaData = $.ajax({
             'generateId': true 
         });
 
-        // Add centroids 
-        map.addSource('centroids', {
-          'type': 'geojson',
-          'data': 'http://127.0.0.1:8887/MSOA_Centroids.geojson'
-        });
-
         // Add MSOA polygons - opacity changes upon hover 
         map.addLayer({
             'id': 'state-fills',
@@ -131,12 +125,12 @@ var msoaData = $.ajax({
               // Check that the feature exits 
               if (e1.features.length > 0) {
 
-                  if (msoaID) {
+                  if (msoaIDClick) {
                     console.log("doing the thing");
                   }
 
-                  // msoaIDClick = e1.features[0].geometry.coordinates;
-                  msoaID = e1.features[0].id;
+                  msoaIDClick = e1.features[0].properties.msoa11cd;
+                  ///msoaID = e1.features[0].id;
 
                   // When a new MSOA is clicked on, turn off flows switch
                   document.getElementById("switch").checked = false;
@@ -199,16 +193,168 @@ var msoaData = $.ajax({
         $('#switch').click(function(){
             if($(this).is(':checked')){
 
-                console.log('It has been checked!');
+                // Note that switch has been turned on 
+                console.log('Flows switch has been turned on!');
                 
-                //var polygon = msoaIDClick;
-                // Get MSOA centroid      
-                // var marker = new mapboxgl.Marker(polygon.getBounds().getCenter()).addTo(map);
+                // Check the ID of the currently selected MSOA
+                console.log(msoaIDClick);
+
+                //////////////////////////////////////////////////////////////////////
+                function getData() {
+                  console.log("GET DATA BEGUN");
+
+                  // Set API URL for origin flows
+                  var url = "http://dev.spatialdatacapture.org:8717/data/originflows/" + msoaIDClick + "/";
+                  
+                  // Store data here
+                  var dataArray = [];
+
+                  // Flag when dataArray has been populated 
+                  var flag = false;
+
+                  // Get the origin flows data 
+                  $.getJSON ( url , function( data ) {
+
+                    // Check that call is working
+                    console.log("working?");
+                    flag = true;
+
+                    $.each ( data, function(k, v) {
+    
+                      // Starting location - should be the same for all 
+                      var orig_lon = v["Orig_Lon"];
+                      var orig_lat = v["Orig_Lat"];
+                      var orig = [orig_lon, orig_lat];
+
+                      // Destination location
+                      var dest_lon = v["Dest_Lon"];
+                      var dest_lat = v["Dest_Lat"];
+                      var dest = [dest_lon, dest_lat];
+
+                      // Collect data 
+                      var newData = {
+                        "origID":                           v["orig_name"],
+                        "orig":                             orig, 
+                        "dest":                             dest, 
+                        "from_home":                        v["from_home"], 
+                        "underground_metro_lightrail_tram": v["underground_metro_lightrail_tram"], 
+                        "train":                            v["Train"], 
+                        "taxi":                             v["Taxi"],
+                        "motorcycle":                       v["Motorcycle"], 
+                        "bicycle":                          v["Bicycle"],
+                        "walk":                             v["walk"],
+                        "other":                            v["other"]
+                      };
+
+                      // Push new data to array and check on progress
+                      dataArray.push(newData);
+                      console.log(dataArray.length, dataArray[0].origID);
+                  
+                    }); // end of for each
+                  }); // end of getJSON
+                } 
+
+
+
+                //////////////////////////////////////////////////////////////////////
+                function mapFlows() {
+                  var data = getData();
+                  console.log("MAKE FLOW MAP BEGUN");
+                  console.log("Data passed: " + data);
+
+                  const flowMap = new mapboxgl.Map({
+                      container: "map_container",
+                      style: "mapbox://styles/mapbox/light-v9",
+                      center: [data[0].Orig_Lon, data[0].Orig_Lon],
+                      zoom: 12,
+                      pitch: 60
+                  });
+
+              
+                  flowMap.on("load", () => {
+                      // Get data for the arc map from SFMTA origin/destination routes
+                      fetch(url)
+                          .then((response) => response.json())
+                          .then((responseJSON) => {console.log(responseJSON);})
+                          //.then(function(responseJSON) //{
+                              // const flowArcs = new MapboxLayer({
+                              //     id: 'flowArcs',
+                              //     type: ArcLayer,
+                              //     data: responseJSON,
+                              //     getSourcePosition: d => [d.Orig_Lon, d.Orig_Lat],
+                              //     getTargetPosition: d => [d.Dest_Lon, d.DestLat],
+                              //     //getSourceColor: d => [64, 255, 0],
+                              //     //getTargetColor: d => [0, 128, 200]
+                              // });
+                        
+                              // //Add the deck.gl arc layer to the map 
+                              // flowMap.addLayer(flowArcs, 'waterway-label');
+                          //});
+                  });
+                } 
+
+                mapFlows();
+    
+
+ 
+
+
+                // Check on completed data array 
+                // console.log(dataArray);
+
+              
+
+
+
+                // create new deck.gl layer 
+                // var deckgl = new deck.DeckGL({
+                  
+                //   container: 'map_container',
+                //   mapboxApiAccessToken: mapboxgl.accessToken,
+                
+                //   initialViewState: {
+                //     longitude: orig_lon,
+                //     latitude: orig_lat,
+                //     zoom: 6,
+                //     bearing: 0,
+                //     pitch: 30,
+                //   },
+                //   controller: true,
+                
+                //   layers: [
+                //   //   new deck.GeoJsonLayer({
+                //   //     id: 'flowBase',
+                //   //     data: msoas,
+                //   //     filled: true,
+                //   //     pointRadiusMinPixels: 2,
+                //   //     pointRadiusScale: 2000,
+                //   //     getRadius: f => (11 - f.properties.scalerank),
+                //   //     getFillColor: f => f.properties.log_zscore_kmeans_cluster,
+                //   //     pickable: true,
+                //   //     autoHighlight: true,
+                //   //     onClick: info => info.object
+                //   //   }),
+                //     new deck.ArcLayer({
+                //       id: 'flowArcs',
+                //       data: dataArray,
+                //       dataTransform: d => d.features,
+                //       getSourcePosition: d => d.orig, 
+                //       getTargetPosition: d => d.dest,
+                //       // getSourceColor: [0, 128, 200],
+                //       // getTargetColor: [200, 0, 80],
+                //       // getWidth: data[0].val
+                //     })
+                //   ]
+                // }); // end of new deck.gl layer
+
+                // map.addLayer(deckgl);
 
             } else {
                 console.log('Our checkbox is not checked!');
             }
         }); // end of flows switch
-
     }); // end of on load 
   }); // end of ajax
+
+
+
