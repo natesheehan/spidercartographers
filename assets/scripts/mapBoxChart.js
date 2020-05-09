@@ -1,6 +1,6 @@
 export const drawChart = (a,b,c,d,e,f,g) => {
 const data = [
-    {"mode":"work at home",
+    {"mode":"home",
     "value":a},
     {"mode":"on foot",
     "value":b},
@@ -29,7 +29,6 @@ const svg = d3.select('.interactiveChart')
     .attr("width", width)
     .attr("height", height);
     
-
 const chart = svg.append('g')
     .attr('transform',`translate(${margin.left}, 20)`);
 
@@ -44,7 +43,6 @@ chart.append('g')
     .attr('stroke-width',0)
     .style('fill',0);
 
-
 const xScale = d3.scaleBand()
     .range([0, innerWidth])
     .domain(data.map(function(d){
@@ -58,7 +56,6 @@ chart.append('g')
     .call(d3.axisBottom(xScale))
     .attr('stroke-width',0);
     // .call(wrap, xScale.bandwidth());
-
 
 //grid lines  
 const grid = chart.append('g')
@@ -79,7 +76,7 @@ const barGroups = chart.selectAll()
 
 //average transport modes usage, dont think we should keep any data here, but its so small so its here for now xd
 const avgValsMap = {
-    "work at home": 10.38,
+    "home": 10.38,
     "on foot": 9.77,
     "bicycle":2.68,
     "car":60,
@@ -87,9 +84,6 @@ const avgValsMap = {
     "train":4.7,
     "underground":3.37
 }
-
-
-
 
 barGroups
     .append('rect')
@@ -114,7 +108,6 @@ barGroups
 
         const lineText = barGroups.append('g');
 
-
         lineText // adds percentage value to the average line
             .append('text')
             // .attr('class', 'value')
@@ -128,9 +121,8 @@ barGroups
             .attr("y", y)
             .text(avgValsMap[data.mode]+"%")
             .style('fill','37a583')
-
-      
     })
+
     .on('mouseleave', function(){
         chart.selectAll('#averageLine').remove()
         chart.selectAll('#averageLineText').remove()

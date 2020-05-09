@@ -5,8 +5,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2hleW5lLWNhbXBiZWxsIiwiYSI6ImNrOHMxYW9wYTA0O
 var map = new mapboxgl.Map({
     container: 'map_container',
     style: 'mapbox://styles/cheyne-campbell/ck966jun93urx1iqlhlheiknl',
-    center: [-4.0, 55],
-    zoom: 5.5
+    center: [-2, 53],
+    zoom: 5.8
 });
 
 // Limit searchable extent to Great Britian
