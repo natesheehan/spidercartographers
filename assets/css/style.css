@@ -19,154 +19,13 @@ h1, .sig, p {
   color: #ffa372;
 }
 
-/* CENTER HOMEPAGE TEXT */
-.groupNameTextHeader {
-  text-align: center;
-}
 
-/* BACKGROUND COLOR OF HOMEPAGE */
-body#home {
-  background-color: #1b262c;
-  background-size: auto;
-  overflow: hidden;
-}
 
 body#story {
   background-color: #fff3e0;
   height: 18600px;
 }
 
-/*Spider animation */
-.spider {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  left: 15%;
-  /* 4. Animatie */
-  animation: swing 2s infinite;
-  transform-origin: top;
-  /* Bonus */
-  transition: 0.8s ease-in-out;
-}
-
-.spider .spiderweb {
-  width: 2px;
-  height: 100px;
-  margin-left: 49px;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.spider .body {
-  width: 100px;
-  height: 80px;
-  background: #222;
-  position: relative;
-  border-radius: 50%;
-}
-
-.spider .body .eye {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  bottom: 20px;
-  background: #fff;
-  border-radius: 50%;
-}
-
-.spider .body .eye.left {
-  left: 20px;
-}
-
-.spider .body .eye.right {
-  right: 20px;
-}
-
-.spider .body .eye:after {
-  background: #222;
-  width: 7px;
-  height: 7px;
-  content: "";
-  display: block;
-  margin: 55%;
-  border-radius: 50%;
-  /* 3. Animatie */
-  animation: look 4s infinite;
-}
-
-.spider .legs .leg {
-  width: 80px;
-  height: 40px;
-  margin-top: -20px;
-  border: 5px solid transparent;
-  border-top-color: #333;
-  border-radius: 40px 40px 0 0;
-}
-
-.spider .legs {
-  position: absolute;
-  bottom: -10%;
-  z-index: -1;
-}
-
-.spider .legs.left {
-  left: -70%;
-}
-
-.spider .legs.right {
-  right: -60%;
-}
-
-.legs.left .leg:nth-child(1) {
-  transform: rotate(10deg);
-  margin-left: 10px;
-}
-
-.legs.right .leg:nth-child(1) {
-  transform: rotate(-10deg);
-  margin-left: -10px;
-}
-
-.legs.left .leg:nth-child(2) {
-  transform: rotate(-20deg);
-  margin-left: 20px;
-}
-
-.legs.right .leg:nth-child(2) {
-  transform: rotate(20deg);
-  margin-left: -20px;
-}
-
-.legs.left .leg:nth-child(3) {
-  transform: rotate(-50deg);
-  margin-left: 30px;
-}
-
-.legs.right .leg:nth-child(3) {
-  transform: rotate(50deg);
-  margin-left: -30px;
-}
-
-/* 1. Animatie */
-@keyframes look {
-  0%, 40%, 100% {
-    transform: translateX(0);
-  }
-
-  45%, 95% {
-    transform: translateX(-110%);
-  }
-}
-
-/* 3. Animatie */
-@keyframes swing {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
 
 /*--------------------------------------------------------------*/
 /* PARALLAX SCROLLING */
@@ -317,6 +176,22 @@ div#bg-1-5 {
   left: -200px;
 }
 
+#little_city {
+  position: relative;
+}
+
+#little_buildings {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+#little_bike {
+  width: 5%;
+  bottom: 0;
+  margin-top: 140px;
+}
+
 /*--------------------------------------------------------------*/
 /* SNAP SCROLLING */
 /*--------------------------------------------------------------*/
@@ -390,21 +265,60 @@ figure {
 /*--------------------------------------------------------------*/
 /* HOME PAGE TRANSPORT MODES */
 /*--------------------------------------------------------------*/
-.spacer {
-  height: 5vh;
+
+#home {
+  background-color: #1b262c;
+  background-size: auto;
+  overflow: hidden;
+  margin: 0;
 }
 
-/* SET THE SIZE OF THE CAR ICON */
+#homepageTitle{
+  position: relative;
+  padding: 5px;
+}
+
+.groupNameTextHeader {
+  text-align: center;
+}
+
+#city_animation {
+  position: relative;
+  height: -webkit-fit-content;
+  width: 100%;
+  height: 70vh;
+}
+
+#sidewalk {
+  bottom: 0px;
+}
+
+#city_background {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  bottom: 0%;
+}
+
 #car_icon {
+  position: absolute;
+  z-index: 4;
   height: 14vh;
+  bottom: 6%;
 }
 
 #bike_icon {
+  position: absolute;
+  z-index: 3;
   height: 12vh;
+  bottom: 12%;
 }
 
 #bus_icon {
+  position: absolute;
+  z-index: 2;
   height: 16vh;
+  bottom: 12%;
 }
 
 /* APPLY BOUNCE EFFECT TO CAR BODY */
@@ -441,26 +355,16 @@ figure {
   animation: rotation 2s infinite linear;
 }
 
-/* BOUNCING ANIMATION FOR CAR BODY */
+/* BOUNCING ANIMATION */
 @keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(15px);
-  }
-
-  100% {
-    transform: translateY(-10px);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
+  100% { transform: translateY(-10px); }
 }
 
-/* ROTATION ANIMATION FOR WHEELS */
+/* ROTATION ANIMATION */
 @keyframes rotation {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 /*--------------------------------------------------------------*/
@@ -469,13 +373,13 @@ figure {
 /* HOMEPAGE MENU PLACEMENT */
 .homepage_menu {
   position: absolute;
+  z-index: 5;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 50%;
   height: 12vh;
-  margin-left: 32%;
-  bottom: 0vh;
+  margin-left: 35%;
+  top: 88vh;
 }
 
 /* PUSH BUTTON ANIMATION */
@@ -486,6 +390,9 @@ figure {
   border-radius: 0.6em;
   display: inline-block;
   margin: 1em;
+  font-size: 20px;
+  font-family: Futura;
+  color: #ffa372;
 }
 
 .pushme .inner {
@@ -495,13 +402,12 @@ figure {
   border: 0.3em solid #ffa372;
   padding: 1em;
   cursor: pointer;
-  text-transform: uppercase;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   -webkit-transform: translate3d(0.6em, -0.6em, 0);
-  transform: translate3d(0.6em, -0.6em, 0);
+  transform: translsate3d(0.6em, -0.6em, 0);
   -webkit-transition: -webkit-transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: -webkit-transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 240ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -524,13 +430,6 @@ figure {
   text-align: center;
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
-}
-
-.pushme {
-  font-size: 20px;
-  font-weight: 800;
-  font-family: Futura;
-  color: #ffa372;
 }
 
 /*--------------------------------------------------------------*/
@@ -704,4 +603,139 @@ svg text {
   width: 50%;
   margin: 20px auto;
   margin-top: 5%;
+}
+
+/*--------------------------------------------------------------*/
+/* SPIDER ANIMATION */
+/*--------------------------------------------------------------*/
+
+.spider {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 15%;
+  /* 4. Animatie */
+  animation: swing 2s infinite;
+  transform-origin: top;
+  /* Bonus */
+  transition: 0.8s ease-in-out;
+}
+
+.spider .spiderweb {
+  width: 2px;
+  height: 100px;
+  margin-left: 49px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.spider .body {
+  width: 100px;
+  height: 80px;
+  background: #222;
+  position: relative;
+  border-radius: 50%;
+}
+
+.spider .body .eye {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  bottom: 20px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.spider .body .eye.left {
+  left: 20px;
+}
+
+.spider .body .eye.right {
+  right: 20px;
+}
+
+.spider .body .eye:after {
+  background: #222;
+  width: 7px;
+  height: 7px;
+  content: "";
+  display: block;
+  margin: 55%;
+  border-radius: 50%;
+  /* 3. Animatie */
+  animation: look 4s infinite;
+}
+
+.spider .legs .leg {
+  width: 80px;
+  height: 40px;
+  margin-top: -20px;
+  border: 5px solid transparent;
+  border-top-color: #333;
+  border-radius: 40px 40px 0 0;
+}
+
+.spider .legs {
+  position: absolute;
+  bottom: -10%;
+  z-index: -1;
+}
+
+.spider .legs.left {
+  left: -70%;
+}
+
+.spider .legs.right {
+  right: -60%;
+}
+
+.legs.left .leg:nth-child(1) {
+  transform: rotate(10deg);
+  margin-left: 10px;
+}
+
+.legs.right .leg:nth-child(1) {
+  transform: rotate(-10deg);
+  margin-left: -10px;
+}
+
+.legs.left .leg:nth-child(2) {
+  transform: rotate(-20deg);
+  margin-left: 20px;
+}
+
+.legs.right .leg:nth-child(2) {
+  transform: rotate(20deg);
+  margin-left: -20px;
+}
+
+.legs.left .leg:nth-child(3) {
+  transform: rotate(-50deg);
+  margin-left: 30px;
+}
+
+.legs.right .leg:nth-child(3) {
+  transform: rotate(50deg);
+  margin-left: -30px;
+}
+
+/* 1. Animatie */
+@keyframes look {
+  0%, 40%, 100% {
+    transform: translateX(0);
+  }
+
+  45%, 95% {
+    transform: translateX(-110%);
+  }
+}
+
+/* 3. Animatie */
+@keyframes swing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
