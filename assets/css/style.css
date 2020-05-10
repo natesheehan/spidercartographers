@@ -445,7 +445,7 @@ figure {
 
 .msoaInfo {
   position: relative;
-  font-family: futura;     
+  font-family: futura;
   top: 0;
   left: 0;
   padding: 5px;
@@ -572,9 +572,9 @@ chart-container {
   visibility: hidden;
 }
 
-/* THIS IS WHERE THE GRAPH LABEL COLOR IS DEFINED */ 
+/* THIS IS WHERE THE GRAPH LABEL COLOR IS DEFINED */
 svg text {
-  fill:#fff3e0;
+  fill:#1b262c;
   font-family: futura;
 }
 
