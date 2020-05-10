@@ -574,7 +574,7 @@ chart-container {
 
 /* THIS IS WHERE THE GRAPH LABEL COLOR IS DEFINED */
 svg text {
-  fill:#1b262c;
+  fill:#ffa372;
   font-family: futura;
 }
 
