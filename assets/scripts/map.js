@@ -44,7 +44,7 @@ var db = firebase.database();
 //   }).done(function(msoas){
 
     // Check that data was read in correctly
-    const msoas = "assets/data/msoas.geojson"
+    const msoas = "http://127.0.0.1:8887/data/msoas.geojson"
     console.log(msoas);
 
     // When map loads...
@@ -60,7 +60,7 @@ var db = firebase.database();
         // Add centroids
         map.addSource('centroids', {
           'type': 'geojson',
-          'data': 'assets/MSOA_Centroids.geojson'
+          'data': 'http://127.0.0.1:8887/MSOA_Centroids.geojson'
         });
 
         // Add MSOA polygons - opacity changes upon hover
@@ -202,6 +202,12 @@ var db = firebase.database();
           msoaID = null;
         });
 
+       
+
+              
+        
+
+      
       ///////////////////////////////////////////////////////////////////////////
 
         // If flows switch is toggled on

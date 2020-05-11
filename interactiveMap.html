@@ -28,11 +28,10 @@
          <div id="map_sidebar">
 
 
-            <div class="button" style="top:0; left: 0; position: fixed; margin-left: 100px; margin-top: 70px;">
+            <div class="button" style="top:0; left: 0; position: fixed; margin-left: 50px; margin-top: 45px;">
                <a class="pushme" href="index.html"> <span class="inner">Home</span></a>
             </div>
-
-            <div class='sidebarInstructions'><p>Double click on an MSOA to view its transport info!</p></div>
+            <div class='sidebarInstructions' style="position: absolute; top: 60px;"><p>Double click on an MSOA to view its transport info!</p></div>
 
             <div class='msoaInfo'>
                <div class='msoaInfoText'><strong>MSOA id:</strong> <span id='msoaId'></span></div>
@@ -40,11 +39,11 @@
                <div class='msoaInfoText'><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
                <div class='msoaInfoText'><strong>How do people commute?</strong> <span id='msoaName'></span></div>
                <div class='interactiveChart'>
-                  <script type="module" src="assets/scripts/mapBoxChart.js"></script>
+                  <script type="module" src="http://127.0.0.1:8887/scripts/mapBoxChart.js"></script>
                </div>
             </div>
 
-            <div id="flowButtonLabel" class='sidebarInstructions'><p>View flows?</p></div>
+            <div id="flowButtonLabel" class='sidebarInstructions' ><p>View flows?</p></div>
             <div id='flowsSwitch'>
                <input type='checkbox' id='switch' autocomplete="off"/><label for='switch'>Toggle</label>
             </div>
@@ -61,8 +60,15 @@
 
          <div id="map_container"></div>
 
+         <div class="mapLegend">        
+            <div>
+               <svg id="mapLegendDots" height=200 width=100></svg>             
+               <script type="module" src="http://127.0.0.1:8887/scripts/mapLegend.js"></script>
+            </div>
+         </div>
 
-         <script type="module" src="assets/scripts/map.js"></script>
+
+         <script type="module" src="http://127.0.0.1:8887/scripts/map.js"></script>
 
    </body>
 </html>
