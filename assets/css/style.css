@@ -21,14 +21,14 @@ h1, .sig, p, a, h4, h3 {
   color: #ffa372;
 }
 
-/* h3 {  
+h3 {  
   display: block;
   margin-block-start: 0em;
   margin-block-end: 0.5em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
-} */
+}
 
 /*--------------------------------------------------------------*/
 /* STORY PAGE - PARALLAX SCROLLING */
@@ -453,9 +453,9 @@ figure {
 /*--------------------------------------------------------------*/
 
 .msoaInfo {
-  position: relative;
+  position: absolute;
   font-family: futura;
-  top: 0;
+  top: 80px;
   left: 0;
   padding: 5px;
   width: 100%;
@@ -478,6 +478,19 @@ figure {
   background-color:#1b262c;
   border-radius: 3px;
   padding: 5px; */
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 150px;
+  margin-bottom: 40px;
+  width: 100px;
+  background-color:rgba(27,38,44, 0.7);
+}
+
+#clusterConsole{
+  position: relative;
+  right: -1070px;
+  top: 210px;
   padding: 10px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   line-height: 18px;
@@ -561,6 +574,200 @@ margin-left: 20px;
   font-family: Futura;
   color: #ffa372;
 }
+
+/*toggle for clusters*/
+
+#clusterSwitch {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 5px 2px;
+  width: 150px;
+  height: 20px;
+}
+
+#clusterButtonLabel {
+  text-align: center;
+}
+
+/* Switch for cluster 1 */
+
+.onoffswitchCluster1 {
+  position: relative; width: 40px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitchCluster1-checkbox {
+  display: none;
+}
+.onoffswitchCluster1-label {
+  display: block; overflow: hidden; cursor: pointer;
+  height: 20px; padding: 0; line-height: 20px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  background-color: #FFFFFF;
+  transition: background-color 0.3s ease-in;
+}
+.onoffswitchCluster1-label:before {
+  content: "";
+  display: block; width: 20px; margin: 0px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 18px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label {
+  background-color: #ffa372;
+}
+.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label, .onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before {
+ border-color: #ffa372;
+}
+.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before {
+  right: 0px; 
+}
+
+/* Switch for cluster 2 */
+
+.onoffswitchCluster2 {
+  position: relative; width: 40px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitchCluster2-checkbox {
+  display: none;
+}
+.onoffswitchCluster2-label {
+  display: block; overflow: hidden; cursor: pointer;
+  height: 20px; padding: 0; line-height: 20px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  background-color: #FFFFFF;
+  transition: background-color 0.3s ease-in;
+}
+.onoffswitchCluster2-label:before {
+  content: "";
+  display: block; width: 20px; margin: 0px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 18px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label {
+  background-color: #ed6663;
+}
+.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label, .onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before {
+ border-color: #ed6663;
+}
+.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before {
+  right: 0px; 
+}
+
+/* Switch for cluster 3 */
+
+.onoffswitchCluster3 {
+  position: relative; width: 40px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitchCluster3-checkbox {
+  display: none;
+}
+.onoffswitchCluster3-label {
+  display: block; overflow: hidden; cursor: pointer;
+  height: 20px; padding: 0; line-height: 20px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  background-color: #FFFFFF;
+  transition: background-color 0.3s ease-in;
+}
+.onoffswitchCluster3-label:before {
+  content: "";
+  display: block; width: 20px; margin: 0px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 18px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label {
+  background-color: #37a583;
+}
+.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label, .onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before {
+ border-color: #37a583;
+}
+.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before {
+  right: 0px; 
+}
+
+/* Switch for cluster 4 */
+
+.onoffswitchCluster4 {
+  position: relative; width: 40px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitchCluster4-checkbox {
+  display: none;
+}
+.onoffswitchCluster4-label {
+  display: block; overflow: hidden; cursor: pointer;
+  height: 20px; padding: 0; line-height: 20px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  background-color: #FFFFFF;
+  transition: background-color 0.3s ease-in;
+}
+.onoffswitchCluster4-label:before {
+  content: "";
+  display: block; width: 20px; margin: 0px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 18px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label {
+  background-color: #186da0;
+}
+.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label, .onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before {
+ border-color: #186da0;
+}
+.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before {
+  right: 0px; 
+}
+
+/* Switch for cluster 5 */
+
+.onoffswitchCluster5 {
+  position: relative; width: 40px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitchCluster5-checkbox {
+  display: none;
+}
+.onoffswitchCluster5-label {
+  display: block; overflow: hidden; cursor: pointer;
+  height: 20px; padding: 0; line-height: 20px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  background-color: #FFFFFF;
+  transition: background-color 0.3s ease-in;
+}
+.onoffswitchCluster5-label:before {
+  content: "";
+  display: block; width: 20px; margin: 0px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 18px;
+  border: 2px solid #E3E3E3; border-radius: 20px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label {
+  background-color: #fff059;
+}
+.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label, .onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
+ border-color: #fff059;
+}
+.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
+  right: 0px; 
+}
+
+
+
 
 /*--------------------------------------------------------------*/
 /* STORY PAGE INTERACTIVE CHART */
@@ -804,12 +1011,14 @@ svg text {
   }
 }
 
-/*--------------------------------------------------------------*/
+/* --------------------------------------------------------------*/
 /* FLOWS BUTTON */
 /*--------------------------------------------------------------*/
 
 #flowsSwitch {
-  position: relative;
+  position: absolute;
+  bottom: 95px;
+  left: 0px;
   width: 100%;
   display: flex;
   align-content: center;
@@ -818,6 +1027,8 @@ svg text {
 
 #flowButtonLabel {
   text-align: center;
+  position: absolute;
+  bottom: 80px;
 }
 
 input[type=checkbox]{
@@ -826,37 +1037,37 @@ width: 0;
 visibility: hidden;
 }
 
-label {
+#flowsLabel {
 cursor: pointer;
 text-indent: -9999px;
-width: 100px;
-height: 50px;
+width: 50px; 
+height: 25px;
 background: grey;
 display: block;
 border-radius: 100px;
 position: relative;
 }
 
-label:after {
+#flowsLabel:after {
 content: '';
 position: absolute;
-top: 5px;
-left: 5px;
-width: 40px;
-height: 40px;
+top: 1px;
+left: 1px;
+width: 24px;
+height: 24px;
 background: #fff;
 border-radius: 90px;
 }
 
-input:checked + label {
+input:checked + #flowsLabel {
 background: #37a583;
 }
 
-input:checked + label:after {
-left: calc(100% - 5px);
+input:checked + #flowsLabel:after {
+left: calc(100% - 1px);
 transform: translateX(-100%);
 }
 
-label:active:after {
+#flowsLabel:active:after {
 width: 90px;
 }

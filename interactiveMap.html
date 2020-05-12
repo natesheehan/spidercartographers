@@ -9,6 +9,7 @@
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
       <script src="https://d3js.org/d3.v5.js"></script>
+      <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
       <!-- FIREBASE STUFF -->
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
@@ -31,7 +32,9 @@
             <div class="button" style="top:0; left: 0; position: fixed; margin-left: 50px; margin-top: 45px;">
                <a class="pushme" href="index.html"> <span class="inner">Home</span></a>
             </div>
-            <div class='sidebarInstructions' style="position: absolute; top: 60px;"><p>Double click on an MSOA to view its transport info!</p></div>
+            <div class='sidebarInstructions' style="position: absolute; top: 60px;">
+               <!-- <p>Double click on an MSOA to view its transport info!</p> -->
+            </div>
 
             <div class='msoaInfo'>
                <div class='msoaInfoText'><strong>MSOA id:</strong> <span id='msoaId'></span></div>
@@ -45,10 +48,10 @@
 
             <div id="flowButtonLabel" class='sidebarInstructions' ><p>View flows?</p></div>
             <div id='flowsSwitch'>
-               <input type='checkbox' id='switch' autocomplete="off"/><label for='switch'>Toggle</label>
+               <input type='checkbox' id='switch' autocomplete="off"/><label id="flowsLabel" for='switch'>Toggle</label>
             </div>
 
-
+         
             <div class="DataSources">
                <div class ="DataSourcesText">
                   <h4> Data Sources </h4>
@@ -65,6 +68,51 @@
                <svg id="mapLegendDots" height=200 width=100></svg>             
                <script type="module" src="http://127.0.0.1:8887/scripts/mapLegend.js"></script>
             </div>
+         </div>
+
+         <!-- CLUSTER CONSOLE -->
+
+         <div id="clusterConsole">
+            <h3>Clusters Console</h3>
+
+            <div class="cluster1">
+               <div class="onoffswitchCluster1">
+                  <input type="checkbox" name="onoffswitchCluster1" class="onoffswitchCluster1-checkbox" id="myonoffswitchCluster1" checked>
+                  <label class="onoffswitchCluster1-label" for="myonoffswitchCluster1"></label>
+              </div>
+            </div>
+
+            <div class="cluster2">
+               <div class="onoffswitchCluster2">
+                  <input type="checkbox" name="onoffswitchCluster2" class="onoffswitchCluster2-checkbox" id="myonoffswitchCluster2" checked>
+                  <label class="onoffswitchCluster2-label" for="myonoffswitchCluster2"></label>
+              </div>
+            </div>
+
+            <div class="cluster3">
+               <div class="onoffswitchCluster3">
+                  <input type="checkbox" name="onoffswitchCluster3" class="onoffswitchCluster3-checkbox" id="myonoffswitchCluster3" checked>
+                  <label class="onoffswitchCluster3-label" for="myonoffswitchCluster3"></label>
+              </div>
+            </div>
+
+            
+            <div class="cluster4">
+               <div class="onoffswitchCluster4">
+                  <input type="checkbox" name="onoffswitchCluster4" class="onoffswitchCluster4-checkbox" id="myonoffswitchCluster4" checked>
+                  <label class="onoffswitchCluster4-label" for="myonoffswitchCluster4"></label>
+              </div>
+            </div>
+
+            
+            <div class="cluster5">
+               <div class="onoffswitchCluster5">
+                  <input type="checkbox" name="onoffswitchCluster5" class="onoffswitchCluster5-checkbox" id="myonoffswitchCluster5" checked>
+                  <label class="onoffswitchCluster5-label" for="myonoffswitchCluster5"></label>
+              </div>
+            </div>
+
+           
          </div>
 
 
