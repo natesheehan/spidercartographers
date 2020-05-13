@@ -42,7 +42,7 @@
                <div class='msoaInfoText'><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
                <div class='msoaInfoText'><strong>How do people commute?</strong> <span id='msoaName'></span></div>
                <div class='interactiveChart'>
-                  <script type="module" src="http://127.0.0.1:8887/scripts/mapBoxChart.js"></script>
+                  <script type="module" src="assets/scripts/mapBoxChart.js"></script>
                </div>
             </div>
 
@@ -51,22 +51,27 @@
                <input type='checkbox' id='switch' autocomplete="off"/><label id="flowsLabel" for='switch'>Toggle</label>
             </div>
 
-         
+
             <div class="DataSources">
                <div class ="DataSourcesText">
                   <h4> Data Sources </h4>
                   <a href="https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson">ArcGIS.</a>
+                  <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates"> ONS </a>
+                  <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales"> ONS(2) </a>
+                  </br>
+                  <a href="https://www.nomisweb.co.uk/census/2011/quick_statistics"> NOMIS </a>
+                  <a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1"> NOMIS (2) </a>
+                  <a href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan"> GOV.UK </a>
                </div>
             </div>
-
          </div>
 
          <div id="map_container"></div>
 
-         <div class="mapLegend">        
+         <div class="mapLegend">
             <div>
-               <svg id="mapLegendDots" height=200 width=100></svg>             
-               <script type="module" src="http://127.0.0.1:8887/scripts/mapLegend.js"></script>
+               <svg id="mapLegendDots" height=200 width=100></svg>
+               <script type="module" src="assets/scripts/mapLegend.js"></script>
             </div>
          </div>
 
@@ -96,7 +101,7 @@
               </div>
             </div>
 
-            
+
             <div class="cluster4">
                <div class="onoffswitchCluster4">
                   <input type="checkbox" name="onoffswitchCluster4" class="onoffswitchCluster4-checkbox" id="myonoffswitchCluster4" checked="checked">
@@ -104,7 +109,7 @@
               </div>
             </div>
 
-            
+
             <div class="cluster5">
                <div class="onoffswitchCluster5">
                   <input type="checkbox" name="onoffswitchCluster5" class="onoffswitchCluster5-checkbox" id="myonoffswitchCluster5" checked="checked">
@@ -112,11 +117,11 @@
               </div>
             </div>
 
-           
+
          </div>
 
 
-         <script type="module" src="http://127.0.0.1:8887/scripts/map.js"></script>
+         <script type="module" src="assets/scripts/map.js"></script>
 
    </body>
 </html>

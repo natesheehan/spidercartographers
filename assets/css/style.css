@@ -1,7 +1,6 @@
 /*--------------------------------------------------------------*/
 /* GENERAL */
 /*--------------------------------------------------------------*/
-
 @font-face {
   font-family: Futura;
   src: url(Futura Bold font.tff);
@@ -21,7 +20,7 @@ h1, .sig, p, a, h4, h3 {
   color: #ffa372;
 }
 
-h3 {  
+h3 {
   display: block;
   margin-block-start: 0em;
   margin-block-end: 0.5em;
@@ -33,7 +32,6 @@ h3 {
 /*--------------------------------------------------------------*/
 /* STORY PAGE - PARALLAX SCROLLING */
 /*--------------------------------------------------------------*/
-
 body#story {
   background-color: #fff3e0;
   height: 18600px;
@@ -185,10 +183,57 @@ div#bg-1-5 {
   left: -200px;
 }
 
+.openTitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 50px;
+}
+
+.introText {
+  z-index: 1000;
+  font-family: futura;
+  font-size: 25px;
+}
+
+.openDiv {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: block;
+  margin: auto;
+}
+
+#chart {
+  float: left;
+  margin-top: 1600px;
+}
+
+.openText {
+  float: right;
+  display: block;
+  width: 50%;
+  margin-right: 10%;
+  margin-top: 1600px;
+  color: #1b262c;
+}
+
+#my_dataviz {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.transportAccessText {
+  text-align: left;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  color: #1b262c;
+}
+
 /*--------------------------------------------------------------*/
 /* STORY PAGE CITY ANIMATION */
 /*--------------------------------------------------------------*/
-
 /* city animation for story page */
 #little_city {
   position: relative;
@@ -211,7 +256,6 @@ div#bg-1-5 {
 /*--------------------------------------------------------------*/
 /* SNAP SCROLLING */
 /*--------------------------------------------------------------*/
-
 * {
   box-sizing: border-box;
 }
@@ -282,7 +326,6 @@ figure {
 /*--------------------------------------------------------------*/
 /* HOME PAGE TRANSPORT MODES */
 /*--------------------------------------------------------------*/
-
 #home {
   background-color: #1b262c;
   background-size: auto;
@@ -290,7 +333,7 @@ figure {
   margin: 0;
 }
 
-#homepageTitle{
+#homepageTitle {
   position: relative;
   padding: 5px;
 }
@@ -374,20 +417,29 @@ figure {
 
 /* BOUNCING ANIMATION */
 @keyframes bounce {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(15px); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 /* ROTATION ANIMATION */
 @keyframes rotation {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*--------------------------------------------------------------*/
 /* HOMEPAGE MENU */
 /*--------------------------------------------------------------*/
-
 .homepage_menu {
   position: absolute;
   z-index: 5;
@@ -451,7 +503,6 @@ figure {
 /*--------------------------------------------------------------*/
 /* INTERACTIVE MAP PAGE INTERACTIVE GRAPH */
 /*--------------------------------------------------------------*/
-
 .msoaInfo {
   position: absolute;
   font-family: futura;
@@ -462,15 +513,15 @@ figure {
   height: 60%;
   font-size: 14px;
   color: #222;
-  background-color:#1b262c;
+  background-color: #1b262c;
   border-radius: 3px;
 }
 
 .msoaInfoText {
- color:#fff3e0
+  color: #fff3e0
 }
 
-.mapLegend{
+.mapLegend {
   position: relative;
   right: -1170px;
   top: 50px;
@@ -484,10 +535,10 @@ figure {
   height: 150px;
   margin-bottom: 40px;
   width: 100px;
-  background-color:rgba(27,38,44, 0.7);
+  background-color: rgba(27, 38, 44, 0.7);
 }
 
-#clusterConsole{
+#clusterConsole {
   position: relative;
   right: -1070px;
   top: 210px;
@@ -497,8 +548,9 @@ figure {
   height: 150px;
   margin-bottom: 40px;
   width: 100px;
-  background-color:rgba(27,38,44, 0.7);
+  background-color: rgba(27, 38, 44, 0.7);
 }
+
 /* .circle{
   height: 65px;
   width: 65px;
@@ -507,19 +559,17 @@ figure {
   line-height: 65px;
   text-align: center;
 } */
-
 /*chart*/
-
 .axis {
- color:#fff3e0
+  color: #fff3e0
 }
 
 .gridLines {
- color:#0d1316
+  color: #0d1316
 }
 
 #Legend {
- font-size:0.7em;
+  font-size: 0.7em;
 }
 
 #map {
@@ -528,12 +578,14 @@ figure {
   display: flex;
   flex-direction: row;
 }
+
 #map_container {
   position: absolute;
   left: 30%;
   width: 70%;
   height: 100%;
 }
+
 #map_sidebar {
   position: absolute;
   width: 30%;
@@ -544,22 +596,22 @@ figure {
 }
 
 #sidebarInstructions {
- width: 100%;
- position: absolute;
- top: 60px;
+  width: 100%;
+  position: absolute;
+  top: 60px;
 }
 
 .DataSources {
-position:absolute;
-bottom: 0;
-left: 0;
-width:100%;
-background-color:#37a583;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #37a583;
 }
 
 .DataSourcesText {
-color:#fff3e0;
-margin-left: 20px;
+  color: #fff3e0;
+  margin-left: 20px;
 }
 
 /*return button on the map*/
@@ -576,7 +628,6 @@ margin-left: 20px;
 }
 
 /*toggle for clusters*/
-
 #clusterSwitch {
   position: relative;
   display: flex;
@@ -592,187 +643,273 @@ margin-left: 20px;
 }
 
 /* Switch for cluster 1 */
-
 .onoffswitchCluster1 {
-  position: relative; width: 40px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
 .onoffswitchCluster1-checkbox {
   display: none;
 }
+
 .onoffswitchCluster1-label {
-  display: block; overflow: hidden; cursor: pointer;
-  height: 20px; padding: 0; line-height: 20px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
   background-color: #FFFFFF;
   transition: background-color 0.3s ease-in;
 }
+
 .onoffswitchCluster1-label:before {
   content: "";
-  display: block; width: 20px; margin: 0px;
+  display: block;
+  width: 20px;
+  margin: 0px;
   background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 18px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
 }
-.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label {
+
+.onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label {
   background-color: #ffa372;
 }
-.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label, .onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before {
- border-color: #ffa372;
+
+.onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label, .onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label:before {
+  border-color: #ffa372;
 }
-.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before {
-  right: 0px; 
+
+.onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label:before {
+  right: 0px;
 }
 
 /* Switch for cluster 2 */
-
 .onoffswitchCluster2 {
-  position: relative; width: 40px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
 .onoffswitchCluster2-checkbox {
   display: none;
 }
+
 .onoffswitchCluster2-label {
-  display: block; overflow: hidden; cursor: pointer;
-  height: 20px; padding: 0; line-height: 20px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
   background-color: #FFFFFF;
   transition: background-color 0.3s ease-in;
 }
+
 .onoffswitchCluster2-label:before {
   content: "";
-  display: block; width: 20px; margin: 0px;
+  display: block;
+  width: 20px;
+  margin: 0px;
   background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 18px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
 }
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label {
+
+.onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label {
   background-color: #ed6663;
 }
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label, .onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before {
- border-color: #ed6663;
+
+.onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label, .onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label:before {
+  border-color: #ed6663;
 }
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before {
-  right: 0px; 
+
+.onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label:before {
+  right: 0px;
 }
 
 /* Switch for cluster 3 */
-
 .onoffswitchCluster3 {
-  position: relative; width: 40px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
 .onoffswitchCluster3-checkbox {
   display: none;
 }
+
 .onoffswitchCluster3-label {
-  display: block; overflow: hidden; cursor: pointer;
-  height: 20px; padding: 0; line-height: 20px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
   background-color: #FFFFFF;
   transition: background-color 0.3s ease-in;
 }
+
 .onoffswitchCluster3-label:before {
   content: "";
-  display: block; width: 20px; margin: 0px;
+  display: block;
+  width: 20px;
+  margin: 0px;
   background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 18px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
 }
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label {
+
+.onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label {
   background-color: #37a583;
 }
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label, .onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before {
- border-color: #37a583;
+
+.onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label, .onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label:before {
+  border-color: #37a583;
 }
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before {
-  right: 0px; 
+
+.onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label:before {
+  right: 0px;
 }
 
 /* Switch for cluster 4 */
-
 .onoffswitchCluster4 {
-  position: relative; width: 40px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
 .onoffswitchCluster4-checkbox {
   display: none;
 }
+
 .onoffswitchCluster4-label {
-  display: block; overflow: hidden; cursor: pointer;
-  height: 20px; padding: 0; line-height: 20px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
   background-color: #FFFFFF;
   transition: background-color 0.3s ease-in;
 }
+
 .onoffswitchCluster4-label:before {
   content: "";
-  display: block; width: 20px; margin: 0px;
+  display: block;
+  width: 20px;
+  margin: 0px;
   background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 18px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
 }
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label {
+
+.onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label {
   background-color: #186da0;
 }
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label, .onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before {
- border-color: #186da0;
+
+.onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label, .onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label:before {
+  border-color: #186da0;
 }
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before {
-  right: 0px; 
+
+.onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label:before {
+  right: 0px;
 }
 
 /* Switch for cluster 5 */
-
 .onoffswitchCluster5 {
-  position: relative; width: 40px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
+
 .onoffswitchCluster5-checkbox {
   display: none;
 }
+
 .onoffswitchCluster5-label {
-  display: block; overflow: hidden; cursor: pointer;
-  height: 20px; padding: 0; line-height: 20px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
   background-color: #FFFFFF;
   transition: background-color 0.3s ease-in;
 }
+
 .onoffswitchCluster5-label:before {
   content: "";
-  display: block; width: 20px; margin: 0px;
+  display: block;
+  width: 20px;
+  margin: 0px;
   background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 18px;
-  border: 2px solid #E3E3E3; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+  border: 2px solid #E3E3E3;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
 }
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label {
+
+.onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label {
   background-color: #fff059;
 }
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label, .onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
- border-color: #fff059;
-}
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
-  right: 0px; 
+
+.onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label, .onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label:before {
+  border-color: #fff059;
 }
 
-
-
+.onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label:before {
+  right: 0px;
+}
 
 /*--------------------------------------------------------------*/
 /* STORY PAGE INTERACTIVE CHART */
 /*--------------------------------------------------------------*/
-
 .tooltip {
   background: #eee;
   box-shadow: 0 0 5px #999999;
@@ -829,7 +966,7 @@ chart-container {
 
 /* THIS IS WHERE THE GRAPH LABEL COLOR IS DEFINED */
 svg text {
-  fill:#ffa372;
+  fill: #ffa372;
   font-family: futura;
 }
 
@@ -862,7 +999,13 @@ svg text {
   width: 33.33%;
   padding: 5px;
 }
-
+.peopleAndPublicTransportText{
+  text-align: left;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 5%;
+  color: #1b262c;
+}
 /* Clearfix (clear floats) */
 .row::after {
   content: "";
@@ -876,15 +1019,83 @@ svg text {
   margin-top: 5%;
 }
 
+.avgTransportTimeTitle {
+  font-size: 40px;
+  font-family: futura;
+}
+
+.row {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.transportTimeTitle {
+  font-family: futura;
+}
+
+.trainImage {
+  width: 40%;
+}
+
+.otherImage {
+  width: 20%;
+}
+
+.travelTimeText {
+  margin-bottom: 5%;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #1b262c;
+}
+
+#my_dataviz1 {
+  margin-top: 2%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.boxPlotText {
+  text-align: left;
+  display: block;
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #1b262c;
+}
+
+.barChart {
+  display: block;
+  height: 60%;
+  width: 30%;
+  text-align: center;
+  margin: auto;
+}
+
+.transportBoxPlotText {
+  text-align: left;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 5%;
+  color: #1b262c;
+}
+
+.barChartPeople {
+  display: block;
+  height: 60%;
+  width: 30%;
+  text-align: center;
+  margin: auto;
+}
+
 /*--------------------------------------------------------------*/
 /* SPIDER ANIMATION */
 /*--------------------------------------------------------------*/
-
 .spider {
   position: absolute;
   display: inline-block;
   top: 0;
-  left: 15%;
+  left: 25%;
   /* 4. Animatie */
   animation: swing 2s infinite;
   transform-origin: top;
@@ -900,16 +1111,16 @@ svg text {
 }
 
 .spider .body {
-  width: 100px;
-  height: 80px;
+  width: 80px;
+  height: 60px;
   background: #222;
   position: relative;
   border-radius: 50%;
 }
 
 .spider .body .eye {
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   position: absolute;
   bottom: 20px;
   background: #fff;
@@ -1014,7 +1225,6 @@ svg text {
 /* --------------------------------------------------------------*/
 /* FLOWS BUTTON */
 /*--------------------------------------------------------------*/
-
 #flowsSwitch {
   position: absolute;
   bottom: 95px;
@@ -1031,43 +1241,43 @@ svg text {
   bottom: 80px;
 }
 
-input[type=checkbox]{
-height: 0;
-width: 0;
-visibility: hidden;
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
 }
 
 #flowsLabel {
-cursor: pointer;
-text-indent: -9999px;
-width: 50px; 
-height: 25px;
-background: grey;
-display: block;
-border-radius: 50px;
-position: relative;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  border-radius: 50px;
+  position: relative;
 }
 
 #flowsLabel:after {
-content: '';
-position: absolute;
-top: 1px;
-left: 1px;
-width: 24px;
-height: 24px;
-background: #fff;
-border-radius: 90px;
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 90px;
 }
 
-input:checked + #flowsLabel {
-background: #37a583;
+input:checked+#flowsLabel {
+  background: #37a583;
 }
 
-input:checked + #flowsLabel:after {
-left: calc(100% - 1px);
-transform: translateX(-100%);
+input:checked+#flowsLabel:after {
+  left: calc(100% - 1px);
+  transform: translateX(-100%);
 }
 
 #flowsLabel:active:after {
-width: 50px;
+  width: 50px;
 }

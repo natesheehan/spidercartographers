@@ -44,7 +44,7 @@ var db = firebase.database();
 //   }).done(function(msoas){
 
     // Check that data was read in correctly
-    const msoas = "http://127.0.0.1:8887/data/msoas.geojson"
+    const msoas = "assets/data/msoas.geojson"
     console.log(msoas);
 
     // When map loads...
@@ -60,9 +60,9 @@ var db = firebase.database();
         // Add centroids
         map.addSource('centroids', {
           'type': 'geojson',
-          'data': 'http://127.0.0.1:8887/MSOA_Centroids.geojson'
+          'data': 'assets/MSOA_Centroids.geojson'
         });
-     
+
 
         // Add MSOA polygons - opacity changes upon hover
         map.addLayer({
@@ -74,11 +74,11 @@ var db = firebase.database();
               'visibility': 'visible'},
             'paint': {
               // its based on a file where cluster numbers are 0-4 not 1-5, so 0 is cluster no 1, 1 is cluster no 2 and so on
-              'fill-color': 
+              'fill-color':
               ['match',
               ['get', 'log_zscore_kmeans_cluster'],
               0,'#ffa372',
-              /* other */ 'rgba(27,38,44, 0.0)'],           
+              /* other */ 'rgba(27,38,44, 0.0)'],
               'fill-opacity': [
                   'case',
                   ['boolean', ['feature-state', 'hover'], false],
@@ -92,17 +92,17 @@ var db = firebase.database();
           'id': 'cluster2',
           'type': 'fill',
           'source': 'states',
-          'layout': {            
+          'layout': {
             'visibility': 'visible'},
           'paint': {
-            'fill-color': 
+            'fill-color':
             ['match',
             ['get', 'log_zscore_kmeans_cluster'],
             1,'#ed6663',
             // 2,'#37a583',
             // 3,'#186da0',
             // 4,'#fff059',
-            /* other */ 'rgba(27,38,44, 0.0)'],  
+            /* other */ 'rgba(27,38,44, 0.0)'],
             'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -112,19 +112,19 @@ var db = firebase.database();
           }
         });
 
-      
+
         map.addLayer({
           'id': 'cluster3',
           'type': 'fill',
           'source': 'states',
-          'layout': {            
+          'layout': {
             'visibility': 'visible'},
           'paint': {
-            'fill-color': 
+            'fill-color':
             ['match',
             ['get', 'log_zscore_kmeans_cluster'],
             2,'#37a583',
-            /* other */ 'rgba(27,38,44, 0.0)'],  
+            /* other */ 'rgba(27,38,44, 0.0)'],
             'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -138,15 +138,15 @@ var db = firebase.database();
           'id': 'cluster4',
           'type': 'fill',
           'source': 'states',
-          'layout': {            
+          'layout': {
             'visibility': 'visible'},
           'paint': {
-            'fill-color': 
+            'fill-color':
             ['match',
             ['get', 'log_zscore_kmeans_cluster'],
             3,'#186da0',
             // 4,'#fff059',
-            /* other */ 'rgba(27,38,44, 0.0)'],  
+            /* other */ 'rgba(27,38,44, 0.0)'],
             'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -160,14 +160,14 @@ var db = firebase.database();
           'id': 'cluster5',
           'type': 'fill',
           'source': 'states',
-          'layout': {            
+          'layout': {
             'visibility': 'visible'},
           'paint': {
-            'fill-color': 
+            'fill-color':
             ['match',
             ['get', 'log_zscore_kmeans_cluster'],
             4,'#fff059',
-            /* other */ 'rgba(27,38,44, 0.0)'],  
+            /* other */ 'rgba(27,38,44, 0.0)'],
             'fill-opacity': [
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
@@ -177,7 +177,7 @@ var db = firebase.database();
           }
         });
 
-      
+
 
         // Add MSOA outlines
         map.addLayer({
@@ -304,7 +304,7 @@ var db = firebase.database();
               map.setLayoutProperty('state-fills', 'visibility', 'none');
             }
           })
-          //cluster 2 
+          //cluster 2
           $('#myonoffswitchCluster2').click(function(){
             if($(this).is(':checked')){
               map.setLayoutProperty('cluster2', 'visibility', 'visible');
@@ -313,7 +313,7 @@ var db = firebase.database();
               map.setLayoutProperty('cluster2', 'visibility', 'none');
             }
           })
-          //cluster 3 
+          //cluster 3
           $('#myonoffswitchCluster3').click(function(){
             if($(this).is(':checked')){
               map.setLayoutProperty('cluster3', 'visibility', 'visible');
@@ -322,7 +322,7 @@ var db = firebase.database();
               map.setLayoutProperty('cluster3', 'visibility', 'none');
             }
           })
-          //cluster 4 
+          //cluster 4
           $('#myonoffswitchCluster4').click(function(){
             if($(this).is(':checked')){
               map.setLayoutProperty('cluster4', 'visibility', 'visible');
@@ -331,7 +331,7 @@ var db = firebase.database();
               map.setLayoutProperty('cluster4', 'visibility', 'none');
             }
           })
-          //cluster 5 
+          //cluster 5
           $('#myonoffswitchCluster5').click(function(){
             if($(this).is(':checked')){
               map.setLayoutProperty('cluster5', 'visibility', 'visible');
@@ -341,14 +341,14 @@ var db = firebase.database();
             }
           })
 
-        }    
-    
+        }
+
 
         getClustersColoured()
-    
-        
 
-      
+
+
+
       ///////////////////////////////////////////////////////////////////////////
 
         // If flows switch is toggled on
