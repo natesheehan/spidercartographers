@@ -14,12 +14,12 @@ library(RColorBrewer)
 library(geojsonio)
 library(knitr)
 
-getwd()
-
 msoa <-  geojson_read("https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson", what = "sp")
 
 msoa_sf <- st_as_sf(msoa)
 
+getwd()
+setwd("C:/Users/cex/Documents/Smart Cities and Urban Analytics/Term 2/SDC/Assessment")
 
 #YJ range 
 yj_DB <- read.csv("Code repos/spidercartographers/Scripts/Data/Clustering_results/yeojohnson_range_st_DBSCAN.csv")
@@ -85,9 +85,9 @@ names(yj_idr_H)[names(yj_idr_H) == "label"] <- "yj_idr_H_cluster"
 
 
 msoa_w_clusters <- merge(msoa,  
-                      yj_Kmeans,
-                       by.x = "msoa11cd",
-                       by.y = "MSOA")
+                         yj_Kmeans,
+                         by.x = "msoa11cd",
+                         by.y = "MSOA")
 
 msoa_w_clusters <- merge(msoa_w_clusters,       
                          yj_H,
@@ -235,10 +235,10 @@ msoa_w_clusters <- merge(msoa_w_clusters,
 #logframes <- c(log_zscore_DB, log_zscore_kmeans, log_zscore_H, log_range_DB, log_range_H, log_range_kmeans, log_idr_DB, log_idr_kmeans, log_idr_H)
 
 #for(df in logframes){
- # msoa_w_clusters <- merge(msoa_w_clusters, 
- #                          df,
-  #                         by.x = "msoa11cd",
-   #                        by.y = "MSOA")
+# msoa_w_clusters <- merge(msoa_w_clusters, 
+#                          df,
+#                         by.x = "msoa11cd",
+#                        by.y = "MSOA")
 #}
 
 
@@ -247,120 +247,20 @@ msoa_w_clusters <- merge(msoa_w_clusters,
 
 msoa_w_clusters <- st_as_sf(msoa_w_clusters)
 
-tmap_mode("plot")
-
-#tm_shape(msoa_w_clusters)+
- # tm_polygons(c("yj_DB_cluster","yj_Kmeans_cluster", "yj_H_cluster"),
-  #            palette = "RdBu")
-
-tm_shape(msoa_w_clusters)+
-  tm_polygons("yj_Kmeans_cluster",
-              palette = "RdBu")
-
-
-tm_shape(msoa_w_clusters)+
-  tm_polygons("yj_H_cluster",
-              palette = "RdBu")
-
-#yj idr maps
-tm_shape(msoa_w_clusters)+
-  tm_polygons("yj_idr_H_cluster",
-              palette = "RdBu")
-#
-#tm_shape(msoa_w_clusters)+
- # tm_polygons("yj_idr_DB_cluster",
-  #            palette = "RdBu")
-
-tm_shape(msoa_w_clusters)+
-  tm_polygons("yj_idr_Kmeans_cluster",
-              palette = "RdBu")
-
-#yj zscore
-#tm_shape(msoa_w_clusters)+
- # tm_polygons("yj_Zscore_H_cluster",
-  #            palette = "RdBu")
-
-tm_shape(msoa_w_clusters)+
-  tm_polygons("yj_zscore_Kmeans_cluster",
-              palette = "RdBu")
-
-#tm_shape(msoa_w_clusters)+
- # tm_polygons("yj_Zscore_DB_cluster",
-  #            palette = "RdBu")
-
-#log range
-#tm_shape(msoa_w_clusters)+
- # tm_polygons("log_range_DB_cluster",
-  #            palette = "RdBu")
-
-breaks = c(-0.5, 0.5,1.5,2.5,3.5,4.5)
 
 tmap_mode("view")
 
-tm_shape(msoa_w_clusters)+
-  tm_polygons("log_range_H_cluster",
-              palette = "RdBu",
-              breaks = breaks)
+Mypal <- c('#ed6663', '#186da0', '#37a583', '#bdccd4', '#ffa372')
 
-tm_shape(msoa_w_clusters)+
-  tm_polygons("log_range_kmeans_cluster",
-              palette = "RdBu",
-              breaks = breaks)
-
-#log z
-#tm_shape(msoa_w_clusters)+
- # tm_polygons("log_zscore_DB_cluster",
- #             palette = "RdBu")
-
-tm_shape(msoa_w_clusters)+
-  tm_polygons("log_zscore_kmeans_cluster",
-              palette = "RdBu")
-
-tm_shape(msoa_w_clusters)+
-  tm_polygons("log_zscore_H_cluster",
-              palette = "RdBu")
-
-#log idr
-tm_shape(msoa_w_clusters)+
-  tm_polygons("log_idr_kmeans_cluster",
-              palette = "RdBu")
-
-tm_shape(msoa_w_clusters)+
-  tm_polygons("log_idr_H_cluster",
-              palette = "RdBu")
-
-#tm_shape(msoa_w_clusters)+
- # tm_polygons("log_idr_DB_cluster",
-  #            palette = "RdBu")
+breaks = c(-0.5, 0.5,1.5,2.5,3.5,4.5)
 
 
+names(msoa_w_clusters)[names(msoa_w_clusters) == "log_zscore_kmeans_cluster"] <- "Clusters"
+
+tm2 <- tm_shape(msoa_w_clusters)+
+  tm_polygons("Clusters",
+              palette = Mypal,
+              breaks=breaks)
 
 
-
-msoa_clusters_df <- merge(yj_idr_Kmeans,
-                          yj_DB,
-                          by = "MSOA"
-)
-
-logframes <- c(log_zscore_DB, log_zscore_kmeans, log_zscore_H, log_range_DB, log_range_H, log_range_kmeans, log_idr_DB, log_idr_kmeans, log_idr_H, yj_idr_DB, yj_idr_H, yj_H, yj_Kmeans, yj_Z_DB, yj_Z_H, yj_Z_Kmeans) 
-
-cleaned_transport <- read.csv("Code repos/spidercartographers/Scripts/Data/cleaned_transport.csv")
-
-
-msoa_clusters_df <- merge(msoa_clusters_df,
-                          yj_Z_Kmeans,
-                          by = "MSOA"
-)
-
-
-
-msoa_clusters_df <- select(msoa_clusters_df, -c(30,31,32))
-
-names(msoa_clusters_df)[names(msoa_clusters_df) == "log_idr_H_cluster.y"] <- "log_idr_H_cluster"
-
-names(msoa_clusters_df)[names(msoa_clusters_df) == "log_idr_DB_cluster.y"] <- "log_idr_DB_cluster"
-
-names(msoa_clusters_df)[names(msoa_clusters_df) == "log_idr_kmeans_cluster.y"] <- "log_idr_kmeans_cluster"
-
-write.csv(msoa_clusters_df, "Code repos/spidercartographers/Scripts/Data/Clustering_results/clusterlabels_cleaneddata3.csv")
-
+save_tmap(tm2, "clusterMap2.html")
