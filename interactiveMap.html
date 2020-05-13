@@ -2,21 +2,32 @@
 <html>
    <head>
       <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+      
       <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+      
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+      
       <script src="https://d3js.org/d3.v5.js"></script>
+      
       <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+      
       <!-- FIREBASE STUFF -->
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+      
       <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+
+
+      <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
+      <script type="text/javascript">var {MapboxLayer, ArcLayer} = deck;</script>
    </head>
 
    <body>
@@ -28,16 +39,11 @@
 
          <div id="map_sidebar">
 
-
             <div class="button" style="top:0; left: 0; position: fixed; margin-left: 50px; margin-top: 45px;">
                <a class="pushme" href="index.html"> <span class="inner">Home</span></a>
             </div>
-            <div class='sidebarInstructions' style="position: absolute; top: 60px;">
-               <!-- <p>Double click on an MSOA to view its transport info!</p> -->
-            </div>
 
             <div class='msoaInfo'>
-               <div class='msoaInfoText'><strong>MSOA id:</strong> <span id='msoaId'></span></div>
                <div class='msoaInfoText'><strong>MSOA Name:</strong> <span id='msoaName'></span></div>
                <div class='msoaInfoText'><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
                <div class='msoaInfoText'><strong>How do people commute?</strong> <span id='msoaName'></span></div>
@@ -112,7 +118,6 @@
               </div>
             </div>
 
-           
          </div>
 
 
