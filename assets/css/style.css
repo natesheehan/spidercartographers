@@ -1071,3 +1071,64 @@ transform: translateX(-100%);
 #flowsLabel:active:after {
 width: 50px;
 }
+
+/*--------------------------------------------------------------*/
+/* ABOUT US PAGE */
+/*--------------------------------------------------------------*/
+body{
+  background-color: #1b262c;
+  /* background-color: #fff3e0; */
+  /* background-color: #bdccd4; */
+}
+
+#cityIconDiv{
+  /* position: relative; */
+  bottom:10px;
+ 
+}
+
+#cityIcon{
+  position: absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 50%;
+  top:1000px;
+}
+
+.greenTop{
+  background-color: #37a583;
+  position: absolute;
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 80px;
+}
+
+.aboutUs{
+  position: absolute;
+  top:100px;
+  left:80px;
+}
+
+.aboutProject{
+  position: absolute;
+  top:300px;
+  right:80px;
+}
+
+.aboutMethodology{
+  position: absolute;
+  top:500px;
+  left:80px;
+}
+
+.aboutPage{
+  color: #fff3e0;
+}
+
+.aboutUsText{
+  position: absolute;
+  width: 500px;
+}
