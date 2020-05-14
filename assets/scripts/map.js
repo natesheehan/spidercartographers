@@ -442,6 +442,8 @@ map.on('load', function() {
               //     pitch: 60
               // });
 
+              // NOTE: colors need to be RGB not HEX
+
               // flowMap.on('style.load', () => {
               //     const flowArcs = new MapboxLayer({
               //       id: 'flowArcs',
@@ -449,8 +451,9 @@ map.on('load', function() {
               //       data: dataArray,
               //       getSourcePosition: d => d.orig,
               //       getTargetPosition: d => d.dest,
-              //       //getSourceColor: d => [64, 255, 0],
-              //       //getTargetColor: d => [0, 128, 200]
+              //       getArcColor: d => d.properties.color
+              //       getTargetColor: d => [0, 128, 200]
+              //       strokeWidth: d => d.properties.
               //     });
 
               //     // //Add the deck.gl arc layer to the map 
