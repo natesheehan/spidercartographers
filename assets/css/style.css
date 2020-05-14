@@ -884,7 +884,7 @@ svg text {
   position: absolute;
   display: inline-block;
   top: 0;
-  left: 15%;
+  left: 35%;
   /* 4. Animatie */
   animation: swing 2s infinite;
   transform-origin: top;

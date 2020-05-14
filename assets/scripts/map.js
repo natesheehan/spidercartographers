@@ -41,7 +41,7 @@ var db = firebase.database();
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Read in MSOA data and check that it worked
-const msoas = "http://127.0.0.1:8887/data/msoas.geojson"
+const msoas = "assets/data/msoas.geojson"
 console.log(msoas);
 
 // When map loads...
