@@ -105,6 +105,12 @@ div#bg-3-4 {
   top: 2800px;
   right: 0px;
 }
+div#bg-3-4 {
+  width: 1104px;
+  height: 684px;
+  top: 3400px;
+  right: 0px;
+}
 
 /* middle layer clouds */
 div#parallax-bg-2 div {
@@ -204,7 +210,7 @@ div#bg-1-5 {
 
 #chart {
   float: left;
-  margin-top: 1600px;
+
 }
 
 .openText {
@@ -943,6 +949,21 @@ figure {
   display: block;
   opacity: 0;
 }
+.tooltipRural {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
+  display: block;
+  opacity: 0;
+}
 
 .legend {
   font-size: 12px;
@@ -961,8 +982,8 @@ rect.disabled {
 }
 
 #chart {
-  float: left;
-  margin-left: 10%;
+  /* float: left;
+  margin-left: 10%; */
 }
 
 chart-container {
