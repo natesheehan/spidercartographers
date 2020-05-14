@@ -571,6 +571,9 @@ figure {
 #Legend {
   font-size: 0.7em;
 }
+#legendUrban {
+  font-size: 0.7em;
+}
 
 #map {
   margin: 0;
@@ -911,6 +914,21 @@ figure {
 /* STORY PAGE INTERACTIVE CHART */
 /*--------------------------------------------------------------*/
 .tooltip {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
+  display: block;
+  opacity: 0;
+}
+.tooltipUrban {
   background: #eee;
   box-shadow: 0 0 5px #999999;
   color: #333;
