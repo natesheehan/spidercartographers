@@ -1109,26 +1109,122 @@ body{
 .aboutUs{
   position: absolute;
   top:100px;
-  left:80px;
+  left:60px;
 }
 
 .aboutProject{
   position: absolute;
-  top:300px;
-  right:80px;
+  top:600px;
+  right:550px;
 }
 
 .aboutMethodology{
   position: absolute;
-  top:500px;
+  top:900px;
   left:80px;
 }
 
+/* text */
+/* that is paragraph text */
 .aboutPage{
   color: #fff3e0;
 }
+
+.aboutPageNames{
+  text-align: center;
+  font-size: 14px;
+}
+
 
 .aboutUsText{
   position: absolute;
   width: 500px;
 }
+
+.aboutProjectTitle{
+  text-align: right;
+  position: absolute;
+  right: -480px;
+  width: 300px;
+  top:0px;
+}
+
+.aboutProjectText{
+  position: absolute;
+  width: 500px;
+  top:30px
+}
+
+.aboutUsPictures{
+  position: absolute;
+  height: 120px;
+  left: 450;
+  }
+
+#chayne{
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  left: 500px;
+  /* top:200px; */
+}
+
+#chayneName{
+  position: absolute;
+  left: 530px;
+}
+
+#nathanael{
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  left: 630px;
+  }
+
+#nathanaelName{
+  position: absolute;
+  left: 660px;
+}
+
+#alicja{
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  left: 760px;
+  }
+
+#alicjaName{
+  position: absolute;
+  left: 790px;
+}
+
+#philip{
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  left: 890px;
+  }
+
+#philipName{
+  position: absolute;
+  left: 920px;
+}
+
+#hussein{
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  left: 1020px;
+  }
+
+#husseinName{
+  position: absolute;
+  left: 1050px;
+}
+
+.aboutUsNames{
+  position: absolute;
+  height: 120px;
+  left: 450;
+  top:190px;
+  }
