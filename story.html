@@ -10,13 +10,7 @@
 
 <body id="story">
 
-  <div class="button" style="top: 0;
-    left: 0;
-    z-index: 1;
-    position: fixed;
-    margin-left: 100px;
-    margin-top: 70px;"><a class="pushme" href="index.html"> <span class="inner">Home</span></a></div>
-
+  <div class="button" style="top: 0;left: 0;z-index: 1;position: fixed;margin-left: 100px;margin-top: 70px;"><a class="pushme" href="index.html"> <span class="inner">Home</span></a></div>
 
   <div id="container">
 
@@ -55,7 +49,8 @@
         </div>
         <div class="totalMSOATravel">
           <h2> Total MSOA Travel </h2>
-          <p class="totalTravelMSOAText">The UK is big, and when it comes to transportation, there is huge variation in accessibility and mode share within MSOA’s. What is an MSOA you ask? A Middle Layer Super Output Area (MSOA) is a geospatial statistic
+          <p class="totalTravelMSOAText">The UK is big, and when it comes to transportation, there is huge variation in accessibility and mode share within MSOA’s. What is an MSOA you ask? A Middle Layer Super Output Area (MSOA) is a geospatial
+            statistic
             used in England and
             Wales.
             Created by the Office for National Statistics it is used to understand small areas of the country. The mean population of an MSOA is 7,200, with a minimum population of 5000. The 2011 census reports 7,201 MSOAs in England and Wales. </br>
@@ -102,9 +97,7 @@
     <section class="story">
       <div class="content">
         <!--London Vs Birmingham Pie Chart -->
-        <div class="openingRow" style="    margin-top: 150px;
-          display: block;
-          text-align: center;">
+        <div class="openingRow" id="londonVsBirmingham">
           <div class="openingColumn">
             <div id="chartLondon">
               <h2> London MSOA travel share </h2>
@@ -122,10 +115,7 @@
             </div>
           </div>
         </div>
-        <p style="    margin-top: 200px;
-          margin-left: 10%;
-          margin-right: 10%;
-          text-align: justify;color: #1b262c;">
+        <p class="londonVsBirminghamText">
           But such a crude categorization fails to show the variation between urban areas. For example we can look at similar transport breakdown between London and Birmingham. This shows that even between urban areas there is differentiation in
           terms of transport usage. However it is noted there is variation within these urban areas as well, thus we can even further down in scale to the MSOA level. </br> </br> Surprisingly, we see that Birmingham has the highest average number of
           bus stops per MSOA, but is that an indication of better public transport availability in Birmingham than London. Definitely not. Due to the population differences, Birmingham is divided into 135 MSOAs while London is divided into 978.
@@ -137,39 +127,34 @@
       <div class="content">
         <div class="openingRow">
           <div class="openingColumn">
-            <img src="assets/images/test.png" alt="test" style="width: 80%;margin-left: 20%;">
+            <img src="assets/images/london_bus_stop_density.png" alt="test" class="cityGif">
           </div>
           <div class="openingColumn">
             <h2> Discussion about travel types in cities </h2>
-            <p style="color: #1b262c;">Let’s take London and plot the number of bus stops in each MSOA. Below is a histogram showing that variation. A what? A histogram shows the distribution of a certain variable; in our case it is count of Bus
+            <p class="cityText">Let’s take London and plot the number of bus stops in each MSOA. Below is a histogram showing that variation. A what? A histogram shows the distribution of a certain variable; in our case it is count of Bus
               stops. The height of a bar
               shows the number of MSOAs that have a certain number of bus stops. For example, there are around 20 MSOAs that have 0-5 bus stops, and almost 250 MSOAs that have 15-20 bus stops (highest bar). Interestingly, there is a smaller number of
               MSOAs with over 150 bus stops! </br> </br> So yes, London may be better served than any other area in the UK, but services in London are by no means uniformly distributed. Is it possible that some areas of London have worse service than
               other urban areas in the UK? The answer to that question, and many others, lies at the MSOA level.</p>
           </div>
+          <p class="nextButton"><a href="#" class="next">Next →</a></p>
         </div>
       </div>
     </section>
     <section class="story">
       <div class="content">
         <!--Bar Chart transport access -->
-        <div style="display: block;
-    margin: auto;
-    text-align: center;
-    margin-top: 380px;" id="my_dataviz"></div>
+        <div class="barCharDiv" id="my_dataviz"></div>
         <script src="https://d3js.org/d3.v4.js"></script>
         <script src="assets/scripts/barChartTransportAcess.js"></script>
 
-        <h2 style="margin-left: 10%;
-    margin-right: 10%;
-    text-align: justify;"> Transport Access </h2>
-        <p style="margin-left: 10%;
-    margin-right: 10%;
-    text-align: justify;color: #1b262c;">What transport mode people choose to get to work can, of course, depend on access to different modes within the MSOA. In terms of stations, bus stops are by far
+        <h2 class="transportAccessTitle"> Transport Access </h2>
+        <p class="transportTextAcess">What transport mode people choose to get to work can, of course, depend on access to different modes within the MSOA. In terms of stations, bus stops are by far
           the most common, with an average of 38.5 stops per MSOA. There are 277,094 bus stations across England and Wales. Only 1,811 out of 7,201 MSOAs have train stations, for a total of 2,305 train stations. An average MSOA has 0.32 train
           stations.
           This is even lower
           for metro, tram or underground stations, as only 535 MSOAs have these stations for a total of 899 stations in England and Wales. This means that the average MSOA has only 0.128 stations. </p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
     <section class="story">
@@ -179,32 +164,32 @@
           <h2 class="avgTransportTimeTitle"> Average Travel Time Per Transport Mode </h2>
           <div class="column">
             <img src="assets/images/trainIcon.png" class="trainImage" alt="Train">
-            <h4 style="color: #1b262c;" class="transportTimeTitle"> 67 Minutes </h4>
+            <h4 class="travelTime" class="transportTimeTitle"> 67 Minutes </h4>
           </div>
           <div class="column">
             <img src="assets/images/busIconFinal.png" class="otherImage" alt="Bus">
-            <h4 style="color: #1b262c;" class="transportTimeTitle"> 28 Minutes </h4>
+            <h4 class="travelTime" class="transportTimeTitle"> 28 Minutes </h4>
           </div>
           <div class="column">
             <img src="assets/images/carIconFinal.png" alt="Car" class="otherImage">
-            <h4 style="color: #1b262c;" class="transportTimeTitle"> 12 Minutes </h4>
+            <h4 class="travelTime" class="transportTimeTitle"> 12 Minutes </h4>
           </div>
         </div>
-        <p style="margin-left: 10%;
-  margin-right: 10%;
-  text-align: justify;color: #1b262c;"> We then explored travel times from each MSOA to reach all others, and the travel times of those who do travel via that mode. It is clear that
+        <p class="travelTimeText"> We then explored travel times from each MSOA to reach all others, and the travel times of those who do travel via that mode. It is clear that
           traveling by car has the most accessibility, and those that do travel by car on average travel for 12 minutes to their workplace. While bus may be the slowest for travelling to other MSOAs, those that travel by bus to work spend an
           average of 28 minutes, followed by those travelling by rail who spend an average of 67 minutes. </p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
     <section class="story">
       <div class="content">
         <div id="my_dataviz1"></div>
         <script src="assets/scripts/boxPlot.js"> </script>
-        <p style="color: #1b262c;" class="boxPlotText"> If there is significant variation in car usage then this should also show up in other modes of transport, as public transport may offer an appealing alternative. The
+        <p class="boxPlotText"> If there is significant variation in car usage then this should also show up in other modes of transport, as public transport may offer an appealing alternative. The
           averages for underground/tram/metro, train and bus usage is 3.4%, 4.7% and 7.3% respectively, and we can see that there is considerable variation across MSOAs. In the
           MSOAs with the lowest percentage use for each of these modes of transport is less than 1% which is associated with considerable reliance on private vehicle travel. However, some MSOAs show significant usage of each of these travel
           modes, with the largest for underground/tram/metro, train and bus usage being 55.7%, 46% and 45.5% respectively. </p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
     <section class="story">
@@ -214,7 +199,7 @@
         </div>
         <script src="assets/scripts/chart.js/dist/Chart.js"></script>
         <script src="assets/scripts/transportBarBox.js"></script>
-        <p style="color: #1b262c;" class="transportBoxPlotText"> Furthermore, looking at the distribution of bus stops, train stations and metro stations, there is variation across England and Wales. This includes where they are located and their
+        <p class="transportBoxPlotText"> Furthermore, looking at the distribution of bus stops, train stations and metro stations, there is variation across England and Wales. This includes where they are located and their
           concentration. For example,
           looking at
           the bus stops picture it can be seen that there are a significant number of bus stops across the map, with the maximum in an MSOA of 189 and the lowest of 0 (although there are only two MSOAs with no bus stops). However, the distribution is
@@ -222,6 +207,7 @@
           in
           large MSOAs such as London. The highest for this is 12 stations in a single MSOA with only 535 MSOAs having these types of stations. Then we have train stations for which the we can see they are more of them across England and Wales, mostly
           surrounding cities and towns and showing the train transport corridors across the UK. 1811 MSOAs have train stations, with the highest again being 12, with the lowest being 0.</p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
     <section class="story">
@@ -231,12 +217,13 @@
         </div>
         <script src="assets/scripts/chart.js/dist/Chart.js"></script>
         <script src="assets/scripts/peopleAndPublicTransport.js"></script>
-        <p style="color: #1b262c;" class="peopleAndPublicTransportText"> Combining these methods of transport as public transport also shows variation across MSOA, as well as combing bicycle usage and walking to work as people powered transport as
+        <p class="peopleAndPublicTransportText"> Combining these methods of transport as public transport also shows variation across MSOA, as well as combing bicycle usage and walking to work as people powered transport as
           seen in the bar chart
           below. This shows that
           while the minimum for public and people powered transport in MSOAs is 0.7% and 2.0% respectively, the maximum for these ranges all the way up to 74.6% and 53.8%. These are significantly different to the average MSOA in which 60% travel to
           work by car. The mean and median for this is also shown with the medians of 10% and 10.3%, and the mean of 15.4% and 12.4% respectively, showing that the values near to the max positively affect the mean of the distributions and as such
           these areas are significantly different to the rest of the county.</p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
   </div>
@@ -407,6 +394,6 @@
       scrollTop: $("html,body").offset().top
     }, "slow");
   });
-</script> 
+</script>
 
 </html>

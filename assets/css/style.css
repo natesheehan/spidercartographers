@@ -224,6 +224,44 @@ div#bg-1-5 {
   display: block;
   text-align: center;
 }
+#londonVsBirmingham{
+  margin-top: 150px;
+  display: block;
+  text-align: center;
+}
+.londonVsBirminghamText{
+  margin-top: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: justify;
+  color: #1b262c;
+}
+.cityGif{
+  width: 80%;
+  margin-left: 20%;
+}
+.cityText{
+  color: #1b262c;
+}
+.barCharDiv{
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 380px;
+}
+.transportAccessTitle{
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: justify;
+}
+.transportTextAcess{
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: justify;color: #1b262c;
+}
+.travelTime{
+  color: #1b262c;
+}
 .ruralUrbanText{
   margin-top: 200px;
   margin-left: 10%;
@@ -952,11 +990,9 @@ svg text {
 }
 
 .travelTimeText {
-  margin-bottom: 5%;
-  text-align: left;
   margin-left: 10%;
   margin-right: 10%;
-  color: #1b262c;
+  text-align: justify;color: #1b262c;
 }
 
 #my_dataviz1 {
