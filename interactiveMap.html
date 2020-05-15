@@ -8,8 +8,8 @@
       <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
       <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
       <script src="https://d3js.org/d3.v5.js"></script>
@@ -31,12 +31,12 @@
 
          <!-- WELCOME POP UP BOX -->
          <div id="blur_out"></div>
-         <div id="popup_box">   
+         <div id="popup_box">
             <h1>Welcome!</h1>
             <p>Get ready to explore the transport characteristics of MSOAs in England and Wales! <strong>Double click</strong>
             on an MSOA to view the breakdown of how people in this MSOA commute to work. After selecting an MSOA, <strong>
             toggle the flows switch</strong> to see where people work, and how they get there!</p>
-            <a id="popupBoxClose">X</a>    
+            <a id="popupBoxClose">X</a>
         </div>
 
         <!-- FLOWS LEGEND -->
@@ -59,14 +59,14 @@
                 <li><a href="aboutUs.html">about</a></li>
               </ul>
             </nav>
-            
+
             <!-- msoa info and chart -->
             <div class='msoaInfo'>
                <div class='msoaInfoText'><strong>MSOA Name:</strong> <span id='msoaName'></span></div>
                <div class='msoaInfoText'><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
                <div class='msoaInfoText'><strong>How do people commute?</strong> <span id='msoaName'></span></div>
                <div class='interactiveChart'>
-                  <script type="module" src="http://127.0.0.1:8887/scripts/mapBoxChart.js"></script>
+                  <script type="module" src="assets/scripts/mapBoxChart.js"></script>
                </div>
             </div>
 
@@ -134,6 +134,12 @@
                <div class ="DataSourcesText">
                   <h4> Data Sources </h4>
                   <a href="https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson">ArcGIS.</a>
+  <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates"> ONS </a>
+  <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales"> ONS(2) </a>
+  </br>
+  <a href="https://www.nomisweb.co.uk/census/2011/quick_statistics"> NOMIS </a>
+  <a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1"> NOMIS (2) </a>
+  <a href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan"> GOV.UK </a>
                </div>
             </div>
 
@@ -142,9 +148,9 @@
          <!-- map goes here -->
          <div id="map_container"></div>
 
-         <script type="module" src="http://127.0.0.1:8887/scripts/map.js"></script>
-         <script type="module" src="http://127.0.0.1:8887/scripts/welcome_popup.js"></script>
-         <script type="module" src="http://127.0.0.1:8887/scripts/burgermenu.js"></script>
+         <script type="module" src="assets/scripts/map.js"></script>
+         <script type="module" src="assets/scripts/welcome_popup.js"></script>
+         <script type="module" src="assets/scripts/burgermenu.js"></script>
 
    </body>
 </html>

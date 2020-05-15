@@ -41,7 +41,7 @@ var db = firebase.database();
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Read in MSOA data and check that it worked
-const msoas = "http://127.0.0.1:8887/data/msoas.geojson"
+const msoas = "assets/data/msoas.geojson"
 console.log(msoas);
 
 // When map loads...
@@ -53,7 +53,7 @@ map.on('load', function() {
         'data': msoas,
         'generateId': true
     });
-  
+
     // Add MSOA polygons
     map.addLayer({
         'id': 'state-fills',
@@ -64,11 +64,11 @@ map.on('load', function() {
           'visibility': 'visible'},
         'paint': {
           // Cluster numbers are 0-4 - 0 is cluster 1, 1 is cluster 2, etc.
-          'fill-color': 
+          'fill-color':
           ['match',
           ['get', 'log_zscore_kmeans_cluster'],
           0,'#ffa372',
-          /* other */ 'rgba(27,38,44, 0.0)'],           
+          /* other */ 'rgba(27,38,44, 0.0)'],
           'fill-opacity': [
               'case',
               ['boolean', ['feature-state', 'hover'], false],
@@ -82,14 +82,14 @@ map.on('load', function() {
       'id': 'cluster2',
       'type': 'fill',
       'source': 'states',
-      'layout': {            
+      'layout': {
         'visibility': 'visible'},
       'paint': {
-        'fill-color': 
+        'fill-color':
         ['match',
         ['get', 'log_zscore_kmeans_cluster'],
         1,'#ed6663',
-        /* other */ 'rgba(27,38,44, 0.0)'],  
+        /* other */ 'rgba(27,38,44, 0.0)'],
         'fill-opacity': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],
@@ -98,19 +98,19 @@ map.on('load', function() {
         ]
       }
     });
-  
+
     map.addLayer({
       'id': 'cluster3',
       'type': 'fill',
       'source': 'states',
-      'layout': {            
+      'layout': {
         'visibility': 'visible'},
       'paint': {
-        'fill-color': 
+        'fill-color':
         ['match',
         ['get', 'log_zscore_kmeans_cluster'],
         2,'#37a583',
-        /* other */ 'rgba(27,38,44, 0.0)'],  
+        /* other */ 'rgba(27,38,44, 0.0)'],
         'fill-opacity': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],
@@ -124,14 +124,14 @@ map.on('load', function() {
       'id': 'cluster4',
       'type': 'fill',
       'source': 'states',
-      'layout': {            
+      'layout': {
         'visibility': 'visible'},
       'paint': {
-        'fill-color': 
+        'fill-color':
         ['match',
         ['get', 'log_zscore_kmeans_cluster'],
         3,'#186da0',
-        /* other */ 'rgba(27,38,44, 0.0)'],  
+        /* other */ 'rgba(27,38,44, 0.0)'],
         'fill-opacity': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],
@@ -145,14 +145,14 @@ map.on('load', function() {
       'id': 'cluster5',
       'type': 'fill',
       'source': 'states',
-      'layout': {            
+      'layout': {
         'visibility': 'visible'},
       'paint': {
-        'fill-color': 
+        'fill-color':
         ['match',
         ['get', 'log_zscore_kmeans_cluster'],
         4,'#fff059',
-        /* other */ 'rgba(27,38,44, 0.0)'],  
+        /* other */ 'rgba(27,38,44, 0.0)'],
         'fill-opacity': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],
@@ -167,11 +167,11 @@ map.on('load', function() {
     var clusterNumberDisplay = document.getElementById('clusterNumber');
 
     // Store cluster names as list
-    var clusterNames = ["Soley car dependant", "Lack of accessibility across all transport modes", 
-                        "High public transport and good accessibility", "Car reliant but high public transport", 
+    var clusterNames = ["Soley car dependant", "Lack of accessibility across all transport modes",
+                        "High public transport and good accessibility", "Car reliant but high public transport",
                         "Good train accessibility but car dependant"];
 
-    // Store which MSOA is being hovered over or clicked on 
+    // Store which MSOA is being hovered over or clicked on
     var msoaID = null;
     var msoaIDClick = null;
 
@@ -284,7 +284,7 @@ map.on('load', function() {
         }
       })
 
-      // Car reliant but high public transport 
+      // Car reliant but high public transport
       $('#myonoffswitchCluster4').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('cluster2', 'visibility', 'visible');
@@ -294,7 +294,7 @@ map.on('load', function() {
         }
       })
 
-      // Good train accessibility but car dependant 
+      // Good train accessibility but car dependant
       $('#myonoffswitchCluster5').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('cluster3', 'visibility', 'visible');
@@ -314,7 +314,7 @@ map.on('load', function() {
         }
       })
 
-      // Lack of accessibility across all transport modes 
+      // Lack of accessibility across all transport modes
       $('#myonoffswitchCluster2').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('cluster5', 'visibility', 'visible');
@@ -323,7 +323,7 @@ map.on('load', function() {
           map.setLayoutProperty('cluster5', 'visibility', 'none');
         }
       })
-    }    
+    }
 
     getClustersColoured();
 
@@ -347,18 +347,18 @@ map.on('load', function() {
             // Set API URL for ORIGIN flows
             var url = "http://dev.spatialdatacapture.org:8717/data/originflows/" + msoaIDClick + "/";
 
-            // Get the origin flows data 
+            // Get the origin flows data
             $.getJSON ( url , function( data ) {
 
               // Check that call is working
               console.log("Retrieving data...");
 
-              // Store data for flow features 
+              // Store data for flow features
               var features = [];
 
               $.each ( data, function( k, v ) {
 
-                // Get starting location 
+                // Get starting location
                 var orig_lon = v["Orig_Lon"];
                 var orig_lat = v["Orig_Lat"];
                 var orig = [orig_lon, orig_lat];
@@ -371,12 +371,12 @@ map.on('load', function() {
                 // Get breakdown of modes for this origin and destination combination
                 var mode_list =  ['from_home', 'underground_metro_lightrail_tram', 'Train', 'Taxi', 'motorcycle', 'Bicycle', 'walk', 'other'];
                 var color_list = ['#696969', '#fff059', '#186da0', '#ffa372', '#714b7f', '#37a583', '#ed6663', '#fff3e0'];
-      
+
                 for (var i = 0; i < mode_list.length; i++) {
                   // Collect data for this mode
                   var newData = {
                     'type': 'Feature',
-                    'id': v["orig_name"], 
+                    'id': v["orig_name"],
                     'properties': {
                       'type': mode_list[i],
                       'color': color_list[i],
@@ -465,9 +465,7 @@ map.on('load', function() {
       if ( typeof borderLayer !== 'undefined') {
         map.removeLayer('state-borders');
       }
-      
+
     } // end of turnOffFlows function
 
 }); // end of on load
-
-
