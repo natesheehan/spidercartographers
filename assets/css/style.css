@@ -33,15 +33,14 @@ h3 {
 /* STORY PAGE - PARALLAX SCROLLING */
 /*--------------------------------------------------------------*/
 body#story {
-  background-color: #fff3e0;
-  height: 18600px;
+
 }
 
 /* foreground (balloons/landscape)*/
 div#parallax-bg-1 {
   position: fixed;
   width: 1200px;
-  margin-top: 2600px;
+  margin-top: -900px;
   top: 0;
   left: 50%;
   margin-left: -600px;
@@ -52,7 +51,7 @@ div#parallax-bg-1 {
 div#parallax-bg-2 {
   position: fixed;
   width: 1200px;
-  margin-top: 1330px;
+  margin-top: -650px;
   left: 50%;
   margin-left: -600px;
   z-index: 2;
@@ -86,6 +85,12 @@ div#bg-3-1 {
 }
 
 div#bg-3-2 {
+  width: 603px;
+  height: 583px;
+  top: 1050px;
+  right: 70px;
+}
+div#bg-3-12 {
   width: 603px;
   height: 583px;
   top: 1050px;
@@ -208,10 +213,7 @@ div#bg-1-5 {
   margin: auto;
 }
 
-#chart {
-  float: left;
 
-}
 
 .openText {
   float: right;
