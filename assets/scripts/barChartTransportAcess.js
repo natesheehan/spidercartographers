@@ -17,21 +17,7 @@ var svgBar = d3.select("#my_dataviz")
   .attr("transform",
     "translate(" + marginBar.left + "," + marginBar.top + ")");
 
-// Parse the Data
-data = [{
-    "mode": "Bus Stops",
-    "share": 38.47993334
-  },
-  {
-    "mode": "Train Stations",
-    "share": 0.320094431
-  },
-  {
-    "mode": "Metro Stations",
-    "share": 0.124843772
-  }
-];
-
+d3.json("http://dev.spatialdatacapture.org:8717/averages/mean/stations", function(data) {
 // Add X axis
 var x = d3.scaleLinear()
   .domain([0, 40])
@@ -63,7 +49,7 @@ svgBar.selectAll("myRect")
     return y(d.mode);
   })
   .attr("width", function(d) {
-    return x(d.share);
+    return x(d.mean);
   })
   .attr("height", y.bandwidth())
   .attr("fill", "#1b262c")
@@ -82,3 +68,4 @@ svgBar.selectAll("myRect")
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
     .text("Transport Type");
+})

@@ -1,7 +1,6 @@
 /*--------------------------------------------------------------*/
 /* GENERAL */
 /*--------------------------------------------------------------*/
-
 @font-face {
   font-family: Futura;
   src: url(Futura Bold font.tff);
@@ -20,7 +19,7 @@ h1, .sig, p, a, h4, h3 {
   color: #ffa372;
 }
 
-h3 {  
+h3 {
   display: block;
   margin-block-start: 0em;
   margin-block-end: 0.5em;
@@ -32,17 +31,13 @@ h3 {
 /*--------------------------------------------------------------*/
 /* STORY PAGE - PARALLAX SCROLLING */
 /*--------------------------------------------------------------*/
-
-body#story {
-  background-color: #fff3e0;
-  height: 18600px;
-}
+body#story {}
 
 /* foreground (balloons/landscape) */
 div#parallax-bg-1 {
   position: fixed;
   width: 1200px;
-  margin-top: 2600px;
+  margin-top: -900px;
   top: 0;
   left: 50%;
   margin-left: -600px;
@@ -53,7 +48,7 @@ div#parallax-bg-1 {
 div#parallax-bg-2 {
   position: fixed;
   width: 1200px;
-  margin-top: 1330px;
+  margin-top: -650px;
   left: 50%;
   margin-left: -600px;
   z-index: 2;
@@ -93,6 +88,13 @@ div#bg-3-2 {
   right: 70px;
 }
 
+div#bg-3-12 {
+  width: 603px;
+  height: 583px;
+  top: 1050px;
+  right: 70px;
+}
+
 div#bg-3-3 {
   width: 446px;
   height: 713px;
@@ -104,6 +106,13 @@ div#bg-3-4 {
   width: 1104px;
   height: 684px;
   top: 2800px;
+  right: 0px;
+}
+
+div#bg-3-4 {
+  width: 1104px;
+  height: 684px;
+  top: 3400px;
   right: 0px;
 }
 
@@ -184,10 +193,69 @@ div#bg-1-5 {
   left: -200px;
 }
 
+.openTitle {
+  text-align: center;
+  color: #1b262c;
+  font-style: italic;
+  font-size: 50px;
+  margin-top: 10%;
+}
+
+.introText {
+  z-index: 1000;
+  font-family: futura;
+  font-size: 25px;
+}
+
+.openDiv {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: block;
+  margin: auto;
+}
+
+.nextButton {
+  margin-left: 10%;
+  color: #1b262c;
+}
+
+#ruralVsUrban{
+  margin-top: 250px;
+  display: block;
+  text-align: center;
+}
+.ruralUrbanText{
+  margin-top: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: justify;color: #1b262c;
+}
+
+.openText {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 7%;
+  color: #1b262c;
+}
+
+#my_dataviz {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.transportAccessText {
+  text-align: left;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  color: #1b262c;
+}
+
 /*--------------------------------------------------------------*/
 /* STORY PAGE CITY ANIMATION */
 /*--------------------------------------------------------------*/
-
 #little_city {
   position: relative;
 }
@@ -207,7 +275,6 @@ div#bg-1-5 {
 /*--------------------------------------------------------------*/
 /* SNAP SCROLLING */
 /*--------------------------------------------------------------*/
-
 * {
   box-sizing: border-box;
 }
@@ -278,7 +345,6 @@ figure {
 /*--------------------------------------------------------------*/
 /* HOME PAGE TRANSPORT MODES ANIMATION */
 /*--------------------------------------------------------------*/
-
 #home {
   background-color: #1b262c;
   background-size: auto;
@@ -286,7 +352,7 @@ figure {
   margin: 0;
 }
 
-#homepageTitle{
+#homepageTitle {
   position: relative;
   padding: 5px;
 }
@@ -365,20 +431,29 @@ figure {
 
 /* BOUNCING ANIMATION */
 @keyframes bounce {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(15px); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 /* ROTATION ANIMATION */
 @keyframes rotation {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*--------------------------------------------------------------*/
 /* HOMEPAGE MENU */
 /*--------------------------------------------------------------*/
-
 .homepage_menu {
   position: absolute;
   z-index: 5;
@@ -442,9 +517,7 @@ figure {
 /*--------------------------------------------------------------*/
 /* INTERACTIVE MAP PAGE INTERACTIVE GRAPH */
 /*--------------------------------------------------------------*/
-
 /* set up page */
-
 #map {
   margin: 0;
   padding: 0;
@@ -480,9 +553,7 @@ figure {
   width: 100px;
   background-color:rgba(27,38,44, 0.7);
 } */
-
 /* sidebar contents */
-
 .msoaInfo {
   position: absolute;
   font-family: futura;
@@ -492,31 +563,33 @@ figure {
   height: 45%;
   font-size: 14px;
   color: #222;
-  background-color:#1b262c;
+  background-color: #1b262c;
   border-radius: 3px;
 }
 
 .msoaInfoText {
- color:#fff3e0;
+  color: #fff3e0;
 }
 
 /* charts - interactive map page */
-
 .axis {
- color:#fff3e0
+  color: #fff3e0
 }
 
 .gridLines {
- color:#0d1316
+  color: #0d1316
 }
 
 #Legend {
- font-size:0.7em;
+  font-size: 0.7em;
+}
+
+#legendUrban {
+  font-size: 0.7em;
 }
 
 /* cluster console */
-
-#clusterConsole{
+#clusterConsole {
   position: absolute;
   line-height: 18px;
   height: 150px;
@@ -544,10 +617,12 @@ figure {
 }
 
 /* switches for clusters and flows */
-
 .onoffswitchCluster1, .onoffswitchCluster2, .onoffswitchCluster3, .onoffswitchCluster4, .onoffswitchCluster5, .onoffswitchFlows {
-  position: relative; width: 40px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative;
+  width: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .onoffswitchCluster1-checkbox, .onoffswitchCluster2-checkbox, .onoffswitchCluster3-checkbox, .onoffswitchCluster4-checkbox, .onoffswitchCluster5-checkbox, .onoffswitchFlows-checkbox {
@@ -555,8 +630,12 @@ figure {
 }
 
 .onoffswitchCluster1-label, .onoffswitchCluster2-label, .onoffswitchCluster3-label, .onoffswitchCluster4-label, .onoffswitchCluster5-label, .onoffswitchFlows-label {
-  display: block; overflow: hidden; cursor: pointer;
-  height: 20px; padding: 0; line-height: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
   border-radius: 20px;
   background-color: grey;
   transition: background-color 0.3s ease-in;
@@ -564,63 +643,74 @@ figure {
 
 .onoffswitchCluster1-label:before, .onoffswitchCluster2-label:before, .onoffswitchCluster3-label:before, .onoffswitchCluster4-label:before, .onoffswitchCluster5-label:before, .onoffswitchFlows-label:before {
   content: "";
-  display: block; width: 16px; height: 16px; margin: 0px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0px;
   background: #FFFFFF;
-  position: absolute; top: 2px; bottom: 0;
+  position: absolute;
+  top: 2px;
+  bottom: 0;
   right: 22px;
   border-radius: 16px;
-  transition: all 0.3s ease-in 0s; 
+  transition: all 0.3s ease-in 0s;
 }
 
-.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before,
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before,
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before,
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before,
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before,
-.onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label:before {
-  right: 2px; 
+.onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label:before,
+.onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label:before,
+.onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label:before,
+.onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label:before,
+.onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label:before,
+.onoffswitchFlows-checkbox:checked+.onoffswitchFlows-label:before {
+  right: 2px;
 }
 
-.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label {
+.onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label {
   background-color: #186da0;
 }
-.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label, .onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before {
- border-color: #186da0;
+
+.onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label, .onoffswitchCluster1-checkbox:checked+.onoffswitchCluster1-label:before {
+  border-color: #186da0;
 }
 
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label {
+.onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label {
   background-color: #fff059;
 }
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label, .onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before {
- border-color: #fff059;
+
+.onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label, .onoffswitchCluster2-checkbox:checked+.onoffswitchCluster2-label:before {
+  border-color: #fff059;
 }
 
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label {
+.onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label {
   background-color: #ffa372;
 }
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label, .onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before {
- border-color: #ffa372;
+
+.onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label, .onoffswitchCluster3-checkbox:checked+.onoffswitchCluster3-label:before {
+  border-color: #ffa372;
 }
 
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label {
+.onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label {
   background-color: #ed6663;
 }
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label, .onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before {
- border-color: #ed6663;
+
+.onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label, .onoffswitchCluster4-checkbox:checked+.onoffswitchCluster4-label:before {
+  border-color: #ed6663;
 }
 
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label {
+.onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label {
   background-color: #37a583;
 }
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label, .onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
- border-color: #37a583;
+
+.onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label, .onoffswitchCluster5-checkbox:checked+.onoffswitchCluster5-label:before {
+  border-color: #37a583;
 }
 
-.onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label {
+.onoffswitchFlows-checkbox:checked+.onoffswitchFlows-label {
   background-color: black;
 }
-.onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label, .onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label:before {
- border-color: black;
+
+.onoffswitchFlows-checkbox:checked+.onoffswitchFlows-label, .onoffswitchFlows-checkbox:checked+.onoffswitchFlows-label:before {
+  border-color: black;
 }
 
 #clusternames {
@@ -666,27 +756,57 @@ figure {
   left: 5%;
   width: 90%;
   top: 82%;
-
 }
 
 .DataSources {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color:#37a583;
+  background-color: #37a583;
   width: 100%;
-  }
-  
-  .DataSourcesText {
-  color:#fff3e0;
+}
+
+.DataSourcesText {
+  color: #fff3e0;
   margin-left: 20px;
-  }
+}
 
 /*--------------------------------------------------------------*/
 /* STORY PAGE INTERACTIVE CHARTS */
 /*--------------------------------------------------------------*/
-
 .tooltip {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
+  display: block;
+  opacity: 0;
+}
+
+.tooltipUrban {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
+  display: block;
+  opacity: 0;
+}
+
+.tooltipRural {
   background: #eee;
   box-shadow: 0 0 5px #999999;
   color: #333;
@@ -719,8 +839,16 @@ rect.disabled {
 }
 
 #chart {
-  float: left;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.totalMSOATravel{
   margin-left: 10%;
+  margin-right: 10%;
+}
+.totalTravelMSOAText{
+  color: #1b262c;
 }
 
 chart-container {
@@ -741,12 +869,12 @@ chart-container {
 }
 
 svg text {
-  fill:#ffa372;
+  fill: #ffa372;
   font-family: futura;
 }
 
 .msoaInfo svg text {
-  fill:#fff3e0;
+  fill: #fff3e0;
   font-family: futura;
 }
 
@@ -780,6 +908,14 @@ svg text {
   padding: 5px;
 }
 
+.peopleAndPublicTransportText {
+  text-align: left;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 5%;
+  color: #1b262c;
+}
+
 /* Clearfix (clear floats) */
 .row::after {
   content: "";
@@ -793,15 +929,83 @@ svg text {
   margin-top: 5%;
 }
 
+.avgTransportTimeTitle {
+  font-size: 40px;
+  font-family: futura;
+}
+
+.row {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.transportTimeTitle {
+  font-family: futura;
+}
+
+.trainImage {
+  width: 40%;
+}
+
+.otherImage {
+  width: 20%;
+}
+
+.travelTimeText {
+  margin-bottom: 5%;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #1b262c;
+}
+
+#my_dataviz1 {
+  margin-top: 2%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.boxPlotText {
+  text-align: left;
+  display: block;
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #1b262c;
+}
+
+.barChart {
+  display: block;
+  height: 60%;
+  width: 30%;
+  text-align: center;
+  margin: auto;
+}
+
+.transportBoxPlotText {
+  text-align: left;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 5%;
+  color: #1b262c;
+}
+
+.barChartPeople {
+  display: block;
+  height: 60%;
+  width: 30%;
+  text-align: center;
+  margin: auto;
+}
+
 /*--------------------------------------------------------------*/
 /* SPIDER ANIMATION */
 /*--------------------------------------------------------------*/
-
 .spider {
   position: absolute;
   display: inline-block;
   top: 0;
-  left: 35%;
+  left: 25%;
   /* 4. Animatie */
   animation: swing 2s infinite;
   transform-origin: top;
@@ -817,16 +1021,16 @@ svg text {
 }
 
 .spider .body {
-  width: 100px;
-  height: 80px;
+  width: 80px;
+  height: 60px;
   background: #222;
   position: relative;
   border-radius: 50%;
 }
 
 .spider .body .eye {
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   position: absolute;
   bottom: 20px;
   background: #fff;
@@ -931,75 +1135,73 @@ svg text {
 /* --------------------------------------------------------------*/
 /* INTERACTIVE MAP POP UP BOX */
 /*--------------------------------------------------------------*/
-
-#blur_out{
+#blur_out {
   /* change display to none when close button is clicked */
   position: absolute;
-  top: 0; 
-  left: 0; 
-  height: 100%; 
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
   z-index: 90;
   background-color: black;
   opacity: .50;
 }
 
-#popup_box { 
+#popup_box {
   /* display:none; */
-  position: absolute; 
-  height: 35%;  
-  width: 40%; 
+  position: absolute;
+  height: 35%;
+  width: 40%;
   left: 30%;
   top: 30%;
-  z-index: 100; 
-  background:#37a583;    
+  z-index: 100;
+  background: #37a583;
   border-radius: 25px;
-  padding:20px;  
-  font-size:15px;  
+  padding: 20px;
+  font-size: 15px;
   -moz-box-shadow: 0 0 5px black;
   -webkit-box-shadow: 0 0 5px black;
   box-shadow: 0 0 5px black;
 }
 
-#popup_box a{  
-cursor: pointer;  
-text-decoration: none;  
-} 
+#popup_box a {
+  cursor: pointer;
+  text-decoration: none;
+}
 
-#popup_box a:hover{  
-  cursor: pointer;  
+#popup_box a:hover {
+  cursor: pointer;
   color: yellow;
-  } 
+}
 
-#popup_box p {  
+#popup_box p {
   color: #fff3e0;
-} 
+}
 
-#popup_box h1 {  
+#popup_box h1 {
   color: #fff3e0;
-} 
+}
 
 #popupBoxClose {
-  font-size:20px;  
-  line-height:15px;  
-  right:20px;  
-  top:20px;  
-  position:absolute;  
-  color:#fff3e0;  
-  font-weight:500;      
+  font-size: 20px;
+  line-height: 15px;
+  right: 20px;
+  top: 20px;
+  position: absolute;
+  color: #fff3e0;
+  font-weight: 500;
 }
 
 /* --------------------------------------------------------------*/
 /* BURGER MENU */
 /*--------------------------------------------------------------*/
- 
 .nav {
   -webkit-transition: left 0.5s ease;
   -moz-transition: left 0.5s ease;
   -ms-transition: left 0.5s ease;
   -o-transition: left 0.5s ease;
   transition: left 0.5s ease;
-  background:#37a583;
+  background: #37a583;
   color: #fff3e0;
   cursor: pointer;
   font-size: 2rem;
@@ -1012,7 +1214,9 @@ text-decoration: none;
   z-index: 1;
 }
 
-.nav.expanded { left: 0; }
+.nav.expanded {
+  left: 0;
+}
 
 .nav ul {
   position: absolute;
@@ -1046,9 +1250,11 @@ text-decoration: none;
   z-index: 2;
 }
 
-.nav-toggle:hover { opacity: 0.8; }
+.nav-toggle:hover {
+  opacity: 0.8;
+}
 
-.nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+.nav-toggle .nav-toggle-bar, .nav-toggle .nav-toggle-bar::after, .nav-toggle .nav-toggle-bar::before {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1059,19 +1265,27 @@ text-decoration: none;
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background:#fff3e0;
+  background: #fff3e0;
   content: '';
   height: 0.25rem;
   width: 100%;
 }
 
-.nav-toggle .nav-toggle-bar { margin-top: 0; }
+.nav-toggle .nav-toggle-bar {
+  margin-top: 0;
+}
 
-.nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+.nav-toggle .nav-toggle-bar::after {
+  margin-top: 0.8rem;
+}
 
-.nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+.nav-toggle .nav-toggle-bar::before {
+  margin-top: -0.8rem;
+}
 
-.nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+.nav-toggle.expanded .nav-toggle-bar {
+  background: transparent;
+}
 
 .nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
   background: white;

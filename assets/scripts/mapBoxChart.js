@@ -22,13 +22,13 @@ const height = 300;
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right;
 
-d3.selectAll("svg").remove(); 
+d3.selectAll("svg").remove();
 
 const svg = d3.select('.interactiveChart')
 .append("svg")
     .attr("width", width)
     .attr("height", height);
-    
+
 const chart = svg.append('g')
     .attr('transform',`translate(${margin.left}, 20)`);
 
@@ -57,7 +57,7 @@ chart.append('g')
     .attr('stroke-width',0);
     // .call(wrap, xScale.bandwidth());
 
-//grid lines  
+//grid lines
 const grid = chart.append('g')
 
 const gridLines = grid.append('g')
@@ -94,7 +94,7 @@ barGroups
     .attr('height', (s) => innerHeight - yScale(s.value))
     .attr('width', xScale.bandwidth())
     .on('mouseenter', function(data, i){
-        
+
         const y = yScale(avgValsMap[data.mode])
         //thats the average national usage of transport modes lines
         const line = chart.append("svg:line")
@@ -197,4 +197,3 @@ chart.append("svg:line")
 
 
 }
-

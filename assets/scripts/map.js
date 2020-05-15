@@ -38,7 +38,6 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 var db = firebase.database();
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Read in MSOA data and check that it worked
 const msoas = "assets/data/msoas.geojson"
