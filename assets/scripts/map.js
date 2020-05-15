@@ -40,7 +40,6 @@ var db = firebase.database();
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 // Read in MSOA data and check that it worked
 const msoas = "http://127.0.0.1:8887/data/msoas.geojson"
 console.log(msoas);
@@ -132,7 +131,6 @@ map.on('load', function() {
         ['match',
         ['get', 'log_zscore_kmeans_cluster'],
         3,'#186da0',
-        // 4,'#fff059',
         /* other */ 'rgba(27,38,44, 0.0)'],  
         'fill-opacity': [
             'case',
@@ -165,9 +163,13 @@ map.on('load', function() {
     });
 
     // Get HTML elements that will change when an MSOA is clicked on
-    var idDisplay = document.getElementById('msoaId');
     var nameDisplay = document.getElementById('msoaName');
     var clusterNumberDisplay = document.getElementById('clusterNumber');
+
+    // Store cluster names as list
+    var clusterNames = ["Soley car dependant", "Lack of accessibility across all transport modes", 
+                        "High public transport and good accessibility", "Car reliant but high public transport", 
+                        "Good train accessibility but car dependant"];
 
     // Store which MSOA is being hovered over or clicked on 
     var msoaID = null;
@@ -212,7 +214,7 @@ map.on('load', function() {
               msoaIDClick = e1.features[0].properties.msoa11cd;
 
               // When a new MSOA is clicked on, turn off flows switchs and reset flow layers
-              document.getElementById("switch").checked = false;
+              document.getElementById("myonoffswitchFlows").checked = false;
               turnOffFlows();
 
               // Set variables equal to the current, clicked feature's info
@@ -237,7 +239,7 @@ map.on('load', function() {
               // Display the id, name and cluster in the sidebar
               // idDisplay.textContent = idOfMsoa;
               nameDisplay.textContent = nameOfMsoa;
-              clusterNumberDisplay.textContent = currentObj.log_zscore_kmeans_cluster;
+              clusterNumberDisplay.textContent = clusterNames[currentObj.log_zscore_kmeans_cluster - 1];
 
               // Get data and draw chart
               const a = currentObj.work_from_home_perc;
@@ -269,10 +271,11 @@ map.on('load', function() {
 
     ///////////////////////////////////////////////////////////////////////////
 
-    // If cluster switch is toggled on
+    // If cluster's switch is toggled on...
     function getClustersColoured(){
-      // cluster 1
-      $('#myonoffswitchCluster1').click(function(){
+
+      // High public transport and good accessibility
+      $('#myonoffswitchCluster3').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('state-fills', 'visibility', 'visible');
         }
@@ -280,8 +283,9 @@ map.on('load', function() {
           map.setLayoutProperty('state-fills', 'visibility', 'none');
         }
       })
-      // cluster 2 
-      $('#myonoffswitchCluster2').click(function(){
+
+      // Car reliant but high public transport 
+      $('#myonoffswitchCluster4').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('cluster2', 'visibility', 'visible');
         }
@@ -289,8 +293,9 @@ map.on('load', function() {
           map.setLayoutProperty('cluster2', 'visibility', 'none');
         }
       })
-      // cluster 3 
-      $('#myonoffswitchCluster3').click(function(){
+
+      // Good train accessibility but car dependant 
+      $('#myonoffswitchCluster5').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('cluster3', 'visibility', 'visible');
         }
@@ -298,8 +303,9 @@ map.on('load', function() {
           map.setLayoutProperty('cluster3', 'visibility', 'none');
         }
       })
-      // cluster 4 
-      $('#myonoffswitchCluster4').click(function(){
+
+      // Soley car dependant
+      $('#myonoffswitchCluster1').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('cluster4', 'visibility', 'visible');
         }
@@ -307,8 +313,9 @@ map.on('load', function() {
           map.setLayoutProperty('cluster4', 'visibility', 'none');
         }
       })
-      // cluster 5 
-      $('#myonoffswitchCluster5').click(function(){
+
+      // Lack of accessibility across all transport modes 
+      $('#myonoffswitchCluster2').click(function(){
         if($(this).is(':checked')){
           map.setLayoutProperty('cluster5', 'visibility', 'visible');
         }
@@ -323,13 +330,13 @@ map.on('load', function() {
   ///////////////////////////////////////////////////////////////////////////
 
     // If flows switch is toggled on...
-    $('#switch').click(function(){
+    $("#myonoffswitchFlows").click(function(){
         if($(this).is(':checked')){
 
             // If the user tries to turn on flows without choosing an MSOA...
             if (msoaIDClick == null) {
               alert("Please click on an MSOA.");
-              document.getElementById("switch").checked = false;
+              document.getElementById("myonoffswitchFlows").checked = false;
             }
 
             console.log('Flows switch has been checked...');
@@ -337,8 +344,6 @@ map.on('load', function() {
 
             // Set API URL for ORIGIN flows
             var url = "http://dev.spatialdatacapture.org:8717/data/originflows/" + msoaIDClick + "/";
-
-            //////////////////////////////////////////////////////////////////////
 
             // Get the origin flows data 
             $.getJSON ( url , function( data ) {
@@ -432,43 +437,12 @@ map.on('load', function() {
 
             }); // end of getJSON
 
-              // DECK.GL ATTEMPS 
-
-              // Create new map 
-              // const flowMap = new mapboxgl.Map({
-              //     container: 'map_container',
-              //     style: 'mapbox://styles/cheyne-campbell/ck966jun93urx1iqlhlheiknl',
-              //     center: dataArray[0].orig,
-              //     zoom: 12,
-              //     pitch: 60
-              // });
-
-              // NOTE: colors need to be RGB not HEX
-
-              // flowMap.on('style.load', () => {
-              //     const flowArcs = new MapboxLayer({
-              //       id: 'flowArcs',
-              //       type: ArcLayer,
-              //       data: dataArray,
-              //       getSourcePosition: d => d.orig,
-              //       getTargetPosition: d => d.dest,
-              //       getArcColor: d => d.properties.color
-              //       getTargetColor: d => [0, 128, 200]
-              //       strokeWidth: d => d.properties.
-              //     });
-
-              //     // //Add the deck.gl arc layer to the map 
-              //     flowMap.addLayer(flowArcs);
-
-              // });
-
         //////////////////////////////////////////////////////////////////////
 
         } else {
             console.log('Our checkbox is not checked!');
             turnOffFlows();
         }
-
     }); // end of flows switch
 
     //////////////////////////////////////////////////////////////////////
@@ -489,8 +463,8 @@ map.on('load', function() {
       if ( typeof borderLayer !== 'undefined') {
         map.removeLayer('state-borders');
       }
-
-    }
+      
+    } // end of turnOffFlows function
 
 }); // end of on load
 

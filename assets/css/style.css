@@ -7,7 +7,6 @@
   src: url(Futura Bold font.tff);
 }
 
-/* links color */
 a {
   color: #ed6663;
 }
@@ -39,7 +38,7 @@ body#story {
   height: 18600px;
 }
 
-/* foreground (balloons/landscape)*/
+/* foreground (balloons/landscape) */
 div#parallax-bg-1 {
   position: fixed;
   width: 1200px;
@@ -50,7 +49,7 @@ div#parallax-bg-1 {
   z-index: 1;
 }
 
-/* background middle layer*/
+/* background middle layer */
 div#parallax-bg-2 {
   position: fixed;
   width: 1200px;
@@ -189,19 +188,16 @@ div#bg-1-5 {
 /* STORY PAGE CITY ANIMATION */
 /*--------------------------------------------------------------*/
 
-/* city animation for story page */
 #little_city {
   position: relative;
 }
 
-/* city animation for story page */
 #little_buildings {
   position: absolute;
   width: 100%;
   bottom: 0;
 }
 
-/* city animation for story page */
 #little_bike {
   width: 5%;
   bottom: 0;
@@ -280,7 +276,7 @@ figure {
 }
 
 /*--------------------------------------------------------------*/
-/* HOME PAGE TRANSPORT MODES */
+/* HOME PAGE TRANSPORT MODES ANIMATION */
 /*--------------------------------------------------------------*/
 
 #home {
@@ -338,17 +334,12 @@ figure {
   bottom: 12%;
 }
 
-/* APPLY BOUNCE EFFECT TO CAR BODY */
-#car_bounce, #wheel_holes {
+/* apply bounce effect to car and bus body */
+#car_bounce, #wheel_holes, #bus_no_wheels, #bus_wheel_holes {
   animation: bounce 1s infinite linear;
 }
 
-/* APPLY BOUNCE EFFECT TO BUS BODY */
-#bus_no_wheels, #bus_wheel_holes {
-  animation: bounce 1s infinite linear;
-}
-
-/* APPLY ROTATION TO CAR WHEELS */
+/* apply rotation to car wheels */
 .cls-6 {
   transform-box: fill-box;
   transform-origin: center;
@@ -356,7 +347,7 @@ figure {
   animation: rotation 4s infinite linear;
 }
 
-/* APPLY ROTATION TO BIKE WHEELS */
+/* apply roation to bike wheels */
 #bike-wheels_medium1, #bike-wheels_medium2 {
   transform-box: fill-box;
   transform-origin: center;
@@ -364,7 +355,7 @@ figure {
   animation: rotation 1s infinite linear;
 }
 
-/* APPLY ROTATION TO BUS WHEELS */
+/* apply rotation to bus wheels */
 #bus_wheels_ring .bus-cls-4 {
   transform-box: fill-box;
   transform-origin: center;
@@ -452,6 +443,8 @@ figure {
 /* INTERACTIVE MAP PAGE INTERACTIVE GRAPH */
 /*--------------------------------------------------------------*/
 
+/* set up page */
+
 #map {
   margin: 0;
   padding: 0;
@@ -475,7 +468,7 @@ figure {
   padding-top: 120px;
 }
 
-.mapLegend{
+/* .mapLegend{
   position: relative;
   right: -1170px;
   top: 50px;
@@ -486,7 +479,9 @@ figure {
   margin-bottom: 40px;
   width: 100px;
   background-color:rgba(27,38,44, 0.7);
-}
+} */
+
+/* sidebar contents */
 
 .msoaInfo {
   position: absolute;
@@ -503,7 +498,6 @@ figure {
 
 .msoaInfoText {
  color:#fff3e0;
- 
 }
 
 /* charts - interactive map page */
@@ -520,6 +514,8 @@ figure {
  font-size:0.7em;
 }
 
+/* cluster console */
+
 #clusterConsole{
   position: absolute;
   line-height: 18px;
@@ -532,8 +528,6 @@ figure {
 #clusterConsole p {
   margin-top: 0;
 }
-
-/*toggle for clusters*/
 
 #clusterSwitch {
   position: relative;
@@ -549,18 +543,18 @@ figure {
   text-align: center;
 }
 
-/* switches for clusters */
+/* switches for clusters and flows */
 
-.onoffswitchCluster1, .onoffswitchCluster2, .onoffswitchCluster3, .onoffswitchCluster4, .onoffswitchCluster5 {
+.onoffswitchCluster1, .onoffswitchCluster2, .onoffswitchCluster3, .onoffswitchCluster4, .onoffswitchCluster5, .onoffswitchFlows {
   position: relative; width: 40px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
-.onoffswitchCluster1-checkbox, .onoffswitchCluster2-checkbox, .onoffswitchCluster3-checkbox, .onoffswitchCluster4-checkbox, .onoffswitchCluster5-checkbox {
+.onoffswitchCluster1-checkbox, .onoffswitchCluster2-checkbox, .onoffswitchCluster3-checkbox, .onoffswitchCluster4-checkbox, .onoffswitchCluster5-checkbox, .onoffswitchFlows-checkbox {
   display: none;
 }
 
-.onoffswitchCluster1-label, .onoffswitchCluster2-label, .onoffswitchCluster3-label, .onoffswitchCluster4-label, .onoffswitchCluster5-label {
+.onoffswitchCluster1-label, .onoffswitchCluster2-label, .onoffswitchCluster3-label, .onoffswitchCluster4-label, .onoffswitchCluster5-label, .onoffswitchFlows-label {
   display: block; overflow: hidden; cursor: pointer;
   height: 20px; padding: 0; line-height: 20px;
   border-radius: 20px;
@@ -568,7 +562,7 @@ figure {
   transition: background-color 0.3s ease-in;
 }
 
-.onoffswitchCluster1-label:before, .onoffswitchCluster2-label:before, .onoffswitchCluster3-label:before, .onoffswitchCluster4-label:before, .onoffswitchCluster5-label:before{
+.onoffswitchCluster1-label:before, .onoffswitchCluster2-label:before, .onoffswitchCluster3-label:before, .onoffswitchCluster4-label:before, .onoffswitchCluster5-label:before, .onoffswitchFlows-label:before {
   content: "";
   display: block; width: 16px; height: 16px; margin: 0px;
   background: #FFFFFF;
@@ -582,43 +576,51 @@ figure {
 .onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before,
 .onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before,
 .onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before,
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
+.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before,
+.onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label:before {
   right: 2px; 
 }
 
 .onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label {
-  background-color: #ffa372;
-}
-.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label, .onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before {
- border-color: #ffa372;
-}
-
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label {
-  background-color: #ed6663;
-}
-.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label, .onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before {
- border-color: #ed6663;
-}
-
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label {
-  background-color: #37a583;
-}
-.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label, .onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before {
- border-color: #37a583;
-}
-
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label {
   background-color: #186da0;
 }
-.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label, .onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before {
+.onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label, .onoffswitchCluster1-checkbox:checked + .onoffswitchCluster1-label:before {
  border-color: #186da0;
 }
 
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label {
+.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label {
   background-color: #fff059;
 }
-.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label, .onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
+.onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label, .onoffswitchCluster2-checkbox:checked + .onoffswitchCluster2-label:before {
  border-color: #fff059;
+}
+
+.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label {
+  background-color: #ffa372;
+}
+.onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label, .onoffswitchCluster3-checkbox:checked + .onoffswitchCluster3-label:before {
+ border-color: #ffa372;
+}
+
+.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label {
+  background-color: #ed6663;
+}
+.onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label, .onoffswitchCluster4-checkbox:checked + .onoffswitchCluster4-label:before {
+ border-color: #ed6663;
+}
+
+.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label {
+  background-color: #37a583;
+}
+.onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label, .onoffswitchCluster5-checkbox:checked + .onoffswitchCluster5-label:before {
+ border-color: #37a583;
+}
+
+.onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label {
+  background-color: black;
+}
+.onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label, .onoffswitchFlows-checkbox:checked + .onoffswitchFlows-label:before {
+ border-color: black;
 }
 
 #clusternames {
@@ -637,6 +639,21 @@ figure {
   font-size: .75em;
 }
 
+#flowButtonLabel {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  top: 75%;
+}
+
+.flowsSwitch {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  top: 82%;
+
+}
+
 .DataSources {
   position: absolute;
   bottom: 0;
@@ -650,9 +667,8 @@ figure {
   margin-left: 20px;
   }
 
-
 /*--------------------------------------------------------------*/
-/* STORY PAGE INTERACTIVE CHART */
+/* STORY PAGE INTERACTIVE CHARTS */
 /*--------------------------------------------------------------*/
 
 .tooltip {
@@ -709,7 +725,6 @@ chart-container {
   visibility: hidden;
 }
 
-/* THIS IS WHERE THE GRAPH LABEL COLOR IS DEFINED */
 svg text {
   fill:#ffa372;
   font-family: futura;
@@ -899,65 +914,6 @@ svg text {
 }
 
 /* --------------------------------------------------------------*/
-/* FLOWS BUTTON */
-/*--------------------------------------------------------------*/
-
-#flowsSwitch {
-    position: absolute;
-    left: 5%;
-    width: 90%;
-    top: 80%;
-}
-
-#flowButtonLabel {
-    position: absolute;
-    left: 5%;
-    width: 90%;
-    top: 75%;
-}
-
-input[type=checkbox] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-#flowsLabel {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 40px; 
-  height: 20px;
-  background: grey;
-  display: block;
-  border-radius: 20px;
-  position: relative;
-}
-
-#flowsLabel:after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border-radius: 16px;
-}
-
-input:checked + #flowsLabel {
-  background: blue;
-}
-
-input:checked + #flowsLabel:after {
-  left: calc(100% - .5px);
-  transform: translateX(-100%);
-}
-
-#flowsLabel:active:after {
-  width: 40px;
-}
-
-/* --------------------------------------------------------------*/
 /* INTERACTIVE MAP POP UP BOX */
 /*--------------------------------------------------------------*/
 
@@ -1017,7 +973,6 @@ text-decoration: none;
   color:#fff3e0;  
   font-weight:500;      
 }
-
 
 /* --------------------------------------------------------------*/
 /* BURGER MENU */
