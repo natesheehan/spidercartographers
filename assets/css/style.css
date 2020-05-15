@@ -1081,11 +1081,6 @@ body{
   /* background-color: #bdccd4; */
 }
 
-#cityIconDiv{
-  /* position: relative; */
-  bottom:10px;
- 
-}
 
 #cityIcon{
   position: absolute;
@@ -1094,7 +1089,24 @@ body{
   margin-right: auto;
   width: 100%;
   height: 50%;
-  top:1000px;
+  top:1250px;
+}
+
+#aboutBikeIcon{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 100px;
+  top:25px;  
+}
+
+#aboutBusIcon{
+  position: absolute;
+  width: 75%;
+  height: 70%;
+  right: -220px;
+  top:35px;
+  
 }
 
 .greenTop{
@@ -1108,24 +1120,32 @@ body{
 
 .aboutUs{
   position: absolute;
-  top:100px;
-  left:60px;
+  top:130px;
+  left:50px;
 }
 
 .aboutProject{
   position: absolute;
-  top:600px;
-  right:550px;
+  top:450px;
+  right:700px;
 }
 
 .aboutMethodology{
   position: absolute;
-  top:900px;
-  left:80px;
+  top:800px;
+  left:50px;
+}
+
+.textBox{
+  width: 550px;
+  height: 300px;
+  top: 70px;
+  margin-bottom: 30px;
 }
 
 /* text */
 /* that is paragraph text */
+
 .aboutPage{
   color: #fff3e0;
 }
@@ -1135,30 +1155,32 @@ body{
   font-size: 14px;
 }
 
-
-.aboutUsText{
+#aboutUsText{
   position: absolute;
-  width: 500px;
-}
+  }
 
 .aboutProjectTitle{
   text-align: right;
   position: absolute;
-  right: -480px;
+  right: -650px;
   width: 300px;
   top:0px;
 }
 
-.aboutProjectText{
+#aboutProjectText{
   position: absolute;
-  width: 500px;
-  top:30px
+  text-align: right;
+  width: 650px;
+}
+
+#aboutMethodologyText{
+  width: 650px;
 }
 
 .aboutUsPictures{
   position: absolute;
   height: 120px;
-  left: 450;
+  left: 50px;
   }
 
 #chayne{
@@ -1178,53 +1200,53 @@ body{
   position: absolute;
   height: 120px;
   width: 120px;
-  left: 630px;
+  left: 625px;
   }
 
 #nathanaelName{
   position: absolute;
-  left: 660px;
+  left: 655px;
 }
 
 #alicja{
   position: absolute;
   height: 120px;
   width: 120px;
-  left: 760px;
+  left: 750px;
   }
 
 #alicjaName{
   position: absolute;
-  left: 790px;
+  left: 785px;
 }
 
 #philip{
   position: absolute;
   height: 120px;
   width: 120px;
-  left: 890px;
+  left: 875px;
   }
 
 #philipName{
   position: absolute;
-  left: 920px;
+  left: 905px;
 }
 
 #hussein{
   position: absolute;
   height: 120px;
   width: 120px;
-  left: 1020px;
+  left: 1000px;
   }
 
 #husseinName{
   position: absolute;
-  left: 1050px;
+  left: 1030px;
 }
 
 .aboutUsNames{
   position: absolute;
   height: 120px;
-  left: 450;
+  left: 50px;
   top:190px;
   }
