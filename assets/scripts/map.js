@@ -339,6 +339,8 @@ map.on('load', function() {
               document.getElementById("myonoffswitchFlows").checked = false;
             }
 
+            document.getElementById("flowsLegend").style.display = "inline-block";
+
             console.log('Flows switch has been checked...');
             console.log('Getting flows for: ' + msoaIDClick);
 

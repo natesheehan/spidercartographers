@@ -639,6 +639,21 @@ figure {
   font-size: .75em;
 }
 
+#flowsLegend {
+  display: none;
+  position: absolute;
+  width: 18%;
+  height: 18%;
+  margin-top: 4%;
+  background: rgba(27, 38, 44, 0.6);
+  right: 0;
+  z-index: 2;
+}
+
+#flowsLegend img {
+  height: 100%;
+}
+
 #flowButtonLabel {
   position: absolute;
   left: 5%;
