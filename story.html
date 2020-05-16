@@ -5,13 +5,25 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <script src="assets/scripts/jquery-3.5.0.min.js"></script>
   <script src="assets/scripts/scrollstory/jquery.scrollstory.js"></script>
+  <script type="module" src="assets/scripts/burgermenu.js"></script>
   <script src="assets/scripts/scrollstory.js"></script>
 </head>
 
 <body id="story">
 
-  <div class="button" style="top: 0;left: 0;z-index: 1;position: fixed;margin-left: 100px;margin-top: 70px;"><a class="pushme" href="index.html"> <span class="inner">Home</span></a></div>
+  <!-- burger menu -->
+  <div class="nav-toggle">
+    <div class="nav-toggle-bar"></div>
+  </div>
 
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="story.html">story</a></li>
+      <li><a href="interactiveMap.html">map</a></li>
+      <li><a href="aboutUs.html">about</a></li>
+    </ul>
+  </nav>
   <div id="container">
 
     <section class="story">
@@ -25,7 +37,7 @@
           <img src="assets/images/bikeIconFinal.png" id="little_bike" alt="Bike">
         </div>
 
-        <h4 class="openText">Transportation surrounds us in every facet of life. Pavements lead us to our supermarkets where we can fill up our hungry bellies. Road and train networks journey us
+        <p class="openText">Transportation surrounds us in every facet of life. Pavements lead us to our supermarkets where we can fill up our hungry bellies. Road and train networks journey us
           across vast stretches of land
           to see every corner of our nation, and
           bikes and
@@ -34,7 +46,7 @@
           Transportation has been explored from many different strands of literature, with each researcher's bias emphasising different aspects. As a group of multidisciplinary data scientists from various corners of the world who are bound together
           by a passion for transportation, we believe it's worth exploring the UK’s transportation characteristics to subsequently inform ways in which policies could be targeted to certain areas to alter transport modes. To understand this, we draw
           upon demographic factors are likely to influence transportation choice, and where similarities and differences are found within the UK. So join us, for an exploration of transportation usage in the UK...
-        </h4>
+        </p>
         <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
@@ -48,7 +60,7 @@
           <script src="assets/scripts/pieCharts/pieChartSetUp.js"></script>
         </div>
         <div class="totalMSOATravel">
-          <h2 style="color:#fff3e0"> Total MSOA Travel </h2>
+          <h2 class="avgTransportTimeTitle">  Total MSOA Travel </h2>
           <p class="totalTravelMSOAText">The UK is big, and when it comes to transportation, there is huge variation in accessibility and mode share within MSOA’s. What is an MSOA you ask? A Middle Layer Super Output Area (MSOA) is a geospatial
             statistic
             used in England and
@@ -71,7 +83,7 @@
         <div class="openingRow" id="ruralVsUrban">
           <div class="openingColumn">
             <div id="chartUrban">
-              <h2> Urban MSOA travel share </h2>
+              <h2 class="avgTransportTimeTitle">  Urban travel </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
               <script src="assets/scripts/pieCharts/pieUrbanChart.js"> </script>
               <script src="assets/scripts/pieCharts/pieChartUrbanSetUp.js"></script>
@@ -79,7 +91,7 @@
           </div>
           <div class="openingColumn">
             <div id="chartRural">
-              <h2> Rural MSOA travel share </h2>
+              <h2 class="avgTransportTimeTitle">  Rural travel </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
               <script src="assets/scripts/pieCharts/pieRuralChart.js"> </script>
               <script src="assets/scripts/pieCharts/pieChartRuralSetUp.js"></script>
@@ -100,7 +112,7 @@
         <div class="openingRow" id="londonVsBirmingham">
           <div class="openingColumn">
             <div id="chartLondon">
-              <h2> London MSOA travel share </h2>
+              <h2 class="avgTransportTimeTitle">  London share </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
               <script src="assets/scripts/pieCharts/pieLondonChart.js"> </script>
               <script src="assets/scripts/pieCharts/pieChartLondonSetUp.js"></script>
@@ -108,7 +120,7 @@
           </div>
           <div class="openingColumn">
             <div id="chartBirmingham">
-              <h2> Birmingham MSOA travel share </h2>
+              <h2 class="avgTransportTimeTitle">  Birmingham share </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
               <script src="assets/scripts/pieCharts/pieBirminghamChart.js"> </script>
               <script src="assets/scripts/pieCharts/pieChartBirminghamSetUp.js"></script>
@@ -130,7 +142,7 @@
             <img src="assets/images/london.gif" alt="test" class="cityGif">
           </div>
           <div class="openingColumn">
-            <h2> Discussion about travel types in cities </h2>
+            <h2 class="avgTransportTimeTitle">  Discussion about travel types in cities </h2>
             <p class="cityText">Let’s take London and plot the number of bus stops in each MSOA. Below is a histogram showing that variation. A what? A histogram shows the distribution of a certain variable; in our case it is count of Bus
               stops. The height of a bar
               shows the number of MSOAs that have a certain number of bus stops. For example, there are around 20 MSOAs that have 0-5 bus stops, and almost 250 MSOAs that have 15-20 bus stops (highest bar). Interestingly, there is a smaller number of
@@ -148,7 +160,7 @@
         <script src="https://d3js.org/d3.v4.js"></script>
         <script src="assets/scripts/barChartTransportAcess.js"></script>
 
-        <h2 class="transportAccessTitle"> Transport Access </h2>
+        <h2 style="margin-left:10%;"class="avgTransportTimeTitle">  Transport Access </h2>
         <p class="transportTextAcess">What transport mode people choose to get to work can, of course, depend on access to different modes within the MSOA. In terms of stations, bus stops are by far
           the most common, with an average of 38.5 stops per MSOA. There are 277,094 bus stations across England and Wales. Only 1,811 out of 7,201 MSOAs have train stations, for a total of 2,305 train stations. An average MSOA has 0.32 train
           stations.
@@ -223,7 +235,22 @@
           while the minimum for public and people powered transport in MSOAs is 0.7% and 2.0% respectively, the maximum for these ranges all the way up to 74.6% and 53.8%. These are significantly different to the average MSOA in which 60% travel to
           work by car. The mean and median for this is also shown with the medians of 10% and 10.3%, and the mean of 15.4% and 12.4% respectively, showing that the values near to the max positively affect the mean of the distributions and as such
           these areas are significantly different to the rest of the county.</p>
-        <p class="nextButton"><a href="#" class="next">Next →</a></p>
+          <p style="    margin-left: 10%;
+    margin-right: 10%;
+    color: #fff3e0;"> This shows that there is considerable variation and heterogeneity in transport profile of MSOAs across the UK. Therefore, our aim was to understand whether different groups of MSOAs with a similar transport profile could be identified from within this data. This was done using clustering methods …</p>
+      <p style="    margin-left: 10%;
+    margin-right: 10%;
+    color: #fff3e0;"> The outcome of this was a result of 5 clusters based on the factors of: … </p>
+      <ul style="    margin-left: 10%;
+    margin-right: 10%;
+    color: #fff3e0;">
+        <li>Cluster 1: same as 2 but better PT accessibility and train usage (Rural but central not coastal)</li>
+        <li>Cluster 2: Very low PT usage. High dependance on cars (rural and peripheral - coastal)</li>
+        <li>Cluster 3: Very low PT usage. High dependance on cars (rural and peripheral - coastal)</li>
+        <li>Cluster 4: High PT usage and good accessibility (LONDON and few other big city core msoas)</li>
+        <li>Cluster 5: good PT accessibility but high car dependency (outer london and other urban areas)</li>
+      </ul>
+      <p class="nextButton"><a href="interactiveMap.html" >View clusters on our interactive map →</a></p>
       </div>
     </section>
   </div>

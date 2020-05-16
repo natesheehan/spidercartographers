@@ -52,7 +52,7 @@ svgBar.selectAll("myRect")
     return x(d.mean);
   })
   .attr("height", y.bandwidth())
-  .attr("fill", "#1b262c")
+  .attr("fill", "#37a583")
 
   svgBar.append("text")
     .attr("class", "x label")

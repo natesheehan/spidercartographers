@@ -235,7 +235,7 @@ div#bg-1-5 {
   color: #fff3e0;
 }
 .londonVsBirminghamText{
-  margin-top: 200px;
+  margin-top: 280px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: justify;
@@ -243,7 +243,7 @@ div#bg-1-5 {
 }
 .cityGif{
   width: 80%;
-  margin-top: 5%;
+  margin-top: 10%;
   height: 140%;
   margin-left: 20%;
 }
@@ -272,7 +272,7 @@ div#bg-1-5 {
   color: #fff3e0;
 }
 .ruralUrbanText{
-  margin-top: 200px;
+  margin-top: 280px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: justify;
@@ -1416,7 +1416,7 @@ body{
   width: 150px;
   height: 150px;
   right: 100px;
-  top:25px;  
+  top:25px;
 }
 
 #aboutBusIcon{
@@ -1425,7 +1425,7 @@ body{
   height: 70%;
   right: -220px;
   top:35px;
-  
+
 }
 
 .greenTop{
