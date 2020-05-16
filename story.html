@@ -48,7 +48,7 @@
           <script src="assets/scripts/pieCharts/pieChartSetUp.js"></script>
         </div>
         <div class="totalMSOATravel">
-          <h2> Total MSOA Travel </h2>
+          <h2 style="color:#fff3e0"> Total MSOA Travel </h2>
           <p class="totalTravelMSOAText">The UK is big, and when it comes to transportation, there is huge variation in accessibility and mode share within MSOA’s. What is an MSOA you ask? A Middle Layer Super Output Area (MSOA) is a geospatial
             statistic
             used in England and
@@ -90,7 +90,7 @@
           Given the difference in size and population of urban areas in the UK, comparisons of total figures would be misleading. We therefore look at MSOA level values to understand the differentiation between transport patterns across the UK. The
           most
           obvious discrepancy is between rural and urban areas, where people in rural areas are more reliant on cars than their urban counterparts.</p>
-        <p><a href="#" class="next">Next →</a></p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
 
@@ -120,14 +120,14 @@
           terms of transport usage. However it is noted there is variation within these urban areas as well, thus we can even further down in scale to the MSOA level. </br> </br> Surprisingly, we see that Birmingham has the highest average number of
           bus stops per MSOA, but is that an indication of better public transport availability in Birmingham than London. Definitely not. Due to the population differences, Birmingham is divided into 135 MSOAs while London is divided into 978.
           Getting summary statistics by city leads to misleading conclusions like the one above, and prevents us from understanding the variation within each city. But is there variation? You bet. </p>
-        <p><a href="#" class="next">Next →</a></p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
     <section class="story">
       <div class="content">
         <div class="openingRow">
           <div class="openingColumn">
-            <img src="assets/images/london_bus_stop_density.png" alt="test" class="cityGif">
+            <img src="assets/images/london.gif" alt="test" class="cityGif">
           </div>
           <div class="openingColumn">
             <h2> Discussion about travel types in cities </h2>
@@ -137,8 +137,8 @@
               MSOAs with over 150 bus stops! </br> </br> So yes, London may be better served than any other area in the UK, but services in London are by no means uniformly distributed. Is it possible that some areas of London have worse service than
               other urban areas in the UK? The answer to that question, and many others, lies at the MSOA level.</p>
           </div>
-          <p class="nextButton"><a href="#" class="next">Next →</a></p>
         </div>
+        <p class="nextButton" style="margin-top: 20%;"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
     <section class="story">
@@ -267,7 +267,7 @@
   body {
     min-height: 100%;
     min-height: 100vh;
-    background-color: white;
+    background-color: #1b262c;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -316,7 +316,7 @@
     width: 50%;
     padding: 10px;
     height: 300px;
-    /* Should be removed. Only for demonstration */
+    color: #fff3e0;
   }
 
   /* Clear floats after the columns */
@@ -339,7 +339,7 @@
       font-family: futura;
       font-weight: 400;
       font-size: 1.2rem;
-      color: #1b262c;
+      color: #fff3e0;
       margin-top: 1.2rem;
     }
 
@@ -348,7 +348,7 @@
       font-family: futura;
       font-weight: 300;
       font-size: 1.5rem;
-      color: #1b262c;
+      color: #fff3e0;
       ;
       margin-top: 2rem;
       line-height: 1.3;
