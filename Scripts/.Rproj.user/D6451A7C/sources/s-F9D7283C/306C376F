@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589620603748.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "306C376F",
+    "lastKnownWriteTime" : 4681650911125176320,
+    "last_content_update" : 1589620603748,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7395F7EB",
+        "caption" : "spatial",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=spatial&cache_key=7395F7EB",
+        "displayedObservations" : 7201,
+        "environment" : "",
+        "expression" : "spatial",
+        "object" : "spatial",
+        "preview" : 0,
+        "totalObservations" : 7201,
+        "variables" : 7
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

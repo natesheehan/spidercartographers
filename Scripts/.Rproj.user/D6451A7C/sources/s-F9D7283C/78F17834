@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4156338761",
+    "hash" : "0",
     "id" : "78F17834",
-    "lastKnownWriteTime" : 1587742846,
-    "last_content_update" : 1587742846,
+    "lastKnownWriteTime" : 1589401592,
+    "last_content_update" : 1589401592,
     "path" : "~/Documents/Code Repos/spidercartographers/Scripts/mapping clusters.R",
     "project_path" : "mapping clusters.R",
     "properties" : {
+        "cursorPosition" : "247,44",
+        "scrollLine" : "243"
     },
     "read_only" : false,
     "read_only_alternatives" : [
