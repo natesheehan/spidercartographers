@@ -38,9 +38,6 @@ function renderRuralPieChart (dataset,dom_element_to_append_to, colorScheme){
     .attr('class', 'label');
 
     tooltipRural.append('div')
-    .attr('class', 'count');
-
-    tooltipRural.append('div')
     .attr('class', 'percent');
 
     var path = svg.selectAll('path')

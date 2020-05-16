@@ -18,6 +18,10 @@ var svgBar = d3.select("#my_dataviz")
     "translate(" + marginBar.left + "," + marginBar.top + ")");
 
 d3.json("http://dev.spatialdatacapture.org:8717/averages/mean/stations", function(data) {
+
+  data[0].mode = "Bus stops"
+  data[1].mode = "Train stations"
+  data[2].mode = "Metro stations"
 // Add X axis
 var x = d3.scaleLinear()
   .domain([0, 40])

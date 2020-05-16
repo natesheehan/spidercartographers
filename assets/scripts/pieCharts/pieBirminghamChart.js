@@ -38,9 +38,6 @@ function renderBirminghamPieChart (dataset,dom_element_to_append_to, colorScheme
     .attr('class', 'label');
 
     tooltipUrban.append('div')
-    .attr('class', 'count');
-
-    tooltipUrban.append('div')
     .attr('class', 'percent');
 
     var path = svg.selectAll('path')

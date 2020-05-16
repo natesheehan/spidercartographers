@@ -31,7 +31,7 @@ $.getJSON(url, function(dataBox) {
 
           var chartColors = {
             orange: '#ffa372',
-            black: '#1b262c',
+            black: '#37a583',
             grey: '#bdccd4'
           };
 

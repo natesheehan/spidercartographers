@@ -38,9 +38,6 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
     .attr('class', 'label');
 
     tooltip.append('div')
-    .attr('class', 'count');
-
-    tooltip.append('div')
     .attr('class', 'percent');
 
     var path = svg.selectAll('path')
