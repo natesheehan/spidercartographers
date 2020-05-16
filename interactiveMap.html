@@ -31,17 +31,19 @@
 
          <!-- WELCOME POP UP BOX -->
          <div id="blur_out"></div>
+
          <div id="popup_box">
             <h1>Welcome!</h1>
-            <p>Get ready to explore the transport characteristics of MSOAs in England and Wales! <strong>Double click</strong>
-            on an MSOA to view the breakdown of how people in this MSOA commute to work. After selecting an MSOA, <strong>
-            toggle the flows switch</strong> to see where people work, and how they get there!</p>
-            <a id="popupBoxClose">X</a>
-        </div>
-
-        <!-- FLOWS LEGEND -->
-        <div id="flowsLegend">
-            <img src="assets/images/flowsLegend.png" alt="Flows legend">
+            <p>If you've come here first, we highly recommend that you read the <a href="story.html">story</a> before exploring the map.</p>
+               
+            <p>If you've already read the story, get ready to explore the transport characteristics of MSOAs in England and Wales! 
+               <strong>Double click</strong> on an MSOA to view the breakdown of how people in this MSOA commute to work. After selecting an MSOA, use the 
+               <strong>last switch </strong> in the sidebar to see where people who live in this MSOA work, and how they get there!</p>
+            <a id="popupBoxClose">
+               <div id="popupBoxCloseButton">
+                  <p>Let's go!</p>
+               </div>
+            </a>
         </div>
 
         <!-- MAP SIDEBAR -->
@@ -51,6 +53,7 @@
             <div class="nav-toggle">
               <div class="nav-toggle-bar"></div>
             </div>
+
             <nav class="nav">
               <ul>
                 <li><a href="index.html">home</a></li>
@@ -61,6 +64,7 @@
             </nav>
 
             <!-- msoa info and chart -->
+            <p class="sidebarSubtitle">Choose an MSOA:</p>
             <div class='msoaInfo'>
                <div class='msoaInfoText'><strong>MSOA Name:</strong> <span id='msoaName'></span></div>
                <div class='msoaInfoText'><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
@@ -73,81 +77,104 @@
             <!-- cluster console -->
             <div id="clusterConsole">
 
-               <p>Choose clusters:</p>
-               <div class="cluster1">
-                  <div class="onoffswitchCluster1">
-                     <input type="checkbox" name="onoffswitchCluster1" class="onoffswitchCluster1-checkbox" id="myonoffswitchCluster1" checked="checked">
-                     <label class="onoffswitchCluster1-label" for="myonoffswitchCluster1"></label>
-               </div>
-               </div>
-
-               <div class="cluster2">
-                  <div class="onoffswitchCluster2">
-                     <input type="checkbox" name="onoffswitchCluster2" class="onoffswitchCluster2-checkbox" id="myonoffswitchCluster2" checked="checked">
-                     <label class="onoffswitchCluster2-label" for="myonoffswitchCluster2"></label>
-               </div>
+               <div class="infoButtonAlignment">
+                  <p class="sidebarSubtitle">Choose clusters:</p>
+                  <div id="clustersMoreInfo">
+                     <p>i</p>
+                  </div>
                </div>
 
-               <div class="cluster3">
-                  <div class="onoffswitchCluster3">
-                     <input type="checkbox" name="onoffswitchCluster3" class="onoffswitchCluster3-checkbox" id="myonoffswitchCluster3" checked="checked">
-                     <label class="onoffswitchCluster3-label" for="myonoffswitchCluster3"></label>
-               </div>
-               </div>
+                  <div class="cluster1">
+                     <div class="onoffswitchCluster1">
+                        <input type="checkbox" name="onoffswitchCluster1" class="onoffswitchCluster1-checkbox" id="myonoffswitchCluster1" checked="checked">
+                        <label class="onoffswitchCluster1-label" for="myonoffswitchCluster1"></label>
+                     </div>
+                     <p class='clusterLabel'>High public transport and good accessibility</p>
+                  </div>
 
-               <div class="cluster4">
-                  <div class="onoffswitchCluster4">
-                     <input type="checkbox" name="onoffswitchCluster4" class="onoffswitchCluster4-checkbox" id="myonoffswitchCluster4" checked="checked">
-                     <label class="onoffswitchCluster4-label" for="myonoffswitchCluster4"></label>
-               </div>
-               </div>
+                  <div class="cluster2">
+                     <div class="onoffswitchCluster2">
+                        <input type="checkbox" name="onoffswitchCluster2" class="onoffswitchCluster2-checkbox" id="myonoffswitchCluster2" checked="checked">
+                        <label class="onoffswitchCluster2-label" for="myonoffswitchCluster2"></label>
+                     </div>
+                     <p class='clusterLabel'>Car reliant but high public transport</p>
+                  </div>
 
-               <div class="cluster5">
-                  <div class="onoffswitchCluster5">
-                     <input type="checkbox" name="onoffswitchCluster5" class="onoffswitchCluster5-checkbox" id="myonoffswitchCluster5" checked="checked">
-                     <label class="onoffswitchCluster5-label" for="myonoffswitchCluster5"></label>
-               </div>
-               </div>
+                  <div class="cluster3">
+                     <div class="onoffswitchCluster3">
+                        <input type="checkbox" name="onoffswitchCluster3" class="onoffswitchCluster3-checkbox" id="myonoffswitchCluster3" checked="checked">
+                        <label class="onoffswitchCluster3-label" for="myonoffswitchCluster3"></label>
+                     </div>
+                     <p class='clusterLabel'>Good train accessibility but car dependant</p>
+                  </div>
 
+                  <div class="cluster4">
+                     <div class="onoffswitchCluster4">
+                        <input type="checkbox" name="onoffswitchCluster4" class="onoffswitchCluster4-checkbox" id="myonoffswitchCluster4" checked="checked">
+                        <label class="onoffswitchCluster4-label" for="myonoffswitchCluster4"></label>
+                     </div>
+                     <p class='clusterLabel'>Soley car dependant</p>
+                  </div>
+
+                  <div class="cluster5">
+                     <div class="onoffswitchCluster5">
+                        <input type="checkbox" name="onoffswitchCluster5" class="onoffswitchCluster5-checkbox" id="myonoffswitchCluster5" checked="checked">
+                        <label class="onoffswitchCluster5-label" for="myonoffswitchCluster5"></label>
+                     </div>
+                     <p class='clusterLabel'>Lack of accessibility across all transport modes</p>
+                  </div>
+               
             </div>
 
-            <div id="flowButtonLabel" class='sidebarInstructions' ><p>View flows:</p></div>
-
-            <div class="flowsSwitch">
-               <div class="onoffswitchFlows">
-                  <input type="checkbox" name="onoffswitchFlows" class="onoffswitchFlows-checkbox" id="myonoffswitchFlows" autocomplete="off">
-                  <label class="onoffswitchFlows-label" for="myonoffswitchFlows"></label>
+            <!-- FLOWS SWITCH AND INFO  -->
+            <div class="infoButtonAlignment">
+               <div id="flowButtonLabel" class='sidebarInstructions'><p class="sidebarSubtitle">View where people work:</p></div>
+               <div id="flowsMoreInfo">
+                  <p>i</p>
                </div>
             </div>
 
-            <!-- cluster names -->
-            <div id='clusternames'>
-               <p>High public transport and good accessibility</p>
-               <p>Car reliant but high public transport</p>
-               <p>Good train accessibility but car dependant</p>
-               <p>Soley car dependant</p>
-               <p>Lack of accessibility across all transport modes</p>
-            </div>
+            
+               <div class="flowsSwitch">
+                  <div class="onoffswitchFlows">
+                     <input type="checkbox" name="onoffswitchFlows" class="onoffswitchFlows-checkbox" id="myonoffswitchFlows" autocomplete="off">
+                     <label class="onoffswitchFlows-label" for="myonoffswitchFlows"></label>
+                  </div>
+               </div>
+            
 
             <!-- data source information -->
             <div class="DataSources">
                <div class ="DataSourcesText">
                   <h4> Data Sources </h4>
                   <a href="https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson">ArcGIS.</a>
-  <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates"> ONS </a>
-  <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales"> ONS(2) </a>
-  </br>
-  <a href="https://www.nomisweb.co.uk/census/2011/quick_statistics"> NOMIS </a>
-  <a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1"> NOMIS (2) </a>
-  <a href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan"> GOV.UK </a>
+                  <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates"> ONS </a>
+                  <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales"> ONS(2) </a>
+                  <a href="https://www.nomisweb.co.uk/census/2011/quick_statistics"> NOMIS </a>
+                  <a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1"> NOMIS (2) </a>
+                  <a href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan"> GOV.UK </a>
                </div>
             </div>
 
+         </div> <!-- end of sidebar div -->
+
+         <!-- FLOWS LEGEND -->
+         <div id="flowsLegend">
+            <img src="assets/images/flowsLegend.png" alt="Flows legend">
          </div>
 
-         <!-- map goes here -->
+         <!-- FLOWS POPUP INFO -->
+         <div id="flowsPopup">
+            <div class='flowsText'><strong>Origin:</strong> <span id='flowOrigin'></span></div>
+            <div class='flowsText'><strong>Destination:</strong> <span id='flowDest'></span></div>
+            <div class='flowsText'><strong>Mode:</strong>:</strong> <span id='flowMode'></span></div>
+            <div class='flowsText'><strong>Number of people:</strong> <span id='flowVolume'></span></div>
+         </div>
+
+         <!-- MAPBOX MAP -->
          <div id="map_container"></div>
 
+         <!-- SCRIPTS-->
          <script type="module" src="assets/scripts/map.js"></script>
          <script type="module" src="assets/scripts/welcome_popup.js"></script>
          <script type="module" src="assets/scripts/burgermenu.js"></script>
