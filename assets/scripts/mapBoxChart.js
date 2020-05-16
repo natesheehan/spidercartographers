@@ -22,7 +22,8 @@ const height = 300;
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.left - margin.right;
 
-d3.selectAll("svg").remove();
+// remove only the old chart, not the magnifying glass in search bar 
+d3.select(".interactiveChart").selectAll("*").remove();
 
 const svg = d3.select('.interactiveChart')
 .append("svg")
@@ -159,13 +160,11 @@ chart.append("svg:line")
     .style("stroke", "37a583")
     .style('stroke-dasharray','5 6');
 
-
-
-    // svg.append('text')
-    //     .attr('x', innerWidth / 2)
-    //     .attr('y', 15)
-    //     .attr('text-anchor', 'middle')
-    //     .text('Transport Mode')
+// svg.append('text')
+//     .attr('x', innerWidth / 2)
+//     .attr('y', 15)
+//     .attr('text-anchor', 'middle')
+//     .text('Transport Mode')
 
 // text wrapping function
 // function wrap(text, width) {

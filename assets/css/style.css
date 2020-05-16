@@ -517,61 +517,86 @@ figure {
 /*--------------------------------------------------------------*/
 /* INTERACTIVE MAP PAGE INTERACTIVE GRAPH */
 /*--------------------------------------------------------------*/
-/* set up page */
+
 #map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  background-color: #1b262c;
 }
 
 #map_container {
   position: absolute;
-  left: 30%;
-  width: 70%;
+  width: 72%;
   height: 100%;
+  right: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #map_sidebar {
   position: absolute;
-  width: 30%;
+  width: 28%;
   height: 100%;
-  padding: 2%;
+  left: 0;
+  margin: 0;
+  padding: 5% 2% 2% 2%;
   background-color: #1b262c;
-  padding-top: 120px;
 }
 
-/* .mapLegend{
+.sidebarSubtitle {
   position: relative;
-  right: -1170px;
-  top: 50px;
-  padding: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  line-height: 18px;
-  height: 150px;
-  margin-bottom: 40px;
-  width: 100px;
-  background-color:rgba(27,38,44, 0.7);
-} */
-/* sidebar contents */
-.msoaInfo {
-  position: absolute;
-  font-family: futura;
-  top: 70px;
-  left: 5%;
-  width: 90%;
-  height: 45%;
-  font-size: 14px;
-  color: #222;
-  background-color: #1b262c;
-  border-radius: 3px;
+  margin: 0% 0% 4% 0%;
+  padding: 0;
 }
 
-.msoaInfoText {
+#flowsMoreInfo, #clustersMoreInfo {
+  position: absolute;
+  right: 0;
+  height: 20px;
+  width: 20px;
+}
+
+#flowsMoreInfo p, #clustersMoreInfo p{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 0px;
+  border-radius: 25px;
+  background: #ffa372;
+  color: #1b262c;
+  font-size: 14px;
+}
+
+#clustersMoreInfo p:hover, #flowsMoreInfo p:hover {
+  background: #fff059;
+}
+
+.infoButtonAlignment {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.msoaInfo {
+  position: relative;
+  width: 100%;
+  margin: 0% 0% 4% 0%;
+  font-family: futura;
+  font-size: 14px;
   color: #fff3e0;
 }
 
-/* charts - interactive map page */
 .axis {
   color: #fff3e0
 }
@@ -588,18 +613,23 @@ figure {
   font-size: 0.7em;
 }
 
-/* cluster console */
 #clusterConsole {
-  position: absolute;
-  line-height: 18px;
-  height: 150px;
-  width: 90%;
-  top: 55%;
-  left: 5%;
+  margin: 0% 0% 4% 0%;
 }
 
-#clusterConsole p {
-  margin-top: 0;
+.clusterLabel {
+  margin: 0;
+  padding-left: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff3e0;
+  line-height: 18px;
+}
+
+.cluster1, .cluster2, .cluster3, .cluster4, .cluster5 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 #clusterSwitch {
@@ -616,7 +646,6 @@ figure {
   text-align: center;
 }
 
-/* switches for clusters and flows */
 .onoffswitchCluster1, .onoffswitchCluster2, .onoffswitchCluster3, .onoffswitchCluster4, .onoffswitchCluster5, .onoffswitchFlows {
   position: relative;
   width: 40px;
@@ -713,62 +742,65 @@ figure {
   border-color: black;
 }
 
-#clusternames {
-  position: absolute;
-  line-height: 21px;
-  height: 150px;
-  width: 90%;
-  top: 55%;
-  left: 16%;
-  padding-top: 35px;
-}
-
-#clusternames p {
-  margin: 0;
-  color: #fff3e0;
-  font-size: .75em;
-}
-
 #flowsLegend {
   display: none;
   position: absolute;
-  width: 18%;
-  height: 18%;
-  margin-top: 4%;
-  background: rgba(27, 38, 44, 0.6);
-  right: 0;
-  z-index: 2;
+  z-index: 501;
+  width: 15%;
+  margin: 1% 2% 2% 30%;
+  padding: 1%;
+  border-radius: 10px;
+  background: #1b262c;
 }
 
 #flowsLegend img {
-  height: 100%;
+  width: 100%;
 }
 
-#flowButtonLabel {
+#flowsPopup {
+  visibility: hidden;
   position: absolute;
-  left: 5%;
-  width: 90%;
-  top: 75%;
+  z-index: 500;
+  width: 30%;
+  margin: 1% 2% 2% 47%;
+  padding: 1%;
+  border-radius: 10px;
+  background: #1b262c;
+  color: #fff3e0;
+  font-family: futura;
+  font-size: 12px;
 }
 
-.flowsSwitch {
-  position: absolute;
-  left: 5%;
-  width: 90%;
-  top: 82%;
+#flowsSwitch {
+  margin: 0% 0% 4% 0%;
 }
 
 .DataSources {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #37a583;
   width: 100%;
+  padding: 0;
+  background-color: #37a583;
 }
 
 .DataSourcesText {
-  color: #fff3e0;
-  margin-left: 20px;
+  padding: 2%;
+}
+
+.DataSourcesText h4{
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+.DataSourcesText a {
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.DataSourcesText a:hover {
+  color: yellow;
 }
 
 /*--------------------------------------------------------------*/
@@ -1135,8 +1167,8 @@ svg text {
 /* --------------------------------------------------------------*/
 /* INTERACTIVE MAP POP UP BOX */
 /*--------------------------------------------------------------*/
+
 #blur_out {
-  /* change display to none when close button is clicked */
   position: absolute;
   top: 0;
   left: 0;
@@ -1148,13 +1180,12 @@ svg text {
 }
 
 #popup_box {
-  /* display:none; */
   position: absolute;
-  height: 35%;
   width: 40%;
   left: 30%;
   top: 30%;
   z-index: 100;
+  padding: 5%;
   background: #37a583;
   border-radius: 25px;
   padding: 20px;
@@ -1171,25 +1202,33 @@ svg text {
 
 #popup_box a:hover {
   cursor: pointer;
-  color: yellow;
+  color:#fff059;
 }
 
-#popup_box p {
+#popupBoxCloseButton:hover {
+  background:#fff059;
+}
+
+#popup_box p, #popup_box h1 {
+  position: relative;
+  margin: 0% 0% 2% 0%;
+  padding: 0;
   color: #fff3e0;
 }
 
-#popup_box h1 {
-  color: #fff3e0;
+#popupBoxCloseButton {
+  position: relative;
+  margin: 0% 0% 2% 0%;
+  padding: 2%;
+  width: 20%;
+  text-align: center;
+  background:#ffa372;
+  border-radius: 10px;
 }
 
-#popupBoxClose {
+#popupBoxCloseButton p {
+  color: #37a583;
   font-size: 20px;
-  line-height: 15px;
-  right: 20px;
-  top: 20px;
-  position: absolute;
-  color: #fff3e0;
-  font-weight: 500;
 }
 
 /* --------------------------------------------------------------*/
@@ -1206,11 +1245,11 @@ svg text {
   cursor: pointer;
   font-size: 2rem;
   height: 100vh;
-  left: -30%;
+  left: -28%;
   padding: 6rem 2rem 2rem 2rem;
   position: fixed;
   top: 0;
-  width: 30%;
+  width: 28%;
   z-index: 1;
 }
 
@@ -1238,16 +1277,16 @@ svg text {
 }
 
 .nav-toggle {
+  position: fixed;
+  z-index: 2;
+  top: 1rem;
+  left: 1rem;
+  height: 2rem;
+  width: 2rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   cursor: pointer;
-  left: 1rem;
-  position: fixed;
-  height: 1rem;
-  top: 2rem;
-  width: 2rem;
-  z-index: 2;
 }
 
 .nav-toggle:hover {
@@ -1257,6 +1296,8 @@ svg text {
 .nav-toggle .nav-toggle-bar, .nav-toggle .nav-toggle-bar::after, .nav-toggle .nav-toggle-bar::before {
   position: absolute;
   top: 50%;
+  height: 0.25rem;
+  width: 100%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -1265,10 +1306,8 @@ svg text {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background: #fff3e0;
   content: '';
-  height: 0.25rem;
-  width: 100%;
+  background: #fff3e0;
 }
 
 .nav-toggle .nav-toggle-bar {
@@ -1307,12 +1346,10 @@ svg text {
 /*--------------------------------------------------------------*/
 /* ABOUT US PAGE */
 /*--------------------------------------------------------------*/
+
 body{
   background-color: #1b262c;
-  /* background-color: #fff3e0; */
-  /* background-color: #bdccd4; */
 }
-
 
 #cityIcon{
   position: absolute;

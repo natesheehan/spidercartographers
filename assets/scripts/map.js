@@ -198,13 +198,12 @@ map.on('load', function() {
         );
 
         ///////////////////////////////////////////////////////////////////////////
-
+        
         // When the MSOA is clicked on, change data and allow option to display flows
         map.on('click', 'state-fills', (e1) => {
 
           // Check that the feature exits
           if (e1.features.length > 0) {
-
               if (msoaIDClick) {
                 console.log("Storing selected MSOA ID...");
               }
@@ -221,37 +220,29 @@ map.on('load', function() {
               var nameOfMsoa = e1.features[0].properties.msoa11nm;
               var ref = db.ref(e1.features[0].properties.msoa11cd);
 
-              // Get Firebase data
-              ref.on('value', getData, errData);
 
-              var currentObj;
+              // Get data from firebase and display in sidebar
+              ref.on('value', function(snapshot) {
+                var currentObj = snapshot.val();
 
-              function getData(data){
-                currentObj = data.val();
-              }
+                // Display the id, name and cluster in the sidebar
+                nameDisplay.textContent = nameOfMsoa;
+                clusterNumberDisplay.textContent = clusterNames[currentObj.log_zscore_kmeans_cluster - 1];
 
-              function errData(data){
-                console.log("ERROR");
-                console.log(err);
-              }
-
-              // Display the id, name and cluster in the sidebar
-              // idDisplay.textContent = idOfMsoa;
-              nameDisplay.textContent = nameOfMsoa;
-              clusterNumberDisplay.textContent = clusterNames[currentObj.log_zscore_kmeans_cluster - 1];
-
-              // Get data and draw chart
-              const a = currentObj.work_from_home_perc;
-              const b = currentObj.on_foot_perc;
-              const c = currentObj.bicycle_perc;
-              const d = currentObj.car_perc;
-              const e = currentObj.bus_perc;
-              const f = currentObj.train_perc;
-              const g = currentObj.underground_metro_perc;
-              drawChart(a,b,c,d,e,f,g)
+                // Get data and draw chart
+                const a = currentObj.work_from_home_perc;
+                const b = currentObj.on_foot_perc;
+                const c = currentObj.bicycle_perc;
+                const d = currentObj.car_perc;
+                const e = currentObj.bus_perc;
+                const f = currentObj.train_perc;
+                const g = currentObj.underground_metro_perc;
+                drawChart(a,b,c,d,e,f,g)
+              }); // end of ref.on
 
           } // end of feature length - clicked
         }); // end of on click
+
       } // end of feature length - hover
     }); // end of on hover
 
@@ -267,7 +258,7 @@ map.on('load', function() {
       }
       msoaID = null;
     });
-
+  
     ///////////////////////////////////////////////////////////////////////////
 
     // If cluster's switch is toggled on...
@@ -326,117 +317,175 @@ map.on('load', function() {
 
     getClustersColoured();
 
-  ///////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
 
     // If flows switch is toggled on...
     $("#myonoffswitchFlows").click(function(){
         if($(this).is(':checked')){
 
             // If the user tries to turn on flows without choosing an MSOA...
-            if (msoaIDClick == null) {
+            if (msoaIDClick != null) {
+
+              document.getElementById("flowsLegend").style.display = "block";
+
+              console.log('Flows switch has been checked...');
+              console.log('Getting flows for: ' + msoaIDClick);
+
+              // Set API URL for ORIGIN flows
+              var url = "http://dev.spatialdatacapture.org:8717/data/originflows/" + msoaIDClick + "/";
+
+              // Get the origin flows data
+              $.getJSON ( url , function( data ) {
+
+                // Check that call is working
+                console.log("Retrieving data...");
+
+                // Store data for flow features
+                var features = [];
+
+                $.each ( data, function( k, v ) {
+
+                  // Get starting location
+                  var orig_lon = v["Orig_Lon"];
+                  var orig_lat = v["Orig_Lat"];
+                  var orig = [orig_lon, orig_lat];
+
+                  // Get destination location
+                  var dest_lon = v["Dest_Lon"];
+                  var dest_lat = v["Dest_Lat"];
+                  var dest = [dest_lon, dest_lat];
+
+                  // Get breakdown of modes for this origin and destination combination
+                  var mode_list =    ['from_home', 'underground_metro_lightrail_tram',       'Train',   'Taxi',    'motorcycle', 'Bicycle', 'walk',    'other',   'car'];
+                  var mode_display = ['From home', 'Underground, metro, lightrail, or tram', 'Train',   'Taxi',    'Motorcycle', 'Bicycle', 'Walk',    'Other',   'Car'];
+                  var color_list =   ['#ff1c24',   '#ffff059',                               '#35ccef', '#fea472', '#a56ab7',    '#c2ef51', '#ed6663', '#b3b3b3', '#ffffff'];
+
+                  for (var i = 0; i < mode_list.length; i++) {
+
+                    // if the volume is less than 5 don't include in visualization
+                    if ((v[mode_list[i]] > 4) == false) {
+                      console.log("it's a no flow");
+                      continue;
+                    }
+
+                    // Collect data for this mode
+                    var newData = {
+                      'type': 'Feature',
+                      'origname': v["orig_name"],
+                      'destname': v["dest_name"],
+                      'properties': {
+                        'origname_prop': v["orig_name"],
+                        'destname_prop': v["dest_name"],
+                        'mode': mode_display[i],
+                        'color': color_list[i],
+                        'volume': v[mode_list[i]],
+                        'weight': v[mode_list[i]] / 2
+                      },
+                      'geometry': {
+                        'type':'LineString',
+                        'coordinates': [orig, dest]
+                      }
+                    }; // end of newData
+
+                    // Push new data to array and check on progress
+                    features.push(newData);
+                    console.log(features.length, features[0].origname);
+
+                  }; //end of mode_list
+                }); // end of for each
+
+                // Build geoJSON
+                var dataArray = {
+                  'type': 'FeatureCollection',
+                  'features': features,
+                };
+
+                // Check that everything loaded
+                console.log('Data has been loaded:');
+                console.log(dataArray);
+
+                map.addSource('flowLines', {
+                  'type': 'geojson',
+                  'data': dataArray,
+                });
+
+                // Add MSOA outlines
+                map.addLayer({
+                  'id': 'state-borders',
+                  'type': 'line',
+                  'source': 'states',
+                  'layout': {},
+                  'paint': {
+                      'line-color': '#141d21',
+                      'line-width': 1
+                  }
+                });
+
+                map.addLayer({
+                  'id': 'flowLines',
+                  'type': 'line',
+                  'source': 'flowLines',
+                  'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                  },
+                  'paint': {
+                    'line-opacity': 0.75,
+                    'line-color': ['get', 'color'],
+                    'line-width': ['get', 'weight']
+                  }
+                });
+
+                // If there are no flows with 5 or more people, alert user and turn off flows switch
+                if (dataArray.features.length <= 0) {
+                  alert("Uh oh! Not enough people commute from this MSOA to display the data. Try choosing another.");
+                  document.getElementById("myonoffswitchFlows").checked = false;
+                  turnOffFlows();
+                }
+
+                // Add hover pop up box for each flow line
+                map.on('mouseenter', 'flowLines', function(e) {
+
+                  map.getCanvas().style.cursor = 'pointer';
+
+                  console.log(e);
+                  
+                  // Store information about the flow line
+                  var residence = e.features[0].properties.origname_prop;
+                  var workplace = e.features[0].properties.destname_prop;
+                  var mode = e.features[0].properties.mode;
+                  var volume = e.features[0].properties.volume;
+                  
+                  // Make pop up visible
+                  document.getElementById("flowsPopup").style.visibility = "visible";
+
+                  // Find elements where the data will be displayed
+                  var flowOrigin = document.getElementById('flowOrigin');
+                  var flowDest = document.getElementById('flowDest');
+                  var flowMode = document.getElementById('flowMode');
+                  var flowVolume = document.getElementById('flowVolume');
+
+                  // Populate the pop up
+                  flowOrigin.textContent = residence;
+                  flowDest.textContent = workplace;
+                  flowMode.textContent = mode;
+                  flowVolume.textContent = volume;
+                  
+                  // When no flow is hovered on, remove pop up box
+                  map.on('mouseleave', 'flowLines', function() {
+                    map.getCanvas().style.cursor = '';
+                    document.getElementById("flowsPopup").style.visibility = "hidden";
+                  }); // end of mouseleave for flowLines
+
+                });// end of mouseenter for flowLines
+
+              }); // end of getJSON
+            } else {
               alert("Please click on an MSOA.");
               document.getElementById("myonoffswitchFlows").checked = false;
+              turnOffFlows();
+
             }
-
-            document.getElementById("flowsLegend").style.display = "inline-block";
-
-            console.log('Flows switch has been checked...');
-            console.log('Getting flows for: ' + msoaIDClick);
-
-            // Set API URL for ORIGIN flows
-            var url = "http://dev.spatialdatacapture.org:8717/data/originflows/" + msoaIDClick + "/";
-
-            // Get the origin flows data
-            $.getJSON ( url , function( data ) {
-
-              // Check that call is working
-              console.log("Retrieving data...");
-
-              // Store data for flow features
-              var features = [];
-
-              $.each ( data, function( k, v ) {
-
-                // Get starting location
-                var orig_lon = v["Orig_Lon"];
-                var orig_lat = v["Orig_Lat"];
-                var orig = [orig_lon, orig_lat];
-
-                // Get destination location
-                var dest_lon = v["Dest_Lon"];
-                var dest_lat = v["Dest_Lat"];
-                var dest = [dest_lon, dest_lat];
-
-                // Get breakdown of modes for this origin and destination combination
-                var mode_list =  ['from_home', 'underground_metro_lightrail_tram', 'Train', 'Taxi', 'motorcycle', 'Bicycle', 'walk', 'other'];
-                var color_list = ['#696969', '#fff059', '#186da0', '#ffa372', '#714b7f', '#37a583', '#ed6663', '#fff3e0'];
-
-                for (var i = 0; i < mode_list.length; i++) {
-                  // Collect data for this mode
-                  var newData = {
-                    'type': 'Feature',
-                    'id': v["orig_name"],
-                    'properties': {
-                      'type': mode_list[i],
-                      'color': color_list[i],
-                      'volume': v[mode_list[i]],
-                      'weight': v[mode_list[i]]
-                    },
-                    'geometry': {
-                      'type':'LineString',
-                      'coordinates': [orig, dest]
-                    }
-                  }; // end of newData
-
-                  // Push new data to array and check on progress
-                  features.push(newData);
-                  console.log(features.length, features[0].id);
-
-                }; //end of mode_list
-              }); // end of for each
-
-              // Build geoJSON
-              var dataArray = {
-                'type': 'FeatureCollection',
-                'features': features,
-              };
-
-              // Check that everything loaded
-              console.log('Data has been loaded:');
-              console.log(dataArray);
-
-              map.addSource('flowLines', {
-                'type': 'geojson',
-                'data': dataArray,
-              });
-
-              // Add MSOA outlines
-              map.addLayer({
-                'id': 'state-borders',
-                'type': 'line',
-                'source': 'states',
-                'layout': {},
-                'paint': {
-                    'line-color': '#141d21',
-                    'line-width': 1
-                }
-              });
-
-              map.addLayer({
-                'id': 'flowLines',
-                'type': 'line',
-                'source': 'flowLines',
-                'layout': {
-                  'line-join': 'round',
-                  'line-cap': 'round'
-                },
-                'paint': {
-                  'line-color': ['get', 'color'],
-                  'line-width': ['get', 'weight']
-                }
-              });
-
-            }); // end of getJSON
 
         //////////////////////////////////////////////////////////////////////
 
@@ -450,6 +499,8 @@ map.on('load', function() {
 
     // Remove layers that are added when the flows switch is turned on
     function turnOffFlows() {
+
+      document.getElementById("flowsLegend").style.display = "none";
 
       var flowSource = map.getSource('flowLines');
       var flowLayer = map.getLayer('flowLines');
