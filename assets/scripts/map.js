@@ -409,10 +409,12 @@ map.on('load', function() {
                 });
 
                 // Center map on selected MSOA
-                map.flyTo({ 
-                  center: dataArray.features[0].geometry.coordinates[0],
-                  zoom: 10
-                });
+                if (dataArray.features.length > 0) {
+                  map.flyTo({ 
+                    center: dataArray.features[0].geometry.coordinates[0],
+                    zoom: 10
+                  });
+                } 
 
                 // Add MSOA outlines
                 map.addLayer({
