@@ -595,6 +595,7 @@ figure {
   margin: 0;
   padding: 5% 2% 2% 2%;
   background-color: #1b262c;
+  overflow: auto;
 }
 
 .sidebarSubtitle {
@@ -819,21 +820,22 @@ figure {
   font-size: 12px;
 }
 
-#flowsSwitch {
-  margin: 0% 0% 4% 0%;
+.flowsSwitch {
+  margin: 0% 0% 12% 0%;
 }
 
 .DataSources {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 60px;
   padding: 0;
   background-color: #37a583;
 }
 
 .DataSourcesText {
-  padding: 2%;
+  padding: 1%;
 }
 
 .DataSourcesText h4{

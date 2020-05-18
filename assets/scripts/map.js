@@ -220,7 +220,6 @@ map.on('load', function() {
               var nameOfMsoa = e1.features[0].properties.msoa11nm;
               var ref = db.ref(e1.features[0].properties.msoa11cd);
 
-
               // Get data from firebase and display in sidebar
               ref.on('value', function(snapshot) {
                 var currentObj = snapshot.val();
@@ -407,6 +406,12 @@ map.on('load', function() {
                 map.addSource('flowLines', {
                   'type': 'geojson',
                   'data': dataArray,
+                });
+
+                // Center map on selected MSOA
+                map.flyTo({ 
+                  center: dataArray.features[0].geometry.coordinates[0],
+                  zoom: 10
                 });
 
                 // Add MSOA outlines
