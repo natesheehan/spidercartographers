@@ -45,7 +45,55 @@
                   <p>Let's go!</p>
                </div>
             </a>
-        </div>
+         </div>
+
+
+         <!-- FLOWS MORE INFO POP UP BOX -->
+         <div id="flowsInfoPopup">
+            <h3>Commuting Flows</h3>
+            <p>Turning on this switch will display data about where people who live in the selected MSOA go for work. This data is represented 
+            as flows, or lines, where the color indicates the transportation mode used and the thickness reflects how many people commute between 
+            the residence MSOA and the workplace MSOA using a given mode. The visualization excludes flows of less than 5 people.</p>
+            <a id="flowsInfoPopupBoxClose">
+               <div id="flowsInfoPopupBoxCloseButton">
+                  <p>X</p>
+               </div>
+            </a>
+         </div>
+
+          <!-- CLUSTERS MORE INFO POP UP BOX -->
+         <div id="clustersInfoPopup">
+            <h3>High public transport and good accessibility</h3>
+            <p>This cluster is associated with high usage of public transport including the underground/metro/tram, train and bus. 
+               It has very good accessibility to all MSOAs through all transport modes, meaning that people in this MSOA can easily 
+               move around. MSOAs that are in the highly accessible centres of large cities tend to fall into this cluster.</p>
+
+            <h3>Car reliant but high public transport </h3>
+            <p>This cluster has high car usage but is notable for the large number of people who use the bus and walk to work. MSOAs 
+               in this cluster also have a high degree of accessibility, but the overall transport profile is more shifted towards cars 
+               than the previous cluster. This cluster is found in large urban areas across England and Wales.</p>
+
+            <h3>Good train accessibility but car dependent</h3>
+            <p>This cluster is composed of rural MSOAs that surround land-locked urban areas. The MSOAs in this clusters benefit from 
+               being on train routes, but that is the only mode of public transport by which they are serviced. As a result, the cluster 
+               is associated with high car ownership and usage, followed by train and walking.</p>
+
+            <h3>Solely car dependent</h3>
+            <p>This cluster is made up of rural areas far from the cities. The MSOAs in this cluster have no public transport options and 
+               people depend on cars to move around. They have poor accessibility even by car, which could be due to a lack of direct road 
+               connections to other parts of the country.</p>
+            
+            <h3>Lack of accessibility across all transport modes </h3>
+            <p>This cluster shows the third highest usage of bus, bicycle and walking to work. However, it has the lowest train usage and all 
+               around accessibility, which is its defining feature. This cluster can be found in coastal towns and cities, which might suggest 
+               they are at the end of train lines and other transport networks, and therefore lack connectivity.</p>
+
+            <a id="clustersInfoPopupBoxClose">
+               <div id="clustersInfoPopupBoxCloseButton">
+                  <p>X</p>
+               </div>
+            </a>
+         </div>
 
         <!-- MAP SIDEBAR -->
          <div id="map_sidebar">
@@ -81,7 +129,7 @@
                <div class="infoButtonAlignment">
                   <p class="sidebarSubtitle">Choose clusters:</p>
                   <div id="clustersMoreInfo">
-                     <p>i</p>
+                     <p id="clustersMoreInfo_p">i</p>
                   </div>
                </div>
 
@@ -131,7 +179,7 @@
             <div class="infoButtonAlignment">
                <div id="flowButtonLabel" class='sidebarInstructions'><p class="sidebarSubtitle">View where people work:</p></div>
                <div id="flowsMoreInfo">
-                  <p>i</p>
+                  <p id="flowsMoreInfo_p">i</p>
                </div>
             </div>
 
@@ -142,8 +190,9 @@
                   <label class="onoffswitchFlows-label" for="myonoffswitchFlows"></label>
                </div>
             </div>
-            
 
+
+            
             <!-- data source information -->
             <div class="DataSources">
                <div class ="DataSourcesText">
@@ -166,8 +215,8 @@
 
          <!-- FLOWS POPUP INFO -->
          <div id="flowsPopup">
-            <div class='flowsText'><strong>Origin:</strong> <span id='flowOrigin'></span></div>
-            <div class='flowsText'><strong>Destination:</strong> <span id='flowDest'></span></div>
+            <div class='flowsText'><strong>Residence MSOA:</strong> <span id='flowOrigin'></span></div>
+            <div class='flowsText'><strong>Workplace MSOA:</strong> <span id='flowDest'></span></div>
             <div class='flowsText'><strong>Mode:</strong>:</strong> <span id='flowMode'></span></div>
             <div class='flowsText'><strong>Number of people:</strong> <span id='flowVolume'></span></div>
          </div>
@@ -178,6 +227,8 @@
          <!-- SCRIPTS-->
          <script type="module" src="assets/scripts/map.js"></script>
          <script type="module" src="assets/scripts/welcome_popup.js"></script>
+         <script type="module" src="assets/scripts/clusters_info_popup.js"></script>
+         <script type="module" src="assets/scripts/flows_info_popup.js"></script>
          <script type="module" src="assets/scripts/burgermenu.js"></script>
 
    </body>

@@ -1217,10 +1217,11 @@ svg text {
 }
 
 /* --------------------------------------------------------------*/
-/* INTERACTIVE MAP POP UP BOX */
+/* INTERACTIVE MAP WELCOME AND INFO POP UP BOXES */
 /*--------------------------------------------------------------*/
 
 #blur_out {
+  display: inline-block;
   position: absolute;
   top: 0;
   left: 0;
@@ -1234,6 +1235,7 @@ svg text {
 #popup_box {
   position: absolute;
   width: 40%;
+  height: 46%;
   left: 30%;
   top: 30%;
   z-index: 100;
@@ -1245,6 +1247,7 @@ svg text {
   -moz-box-shadow: 0 0 5px black;
   -webkit-box-shadow: 0 0 5px black;
   box-shadow: 0 0 5px black;
+  overflow: auto;
 }
 
 #popup_box a {
@@ -1281,6 +1284,57 @@ svg text {
 #popupBoxCloseButton p {
   color: #37a583;
   font-size: 20px;
+}
+
+#clustersInfoPopup, #flowsInfoPopup {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  padding: 5%;
+  background: #37a583;
+  border-radius: 25px;
+  padding: 20px;
+  font-size: 15px;
+  -moz-box-shadow: 0 0 5px black;
+  -webkit-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black;
+  overflow: auto;
+}
+
+#clustersInfoPopup {
+  height: 82%;
+  width: 50%;
+  top: 10%;
+  left: 25%;
+}
+
+#flowsInfoPopup {
+  height: 25%;
+  width: 40%;
+  top: 30%;
+  left: 30%;
+  padding-top: 2%;
+}
+
+#clustersInfoPopup p, #flowsInfoPopup p {
+  position: relative;
+  font-size: 14px;
+  color: #fff3e0;
+  text-decoration: none;
+}
+
+#clustersInfoPopupBoxCloseButton, #flowsInfoPopupBoxCloseButton {
+  position: absolute;
+  top: 0px;
+  right: 25px;
+}
+
+#clustersInfoPopupBoxCloseButton p, #flowsInfoPopupBoxCloseButton p {
+  font-size: 20px;
+}
+
+#clustersInfoPopupBoxCloseButton p:hover, #flowsInfoPopupBoxCloseButton p:hover {
+  color: #fff059;
 }
 
 /* --------------------------------------------------------------*/
