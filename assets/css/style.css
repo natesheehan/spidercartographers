@@ -306,18 +306,22 @@ div#bg-1-5 {
 /*--------------------------------------------------------------*/
 #little_city {
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 #little_buildings {
-  position: absolute;
+  position: relative;
   width: 100%;
   bottom: 0;
 }
 
 #little_bike {
+  position: absolute;
   width: 5%;
-  bottom: 0;
-  margin-top: 140px;
+  left: 0;
+  bottom: 5px;
+  z-index: .5;
 }
 
 /*--------------------------------------------------------------*/
