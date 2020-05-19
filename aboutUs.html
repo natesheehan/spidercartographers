@@ -2,113 +2,135 @@
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
-        <script type="module" src="assets/scripts/burgermenu.js"></script>        
+
+        <meta charset='UTF-8'>
+        <meta name='description' content='About Us'>
+        <meta name='author' content='Spider Cartographers'>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+
+        <link rel='stylesheet' type='text/css' href='assets/css/style.css'/>
+
+        <script type='module' src='assets/scripts/burgermenu.js'></script>  
+
     </head>
 
-    <body>      
+    <body id="aboutPage">      
 
         <!-- burger menu -->
-        <div class="nav-toggle">
-            <div class="nav-toggle-bar"></div>
+        <div class='nav-toggle'>
+            <div class='nav-toggle-bar'></div>
         </div>
 
-        <nav class="nav">
+        <nav class='nav'>
             <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="story.html">story</a></li>
-            <li><a href="interactiveMap.html">map</a></li>
-            <li><a href="aboutUs.html">about</a></li>
+            <li><a href='index.html'>home</a></li>
+            <li><a href='story.html'>story</a></li>
+            <li><a href='interactiveMap.html'>map</a></li>
+            <li><a href='aboutUs.html'>about</a></li>
             </ul>
         </nav>
+        
+        <div class='aboutContainer'>
 
+            <!-- about the project -->
+            <div class='aboutProjectContainer'>
+                <div class='aboutProject'>
+                    <div class='textBox'>
+                        <h1 class='aboutProjectTitle'>About the project</h1>
+                        <p class='aboutPage'>The project's goal is to inspire a dialogue about transport modes, availability and choice in England and Wales. 
+                            The aim of our analysis and website is to be able to understand how transport usage within England and Wales differs and what factors 
+                            are likely to affect this. The purpose of which is that a deeper understanding of the geographical differences in transport choice 
+                            could inform national and local travel policies to move towards more sustainable modes of transport.</p>
+                    </div>
 
-        <div class="aboutContainer">
-            <div class="aboutProjectContainer">
-                <div class="aboutProject">
-                    <div class="textBox">
-                        <h1 class="aboutProjectTitle">About the project</h1>
-                        <p class="aboutPage">The project's goal is to inspire a dialogue about transport modes, availability and choice in England and Wales. The aim of our analysis and website is to be able to understand how transport usage within England and Wales differs and what factors are likely to affect this. The purpose of which is that a deeper understanding of the geographical differences in transport choice could inform national and local travel policies to move towards more sustainable modes of transport. </p>
-                    </div>
-                    <div id="aboutBusIconContainer">
-                        <img src="assets/images/busIconFinal.png" id="aboutBusIcon" alt="bus">
-                    </div>
-                    
+                    <div id='aboutBusIconContainer'>
+                        <img src='assets/images/busIconFinal.png' id='aboutBusIcon' alt='bus'>
+                    </div>   
                 </div>
             </div>
 
+            <!-- about our methodology -->
             <div>                
-                <div class="aboutMethodologyContainer">
-                    <div class="aboutBikeIcon">
-                        <img src="assets/images/bikeIconFinal.png" id="aboutBikeIcon" alt="bike">
+                <div class='aboutMethodologyContainer'>
+                    <div class='aboutBikeIcon'>
+                        <img src='assets/images/bikeIconFinal.png' id='aboutBikeIcon' alt='bike'>
                     </div>
-                    
-                    <div class="aboutMethodologyTextArea">
-                        <h1 id="aboutMethodologyTitle">Our methodology</h1>
-                        <div id="aboutMethodologyText">
-                            <p class="aboutPage">To understand the UK's transportation characteristics, we draw upon demographic factors are likely to influence transportation choice, and where similarities and differences are found. We have undertaken a geodemographic approach at the MSOA level to create different groups of transport profiles and further performed classification analysis to understand what demographic factors are related to these profiles. The results of these, and the subsequent visualisations, show how transport usage profiles change across the UK, from which policy could derive understanding as to where policies are required to move towards more sustainable modes of transport. To read more about our methodology click <a href="./Methodology_SC.pdf" download="Methodology">here.</a></p>
+
+                    <div class='aboutMethodologyTextArea'>
+                        <h1 id='aboutMethodologyTitle'>Our methodology</h1>
+                        <div id='aboutMethodologyText'>
+                            <p class='aboutPage'>To understand the UK's transportation characteristics, we draw upon demographic factors are likely to influence 
+                                transportation choice, and where similarities and differences are found. We have undertaken a geodemographic approach at the MSOA 
+                                level to create different groups of transport profiles and further performed classification analysis to understand what demographic 
+                                factors are related to these profiles. The results of these, and the subsequent visualisations, show how transport usage profiles 
+                                change across the UK, from which policy could derive understanding as to where policies are required to move towards more sustainable 
+                                modes of transport. To read more about our methodology click <a href='./Methodology_SC.pdf' download='Methodology'>here.</a></p>
                         </div>
                     </div>               
                 </div>
             </div>
                 
-
-            <div class="aboutUs">
+            <!-- about us -->
+            <div class='aboutUs'>
                 <h1>About Us</h1>
-                <div class="aboutUsContainer">
-                    <div class="textBox" id="aboutUsText">
-                        <p class="aboutPage">We are a group of multidisciplinary data scientists from various corners of the world who are bound together by a passion for transportation. We believe it's worth exploring the transportation characteristics to subsequently inform ways in which policies could be targeted to certain areas to alter transport modes.</p>
-                        <a href="mailto:hussein.mahfouz.19@ucl.ac.uk,nathanael.sheehan.19@ucl.ac.uk,cheyne.campbell.19@ucl.ac.uk,philip.wilkinson.19@ucl.ac.uk,alicja.kotarba.19@ucl.ac.uk">
-                        <div class="aboutContactUsContainer">
-                            <img src="assets/images/emailIcon2.png" alt="email icon2" id="aboutEmailIcon">
-                            <p class="aboutPage">Contact us</p>
-                        </div></a>
-                        
-
+                <div class='aboutUsContainer'>
+                    <div class='textBox' id='aboutUsText'>
+                        <p class='aboutPage'>We are a group of multidisciplinary data scientists from various corners of the world who are bound together by a 
+                            passion for transportation. We believe it's worth exploring the transportation characteristics to subsequently inform ways in which 
+                            policies could be targeted to certain areas to alter transport modes.</p>
+                        <a href='mailto:hussein.mahfouz.19@ucl.ac.uk,nathanael.sheehan.19@ucl.ac.uk,cheyne.campbell.19@ucl.ac.uk,philip.wilkinson.19@ucl.ac.uk,alicja.kotarba.19@ucl.ac.uk'>
+                            <div class='aboutContactUsContainer'>
+                                <img src='assets/images/emailIcon2.png' alt='email icon2' id='aboutEmailIcon'>
+                                <p class='aboutPage'>Contact us</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="aboutUsPicsNamesContainer">
-                        <div class="cheyne">
-                            <a href="https://www.linkedin.com/in/cheyne-campbell">
-                                <img src="assets/images/chayne2.png" id="chayne" alt="Chayne">
-                            <p class="aboutPageNames" id="chayneName">Cheyne Campbell</p>
+
+                    <div class='aboutUsPicsNamesContainer'>
+
+                        <div class='cheyne'>
+                            <a href='https://www.linkedin.com/in/cheyne-campbell'>
+                                <img src='assets/images/chayne2.png' id='chayne' alt='Cheyne'>
+                            <p class='aboutPageNames' id='chayneName'>Cheyne Campbell</p>
                             </a>                            
                         </div>
-                        <div class="nathanael">
-                            <a href="https://nathanaelsheehan-82489.firebaseapp.com/">
-                                <img src="assets/images/nathanael.png" id="nathanael" alt="nathanael">
-                                <p class="aboutPageNames" id="nathanaelName">Nathanael Sheehan</p>
+
+                        <div class='nathanael'>
+                            <a href='https://nathanaelsheehan-82489.firebaseapp.com/'>
+                                <img src='assets/images/nathanael.png' id='nathanael' alt='Nathanael'>
+                                <p class='aboutPageNames' id='nathanaelName'>Nathanael Sheehan</p>
                             </a>                           
                         </div>
-                        <div class="alicja">
-                            <a href="https://www.linkedin.com/in/alicja-kotarba-268a18158/?locale=en_US">
-                                <img src="assets/images/alicja.png" id="alicja" alt="alicja">
-                                <p class="aboutPageNames" id="alicjaName">Alicja Kotarba</p>
+
+                        <div class='alicja'>
+                            <a href='https://www.linkedin.com/in/alicja-kotarba-268a18158/?locale=en_US'>
+                                <img src='assets/images/alicja.png' id='alicja' alt='Alicja'>
+                                <p class='aboutPageNames' id='alicjaName'>Alicja Kotarba</p>
                             </a>
                         </div>
-                        <div class="philip">
-                            <a href="https://www.linkedin.com/in/alicja-kotarba-268a18158/?locale=en_US">
-                                <img src="assets/images/philip2.png" id="philip" alt="philip">
-                                <p class="aboutPageNames" id="philipName">Philip Wilkinson</p>
+
+                        <div class='philip'>
+                            <a href='https://www.linkedin.com/in/alicja-kotarba-268a18158/?locale=en_US'>
+                                <img src='assets/images/philip2.png' id='philip' alt='Philip'>
+                                <p class='aboutPageNames' id='philipName'>Philip Wilkinson</p>
                             </a>                         
                         </div>
-                        <div class="hussein">
-                            <a href="https://www.linkedin.com/in/alicja-kotarba-268a18158/?locale=en_US">
-                                <img src="assets/images/hussein2.png" id="hussein" alt="hussein">
-                                <p class="aboutPageNames" id="husseinName">Hussein Mahfouz</p>
+
+                        <div class='hussein'>
+                            <a href='https://www.linkedin.com/in/alicja-kotarba-268a18158/?locale=en_US'>
+                                <img src='assets/images/hussein2.png' id='hussein' alt='Hussein'>
+                                <p class='aboutPageNames' id='husseinName'>Hussein Mahfouz</p>
                             </a>
-                        </div> 
-                                                   
-                    </div>                     
-                </div>                
-            </div>
+                        </div>   
 
-            
-        </div>   
+                    </div> <!-- aboutUsPicsNamesContainer -->
+                </div> <!-- aboutUsContainer -->                
+            </div> <!-- aboutUs -->
+        </div> <!-- aboutContainer -->
         
-        <div class="cityIconContainer">
-            <img src="assets/images/blueCity.png" id="cityIcon" alt="City">                              
+        <div class='cityIconContainer'>
+            <img src='assets/images/blueCity.png' id='cityIcon' alt='City'>                              
         </div>
-
        
     </body>
 

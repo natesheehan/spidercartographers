@@ -23,14 +23,14 @@ map.doubleClickZoom.disable();
 
 // Web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyBB8J3_bgG7AYKrmYthHqzD3gAHNUk925A",
-  authDomain: "spidercartographers.firebaseapp.com",
-  databaseURL: "https://spidercartographers.firebaseio.com",
-  projectId: "spidercartographers",
-  storageBucket: "spidercartographers.appspot.com",
-  messagingSenderId: "1018443119846",
-  appId: "1:1018443119846:web:2edfb7354e138727694f27",
-  measurementId: "G-RQHR5T16XR"
+  apiKey: 'AIzaSyBB8J3_bgG7AYKrmYthHqzD3gAHNUk925A',
+  authDomain: 'spidercartographers.firebaseapp.com',
+  databaseURL: 'https://spidercartographers.firebaseio.com',
+  projectId: 'spidercartographers',
+  storageBucket: 'spidercartographers.appspot.com',
+  messagingSenderId: '1018443119846',
+  appId: '1:1018443119846:web:2edfb7354e138727694f27',
+  measurementId: 'G-RQHR5T16XR'
 };
 
 // Initialize Firebase
@@ -38,9 +38,8 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 var db = firebase.database();
 
-
 // Read in MSOA data and check that it worked
-const msoas = "assets/data/msoas.geojson"
+const msoas = 'assets/data/msoas.geojson'
 console.log(msoas);
 
 // When map loads...
@@ -166,9 +165,9 @@ map.on('load', function() {
     var clusterNumberDisplay = document.getElementById('clusterNumber');
 
     // Store cluster names as list
-    var clusterNames = ["Soley car dependant", "Lack of accessibility across all transport modes",
-                        "High public transport and good accessibility", "Car reliant but high public transport",
-                        "Good train accessibility but car dependant"];
+    var clusterNames = ['Soley car dependant', 'Lack of accessibility across all transport modes',
+                        'High public transport and good accessibility', 'Car reliant but high public transport',
+                        'Good train accessibility but car dependant'];
 
     // Store which MSOA is being hovered over or clicked on
     var msoaID = null;
@@ -205,14 +204,14 @@ map.on('load', function() {
           // Check that the feature exits
           if (e1.features.length > 0) {
               if (msoaIDClick) {
-                console.log("Storing selected MSOA ID...");
+                console.log('Storing selected MSOA ID...');
               }
 
               // Store msoa11cd of currently selected MSOA
               msoaIDClick = e1.features[0].properties.msoa11cd;
 
               // When a new MSOA is clicked on, turn off flows switchs and reset flow layers
-              document.getElementById("myonoffswitchFlows").checked = false;
+              document.getElementById('myonoffswitchFlows').checked = false;
               turnOffFlows();
 
               // Set variables equal to the current, clicked feature's info
@@ -241,7 +240,6 @@ map.on('load', function() {
 
           } // end of feature length - clicked
         }); // end of on click
-
       } // end of feature length - hover
     }); // end of on hover
 
@@ -319,25 +317,25 @@ map.on('load', function() {
     ///////////////////////////////////////////////////////////////////////////
 
     // If flows switch is toggled on...
-    $("#myonoffswitchFlows").click(function(){
+    $('#myonoffswitchFlows').click(function(){
         if($(this).is(':checked')){
 
             // If the user tries to turn on flows without choosing an MSOA...
             if (msoaIDClick != null) {
 
-              document.getElementById("flowsLegend").style.display = "block";
+              document.getElementById('flowsLegend').style.display = 'block';
 
               console.log('Flows switch has been checked...');
               console.log('Getting flows for: ' + msoaIDClick);
 
               // Set API URL for ORIGIN flows
-              var url = "http://dev.spatialdatacapture.org:8717/data/originflows/" + msoaIDClick + "/";
+              var url = 'http://dev.spatialdatacapture.org:8717/data/originflows/' + msoaIDClick + '/';
 
               // Get the origin flows data
               $.getJSON ( url , function( data ) {
 
                 // Check that call is working
-                console.log("Retrieving data...");
+                console.log('Retrieving data...');
 
                 // Store data for flow features
                 var features = [];
@@ -345,13 +343,13 @@ map.on('load', function() {
                 $.each ( data, function( k, v ) {
 
                   // Get starting location
-                  var orig_lon = v["Orig_Lon"];
-                  var orig_lat = v["Orig_Lat"];
+                  var orig_lon = v['Orig_Lon'];
+                  var orig_lat = v['Orig_Lat'];
                   var orig = [orig_lon, orig_lat];
 
                   // Get destination location
-                  var dest_lon = v["Dest_Lon"];
-                  var dest_lat = v["Dest_Lat"];
+                  var dest_lon = v['Dest_Lon'];
+                  var dest_lat = v['Dest_Lat'];
                   var dest = [dest_lon, dest_lat];
 
                   // Get breakdown of modes for this origin and destination combination
@@ -363,18 +361,18 @@ map.on('load', function() {
 
                     // if the volume is less than 5 don't include in visualization
                     if ((v[mode_list[i]] > 4) == false) {
-                      console.log("it's a no flow");
+                      console.log('it is a no flow');
                       continue;
                     }
 
                     // Collect data for this mode
                     var newData = {
                       'type': 'Feature',
-                      'origname': v["orig_name"],
-                      'destname': v["dest_name"],
+                      'origname': v['orig_name'],
+                      'destname': v['dest_name'],
                       'properties': {
-                        'origname_prop': v["orig_name"],
-                        'destname_prop': v["dest_name"],
+                        'origname_prop': v['orig_name'],
+                        'destname_prop': v['dest_name'],
                         'mode': mode_display[i],
                         'color': color_list[i],
                         'volume': v[mode_list[i]],
@@ -445,8 +443,8 @@ map.on('load', function() {
 
                 // If there are no flows with 5 or more people, alert user and turn off flows switch
                 if (dataArray.features.length <= 0) {
-                  alert("Uh oh! Not enough people commute from this MSOA to display the data. Try choosing another.");
-                  document.getElementById("myonoffswitchFlows").checked = false;
+                  alert('Uh oh! Not enough people commute from this MSOA to display the data. Try choosing another.');
+                  document.getElementById('myonoffswitchFlows').checked = false;
                   turnOffFlows();
                 }
 
@@ -464,7 +462,7 @@ map.on('load', function() {
                   var volume = e.features[0].properties.volume;
                   
                   // Make pop up visible
-                  document.getElementById("flowsPopup").style.visibility = "visible";
+                  document.getElementById('flowsPopup').style.visibility = 'visible';
 
                   // Find elements where the data will be displayed
                   var flowOrigin = document.getElementById('flowOrigin');
@@ -481,17 +479,15 @@ map.on('load', function() {
                   // When no flow is hovered on, remove pop up box
                   map.on('mouseleave', 'flowLines', function() {
                     map.getCanvas().style.cursor = '';
-                    document.getElementById("flowsPopup").style.visibility = "hidden";
+                    document.getElementById('flowsPopup').style.visibility = 'hidden';
                   }); // end of mouseleave for flowLines
 
                 });// end of mouseenter for flowLines
-
               }); // end of getJSON
             } else {
-              alert("Please click on an MSOA.");
-              document.getElementById("myonoffswitchFlows").checked = false;
+              alert('Please click on an MSOA.');
+              document.getElementById('myonoffswitchFlows').checked = false;
               turnOffFlows();
-
             }
 
         //////////////////////////////////////////////////////////////////////
@@ -507,7 +503,7 @@ map.on('load', function() {
     // Remove layers that are added when the flows switch is turned on
     function turnOffFlows() {
 
-      document.getElementById("flowsLegend").style.display = "none";
+      document.getElementById('flowsLegend').style.display = 'none';
 
       var flowSource = map.getSource('flowLines');
       var flowLayer = map.getLayer('flowLines');

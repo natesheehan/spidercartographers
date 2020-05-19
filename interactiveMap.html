@@ -1,68 +1,68 @@
 <!DOCTYPE html>
-
 <html>
 
    <head>
 
-      <meta charset="UTF-8">
-      <meta name="description" content="Interactive Map">
-      <meta name="author" content="Spider Cartographers">
-      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+      <meta charset='UTF-8'>
+      <meta name='description' content='Interactive Map'>
+      <meta name='author' content='Spider Cartographers'>
+      <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
 
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+      <link rel='stylesheet' type='text/css' href='assets/css/style.css'/>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
-      <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
-      <script src="https://d3js.org/d3.v5.js"></script>
-      <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
-      <script src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js" type="text/javascript"></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+      <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+      <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+      <script src='https://d3js.org/d3.v5.js'></script>
+      <script src='https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js'></script>
+      <script src='https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js'></script>
+      <script src='https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js'></script>
+      <script src='https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js'></script>
+      <script src='http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js' type='text/javascript'></script>
 
    </head>
 
    <body>
 
       <!-- MAPBOX GEOCODER FOR SEARCH BAR -->
-      <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-      <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css" />
+      <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js'></script>
+      <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css' type='text/css' />
 
-      <body id="map">
+      <body id='map'>
 
          <!-- WELCOME POP UP BOX -->
-         <div id="blur_out"></div>
+         <div id='blur_out'></div>
 
-         <div id="popup_box">
+         <div id='popup_box'>
             <h1>Welcome!</h1>
-            <p>If you've come here first, we recommend that you read the <a href="story.html">story</a> before exploring the map.</p>
+            <p>If you've come here first, we recommend that you read the <a href='story.html'>story</a> before exploring the map.</p>
             <p>If you've already read the story, get ready to explore the transport characteristics of MSOAs in England and Wales! 
                <strong>Click</strong> on an MSOA to view the breakdown of how people in this MSOA commute to work. After selecting an MSOA, use the 
-               <strong>last switch </strong> in the sidebar to see where people who live in this MSOA work, and how they get there!</p>
-            <a id="popupBoxClose">
-               <div id="popupBoxCloseButton">
+               <strong>last switch</strong> in the sidebar to see where people who live in this MSOA work, and how they get there!</p> 
+
+            <a id='popupBoxClose'>
+               <div id='popupBoxCloseButton'>
                   <p>Let's go!</p>
                </div>
             </a>
          </div>
 
-
-         <!-- FLOWS MORE INFO POP UP BOX -->
-         <div id="flowsInfoPopup">
+         <!-- FLOWS - MORE INFO POP UP BOX -->
+         <div id='flowsInfoPopup'>
             <h3>Commuting Flows</h3>
             <p>Turning on this switch will display data about where people who live in the selected MSOA go for work. This data is represented 
             as flows, or lines, where the color indicates the transportation mode used and the thickness reflects how many people commute between 
             the residence MSOA and the workplace MSOA using a given mode. The visualization excludes flows of less than 5 people.</p>
-            <a id="flowsInfoPopupBoxClose">
-               <div id="flowsInfoPopupBoxCloseButton">
+
+            <a id='flowsInfoPopupBoxClose'>
+               <div id='flowsInfoPopupBoxCloseButton'>
                   <p>X</p>
                </div>
             </a>
          </div>
 
-          <!-- CLUSTERS MORE INFO POP UP BOX -->
-         <div id="clustersInfoPopup">
+          <!-- CLUSTERS - MORE INFO POP UP BOX -->
+         <div id='clustersInfoPopup'>
             <h3>High public transport and good accessibility</h3>
             <p>This cluster is associated with high usage of public transport including the underground/metro/tram, train and bus. 
                It has very good accessibility to all MSOAs through all transport modes, meaning that people in this MSOA can easily 
@@ -88,87 +88,87 @@
                around accessibility, which is its defining feature. This cluster can be found in coastal towns and cities, which might suggest 
                they are at the end of train lines and other transport networks, and therefore lack connectivity.</p>
 
-            <a id="clustersInfoPopupBoxClose">
-               <div id="clustersInfoPopupBoxCloseButton">
+            <a id='clustersInfoPopupBoxClose'>
+               <div id='clustersInfoPopupBoxCloseButton'>
                   <p>X</p>
                </div>
             </a>
          </div>
 
         <!-- MAP SIDEBAR -->
-         <div id="map_sidebar">
+         <div id='map_sidebar'>
 
             <!-- burger menu -->
-            <div class="nav-toggle">
-              <div class="nav-toggle-bar"></div>
+            <div class='nav-toggle'>
+              <div class='nav-toggle-bar'></div>
             </div>
 
-            <nav class="nav">
+            <nav class='nav'>
               <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="story.html">story</a></li>
-                <li><a href="interactiveMap.html">map</a></li>
-                <li><a href="aboutUs.html">about</a></li>
+                <li><a href='index.html'>home</a></li>
+                <li><a href='story.html'>story</a></li>
+                <li><a href='interactiveMap.html'>map</a></li>
+                <li><a href='aboutUs.html'>about</a></li>
               </ul>
             </nav>
 
             <!-- msoa info and chart -->
-            <p class="sidebarSubtitle">Choose an MSOA:</p>
+            <p class='sidebarSubtitle'>Choose an MSOA:</p>
             <div class='msoaInfo'>
                <div class='msoaInfoText'><strong>MSOA Name:</strong> <span id='msoaName'></span></div>
                <div class='msoaInfoText'><strong>Cluster:</strong> <span id='clusterNumber'></span></div>
                <div class='msoaInfoText'><strong>How do people commute?</strong> <span id='msoaName'></span></div>
                <div class='interactiveChart'>
-                  <script type="module" src="assets/scripts/mapBoxChart.js"></script>
+                  <script type='module' src='assets/scripts/mapBoxChart.js'></script>
                </div>
             </div>
 
             <!-- cluster console -->
-            <div id="clusterConsole">
+            <div id='clusterConsole'>
 
-               <div class="infoButtonAlignment">
-                  <p class="sidebarSubtitle">Choose clusters:</p>
-                  <div id="clustersMoreInfo">
-                     <p id="clustersMoreInfo_p">i</p>
+               <div class='infoButtonAlignment'>
+                  <p class='sidebarSubtitle'>Choose clusters:</p>
+                  <div id='clustersMoreInfo'>
+                     <p id='clustersMoreInfo_p'>i</p>
                   </div>
                </div>
 
-                  <div class="cluster1">
-                     <div class="onoffswitchCluster1">
-                        <input type="checkbox" name="onoffswitchCluster1" class="onoffswitchCluster1-checkbox" id="myonoffswitchCluster1" checked="checked">
-                        <label class="onoffswitchCluster1-label" for="myonoffswitchCluster1"></label>
+                  <div class='cluster1'>
+                     <div class='onoffswitchCluster1'>
+                        <input type='checkbox' name='onoffswitchCluster1' class='onoffswitchCluster1-checkbox' id='myonoffswitchCluster1' checked='checked'>
+                        <label class='onoffswitchCluster1-label' for='myonoffswitchCluster1'></label>
                      </div>
                      <p class='clusterLabel'>High public transport and good accessibility</p>
                   </div>
 
-                  <div class="cluster2">
-                     <div class="onoffswitchCluster2">
-                        <input type="checkbox" name="onoffswitchCluster2" class="onoffswitchCluster2-checkbox" id="myonoffswitchCluster2" checked="checked">
-                        <label class="onoffswitchCluster2-label" for="myonoffswitchCluster2"></label>
+                  <div class='cluster2'>
+                     <div class='onoffswitchCluster2'>
+                        <input type='checkbox' name='onoffswitchCluster2' class='onoffswitchCluster2-checkbox' id='myonoffswitchCluster2' checked='checked'>
+                        <label class='onoffswitchCluster2-label' for='myonoffswitchCluster2'></label>
                      </div>
                      <p class='clusterLabel'>Car reliant but high public transport</p>
                   </div>
 
-                  <div class="cluster3">
-                     <div class="onoffswitchCluster3">
-                        <input type="checkbox" name="onoffswitchCluster3" class="onoffswitchCluster3-checkbox" id="myonoffswitchCluster3" checked="checked">
-                        <label class="onoffswitchCluster3-label" for="myonoffswitchCluster3"></label>
+                  <div class='cluster3'>
+                     <div class='onoffswitchCluster3'>
+                        <input type='checkbox' name='onoffswitchCluster3' class='onoffswitchCluster3-checkbox' id='myonoffswitchCluster3' checked='checked'>
+                        <label class='onoffswitchCluster3-label' for='myonoffswitchCluster3'></label>
                      </div>
                      <p class='clusterLabel'>Good train accessibility but car dependant</p>
                   </div>
 
-                  <div class="cluster4">
-                     <div class="onoffswitchCluster4">
-                        <input type="checkbox" name="onoffswitchCluster4" class="onoffswitchCluster4-checkbox" id="myonoffswitchCluster4" checked="checked">
-                        <label class="onoffswitchCluster4-label" for="myonoffswitchCluster4"></label>
+                  <div class='cluster4'>
+                     <div class='onoffswitchCluster4'>
+                        <input type='checkbox' name='onoffswitchCluster4' class='onoffswitchCluster4-checkbox' id='myonoffswitchCluster4' checked='checked'>
+                        <label class='onoffswitchCluster4-label' for='myonoffswitchCluster4'></label>
                      </div>
                      <p class='clusterLabel'>Soley car dependant</p>
                   </div>
 
-                  <div class="cluster5">
-                     <div class="onoffswitchCluster5">
-                        <input type="checkbox" name="onoffswitchCluster5" class="onoffswitchCluster5-checkbox" id="myonoffswitchCluster5" checked="checked">
-                        <label class="onoffswitchCluster5-label" for="myonoffswitchCluster5"></label>
+                  <div class='cluster5'>
+                     <div class='onoffswitchCluster5'>
+                        <input type='checkbox' name='onoffswitchCluster5' class='onoffswitchCluster5-checkbox' id='myonoffswitchCluster5' checked='checked'>
+                        <label class='onoffswitchCluster5-label' for='myonoffswitchCluster5'></label>
                      </div>
                      <p class='clusterLabel'>Lack of accessibility across all transport modes</p>
                   </div>
@@ -176,60 +176,58 @@
             </div>
 
             <!-- flows switch and info  -->
-            <div class="infoButtonAlignment">
-               <div id="flowButtonLabel" class='sidebarInstructions'><p class="sidebarSubtitle">View where people work:</p></div>
-               <div id="flowsMoreInfo">
-                  <p id="flowsMoreInfo_p">i</p>
+            <div class='infoButtonAlignment'>
+               <div id='flowButtonLabel' class='sidebarInstructions'><p class='sidebarSubtitle'>View where people work:</p></div>
+               <div id='flowsMoreInfo'>
+                  <p id='flowsMoreInfo_p'>i</p>
                </div>
             </div>
-
             
-            <div class="flowsSwitch">
-               <div class="onoffswitchFlows">
-                  <input type="checkbox" name="onoffswitchFlows" class="onoffswitchFlows-checkbox" id="myonoffswitchFlows" autocomplete="off">
-                  <label class="onoffswitchFlows-label" for="myonoffswitchFlows"></label>
+            <div class='flowsSwitch'>
+               <div class='onoffswitchFlows'>
+                  <input type='checkbox' name='onoffswitchFlows' class='onoffswitchFlows-checkbox' id='myonoffswitchFlows' autocomplete='off'>
+                  <label class='onoffswitchFlows-label' for='myonoffswitchFlows'></label>
                </div>
             </div>
-
-
             
             <!-- data source information -->
-            <div class="DataSources">
-               <div class ="DataSourcesText">
-                  <h4> Data Sources </h4>
-                  <a href="https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson">ArcGIS.</a>
-                  <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates"> ONS </a>
-                  <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales"> ONS(2) </a>
-                  <a href="https://www.nomisweb.co.uk/census/2011/quick_statistics"> NOMIS </a>
-                  <a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1"> NOMIS (2) </a>
-                  <a href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan"> GOV.UK </a>
+            <div class='DataSources'>
+               <div class ='DataSourcesText'>
+                  <h4>Data Sources</h4>
+                  <a href='https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson'>ArcGIS </a>
+                  <a href='https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates'>ONS </a>
+                  <a href='https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales'>ONS(2) </a>
+                  <a href='https://www.nomisweb.co.uk/census/2011/quick_statistics'>NOMIS </a>
+                  <a href='https://www.nomisweb.co.uk/census/2011/bulk/rOD1'>NOMIS(2) </a>
+                  <a href='https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan'>GOV.UK</a>
                </div>
             </div>
 
          </div> <!-- end of sidebar div -->
 
          <!-- FLOWS LEGEND -->
-         <div id="flowsLegend">
-            <img src="assets/images/flowsLegend.png" alt="Flows legend">
+         <div id='flowsLegend'>
+            <img src='assets/images/flowsLegend.png' alt='Flows Legend'>
          </div>
 
          <!-- FLOWS POPUP INFO -->
-         <div id="flowsPopup">
-            <div class='flowsText'><strong>Residence MSOA:</strong> <span id='flowOrigin'></span></div>
-            <div class='flowsText'><strong>Workplace MSOA:</strong> <span id='flowDest'></span></div>
-            <div class='flowsText'><strong>Mode:</strong>:</strong> <span id='flowMode'></span></div>
-            <div class='flowsText'><strong>Number of people:</strong> <span id='flowVolume'></span></div>
+         <div id='flowsPopup'>
+            <div class='flowsText'><strong>Residence MSOA: </strong><span id='flowOrigin'></span></div>
+            <div class='flowsText'><strong>Workplace MSOA: </strong><span id='flowDest'></span></div>
+            <div class='flowsText'><strong>Mode: </strong><span id='flowMode'></span></div>
+            <div class='flowsText'><strong>Number of people: </strong><span id='flowVolume'></span></div>
          </div>
 
          <!-- MAPBOX MAP -->
-         <div id="map_container"></div>
+         <div id='map_container'></div>
 
-         <!-- SCRIPTS-->
-         <script type="module" src="assets/scripts/map.js"></script>
-         <script type="module" src="assets/scripts/welcome_popup.js"></script>
-         <script type="module" src="assets/scripts/clusters_info_popup.js"></script>
-         <script type="module" src="assets/scripts/flows_info_popup.js"></script>
-         <script type="module" src="assets/scripts/burgermenu.js"></script>
+         <!-- SCRIPTS w-->
+         <script type='module' src='assets/scripts/map.js'></script>
+         <script type='module' src='assets/scripts/welcome_popup.js'></script>
+         <script type='module' src='assets/scripts/clusters_info_popup.js'></script>
+         <script type='module' src='assets/scripts/flows_info_popup.js'></script>
+         <script type='module' src='assets/scripts/burgermenu.js'></script>
 
    </body>
+
 </html>

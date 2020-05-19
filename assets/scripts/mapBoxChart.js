@@ -58,7 +58,7 @@ chart.append('g')
     .attr('stroke-width',0);
     // .call(wrap, xScale.bandwidth());
 
-//grid lines
+// grid lines
 const grid = chart.append('g')
 
 const gridLines = grid.append('g')

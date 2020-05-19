@@ -1,4 +1,4 @@
-$("#clustersMoreInfo_p").click( function() {
+$('#clustersMoreInfo_p').click( function() {
 
     loadPopupBoxInfoClusters();
 
@@ -8,19 +8,19 @@ $("#clustersMoreInfo_p").click( function() {
 
     function unloadPopupBoxInfoClusters() {    
         $('#clustersInfoPopup').css({
-            "display": "none"
+            'display': 'none'
         });
-        $("#blur_out").css({       
-            "display": "none"  
+        $('#blur_out').css({       
+            'display': 'none'  
         }); 
     }    
 
     function loadPopupBoxInfoClusters() {   
         $('#clustersInfoPopup').css({
-            "display": "inline-block"
+            'display': 'inline-block'
         });
-        $("#blur_out").css({
-            "display": "inline-block"
+        $('#blur_out').css({
+            'display': 'inline-block'
         })    
     }        
 });

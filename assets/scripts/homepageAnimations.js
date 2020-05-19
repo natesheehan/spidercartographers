@@ -1,7 +1,6 @@
-var car = document.querySelector("#car_icon");
-var bike = document.querySelector("#bike_icon");
-var bus = document.querySelector("#bus_icon");
-
+var car = document.querySelector('#car_icon');
+var bike = document.querySelector('#bike_icon');
+var bus = document.querySelector('#bus_icon');
 
 var car_xPos = 0;
 var car_yPos = 0;
@@ -14,7 +13,6 @@ var bike_angle = 0;
 var bus_xPos = 0;
 var bus_yPos = 0;
 var bus_angle = 0;
-
 
 function car_animate() {
   car_xPos += 2.5;
@@ -31,7 +29,6 @@ function car_animate() {
   requestAnimationFrame(car_animate);
 }
 
-
 function bike_animate() {
   bike_xPos += 2;
   bike_angle += .1;
@@ -46,7 +43,6 @@ function bike_animate() {
   }
   requestAnimationFrame(bike_animate);
 }
-
 
 function bus_animate() {
     bus_xPos += 3;

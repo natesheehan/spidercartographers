@@ -567,9 +567,8 @@ figure {
 }
 
 /*--------------------------------------------------------------*/
-/* INTERACTIVE MAP PAGE INTERACTIVE GRAPH */
+/* INTERACTIVE MAP PAGE */
 /*--------------------------------------------------------------*/
-
 #map {
   position: absolute;
   width: 100%;
@@ -615,7 +614,7 @@ figure {
   width: 20px;
 }
 
-#flowsMoreInfo p, #clustersMoreInfo p{
+#flowsMoreInfo p, #clustersMoreInfo p {
   position: absolute;
   top: 0;
   right: 0;
@@ -724,7 +723,7 @@ figure {
 }
 
 .onoffswitchCluster1-label:before, .onoffswitchCluster2-label:before, .onoffswitchCluster3-label:before, .onoffswitchCluster4-label:before, .onoffswitchCluster5-label:before, .onoffswitchFlows-label:before {
-  content: "";
+  content: '';
   display: block;
   width: 16px;
   height: 16px;
@@ -855,6 +854,7 @@ figure {
 
 .DataSourcesText a:hover {
   color: yellow;
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------*/
@@ -978,7 +978,7 @@ svg text {
 }
 
 .tip::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   bottom: -.5rem;
   left: 50%;
@@ -1004,7 +1004,7 @@ svg text {
 
 /* Clearfix (clear floats) */
 .row::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -1137,7 +1137,7 @@ svg text {
   background: #222;
   width: 7px;
   height: 7px;
-  content: "";
+  content: '';
   display: block;
   margin: 55%;
   border-radius: 50%;
@@ -1223,7 +1223,6 @@ svg text {
 /* --------------------------------------------------------------*/
 /* INTERACTIVE MAP WELCOME AND INFO POP UP BOXES */
 /*--------------------------------------------------------------*/
-
 #blur_out {
   display: inline-block;
   position: absolute;
@@ -1233,7 +1232,7 @@ svg text {
   width: 100%;
   z-index: 90;
   background-color: black;
-  opacity: .50;
+  opacity: 0.5;
 }
 
 #popup_box {
@@ -1383,7 +1382,8 @@ svg text {
 }
 
 .nav a:hover {
-  color: yellow;
+  color: #fff059;
+  text-decoration: none;
 }
 
 .nav-toggle {
@@ -1456,13 +1456,9 @@ svg text {
 /*--------------------------------------------------------------*/
 /* ABOUT US PAGE */
 /*--------------------------------------------------------------*/
-
-html, body{
+#aboutPage {
   width: 100%;
   height: 100%;
-}
-
-body{
   background-color: #1b262c;
 }
 
@@ -1474,11 +1470,10 @@ body{
 
 .aboutProjectContainer, .aboutMethodologyContainer, .aboutUsContainer{
   margin-bottom: 5%;
-
 }
 
 .cityIconContainer{
-  bottom:0%;
+  bottom: 0%;
   padding: 0 0 0 0;
   width: 100%;
 }
@@ -1545,75 +1540,73 @@ body{
   /* position: absolute; */
 }
 
-.aboutMethodology{
+.aboutMethodology {
   /* position: absolute; */
   top:60%;
   width: 100%;
   margin-right: 5%;  
 }
 
-.aboutUs{
+.aboutUs {
   /* position: absolute; */
   top:120%;
 }
 
-.textBox{
+.textBox {
   width: 60%;
 }
 
 /* text */
 /* that is paragraph text */
 
-.aboutPage{
+.aboutPage {
   color: #fff3e0;
 }
 
-.aboutPageNames{
+.aboutPageNames {
   text-align: center;
   font-size: 14px;
   margin-block-start:0;
 }
 
 
-.aboutProjectTitle{
+.aboutProjectTitle {
   text-align: left;
   /* position: absolute; */
   width: 300px;
   top:0px;
 }
 
-.aboutMethodologyTextArea{
+.aboutMethodologyTextArea {
   width: 60%;
 }
 
-
-
-#aboutMethodologyTitle{
+#aboutMethodologyTitle {
   text-align: right;
 }
 
-.aboutUsPictures{
+.aboutUsPictures {
   padding-top: 2%;
   display: flex;
   justify-content: space-around;
-  }
+}
 
-#chayne, #nathanael, #alicja, #philip, #hussein{ 
+#chayne, #nathanael, #alicja, #philip, #hussein { 
   height: 120px;
   width: 120px;
 }
 
-.aboutUsNames{
+.aboutUsNames {
   display: flex;
   justify-content: space-around;
 }
 
-#aboutEmailIcon{
+#aboutEmailIcon {
   width: 50px;
   height: 50px;
 }
 
-.aboutContactUsContainer{
+.aboutContactUsContainer {
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
@@ -1628,11 +1621,15 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+#aboutPage a:hover img {
   opacity: 0.5;
 }
 
-a:active {
-  text-decoration: underline;
+#aboutPage a:hover p {
+  color: #fff059;
 }
+
+#aboutPage a:hover {
+  color: #fff059;
+}
+

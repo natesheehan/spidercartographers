@@ -8,13 +8,13 @@ $(document).ready( function() {
     });
 
     function unloadPopupBox() {    
-        $('#popup_box').fadeOut("slow");
-        $("#blur_out").css({       
-            "display": "none"  
+        $('#popup_box').fadeOut('slow');
+        $('#blur_out').css({       
+            'display': 'none'  
         }); 
     }    
 
     function loadPopupBox() {   
-        $('#popup_box').fadeIn("slow");       
+        $('#popup_box').fadeIn('slow');       
     }        
 });
