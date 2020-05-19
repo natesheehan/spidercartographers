@@ -12,8 +12,8 @@
 
   <script src="assets/scripts/jquery-3.5.0.min.js"></script>
   <script src="assets/scripts/scrollstory/jquery.scrollstory.js"></script>
-  <script type="module" src="assets/scripts/burgermenu.js"></script>
-  <script src="assets/scripts/scrollstory.js"></script>
+  <script type="module" src="assets/scripts/generalScripts/burgermenu.js"></script>
+  <script src="assets/scripts/storyScripts/scrollstory.js"></script>
 
 </head>
 
@@ -28,8 +28,8 @@
     <ul>
       <li><a href="index.html">home</a></li>
       <li><a href="story.html">story</a></li>
-      <li><a href="interactiveMap.html">map</a></li>
-      <li><a href="aboutUs.html">about</a></li>
+      <li><a href="map.html">map</a></li>
+      <li><a href="about.html">about</a></li>
     </ul>
   </nav>
   <div id="container">
@@ -64,8 +64,8 @@
         <!--Opening pie chart -->
         <div id="chart">
           <script src="https://d3js.org/d3.v3.min.js"> </script>
-          <script src="assets/scripts/pieCharts/pieChart.js"> </script>
-          <script src="assets/scripts/pieCharts/pieChartSetUp.js"></script>
+          <script src="assets/scripts/storyScripts/pieCharts/pieChart.js"> </script>
+          <script src="assets/scripts/storyScripts/pieCharts/pieChartSetUp.js"></script>
         </div>
         <div class="totalMSOATravel">
           <h2 class="avgTransportTimeTitle">  Total MSOA Travel </h2>
@@ -93,16 +93,16 @@
             <div id="chartUrban">
               <h2 class="avgTransportTimeTitle">  Urban travel </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
-              <script src="assets/scripts/pieCharts/pieUrbanChart.js"> </script>
-              <script src="assets/scripts/pieCharts/pieChartUrbanSetUp.js"></script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieUrbanChart.js"> </script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieChartUrbanSetUp.js"></script>
             </div>
           </div>
           <div class="openingColumn">
             <div id="chartRural">
               <h2 class="avgTransportTimeTitle">  Rural travel </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
-              <script src="assets/scripts/pieCharts/pieRuralChart.js"> </script>
-              <script src="assets/scripts/pieCharts/pieChartRuralSetUp.js"></script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieRuralChart.js"> </script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieChartRuralSetUp.js"></script>
             </div>
           </div>
         </div>
@@ -122,16 +122,16 @@
             <div id="chartLondon">
               <h2 class="avgTransportTimeTitle">  London share </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
-              <script src="assets/scripts/pieCharts/pieLondonChart.js"> </script>
-              <script src="assets/scripts/pieCharts/pieChartLondonSetUp.js"></script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieLondonChart.js"> </script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieChartLondonSetUp.js"></script>
             </div>
           </div>
           <div class="openingColumn">
             <div id="chartBirmingham">
               <h2 class="avgTransportTimeTitle">  Birmingham share </h2>
               <script src="https://d3js.org/d3.v3.min.js"> </script>
-              <script src="assets/scripts/pieCharts/pieBirminghamChart.js"> </script>
-              <script src="assets/scripts/pieCharts/pieChartBirminghamSetUp.js"></script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieBirminghamChart.js"> </script>
+              <script src="assets/scripts/storyScripts/pieCharts/pieChartBirminghamSetUp.js"></script>
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@
         <!--Bar Chart transport access -->
         <div class="barCharDiv" id="my_dataviz"></div>
         <script src="https://d3js.org/d3.v4.js"></script>
-        <script src="assets/scripts/barChartTransportAcess.js"></script>
+        <script src="assets/scripts/storyScripts/barChartTransportAcess.js"></script>
 
         <h2 style="margin-left:10%;"class="avgTransportTimeTitle">  Transport Access </h2>
         <p class="transportTextAcess">What transport mode people choose to get to work can, of course, depend on access to different modes within the MSOA. In terms of stations, bus stops are by far
@@ -204,7 +204,7 @@
     <section class="story">
       <div class="content">
         <div id="my_dataviz1"></div>
-        <script src="assets/scripts/boxPlot.js"> </script>
+        <script src="assets/scripts/storyScripts/boxPlot.js"> </script>
         <p class="boxPlotText"> If there is significant variation in car usage then this should also show up in other modes of transport, as public transport may offer an appealing alternative. The
           averages for underground/tram/metro, train and bus usage is 3.4%, 4.7% and 7.3% respectively, and we can see that there is considerable variation across MSOAs. In the
           MSOAs with the lowest percentage use for each of these modes of transport is less than 1% which is associated with considerable reliance on private vehicle travel. However, some MSOAs show significant usage of each of these travel
@@ -218,7 +218,7 @@
           <canvas id="barChart" class="chartjs-render-monitor"></canvas>
         </div>
         <script src="assets/scripts/chart.js/dist/Chart.js"></script>
-        <script src="assets/scripts/transportBarBox.js"></script>
+        <script src="assets/scripts/storyScripts/transportBarBox.js"></script>
         <p class="transportBoxPlotText"> Furthermore, looking at the distribution of bus stops, train stations and metro stations, there is variation across England and Wales. This includes where they are located and their
           concentration. For example,
           looking at
@@ -236,7 +236,7 @@
           <canvas id="barChartPeople" class="chartjs-render-monitor"></canvas>
         </div>
         <script src="assets/scripts/chart.js/dist/Chart.js"></script>
-        <script src="assets/scripts/peopleAndPublicTransport.js"></script>
+        <script src="assets/scripts/storyScripts/peopleAndPublicTransport.js"></script>
         <p class="peopleAndPublicTransportText"> Combining these methods of transport as public transport also shows variation across MSOA, as well as combing bicycle usage and walking to work as people powered transport as
           seen in the bar chart
           below. This shows that
@@ -258,11 +258,11 @@
         <li>Cluster 4: High PT usage and good accessibility (LONDON and few other big city core msoas)</li>
         <li>Cluster 5: good PT accessibility but high car dependency (outer london and other urban areas)</li>
       </ul>
-      <p class="nextButton"><a href="interactiveMap.html" >View clusters on our interactive map →</a></p>
+      <p class="nextButton"><a href="map.html" >View clusters on our interactive map →</a></p>
       </div>
     </section>
   </div>
-  <script type="module" src="assets/scripts/littleCityAnimation.js"></script>
+  <script type="module" src="assets/scripts/storyScripts/littleCityAnimation.js"></script>
 </body>
 <p><a href="#" class="backtotop">Back to top ↑</a></p>
 <style>
