@@ -31,7 +31,9 @@ h3 {
 /*--------------------------------------------------------------*/
 /* STORY PAGE - PARALLAX SCROLLING */
 /*--------------------------------------------------------------*/
-body#story {}
+body#story {
+
+}
 
 /* foreground (balloons/landscape) */
 div#parallax-bg-1 {
@@ -254,8 +256,9 @@ div#bg-1-5 {
   display: block;
   margin: auto;
   text-align: center;
-  margin-top: 380px;
+  /* margin-top: 380px; */
 }
+
 .transportAccessTitle{
   margin-left: 10%;
   margin-right: 10%;
@@ -1506,7 +1509,7 @@ svg text {
   justify-content: space-around;
 }
 
-.aboutBikeIcon{  
+.aboutBikeIcon{
   text-align: center;
   width: 40%;
   height: 250px;
@@ -1544,7 +1547,7 @@ svg text {
   /* position: absolute; */
   top:60%;
   width: 100%;
-  margin-right: 5%;  
+  margin-right: 5%;
 }
 
 .aboutUs {
@@ -1591,7 +1594,7 @@ svg text {
   justify-content: space-around;
 }
 
-#chayne, #nathanael, #alicja, #philip, #hussein { 
+#chayne, #nathanael, #alicja, #philip, #hussein {
   height: 120px;
   width: 120px;
 }
@@ -1632,4 +1635,3 @@ a:visited {
 #aboutPage a:hover {
   color: #fff059;
 }
-
