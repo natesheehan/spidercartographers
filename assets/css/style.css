@@ -17,7 +17,6 @@ p {
 h1, .sig, p, a, h4, h3 {
   font-family: Futura;
   color: #ffa372;
-  /* text-align: justify; */
 }
 
 h3 {
@@ -29,14 +28,10 @@ h3 {
   font-weight: bold;
 }
 
-
-
 /*--------------------------------------------------------------*/
 /* STORY PAGE - PARALLAX SCROLLING */
 /*--------------------------------------------------------------*/
-body#story {
-
-}
+body#story {}
 
 /* foreground (balloons/landscape) */
 div#parallax-bg-1 {
@@ -1467,77 +1462,73 @@ svg text {
   height: 100%;
   background-color: #1b262c;
 }
+
 .aboutContainer{
   text-align: justify;
   padding: 5% 4% 0 4%;
   width: 100%;
 }
+
 .aboutProjectContainer, .aboutMethodologyContainer, .aboutUsContainer{
   margin-bottom: 5%;
 }
-/* text */
-.textBox {
-  width: 60%;
-}
-/* that is paragraph text */
-.aboutPage {
-  color: #fff3e0;
-}
 
-
-/* about project */
-.aboutProject{
-  display: flex;
-  justify-content: start;
-  top: 20%;
-}
-.aboutProject, .aboutUs{
+.cityIconContainer{
+  bottom: 0%;
+  padding: 0 0 0 0;
   width: 100%;
 }
-.aboutProjectTitle {
-  text-align: left;
-  top:0px;
+
+#cityIcon{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-<<<<<<< HEAD
-.aboutBikeIcon{
-=======
-/* bike icon */
-.aboutBikeIcon{  
->>>>>>> master
-  text-align: center;
-  width: 40%;
-  height: 250px;
-}
-#aboutBikeIcon{
-  width: 250px;
-  height: 250px;
-}
-
-/* about methodology */
 .aboutMethodologyContainer{
   display: flex;
   justify-content: start;
   top: 20%;
 }
-.aboutMethodologyTextArea {
-  width: 60%;
-}
-#aboutMethodologyTitle {
-  text-align: right;
+
+.aboutUsContainer{
+  display: flex;
+  justify-content: start;
 }
 
-/* bus icon */
+#aboutUsText{
+  width:45%
+}
+
+.aboutUsPicsNamesContainer{
+  padding-left: 0.5%;
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.aboutBikeIcon{
+  text-align: center;
+  width: 40%;
+  height: 250px;
+  /* margin-left: 55%; */
+}
+
+#aboutBikeIcon{
+  width: 250px;
+  height: 250px;
+}
+
 #aboutBusIconContainer{
   width: 40%;
   text-align: center;
 }
+
 #aboutBusIcon{
   width: 90%;
   height: 100%;
 }
 
-<<<<<<< HEAD
 .aboutProject{
   display: flex;
   justify-content: start;
@@ -1557,31 +1548,27 @@ svg text {
   margin-right: 5%;
 }
 
-=======
-/* about us */
->>>>>>> master
 .aboutUs {
+  /* position: absolute; */
   top:120%;
 }
-.aboutUsContainer{
-  display: flex;
-  justify-content: start;
+
+.textBox {
+  width: 60%;
 }
-#aboutUsText{
-  width:45%
+
+/* text */
+/* that is paragraph text */
+
+.aboutPage {
+  color: #fff3e0;
 }
-.aboutUsPicsNamesContainer{
-  padding-left: 0.5%;
-  width: 55%;
-  display: flex;
-  justify-content: space-around;
-}
+
 .aboutPageNames {
   text-align: center;
   font-size: 14px;
   margin-block-start:0;
 }
-<<<<<<< HEAD
 
 
 .aboutProjectTitle {
@@ -1606,54 +1593,43 @@ svg text {
 }
 
 #chayne, #nathanael, #alicja, #philip, #hussein {
-=======
-#chayne, #nathanael, #alicja, #philip, #hussein { 
->>>>>>> master
   height: 120px;
   width: 120px;
 }
+
 .aboutUsNames {
   display: flex;
   justify-content: space-around;
 }
 
-/* contact us */
+#aboutEmailIcon {
+  width: 50px;
+  height: 50px;
+}
+
 .aboutContactUsContainer {
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
   width:25%;
 }
-#aboutEmailIcon {
-  width: 50px;
-  height: 50px;
-}
 
-/* city icon */
-.cityIconContainer{
-  bottom: 0%;
-  padding: 0 0 0 0;
-  width: 100%;
-}
-#cityIcon{
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* links */
 a:link {
   text-decoration: none;
 }
+
 a:visited {
   text-decoration: none;
 }
+
 #aboutPage a:hover img {
   opacity: 0.5;
 }
+
 #aboutPage a:hover p {
   color: #fff059;
 }
+
 #aboutPage a:hover {
   color: #fff059;
 }

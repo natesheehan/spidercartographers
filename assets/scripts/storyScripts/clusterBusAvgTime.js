@@ -1,16 +1,16 @@
 // set the dimensions and margins of the graph
-var marginBarCar = {top: 30, right: 30, bottom: 70, left: 60},
-    widthBarCar = 460 - marginBarCar.left - marginBarCar.right,
-    heightBarCar = 400 - marginBarCar.top - marginBarCar.bottom;
+var marginBarBus = {top: 30, right: 30, bottom: 70, left: 60},
+    widthBarBus = 460 - marginBarBus.left - marginBarBus.right,
+    heightBarBus = 400 - marginBarBus.top - marginBarBus.bottom;
 
 // append the svg object to the body of the page
-var svgBarCar = d3.select("#barCar")
+var svgBarBus = d3.select("#barCar")
   .append("svg")
-    .attr("width", widthBarCar + marginBarCar.left + marginBarCar.right)
-    .attr("height", heightBarCar + marginBarCar.top + marginBarCar.bottom)
+    .attr("width", widthBarBus + marginBarBus.left + marginBarBus.right)
+    .attr("height", heightBarBus + marginBarBus.top + marginBarBus.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + marginBarCar.left + "," + marginBarCar.top + ")");
+          "translate(" + marginBarBus.left + "," + marginBarBus.top + ")");
 
 d3.json("http://dev.spatialdatacapture.org:8717/data/clusters/average", function(data) {
 
@@ -26,7 +26,7 @@ delete data[0].train_perc
 delete data[0].underground_metro_perc
 delete data[0].work_from_home_perc
 delete data[0].avg_time_from_origin_rail_UNWEIGHTED
-delete data[0].avg_time_from_origin_bus_UNWEIGHTED
+delete data[0].avg_time_from_origin_car_UNWEIGHTED
 
 
 delete data[1].HH_owning_cars_perc
@@ -41,7 +41,7 @@ delete data[1].train_perc
 delete data[1].underground_metro_perc
 delete data[1].work_from_home_perc
 delete data[1].avg_time_from_origin_rail_UNWEIGHTED
-delete data[1].avg_time_from_origin_bus_UNWEIGHTED
+delete data[1].avg_time_from_origin_car_UNWEIGHTED
 
 delete data[2].HH_owning_cars_perc
 delete data[2].avg_time_bus
@@ -55,7 +55,7 @@ delete data[2].train_perc
 delete data[2].underground_metro_perc
 delete data[2].work_from_home_perc
 delete data[2].avg_time_from_origin_rail_UNWEIGHTED
-delete data[2].avg_time_from_origin_bus_UNWEIGHTED
+delete data[2].avg_time_from_origin_car_UNWEIGHTED
 
 delete data[3].HH_owning_cars_perc
 delete data[3].avg_time_bus
@@ -69,7 +69,7 @@ delete data[3].train_perc
 delete data[3].underground_metro_perc
 delete data[3].work_from_home_perc
 delete data[3].avg_time_from_origin_rail_UNWEIGHTED
-delete data[3].avg_time_from_origin_bus_UNWEIGHTED
+delete data[3].avg_time_from_origin_car_UNWEIGHTED
 
 delete data[4].HH_owning_cars_perc
 delete data[4].avg_time_bus
@@ -83,17 +83,16 @@ delete data[4].train_perc
 delete data[4].underground_metro_perc
 delete data[4].work_from_home_percs
 delete data[4].avg_time_from_origin_rail_UNWEIGHTED
-delete data[4].avg_time_from_origin_bus_UNWEIGHTED
+delete data[4].avg_time_from_origin_car_UNWEIGHTED
 
-console.log(data)
 
 // X axis
 var x = d3.scaleBand()
-  .range([ 0, widthBarCar ])
+  .range([ 0, widthBarBus ])
   .domain(data.map(function(d) { return d["cluster label"]; }))
   .padding(0.2);
-svgBarCar.append("g")
-  .attr("transform", "translate(0," + heightBarCar + ")")
+svgBarBus.append("g")
+  .attr("transform", "translate(0," + heightBarBus + ")")
   .call(d3.axisBottom(x))
   .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
@@ -102,35 +101,35 @@ svgBarCar.append("g")
 // Add Y axis
 var y = d3.scaleLinear()
   .domain([0, 400])
-  .range([ heightBarCar, 0]);
-svgBarCar.append("g")
+  .range([ heightBarBus, 0]);
+svgBarBus.append("g")
   .call(d3.axisLeft(y));
 
 // Bars
-svgBarCar.selectAll("mybar")
+svgBarBus.selectAll("mybar")
   .data(data)
   .enter()
   .append("rect")
     .attr("x", function(d) { return x(d["cluster label"]); })
-    .attr("y", function(d) { return y(d.avg_time_from_origin_car_UNWEIGHTED); })
+    .attr("y", function(d) { return y(d.avg_time_from_origin_bus_UNWEIGHTED); })
     .attr("width", x.bandwidth())
-    .attr("height", function(d) { return heightBarCar - y(d.avg_time_from_origin_car_UNWEIGHTED); })
+    .attr("height", function(d) { return heightBarBus - y(d.avg_time_from_origin_bus_UNWEIGHTED); })
     .attr("fill", "#69b3a2")
 
-    svgBarCar.append("text")
+    svgBarBus.append("text")
       .attr("class", "x label")
       .attr("text-anchor", "end")
-      .attr("x", widthBarCar -150)
-      .attr("y", heightBarCar +35)
+      .attr("x", widthBarBus - 150)
+      .attr("y", heightBarBus +35)
       .text("Cluster");
 
-      svgBarCar.append("text")
+      svgBarBus.append("text")
       .attr("class", "y label")
       .attr("text-anchor", "end")
       .attr("y", -10)
       .attr("x", 300)
       .attr("dy", ".75em")
       .attr("transform", "rotate(-360)")
-      .text("Average time to origin by car (Minutes)");
+      .text("Average time from origin by bus (Minutes)");
 
 })
