@@ -38,7 +38,7 @@ $.getJSON(url, function(dataBox) {
           var barPeopleData = {
             labels: ["MIN", "25%", "50%", "75%", "MAX", "MEAN"],
             datasets: [{
-              label: 'People Power',
+              label: 'Sustainable travel',
               backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
               borderColor: chartColors.grey,
               borderWidth: 1,
@@ -79,7 +79,7 @@ $.getJSON(url, function(dataBox) {
               },
               title: {
                 display: true,
-                text: 'Public Transport'
+                text: 'Active Transport versus Public Transport'
               }
             }
           });

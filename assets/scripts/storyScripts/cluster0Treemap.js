@@ -69,7 +69,7 @@ data[6].mode = "Car (67%)"
                 .attr("x", 30)
                 .attr("dy", ".75em")
                 .attr("transform", "rotate(-360)")
-                .text("Cluster 0");
+                .text("Profile 1");
 
 
 });
