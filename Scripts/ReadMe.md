@@ -6,8 +6,8 @@
 \deftab720
 \pard\pardeftab720\ri-340\sl259\slmult1\sa160\partightenfactor0
 
-\f0\b\fs22 \cf0 ReadMe Data side:\
-Workflow follows these workbooks in order
+\f0\b\fs22 \cf0 # Data Scripts:\
+# Workflow follows these workbooks in order
 \f1\b0 \
 
 \f0\b 1. Points in polygon.R 
