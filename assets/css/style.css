@@ -17,7 +17,6 @@ p {
 h1, .sig, p, a, h4, h3 {
   font-family: Futura;
   color: #ffa372;
-  /* text-align: justify; */
 }
 
 h3 {
@@ -29,172 +28,11 @@ h3 {
   font-weight: bold;
 }
 
-
-
 /*--------------------------------------------------------------*/
 /* STORY PAGE - PARALLAX SCROLLING */
 /*--------------------------------------------------------------*/
 body#story {}
 
-/* foreground (balloons/landscape) */
-div#parallax-bg-1 {
-  position: fixed;
-  width: 1200px;
-  margin-top: -900px;
-  top: 0;
-  left: 50%;
-  margin-left: -600px;
-  z-index: 1;
-}
-
-/* background middle layer */
-div#parallax-bg-2 {
-  position: fixed;
-  width: 1200px;
-  margin-top: -650px;
-  left: 50%;
-  margin-left: -600px;
-  z-index: 2;
-}
-
-/* background layer */
-div#parallax-bg-3 {
-  position: fixed;
-  width: 960px;
-  top: 0;
-  left: 50%;
-  margin-left: -470px;
-  z-index: 3;
-}
-
-/* foreground */
-div#parallax-bg-3 div {
-  background-repeat: no-repeat;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  /* text-align: center; */
-  overflow: hidden;
-}
-
-div#bg-3-1 {
-  width: 529px;
-  height: 757px;
-  top: -100px;
-  right: 100px;
-}
-
-div#bg-3-2 {
-  width: 603px;
-  height: 583px;
-  top: 1050px;
-  right: 70px;
-}
-
-div#bg-3-12 {
-  width: 603px;
-  height: 583px;
-  top: 1050px;
-  right: 70px;
-}
-
-div#bg-3-3 {
-  width: 446px;
-  height: 713px;
-  top: 1800px;
-  right: 140px;
-}
-
-div#bg-3-4 {
-  width: 1104px;
-  height: 684px;
-  top: 2800px;
-  right: 0px;
-}
-
-div#bg-3-4 {
-  width: 1104px;
-  height: 684px;
-  top: 3400px;
-  right: 0px;
-}
-
-/* middle layer clouds */
-div#parallax-bg-2 div {
-  background-repeat: no-repeat;
-  /* position: absolute; */
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-
-div#bg-2-1 {
-  top: 100px;
-  left: -310px;
-}
-
-div#bg-2-2 {
-  top: 270px;
-  right: -70px;
-}
-
-div#bg-2-3 {
-  top: 870px;
-  left: -300px;
-}
-
-div#bg-2-4 {
-  top: 1120px;
-  right: -130px;
-}
-
-div#bg-2-5 {
-  top: 1620px;
-  left: 140px;
-}
-
-div#bg-2-6 {
-  top: 720px;
-  left: 340px;
-}
-
-/*background layer clouds */
-div#parallax-bg-1 div {
-  background-repeat: no-repeat;
-  /* position: absolute; */
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-
-div#bg-1-1 {
-  top: 200px;
-  right: 450px;
-}
-
-div#bg-1-2 {
-  top: 420px;
-  left: 0px;
-}
-
-div#bg-1-3 {
-  top: 850px;
-  right: -290px;
-}
-
-div#bg-1-4 {
-  top: 1350px;
-  left: 200px;
-}
-
-div#bg-1-5 {
-  top: 1200px;
-  left: -200px;
-}
 
 .openTitle {
   text-align: center;
@@ -236,9 +74,15 @@ div#bg-1-5 {
   display: block;
   text-align: center;
   color: #fff3e0;
+  margin-bottom: 25%;
+}
+.sustainableTravelText {
+    text-align: left;
+    margin-right: 10%;
+    margin-left: 10%;
+    color: #fff3e0;
 }
 .londonVsBirminghamText{
-  margin-top: 280px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: justify;
@@ -246,7 +90,7 @@ div#bg-1-5 {
 }
 .cityGif{
   width: 80%;
-  margin-top: 10%;
+  margin-top: 5%;
   height: 140%;
   margin-left: 20%;
 }
@@ -257,8 +101,9 @@ div#bg-1-5 {
   display: block;
   margin: auto;
   text-align: center;
-  margin-top: 380px;
+  /* margin-top: 380px; */
 }
+
 .transportAccessTitle{
   margin-left: 10%;
   margin-right: 10%;
@@ -302,6 +147,20 @@ div#bg-1-5 {
   margin-right: 10%;
   margin-top: 2%;
   color: #1b262c;
+}
+.spatialScaleText{
+  text-align: left;
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  color: #fff3e0;
+}
+.spatialScaleHeader {
+  font-size: 40px;
+font-family: futura;
+color: #fff3e0;
+margin-left:10%;
 }
 
 /*--------------------------------------------------------------*/
@@ -632,7 +491,7 @@ figure {
   font-size: 14px;
 }
 
-#clustersMoreInfo p:hover, #flowsMoreInfo p:hover {
+#clustersMoreInfo p:hover, #flowsMoreInfo p:hover a:hover {
   background: #fff059;
 }
 
@@ -863,6 +722,10 @@ figure {
 /*--------------------------------------------------------------*/
 /* STORY PAGE INTERACTIVE CHARTS */
 /*--------------------------------------------------------------*/
+.storyLinks a:hover {
+  color: yellow;
+  text-decoration: none;
+}
 .tooltip {
   background: #eee;
   box-shadow: 0 0 5px #999999;
@@ -1464,141 +1327,174 @@ svg text {
   height: 100%;
   background-color: #1b262c;
 }
+
 .aboutContainer{
   text-align: justify;
   padding: 5% 4% 0 4%;
   width: 100%;
 }
+
 .aboutProjectContainer, .aboutMethodologyContainer, .aboutUsContainer{
   margin-bottom: 5%;
 }
-/* text */
-.textBox {
-  width: 60%;
-}
-/* that is paragraph text */
-.aboutPage {
-  color: #fff3e0;
-}
 
-
-/* about project */
-.aboutProject{
-  display: flex;
-  justify-content: start;
-  top: 20%;
-}
-.aboutProject, .aboutUs{
-  width: 100%;
-}
-.aboutProjectTitle {
-  text-align: left;
-  top:0px;
-}
-
-/* bike icon */
-.aboutBikeIcon{  
-  text-align: center;
-  width: 40%;
-  height: 250px;
-}
-#aboutBikeIcon{
-  width: 250px;
-  height: 250px;
-}
-
-/* about methodology */
-.aboutMethodologyContainer{
-  display: flex;
-  justify-content: start;
-  top: 20%;
-}
-.aboutMethodologyTextArea {
-  width: 60%;
-}
-#aboutMethodologyTitle {
-  text-align: right;
-}
-
-/* bus icon */
-#aboutBusIconContainer{
-  width: 40%;
-  text-align: center;
-}
-#aboutBusIcon{
-  width: 90%;
-  height: 100%;
-}
-
-/* about us */
-.aboutUs {
-  top:120%;
-}
-.aboutUsContainer{
-  display: flex;
-  justify-content: start;
-}
-#aboutUsText{
-  width:45%
-}
-.aboutUsPicsNamesContainer{
-  padding-left: 0.5%;
-  width: 55%;
-  display: flex;
-  justify-content: space-around;
-}
-.aboutPageNames {
-  text-align: center;
-  font-size: 14px;
-  margin-block-start:0;
-}
-#chayne, #nathanael, #alicja, #philip, #hussein { 
-  height: 120px;
-  width: 120px;
-}
-.aboutUsNames {
-  display: flex;
-  justify-content: space-around;
-}
-
-/* contact us */
-.aboutContactUsContainer {
-  display: flex;
-  justify-content: space-between;
-  vertical-align: middle;
-  width:25%;
-}
-#aboutEmailIcon {
-  width: 50px;
-  height: 50px;
-}
-
-/* city icon */
 .cityIconContainer{
   bottom: 0%;
   padding: 0 0 0 0;
   width: 100%;
 }
+
 #cityIcon{
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-/* links */
+.aboutMethodologyContainer{
+  display: flex;
+  justify-content: start;
+  top: 20%;
+}
+
+.aboutUsContainer{
+  display: flex;
+  justify-content: start;
+}
+
+#aboutUsText{
+  width:45%
+}
+
+.aboutUsPicsNamesContainer{
+  padding-left: 0.5%;
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.aboutBikeIcon{
+  text-align: center;
+  width: 40%;
+  height: 250px;
+  /* margin-left: 55%; */
+}
+
+#aboutBikeIcon{
+  width: 250px;
+  height: 250px;
+}
+
+#aboutBusIconContainer{
+  width: 40%;
+  text-align: center;
+}
+
+#aboutBusIcon{
+  width: 90%;
+  height: 100%;
+}
+
+.aboutProject{
+  display: flex;
+  justify-content: start;
+  top: 20%;
+}
+
+.aboutProject, .aboutUs{
+  width: 100%;
+  /* margin-left: 5%; */
+  /* position: absolute; */
+}
+
+.aboutMethodology {
+  /* position: absolute; */
+  top:60%;
+  width: 100%;
+  margin-right: 5%;
+}
+
+.aboutUs {
+  /* position: absolute; */
+  top:120%;
+}
+
+.textBox {
+  width: 60%;
+}
+
+/* text */
+/* that is paragraph text */
+
+.aboutPage {
+  color: #fff3e0;
+}
+
+.aboutPageNames {
+  text-align: center;
+  font-size: 14px;
+  margin-block-start:0;
+}
+
+
+.aboutProjectTitle {
+  text-align: left;
+  /* position: absolute; */
+  width: 300px;
+  top:0px;
+}
+
+.aboutMethodologyTextArea {
+  width: 60%;
+}
+
+#aboutMethodologyTitle {
+  text-align: right;
+}
+
+.aboutUsPictures {
+  padding-top: 2%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#chayne, #nathanael, #alicja, #philip, #hussein {
+  height: 120px;
+  width: 120px;
+}
+
+.aboutUsNames {
+  display: flex;
+  justify-content: space-around;
+}
+
+#aboutEmailIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.aboutContactUsContainer {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  width:25%;
+}
+
 a:link {
   text-decoration: none;
 }
+
 a:visited {
   text-decoration: none;
 }
+
 #aboutPage a:hover img {
   opacity: 0.5;
 }
+
 #aboutPage a:hover p {
   color: #fff059;
 }
+
 #aboutPage a:hover {
   color: #fff059;
 }
-
