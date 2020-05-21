@@ -2,7 +2,7 @@
 
 ## Workflow follows these workbooks in order
 
-### 1. Points in polygon.R -
+### 1. Points in polygon.R 
 This reads in the stops.csv file (too large to be uploaded to github), merges this with the MSOA GeoJSON to perform a points in polygon analysis of each bus sotp, train station and metro/tram/underground station in the UK and outputs the locations csvs. This was also used to get the latitude and longitude of each MSOA centroid to add it to the flows data. 
 
 ### 1. Travel_Time_bus.ipynb (Car and Rail also) 
@@ -32,7 +32,7 @@ This workbook performs the final classification results and explains the method 
 ### 6. Data for Website Story Page.ipynb 
 This uses the existing data from the previous workbooks to produce summary statistics that will be used to inform the story and on the website through grouby methods. 
 
-### 7. Flows to sql,ipynb 
+### 7. Flows to sql.ipynb 
 This workbook is used to put all the resulting information onto sql which is then used through the API (with all personal information removed). 
 
 
