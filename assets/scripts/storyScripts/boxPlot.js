@@ -20,7 +20,6 @@ var svg = d3.select("#my_dataviz1")
 
 d3.json("http://dev.spatialdatacapture.org:8717/averages/mean,min,twenty_five,median,seventy_five,max/box3", function(boxData) {
 // Compute summary statistics used for the box:
-    console.log(boxData);
 var q1 = boxData[0].twenty_five
 var median = boxData[0].mean
 var q3 = boxData[0].seventy_five
