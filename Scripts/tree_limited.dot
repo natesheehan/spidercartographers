@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label="perc_households_owned <= 65.05\ngini = 0.77\nsamples = 3412\nvalue = [731, 896, 615, 1612, 1546]", fillcolor="#fcfcff"] ;
+1 [label="percent_at_or_above_qual_level_4 <= 24.05\ngini = 0.67\nsamples = 1488\nvalue = [66, 398, 549, 1157, 185]", fillcolor="#bdbcf6"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="percent_unemployed <= 4.55\ngini = 0.52\nsamples = 864\nvalue = [27, 317, 59, 893, 77]", fillcolor="#9593f1"] ;
+1 -> 2 ;
+3 [label="gini = 0.73\nsamples = 113\nvalue = [18, 58, 7, 69, 40]", fillcolor="#efeffd"] ;
+2 -> 3 ;
+4 [label="gini = 0.46\nsamples = 751\nvalue = [9, 259, 52, 824, 37]", fillcolor="#8886ef"] ;
+2 -> 4 ;
+5 [label="Pop_Per_Hectare <= 57.35\ngini = 0.66\nsamples = 624\nvalue = [39, 81, 490, 264, 108]", fillcolor="#c1f7ed"] ;
+1 -> 5 ;
+6 [label="gini = 0.74\nsamples = 270\nvalue = [39, 60, 59, 168, 108]", fillcolor="#dbdbfa"] ;
+5 -> 6 ;
+7 [label="gini = 0.35\nsamples = 354\nvalue = [0, 21, 431, 96, 0]", fillcolor="#6cecd4"] ;
+5 -> 7 ;
+8 [label="Net annual income (£) <= 33850.0\ngini = 0.7\nsamples = 1924\nvalue = [665, 498, 66, 455, 1361]", fillcolor="#f7c5ed"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="percent_unemployed <= 3.25\ngini = 0.74\nsamples = 826\nvalue = [281, 418, 0, 298, 281]", fillcolor="#effce7"] ;
+8 -> 9 ;
+10 [label="gini = 0.7\nsamples = 325\nvalue = [206, 134, 0, 48, 131]", fillcolor="#fae7da"] ;
+9 -> 10 ;
+11 [label="gini = 0.7\nsamples = 501\nvalue = [75, 284, 0, 250, 150]", fillcolor="#f6fdf2"] ;
+9 -> 11 ;
+12 [label="Pop_Per_Hectare <= 1.25\ngini = 0.57\nsamples = 1098\nvalue = [384, 80, 66, 157, 1080]", fillcolor="#f29bdf"] ;
+8 -> 12 ;
+13 [label="gini = 0.43\nsamples = 198\nvalue = [228, 5, 0, 0, 91]", fillcolor="#f0b58b"] ;
+12 -> 13 ;
+14 [label="gini = 0.5\nsamples = 900\nvalue = [156, 75, 66, 157, 989]", fillcolor="#ee7fd6"] ;
+12 -> 14 ;
+}
