@@ -43,12 +43,20 @@
           <img src="assets/images/blueCity.png" id="little_buildings" alt="City" style="width:100%; margin-top:5%">
           <img src="assets/images/bikeIconFinal.png" id="little_bike" alt="Bike">
         </div>
+        <div class="storyLinks">
         <p class="openText">Transportation surrounds us in every facet of life. Pavements lead us to our supermarkets, bikes and buses connect us to our family and friends, and road and train networks take us across vast stretches of land to see
           every corner of our nation. We have all become familiar with, and used to, the luxuries of modern transportation. As transportation evolves to the challenges of the 21st century, such as congestion and climate change, it is important to
-          consider our existing usage of transport modes and how we may shift towards more sustainable ones in the future. </br> </br>Through analysing open data <a href="https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson" style="font-size:9px">1</a><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates"style="font-size:9px">2</a><a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales"style="font-size:9px">3</a><a href="https://www.nomisweb.co.uk/census/2011/quick_statistics"style="font-size:9px">4</a><a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1" style="font-size:9px">5</a><a href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan" style="font-size:9px">6</a>, we identified areas of England and Wales that share similar characteristics. Such
+          consider our existing usage of transport modes and how we may shift towards more sustainable ones in the future. </br> </br>Through analysing open data <a
+            href="https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson" class="storyLinks" style="font-size:9px">1</a><a
+            href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates" style="font-size:9px" class="storyLinks">2</a><a
+            href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales" style="font-size:9px" class="storyLinks">3</a><a
+            href="https://www.nomisweb.co.uk/census/2011/quick_statistics" style="font-size:9px">4</a><a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1" style="font-size:9px" class="storyLinks">5</a><a
+            href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan" style="font-size:9px" class="storyLinks">6</a>, we identified areas of England and Wales that share similar
+          characteristics. Such
           identification is an essential step towards successful policy interventions and financial investments aimed at increasing transport accessibility and sustainability. Therefore, as a group of multidisciplinary urban analysts from various
           corners of the world, we wish to share with you the story of our analysis.
         </p>
+      </div>
         <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
@@ -71,13 +79,13 @@
           <script src="assets/scripts/storyScripts/pieCharts/pieChart.js"> </script>
           <script src="assets/scripts/storyScripts/pieCharts/pieChartSetUp.js"></script>
         </div>
+        <p style="color:#fff3e0;TEXT-ALIGN: CENTER;">WFH = Working from home</br> <i> Click on a legend label to see how total share would be redistributed without that mode.</i> </p>
         <div class="totalMSOATravel">
           <h2 class="avgTransportTimeTitle"> Total Travel Share for England And Wales </h2>
           <p class="totalTravelMSOAText">Considering England and Wales as a whole, travel to work is primarily driven by car usage, followed by walking and taking the bus. Sustainable transport, which includes bus, train, metro, walking, and cycling,
             only accounts for roughly 28% of total travel share. This suggests transportation in its current form is not prepared to help combat the climate crisis. However, given the disparities in transport access and socio-economic conditions
             across England and Wales, total figures don’t show the full story. The most obvious discrepancy is between rural and urban areas.</p>
           </br>
-          <p style="color:#fff3e0;"> <i> Click on a legend label to see how total share would be redistributed without that mode.</i> </p>
         </div>
         <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
@@ -111,7 +119,6 @@
           important mode of transport for both geographies, perhaps demonstrating that people will choose to walk when they can.</br> </br>But such a crude categorization fails to show the variation amongst urban areas. For example, the next section
           breaks down the transportation differences between London and Birmingham. </p>
         </br>
-        <p style="color:#fff3e0;margin-left:10%;"> <i> Click on a legend label to see how total share would be redistributed without that mode.</i> </p>
         <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
@@ -148,7 +155,6 @@
           </p>
         </div>
         </br>
-        <p style="color:#fff3e0;margin-left:10%;"> <i> Click on a legend label to see how total share would be redistributed without that mode.</i> </p>
         <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
@@ -161,8 +167,12 @@
           <div class="openingColumn">
             <h2 class="avgTransportTimeTitle"> Analysing Variation Within Cities </h2>
             <p class="cityText">As an example, London may be better served in terms of public transport than any other area in England and Wales, but services in London are by no means uniformly distributed. The animation to the left shows notable
-              nonconformity across London for several variables, such as bus stop density and car ownership, these are used to understand transport profiles. Is it possible that some areas of London have worse service than other urban areas in
+              nonconformity across London for several variables, such as bus stop density and car ownership, which are used to understand transport profiles. Is it possible that some areas of London have worse service than other urban areas in
               England and Wales? The answer to that question, and many others, lies in looking at the data at the MSOA level.</p>
+            </br>
+            </br>
+            <p class="cityText"> You can view these maps as photos, by clicking on the links → <a href="assets/images/bus_mode_share_map.png"> Bus share </a> ,<a href="assets/images/car_ownership_map.png"> Car Ownership </a> ,<a
+                href="assets/images/london_bus_stop_density.png"> Bus stop density </a> ,<a href="assets/images/metro_mode_share_map.png"> Metro mode share </a> &<a href="assets/images/tube_map.png"> Tube density </a>
           </div>
         </div>
         <p class="nextButton" style="margin-top: 20%;"><a href="#" class="next">Next →</a></p>
@@ -181,7 +191,7 @@
         <h2 style="margin-left:10%;" class="avgTransportTimeTitle"> Public Transport Access</h2>
         <p class="transportTextAcess">Looking at public transport accessibility, bus stops are by far the most prevalent type of transport facility. There are over 270,000 bus stops across England and Wales, with only two MSOAs having no bus stops at
           all. </br> </br>That being said, other public transportation modes are less commonplace. Only a fourth of MSOAs have train stations at all, showcasing an uneven distribution in public transportation infrastructure. This is even more
-          apparent when looking at metro, tram and underground stations. There are a total of 899 metro, tram and underground stations in England and Wales, with only eight percent of MSOAs containing one.</p>
+          apparent when looking at metro, tram and underground stations as there are only 899 these. Only eight percent of MSOAs have one.</p>
         <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
@@ -261,7 +271,8 @@
           <script src="assets/scripts/storyScripts/cluster2Treemap.js"></script>
           <script src="https://d3js.org/d3.v4.js"></script>
           <p style="margin-left:10%;margin-right:10%;text-align:left;color:white;"><b>Lack of accessibility across all transport modes </b> </br> </br> This cluster shows the third highest usage of bus, bicycle and walking to work, but has the lowest
-            train usage, working from home and all around accessibility. The most popular modes to travel to work are by car, by walking and bus, but the lack of accessibility across all modes and little train usage is the defining feature. This can
+            train usage, working from home (WFH) and all around accessibility. The most popular modes to travel to work are by car, by walking and bus, but the lack of accessibility across all modes and little train usage is the defining feature.
+            This can
             be found in coastal towns and cities such as Newcastle, Cardiff and Blackpool, which might suggest the MSOAs are at the end of train lines and other transport networks and therefore lack external connectivity.</p>
         </div>
         <div class="barCharDiv" id="clusterPie3">
@@ -276,7 +287,8 @@
           <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
           <script src="assets/scripts/storyScripts/cluster4Treemap.js"></script>
           <script src="https://d3js.org/d3.v4.js"></script>
-          <p style="margin-left:10%;margin-right:10%;text-align:left;color:white;"><b>Profile 5: Car reliant but high public transport </b> </br> </br> This cluster has high car usage but is notable for the large number of people who use the bus and
+          <p style="margin-left:10%;margin-right:10%;text-align:left;color:white;"><b>Car reliant but high public transport </b> </br> </br> This cluster has high car usage but is notable for the comparitvely large number of people who use the bus
+            and
             walk to work. These MSOAs also have a high degree of accessibility but the overall transport profile is more shifted towards cars than the previous cluster. This is found in large Urban areas across the UK such as Manchester and
             Birmingham, suggesting that the main difference between these and London is the degree of usage of public transport with the main difference occurring due to the lack of usage of an underground/metro/tram.</p>
           <p class="nextButton" style="margin-left: -75%; margin-top: 5%;"><a href="#">Next →</a></p>
@@ -291,7 +303,7 @@
         <script src="assets/scripts/storyScripts/clusterTrainAvgTime.js"></script>
         <script src="https://d3js.org/d3.v4.js"></script>
         <h2 style="margin-left:10%;" class="avgTransportTimeTitle"> Accessibility by Transport Mode in the Profiles</h2>
-        <p class="peopleAndPublicTransportText"> As explained above, the clusters differ in their accessibility. To get a feeling of this variation, the following bar charts compare the average accessibility by transport mode across the different
+        <p class="peopleAndPublicTransportText"> As explained above, the clusters differ in their accessibility. To get a feeling of this variation, the bar charts above compare the average accessibility by transport mode across the different
           clusters.</p>
         <p class="nextButton"><a href="#">Next →</a></p>
       </div>
@@ -299,19 +311,36 @@
     <section class="story">
       <div class="content">
         <h2 style="margin-left:10%;" class="avgTransportTimeTitle"> Relationship between Transport Profiles and Demographics </h2>
-        <p class="peopleAndPublicTransportText"> As an additional step we began to explore how, if at all, transport profiles relate to demographic characteristics. We attempt to answer this through a classification analysis, which is explained in detail in <a href="./assets/data/Methodology_SC.pdf">our methodology </a>. The classification analysis was performed using a Random Forest Classification algorithm, including factors which have been found to be related to transport usage like population density, net annual income, and mean age. 65% of MSOAs were able to be correctly classified by the demographic factors, with population density and net annual income being the most important factors relating to the identification of the transport profile.</p>
-      </br>
-      <img src="assets/images/tree.png" style="width: 80%;margin-left: 10%;">
-      <p class="peopleAndPublicTransportText"> An example of one of the decision trees from the algorithm can be seen above. It shows us how the algorithm worked to predict which transport profile an MSOA belonged to. For example, transport profile 4 (high public transport and good accessibility) is associated with an income above £33,850 with the percentage of households owned being greater than 59.25%. In contrast, transport profile 1 (good train accessibility but car dependent) is associated with an income below £33,850 and a mean age of less than 38.25 years. The issue, however, is that this is one of many decision trees created by the algorithm. To get a better understanding of the result of the classification, it would be necessary to examine more trees. This would help inform us as to which demographic factors are related to the cluster outputs. </p>
-        <p class="nextButton"><a href="/map.html">View our interactive map →</a></p>
+        <div class="storyLinks">
+          <p class="peopleAndPublicTransportText"> As an additional step we began to explore how, if at all, transport profiles relate to demographic characteristics. We attempt to answer this through a classification analysis, which is explained in
+            detail in <a href="./assets/data/Methodology_SC.pdf">our methodology </a>. The classification analysis was performed using a Random Forest Classification algorithm, including factors which have been found to be related to transport usage
+            like population density, net annual income, and mean age. 65% of MSOAs were able to be correctly classified by the demographic factors, with population density and net annual income being the most important factors relating to the
+            identification of the transport profile.</p>
+          </br>
+          <img src="assets/images/tree.png" style="width: 80%;margin-left: 10%;">
+          <p class="peopleAndPublicTransportText"> An example of one of the decision trees from the algorithm can be seen above. It shows us how the algorithm worked to predict which transport profile an MSOA belonged to. For example, transport
+            profile
+            4 (high public transport and good accessibility) is associated with an income above £33,850 with the percentage of households owned being greater than 59.25%. In contrast, transport profile 1 (good train accessibility but car dependent)
+            is
+            associated with an income below £33,850 and a mean age of less than 38.25 years. The issue, however, is that this is one of many decision trees created by the algorithm. To get a better understanding of the result of the classification,
+            it
+            would be necessary to examine more trees. This would help inform us as to which demographic factors are related to the cluster outputs. </p>
+          <p class="nextButton"><a href="/map.html">View our interactive map →</a></p>
+        </div>
       </div>
     </section>
   </div>
   <h2 style="margin-left:10%;" class="avgTransportTimeTitle"> Further Reading </h2>
-  <ul style="margin-left:10%;margin-right:10%;">
-    <a href="./assets/data/Methodology_SC.pdf"><li> Our methodology </li></a>
-    <a href="https://towardsdatascience.com/unsupervised-learning-and-data-clustering-eeecb78b422a"><li> Clustering </li></a>
-    <a href="https://medium.com/@categitau/in-one-of-my-previous-posts-i-introduced-machine-learning-and-talked-about-the-two-most-common-c1ac6e18df16"><li> Classification </li> </a>
+  <ul class="storyLinks" style="margin-left:10%;margin-right:10%;">
+    <a href="./assets/data/Methodology_SC.pdf">
+      <li> Our methodology </li>
+    </a>
+    <a href="https://towardsdatascience.com/unsupervised-learning-and-data-clustering-eeecb78b422a">
+      <li class="storyLinks"> Clustering </li>
+    </a>
+    <a href="https://medium.com/@categitau/in-one-of-my-previous-posts-i-introduced-machine-learning-and-talked-about-the-two-most-common-c1ac6e18df16">
+      <li> Classification </li>
+    </a>
   </ul>
 
   <script type="module" src="assets/scripts/storyScripts/littleCityAnimation.js"></script>

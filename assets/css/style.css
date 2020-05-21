@@ -491,7 +491,7 @@ figure {
   font-size: 14px;
 }
 
-#clustersMoreInfo p:hover, #flowsMoreInfo p:hover {
+#clustersMoreInfo p:hover, #flowsMoreInfo p:hover a:hover {
   background: #fff059;
 }
 
@@ -722,6 +722,10 @@ figure {
 /*--------------------------------------------------------------*/
 /* STORY PAGE INTERACTIVE CHARTS */
 /*--------------------------------------------------------------*/
+.storyLinks a:hover {
+  color: yellow;
+  text-decoration: none;
+}
 .tooltip {
   background: #eee;
   box-shadow: 0 0 5px #999999;
