@@ -491,8 +491,9 @@ figure {
   font-size: 14px;
 }
 
-#clustersMoreInfo p:hover, #flowsMoreInfo p:hover a:hover {
+#clustersMoreInfo p:hover, #flowsMoreInfo p:hover {
   background: #fff059;
+  cursor: pointer;
 }
 
 .infoButtonAlignment {
@@ -715,7 +716,7 @@ figure {
 }
 
 .DataSourcesText a:hover {
-  color: yellow;
+  color: #fff059;
   text-decoration: none;
 }
 
@@ -724,7 +725,7 @@ figure {
 /*--------------------------------------------------------------*/
 
 .storyLinks a:hover {
-  color: yellow;
+  color: #fff059;
   text-decoration: none;
 }
 .tooltip {
@@ -997,7 +998,9 @@ svg text {
 }
 
 #popupBoxCloseButton:hover {
+  cursor: pointer;
   background:#fff059;
+  
 }
 
 #popup_box p, #popup_box h1 {
