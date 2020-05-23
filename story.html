@@ -64,11 +64,13 @@
     <!-- Spatial Scale section -->
     <section class="story">
       <div class="content">
+        <img src="assets/images/MSOA_map.png" class="MSOAMap">
         <h2 class="spatialScaleHeader"> Spatial Scale</h2>
         <p class="spatialScaleText">For this analysis, we used census data per middle layer super output area (MSOA). An MSOA is a geospatial statistic used in England and Wales that was created by the Office for National Statistics. It is used to
           understand small areas of the country. The 2011 census reports 7,201 MSOAs with a mean population of 7,200 people and a minimum population of 5,000. While in some cases it may be helpful to aggregate MSOA data into larger geographical
           areas, the below sections will demonstrate the issues of such aggregation for our analysis of transport characteristics. We start with aggregated, national level statistics and work our way down to the MSOA level to show that variations
           exist at all spatial scales.</p>
+        <p class="nextButton"><a href="#" class="next">Next →</a></p>
       </div>
     </section>
 
@@ -336,6 +338,12 @@
     <a href="./assets/data/Methodology_SC.pdf">
       <li> Our methodology </li>
     </a>
+    <a href="https://github.com/natesheehan/spidercartographers">
+      <li> Our github </li>
+    </a>
+    <a href="http://dev.spatialdatacapture.org:8717/">
+      <li> Our API documentation </li>
+    </a>
     <a href="https://towardsdatascience.com/unsupervised-learning-and-data-clustering-eeecb78b422a">
       <li class="storyLinks"> Clustering </li>
     </a>
@@ -386,7 +394,6 @@
     min-height: 100%;
     min-height: 100vh;
     background-color: #1b262c;
-    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -456,7 +463,6 @@
     .attribution {
       font-family: futura;
       font-weight: 400;
-      font-size: 1.2rem;
       color: #fff3e0;
       margin-top: 1.2rem;
     }
@@ -465,7 +471,6 @@
     a {
       font-family: futura;
       font-weight: 300;
-      font-size: 1.5rem;
       color: #fff3e0;
       ;
       margin-top: 2rem;
