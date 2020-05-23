@@ -54,10 +54,16 @@ body#story {}
   display: block;
   margin: auto;
 }
-
 .nextButton {
   margin-left: 10%;
-  color: #1b262c;
+}
+.nextButton a:hover {
+  color: #fff059;
+}
+.MSOAMap {
+  width:50%;
+  display:block;
+  margin:auto;
 }
 
 #ruralVsUrban {
@@ -1000,7 +1006,7 @@ svg text {
 #popupBoxCloseButton:hover {
   cursor: pointer;
   background:#fff059;
-  
+
 }
 
 #popup_box p, #popup_box h1 {
