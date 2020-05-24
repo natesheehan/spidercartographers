@@ -33,7 +33,6 @@ h3 {
 /*--------------------------------------------------------------*/
 body#story {}
 
-
 .openTitle {
   text-align: center;
   color: #fff3e0;
@@ -54,83 +53,104 @@ body#story {}
   display: block;
   margin: auto;
 }
+
 .nextButton {
   margin-left: 10%;
 }
+
 .nextButton a:hover {
   color: #fff059;
 }
+
 .MSOAMap {
-  width:50%;
-  display:block;
-  margin:auto;
+  width: 50%;
+  display: block;
+  margin: auto;
 }
 
 #ruralVsUrban {
   display: block;
   text-align: center;
 }
-#chartRural{
+
+#chartRural {
   color: #fff3e0;
 }
-#chartUrban{
+
+#chartUrban {
   color: #fff3e0;
 }
-#londonVsBirmingham{
+
+#londonVsBirmingham {
   display: block;
   text-align: center;
   color: #fff3e0;
   margin-bottom: 25%;
 }
+
 .sustainableTravelText {
-    text-align: left;
-    margin-right: 10%;
-    margin-left: 10%;
-    color: #fff3e0;
+  text-align: left;
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #fff3e0;
 }
-.londonVsBirminghamText{
+
+.londonVsBirminghamText {
   margin-left: 10%;
   margin-right: 10%;
   text-align: justify;
   color: #fff3e0;
 }
-.cityGif{
+
+.cityGif {
   width: 80%;
   margin-top: 5%;
   height: 140%;
   margin-left: 20%;
 }
-.cityText{
+
+.cityText {
   color: #fff3e0;
 }
-.barCharDiv{
+
+.barCharDiv {
   display: block;
   margin: auto;
   text-align: center;
   /* margin-top: 380px; */
 }
 
-.transportAccessTitle{
+.transportAccessTitle {
   margin-left: 10%;
   margin-right: 10%;
   text-align: justify;
   color: #fff3e0;
 }
-.transportTextAcess{
+
+.transportTextAcess {
   margin-left: 10%;
   margin-right: 10%;
   text-align: justify;
   color: #fff3e0;
 }
-.travelTime{
+
+.travelTime {
   color: #fff3e0;
 }
-.ruralUrbanText{
-  margin-top: 280px;
+
+.ruralUrbanText {
   margin-left: 10%;
   margin-right: 10%;
   text-align: justify;
   color: #fff3e0;
+}
+
+.urbanRuralDiv {
+  margin-top: 25%;
+}
+
+.msoaCount {
+  font-size: 20px;
 }
 
 .openText {
@@ -154,7 +174,8 @@ body#story {}
   margin-top: 2%;
   color: #1b262c;
 }
-.spatialScaleText{
+
+.spatialScaleText {
   text-align: left;
   display: block;
   margin-left: 10%;
@@ -162,11 +183,24 @@ body#story {}
   margin-top: 2%;
   color: #fff3e0;
 }
+
 .spatialScaleHeader {
   font-size: 40px;
+<<<<<<< HEAD
+  font-family: futura;
+  color: #fff3e0;
+  margin-left: 10%;
+}
+.clusterDescription {
+  margin-left:10%;
+  margin-right:10%;
+  text-align:left;
+  color:#fff3e0;
+=======
 font-family: Futura, sans-serif;
 color: #fff3e0;
 margin-left:10%;
+>>>>>>> master
 }
 
 /*--------------------------------------------------------------*/
@@ -710,7 +744,7 @@ figure {
   padding: 1%;
 }
 
-.DataSourcesText h4{
+.DataSourcesText h4 {
   margin: 0;
   padding: 0;
   font-size: 12px;
@@ -729,11 +763,19 @@ figure {
 /*--------------------------------------------------------------*/
 /* STORY PAGE INTERACTIVE CHARTS */
 /*--------------------------------------------------------------*/
-
 .storyLinks a:hover {
   color: #fff059;
   text-decoration: none;
 }
+/* .storyLinks {
+  margin-left:10%;
+  margin-right:10%;
+} */
+.pieDescription{
+  color:#fff3e0;
+  TEXT-ALIGN: CENTER;
+}
+
 .tooltip {
   background: #eee;
   box-shadow: 0 0 5px #999999;
@@ -803,11 +845,13 @@ rect.disabled {
   margin: auto;
   text-align: center;
 }
-.totalMSOATravel{
+
+.totalMSOATravel {
   margin-left: 10%;
   margin-right: 10%;
 }
-.totalTravelMSOAText{
+
+.totalTravelMSOAText {
   color: #fff3e0;
 }
 
@@ -895,6 +939,13 @@ svg text {
   color: #fff3e0;
 }
 
+.storyTitle {
+  font-size: 40px;
+  font-family: futura;
+  color: #fff3e0;
+  margin-left: 10%;
+}
+
 .row {
   text-align: center;
   margin-top: 5%;
@@ -911,7 +962,7 @@ svg text {
 
 .otherImage {
   width: 60%;
-  margin-top:18%;
+  margin-top: 18%;
 }
 
 .travelTimeText {
@@ -1000,13 +1051,12 @@ svg text {
 
 #popup_box a:hover {
   cursor: pointer;
-  color:#fff059;
+  color: #fff059;
 }
 
 #popupBoxCloseButton:hover {
   cursor: pointer;
-  background:#fff059;
-
+  background: #fff059;
 }
 
 #popup_box p, #popup_box h1 {
@@ -1022,7 +1072,7 @@ svg text {
   padding: 2%;
   width: 20%;
   text-align: center;
-  background:#ffa372;
+  background: #ffa372;
   border-radius: 10px;
 }
 
@@ -1204,79 +1254,79 @@ svg text {
   background-color: #1b262c;
 }
 
-.aboutContainer{
+.aboutContainer {
   text-align: justify;
   padding: 5% 4% 0 4%;
   width: 100%;
 }
 
-.aboutProjectContainer, .aboutMethodologyContainer, .aboutUsContainer{
+.aboutProjectContainer, .aboutMethodologyContainer, .aboutUsContainer {
   margin-bottom: 5%;
 }
 
-.cityIconContainer{
+.cityIconContainer {
   bottom: 0%;
   padding: 0 0 0 0;
   width: 100%;
 }
 
-#cityIcon{
+#cityIcon {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.aboutMethodologyContainer{
+.aboutMethodologyContainer {
   display: flex;
   justify-content: start;
   top: 20%;
 }
 
-.aboutUsContainer{
+.aboutUsContainer {
   display: flex;
   justify-content: start;
 }
 
-#aboutUsText{
-  width:45%
+#aboutUsText {
+  width: 45%
 }
 
-.aboutUsPicsNamesContainer{
+.aboutUsPicsNamesContainer {
   padding-left: 0.5%;
   width: 55%;
   display: flex;
   justify-content: space-around;
 }
 
-.aboutBikeIcon{
+.aboutBikeIcon {
   text-align: center;
   width: 40%;
   height: 250px;
   /* margin-left: 55%; */
 }
 
-#aboutBikeIcon{
+#aboutBikeIcon {
   width: 250px;
   height: 250px;
 }
 
-#aboutBusIconContainer{
+#aboutBusIconContainer {
   width: 40%;
   text-align: center;
 }
 
-#aboutBusIcon{
+#aboutBusIcon {
   width: 90%;
   height: 100%;
 }
 
-.aboutProject{
+.aboutProject {
   display: flex;
   justify-content: start;
   top: 20%;
 }
 
-.aboutProject, .aboutUs{
+.aboutProject, .aboutUs {
   width: 100%;
   /* margin-left: 5%; */
   /* position: absolute; */
@@ -1284,14 +1334,14 @@ svg text {
 
 .aboutMethodology {
   /* position: absolute; */
-  top:60%;
+  top: 60%;
   width: 100%;
   margin-right: 5%;
 }
 
 .aboutUs {
   /* position: absolute; */
-  top:120%;
+  top: 120%;
 }
 
 .textBox {
@@ -1300,7 +1350,6 @@ svg text {
 
 /* text */
 /* that is paragraph text */
-
 .aboutPage {
   color: #fff3e0;
 }
@@ -1308,15 +1357,14 @@ svg text {
 .aboutPageNames {
   text-align: center;
   font-size: 14px;
-  margin-block-start:0;
+  margin-block-start: 0;
 }
-
 
 .aboutProjectTitle {
   text-align: left;
   /* position: absolute; */
   width: 300px;
-  top:0px;
+  top: 0px;
 }
 
 .aboutMethodologyTextArea {
@@ -1352,7 +1400,7 @@ svg text {
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
-  width:25%;
+  width: 25%;
 }
 
 a:link {

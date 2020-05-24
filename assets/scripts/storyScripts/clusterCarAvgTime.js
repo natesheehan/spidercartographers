@@ -127,7 +127,7 @@ svgBarCar.selectAll("mybar")
       .attr("class", "y label")
       .attr("text-anchor", "end")
       .attr("y", -10)
-      .attr("x", 300)
+      .attr("x", 350)
       .attr("dy", ".75em")
       .attr("transform", "rotate(-360)")
       .text("Average time from origin by car (Minutes)");

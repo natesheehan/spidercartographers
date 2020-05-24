@@ -6,7 +6,6 @@ var flag = false;
 // get box 5 data
 $.getJSON(url, function(dataBox) {
       // Check that call is working
-      console.log("working?");
       flag = true;
       $.each(dataBox, function(k, v) {
           // Collect data
@@ -22,7 +21,6 @@ $.getJSON(url, function(dataBox) {
              };
             // Push new data to array and check on progress
             dataBoxArray.push(newBoxData);
-            console.log(newBoxData.mode);
           }); // end of for each
 
           var DEFAULT_DATASET_SIZE = 6,
@@ -30,17 +28,17 @@ $.getJSON(url, function(dataBox) {
             color = Chart.helpers.color;
 
           var chartColors = {
-            orange: '#ffa372',
+            yellow: '#fff059',
             black: '#37a583',
-            grey: '#bdccd4'
+            blue: '#186da0'
           };
 
           var barPeopleData = {
             labels: ["MIN", "25%", "50%", "75%", "MAX", "MEAN"],
             datasets: [{
               label: 'Sustainable travel',
-              backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
-              borderColor: chartColors.grey,
+              backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+              borderColor: chartColors.blue,
               borderWidth: 1,
               data: [
                 2.019363762,
@@ -52,8 +50,8 @@ $.getJSON(url, function(dataBox) {
               ]
             }, {
               label: 'Public Transport',
-              backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
-              borderColor: chartColors.orange,
+              backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
+              borderColor: chartColors.yellow,
               borderWidth: 1,
               data: [
                 0.744047619,
