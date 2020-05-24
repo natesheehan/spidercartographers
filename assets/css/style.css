@@ -2,7 +2,7 @@
 /* GENERAL */
 /*--------------------------------------------------------------*/
 @font-face {
-  font-family: Futura;
+  font-family: Futura, sans-serif;
   src: url(Futura Bold font.tff);
 }
 
@@ -15,7 +15,7 @@ p {
 }
 
 h1, .sig, p, a, h4, h3 {
-  font-family: Futura;
+  font-family: Futura, sans-serif;
   color: #ffa372;
 }
 
@@ -43,7 +43,7 @@ body#story {}
 
 .introText {
   z-index: 1000;
-  font-family: futura;
+  font-family: Futura, sans-serif;
   font-size: 25px;
 }
 
@@ -186,6 +186,7 @@ body#story {}
 
 .spatialScaleHeader {
   font-size: 40px;
+<<<<<<< HEAD
   font-family: futura;
   color: #fff3e0;
   margin-left: 10%;
@@ -195,6 +196,11 @@ body#story {}
   margin-right:10%;
   text-align:left;
   color:#fff3e0;
+=======
+font-family: Futura, sans-serif;
+color: #fff3e0;
+margin-left:10%;
+>>>>>>> master
 }
 
 /*--------------------------------------------------------------*/
@@ -421,7 +427,7 @@ figure {
   display: inline-block;
   margin: 1em;
   font-size: 15px;
-  font-family: Futura;
+  font-family: Futura, sans-serif;
   color: #ffa372;
 }
 
@@ -541,7 +547,7 @@ figure {
   position: relative;
   width: 100%;
   margin: 0% 0% 4% 0%;
-  font-family: futura;
+  font-family: Futura, sans-serif;
   font-size: 14px;
   color: #fff3e0;
 }
@@ -716,7 +722,7 @@ figure {
   border-radius: 10px;
   background: #1b262c;
   color: #fff3e0;
-  font-family: futura;
+  font-family: Futura, sans-serif;
   font-size: 12px;
 }
 
@@ -868,12 +874,12 @@ chart-container {
 
 svg text {
   fill: #ffa372;
-  font-family: futura;
+  font-family: Futura, sans-serif;
 }
 
 .msoaInfo svg text {
   fill: #fff3e0;
-  font-family: futura;
+  font-family: Futura, sans-serif;
 }
 
 .background-style {
@@ -929,7 +935,7 @@ svg text {
 
 .avgTransportTimeTitle {
   font-size: 40px;
-  font-family: futura;
+  font-family: Futura, sans-serif;
   color: #fff3e0;
 }
 
@@ -946,7 +952,7 @@ svg text {
 }
 
 .transportTimeTitle {
-  font-family: futura;
+  font-family: Futura, sans-serif;
 }
 
 .trainImage {
