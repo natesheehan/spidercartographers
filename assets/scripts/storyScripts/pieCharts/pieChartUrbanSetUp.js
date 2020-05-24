@@ -11,7 +11,7 @@ d3.json("http://dev.spatialdatacapture.org:8717/cityscale/mean/urban", function(
     urbanData[7].metrics = "Train"
     urbanData[8].metrics = "Underground"
     urbanData[9].metrics = "WFH"
-    
-    var colorScheme = ["#ffa372"," #ff059","#ed6663","#bdccd4","#37a583","#186da0","#1b262c","#4DB6AC","#FFF176","#64B5F6","#00E676","#00008b"];
+
+    var colorScheme = ["#ffa372"," #ff059","#ed6663","#bdccd4","#37a583","#186da0","#202BBC","#4DB6AC","#FFF176","#64B5F6","#00E676","#00008b"];
     renderUrbanPieChart(urbanMeanData,"#chartUrban",colorScheme);
 });
