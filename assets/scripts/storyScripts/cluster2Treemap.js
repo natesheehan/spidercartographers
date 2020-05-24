@@ -14,7 +14,7 @@ var svgPieCluster2 = d3.select("#clusterPie2")
     .attr("transform", "translate(" + (widthPieCluster2 / 2 + marginPieCluster2.left) + "," + (heightPieCluster2 / 2 + marginPieCluster2.top) + ")");
 
 d3.json("http://dev.spatialdatacapture.org:8717/clustermeans/perc/cluster2", function(data) {
-console.log(data)
+
 
 data[0].mode = "WFH (8.7%)"
 data[1].mode = "Metro (0.8%)"
