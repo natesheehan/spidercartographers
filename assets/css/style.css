@@ -186,7 +186,6 @@ body#story {}
 
 .spatialScaleHeader {
   font-size: 40px;
-<<<<<<< HEAD
   font-family: futura;
   color: #fff3e0;
   margin-left: 10%;
@@ -196,11 +195,6 @@ body#story {}
   margin-right:10%;
   text-align:left;
   color:#fff3e0;
-=======
-font-family: Futura, sans-serif;
-color: #fff3e0;
-margin-left:10%;
->>>>>>> master
 }
 
 /*--------------------------------------------------------------*/
