@@ -700,7 +700,7 @@ figure {
 #flowsLegend {
   display: none;
   position: absolute;
-  z-index: 501;
+  z-index: 89;
   width: 15%;
   margin: 1% 2% 2% 30%;
   padding: 1%;
@@ -715,7 +715,7 @@ figure {
 #flowsPopup {
   visibility: hidden;
   position: absolute;
-  z-index: 500;
+  z-index: 89;
   width: 30%;
   margin: 1% 2% 2% 47%;
   padding: 1%;
@@ -1084,7 +1084,7 @@ svg text {
 #clustersInfoPopup, #flowsInfoPopup {
   display: none;
   position: absolute;
-  z-index: 100;
+  z-index: 502;
   padding: 5%;
   background: #37a583;
   border-radius: 25px;
