@@ -45,16 +45,16 @@
           <img src="assets/images/bikeIconFinal.png" id="little_bike" alt="Bike">
         </div>
         <div class="storyLinks">
-          <p class="openText">Transportation surrounds us in every facet of life. Pavements lead us to our supermarkets, bikes and buses connect us to our family and friends, and road and train networks take us across vast stretches of land to see
+          <p class="openText">Transportation surrounds us in every facet of life (Delbosc, 2012). Pavements lead us to our supermarkets, bikes and buses connect us to our family and friends, and road and train networks take us across vast stretches of land to see
             every corner of our nation. We have all become familiar with, and used to, the luxuries of modern transportation. As transportation evolves to the challenges of the 21st century, such as congestion and climate change, it is important to
-            consider our existing usage of transport modes and how we may shift towards more sustainable ones in the future. </br> </br>Through analysing open data <a
+            consider our existing usage of transport modes and how we may shift towards more sustainable ones in the future (Buehler, 2012 and Laverty et al., 2013). </br> </br>Through analysing open data <a
               href="https://opendata.arcgis.com/datasets/29fdaa2efced40378ce8173b411aeb0e_2.geojson" class="storyLinks" style="font-size:9px">1</a><a
               href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/middlesuperoutputareamidyearpopulationestimates" style="font-size:9px" class="storyLinks">2</a><a
               href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/smallareaincomeestimatesformiddlelayersuperoutputareasenglandandwales" style="font-size:9px" class="storyLinks">3</a><a
               href="https://www.nomisweb.co.uk/census/2011/quick_statistics" style="font-size:9px">4</a><a href="https://www.nomisweb.co.uk/census/2011/bulk/rOD1" style="font-size:9px" class="storyLinks">5</a><a
               href="https://data.gov.uk/dataset/ff93ffc1-6656-47d8-9155-85ea0b8f2251/national-public-transport-access-nodes-naptan" style="font-size:9px" class="storyLinks">6</a>, we identified areas of England and Wales that share similar
             characteristics. Such
-            identification is an essential step towards successful policy interventions and financial investments aimed at increasing transport accessibility and sustainability. Therefore, as a group of multidisciplinary urban analysts from various
+            identification is an essential step towards successful policy interventions and financial investments aimed at increasing transport accessibility and sustainability (Collins and Chambers, 2005). Therefore, as a group of multidisciplinary urban analysts from various
             corners of the world, we wish to share with you the story of our analysis.
           </p>
         </div>
@@ -253,7 +253,7 @@
         <h2 class="storyTitle">Identifying Transport Profiles </h2>
         <p class="travelTimeText">It is evident that there is considerable variation and heterogeneity in transport characteristics of MSOAs across England and Wales. The next step was to determine whether different groups of MSOAs with a similar
           transport profile could be identified. To do so, we used the transport characteristics discussed above, such as commuting mode shares, car ownership and travel time accessibility by different modes to represent the transport profile of an
-          MSOA. </br> </br>We used a clustering algorithm to group the MSOAs into distinct transport profiles. Clustering algorithms group data points to maximize similarity within groups and minimize it between them. Our clustering revealed five
+          MSOA. </br> </br>We used a clustering algorithm to group the MSOAs into distinct transport profiles (Shelton et al., 2006). Clustering algorithms group data points to maximize similarity within groups and minimize it between them. Our clustering revealed five
           distinct groups in our data: </p>
         <div class="barCharDiv" id="clusterPie0">
           <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
@@ -319,8 +319,8 @@
       <div class="content">
         <h2 class="storyTitle"> Relationship between Transport Profiles and Demographics </h2>
         <div class="storyLinks">
-          <p class="peopleAndPublicTransportText"> As an additional step we began to explore how, if at all, transport profiles relate to demographic characteristics. We attempt to answer this through a classification analysis, which is explained in
-            detail in our<a href="./Report/Group0_SDCFinalReport.pdf" target="_blank"> methodology </a>. The classification analysis was performed using a Random Forest Classification algorithm, including factors which have been found to be related to transport usage
+          <p class="peopleAndPublicTransportText"> As an additional step we began to explore how, if at all, transport profiles relate to demographic characteristics (Harris et al., 2007). We attempt to answer this through a classification analysis, which is explained in
+            detail in our<a href="./Report/Group0_SDCFinalReport.pdf" target="_blank"> methodology </a> (Titheridge et al., 2008). The classification analysis was performed using a Random Forest Classification algorithm, including factors which have been found to be related to transport usage
             like population density, net annual income, and mean age. 65% of MSOAs were able to be correctly classified by the demographic factors, with population density and net annual income being the most important factors relating to the
             identification of the transport profile.</p>
           </br>
@@ -354,7 +354,28 @@
     <a href="https://medium.com/@categitau/in-one-of-my-previous-posts-i-introduced-machine-learning-and-talked-about-the-two-most-common-c1ac6e18df16">
       <li> Classification </li>
     </a>
-  </ul>
+    <a href="https://www.sciencedirect.com/science/article/pii/S0966692310001171">
+      <li>Buehler, R., 2011. Determinants of Transport Mode Choice: A Comparison of Germany and the USA. Journal of Transport Geography, 19, pp. 644-657.</li>
+    </a>
+    <a href="https://journals.sagepub.com/doi/10.1177/0013916504265440">
+      <li>Collins, C., and Chambers, S., 2005. Psychological and Situational Influences on Commuter-Transport-Mode Choice. Environment and Behaviour, 37, pp. 640-661.</li>
+    </a>
+    <a href="https://www.researchgate.net/publication/233390464_The_role_of_well-being_in_transport_policy">
+      <li>Delbosc, A., 2012. The Role of Well-Being in Transport Policy. Transport Policy, 23, pp. 25-33.</li>
+    </a>
+    <a href="https://link.springer.com/article/10.1007/s11113-007-9042-9">
+      <li>Harris, R., Johnston, R., and Burgess, S., 2007. Neighborhoods, Ethnicity and School Choice: Developing a Statistical Framework for Geodemographic Analysis. Population Research Policy Review, 26, pp. 553-579.</li>
+    </a>
+    <a href="https://www.sciencedirect.com/science/article/pii/S0749379713003334">
+      <li>Laverty, A., Mindell, J., Webb, E., and Millett, C., 2013. Active Travel to Work and Cardiovascular Risk Factors in the United Kingdom. American Journal of Preventive Medicine, 45(3), pp. 282-288.</li>
+    </a>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/16221559/">
+      <li>Shelton, N., Birkin, M., and Dorling, D., 2006. Where Not to Live: A Geo-Demographic Classification of Mortality for England and Wales, 1981-2000. Health & Place, 12, pp. 557-569.</li>
+    </a>
+    <a href="https://repository.lboro.ac.uk/articles/Using_geo-demographic_analysis_to_calculate_patronage_figures_for_rural_buses_Final_report/9460964">
+      <li>Titheridge, H., Potter, S., Enoch, M., and Bannister, D., 2008. Using Geo-Demographic Analysis to Calculate Patronage Figures for Rural Buses. Final report, London: UCL and the Open University.</li>
+    </a>
+   </ul>
 
   <script type="module" src="assets/scripts/storyScripts/littleCityAnimation.js"></script>
 </body>
