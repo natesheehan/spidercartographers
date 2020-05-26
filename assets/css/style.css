@@ -186,21 +186,17 @@ body#story {}
 
 .spatialScaleHeader {
   font-size: 40px;
-<<<<<<< HEAD
-  font-family: futura;
+  font-family: Futura, sans-serif;
   color: #fff3e0;
   margin-left: 10%;
 }
+
 .clusterDescription {
   margin-left:10%;
   margin-right:10%;
   text-align:left;
   color:#fff3e0;
-=======
-font-family: Futura, sans-serif;
-color: #fff3e0;
-margin-left:10%;
->>>>>>> master
+  font-family: Futura, sans-serif;
 }
 
 /*--------------------------------------------------------------*/
