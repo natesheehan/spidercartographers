@@ -13,7 +13,7 @@ var svgPieCluster3 = d3.select("#clusterPie3")
   .append("g")
     .attr("transform", "translate(" + (widthPieCluster3 / 2 + marginPieCluster3.left) + "," + (heightPieCluster3 / 2 + marginPieCluster3.top) + ")");
 
-d3.json("http://dev.spatialdatacapture.org:8717/clustermeans/perc/cluster3", function(data) {
+d3.json("https://raw.githubusercontent.com/natesheehan/scdata/master/cluster3.json", function(data) {
 
 
 data[0].mode = "WFH (9.4%)"

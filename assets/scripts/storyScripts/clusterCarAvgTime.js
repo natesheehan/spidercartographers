@@ -12,7 +12,7 @@ var svgBarCar = d3.select("#barCar")
     .attr("transform",
           "translate(" + marginBarCar.left + "," + marginBarCar.top + ")");
 
-d3.json("http://dev.spatialdatacapture.org:8717/data/clusters/average", function(data) {
+d3.json("https://raw.githubusercontent.com/natesheehan/scdata/master/profile.json", function(data) {
 
 delete data[0].HH_owning_cars_perc
 delete data[0].avg_time_bus
