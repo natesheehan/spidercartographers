@@ -17,15 +17,13 @@ var svg = d3.select("#my_dataviz1")
   .attr("transform",
     "translate(" + marginBox.left + "," + marginBox.top + ")");
 
-
-d3.json("http://dev.spatialdatacapture.org:8717/averages/mean,min,twenty_five,median,seventy_five,max/box3", function(boxData) {
 // Compute summary statistics used for the box:
-var q1 = boxData[0].twenty_five
-var median = boxData[0].mean
-var q3 = boxData[0].seventy_five
-var interQuantileRange = q3 -q1
-var min = boxData[0].min
-var max = boxData[0].max
+var q1 = 54.50845335
+var median = 60.00976374
+var q3 = 71.10474827
+var interQuantileRange = 65.10757717
+var min = 3.051201672
+var max = 84.16775885
 
 // Show the Y scale
 var y = d3.scaleLinear()
@@ -44,7 +42,7 @@ svg
   .attr("x2", centerBox)
   .attr("y1", y(min))
   .attr("y2", y(max))
-  .attr("stroke", "#37a583")
+  .attr("stroke", "black")
 
 // Show the box
 svg
@@ -54,7 +52,7 @@ svg
   .attr("height", (y(q1) - y(q3)))
   .attr("width", widthBox)
   .attr("stroke", "black")
-  .style("fill", "#186da0")
+  .style("fill", "#ffa372")
 
 svg.append("text")
   .attr("x", +190)
@@ -77,5 +75,4 @@ svg
   .attr("y2", function(d) {
     return (y(d))
   })
-  .attr("stroke", "#37a583")
-});
+  .attr("stroke", "black")

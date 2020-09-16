@@ -1,17 +1,3 @@
-d3.json("http://dev.spatialdatacapture.org:8717/cityscale/mean/urban", function(urbanData) {
-    var urbanMeanData = urbanData;
-
-    urbanData[0].metrics = "Bike"
-    urbanData[1].metrics = "Bus"
-    urbanData[2].metrics = "Car"
-    urbanData[3].metrics = "Motorbike"
-    urbanData[4].metrics = "Walk"
-    urbanData[5].metrics = "Other"
-    urbanData[6].metrics = "Taxi"
-    urbanData[7].metrics = "Train"
-    urbanData[8].metrics = "Underground"
-    urbanData[9].metrics = "WFH"
-
-    var colorScheme = ["#ffa372"," #ff059","#ed6663","#bdccd4","#37a583","#186da0","#202BBC","#4DB6AC","#FFF176","#64B5F6","#00E676","#00008b"];
-    renderUrbanPieChart(urbanMeanData,"#chartUrban",colorScheme);
-});
+var inputUrbanData = [{label:"Bike",value:2.92785024354624},{label:"Bus",value:8.41491458105482},{label:"Car",value:58.1037505779099},{label:"Motorbike",value:0.7924216548213},{label:"Walk",value:10.5196606120437},{label:"Other",value:0.493069454849745},{label:"Taxi",value:0.576893942983423},{label:"Train",value:5.16966611934216},{label:"Underground",value:4.07432422678577},{label:"WFH",value:8.92744858666295}];
+var colorScheme = ["#ffa372"," #ff059","#ed6663","#bdccd4","#37a583","#186da0","#202BBC","#4DB6AC","#FFF176","#64B5F6","#00E676","#00008b"];
+renderPieChart(inputUrbanData,"#chartUrban",colorScheme);

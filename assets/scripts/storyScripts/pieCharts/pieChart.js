@@ -28,14 +28,18 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
 
     var pie = d3.layout.pie()
     .sort(null)
-    .value(function(d) { return d.mean; });
+    .value(function(d) { return d.value; });
 
     var tooltip = d3.select(dom_element_to_append_to)
     .append('div')
     .attr('class', 'tooltip');
 
+
     tooltip.append('div')
     .attr('class', 'label');
+
+    tooltip.append('div')
+    .attr('class', 'count');
 
     tooltip.append('div')
     .attr('class', 'percent');
@@ -46,19 +50,19 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
     .append('path')
     .attr('d', arc)
     .attr('fill', function(d, i) {
-      return color(d.data.mode);
+      return color(d.data.label);
     })
     .each(function(d) { this._current = d; });
 
 
     path.on('mouseover', function(d) {
       var total = d3.sum(dataset.map(function(d) {
-        return (d.enabled) ? d.mean : 0;
+        return (d.enabled) ? d.value : 0;
       }));
 
-      var percent = Math.round(1000 * d.data.mean / total) / 10;
-      tooltip.select('.label').html(d.data.mode.toUpperCase()).style('color','black');
-      tooltip.select('.count').html(d.data.mean);
+      var percent = Math.round(1000 * d.data.value / total) / 10;
+      tooltip.select('.label').html(d.data.label.toUpperCase()).style('color','black');
+      tooltip.select('.count').html(d.data.value);
       tooltip.select('.percent').html(percent + '%');
 
       tooltip.style('display', 'block');
@@ -111,8 +115,8 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
       }
 
       pie.value(function(d) {
-        if (d.mode === label) d.enabled = enabled;
-        return (d.enabled) ? d.mean : 0;
+        if (d.label === label) d.enabled = enabled;
+        return (d.enabled) ? d.value : 0;
       });
 
       path = path.data(pie(dataset));
