@@ -42,7 +42,7 @@ svg
   .attr("x2", centerBox)
   .attr("y1", y(min))
   .attr("y2", y(max))
-  .attr("stroke", "black")
+  .attr("stroke", "#fff3e0")
 
 // Show the box
 svg
@@ -51,7 +51,7 @@ svg
   .attr("y", y(q3))
   .attr("height", (y(q1) - y(q3)))
   .attr("width", widthBox)
-  .attr("stroke", "black")
+  .attr("stroke", "#fff3e0")
   .style("fill", "#ffa372")
 
 svg.append("text")
@@ -75,4 +75,4 @@ svg
   .attr("y2", function(d) {
     return (y(d))
   })
-  .attr("stroke", "black")
+  .attr("stroke", "#fff3e0")

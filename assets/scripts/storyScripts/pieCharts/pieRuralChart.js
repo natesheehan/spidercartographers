@@ -1,4 +1,4 @@
-function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
+function renderRuralPieChart (dataset,dom_element_to_append_to, colorScheme){
 
     var margin = {top:50,bottom:50,left:50,right:50};
     var width = 500 - margin.left - margin.right,
@@ -28,20 +28,16 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
 
     var pie = d3.layout.pie()
     .sort(null)
-    .value(function(d) { return d.value; });
+    .value(function(d) { return d.mean; });
 
-    var tooltip = d3.select(dom_element_to_append_to)
+    var tooltipRural = d3.select(dom_element_to_append_to)
     .append('div')
     .attr('class', 'tooltip');
 
-
-    tooltip.append('div')
+    tooltipRural.append('div')
     .attr('class', 'label');
 
-    tooltip.append('div')
-    .attr('class', 'count');
-
-    tooltip.append('div')
+    tooltipRural.append('div')
     .attr('class', 'percent');
 
     var path = svg.selectAll('path')
@@ -50,38 +46,38 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
     .append('path')
     .attr('d', arc)
     .attr('fill', function(d, i) {
-      return color(d.data.label);
+      return color(d.data.metrics);
     })
     .each(function(d) { this._current = d; });
 
 
     path.on('mouseover', function(d) {
       var total = d3.sum(dataset.map(function(d) {
-        return (d.enabled) ? d.value : 0;
+        return (d.enabled) ? d.mean : 0;
       }));
 
-      var percent = Math.round(1000 * d.data.value / total) / 10;
-      tooltip.select('.label').html(d.data.label.toUpperCase()).style('color','black');
-      tooltip.select('.count').html(d.data.value);
-      tooltip.select('.percent').html(percent + '%');
+      var percent = Math.round(1000 * d.data.mean / total) / 10;
+      tooltipRural.select('.label').html(d.data.metrics.toUpperCase()).style('color','black');
+      tooltipRural.select('.count').html(d.data.mean);
+      tooltipRural.select('.percent').html(percent + '%');
 
-      tooltip.style('display', 'block');
-      tooltip.style('opacity',2);
+      tooltipRural.style('display', 'block');
+      tooltipRural.style('opacity',2);
 
     });
 
 
     path.on('mousemove', function(d) {
-      tooltip.style('top', (d3.event.layerY + 10) + 'px')
+      tooltipRural.style('top', (d3.event.layerY + 10) + 'px')
       .style('left', (d3.event.layerX - 25) + 'px');
     });
 
     path.on('mouseout', function() {
-      tooltip.style('display', 'none');
-      tooltip.style('opacity',0);
+      tooltipRural.style('display', 'none');
+      tooltipRural.style('opacity',0);
     });
 
-    var legend = svg.selectAll('.legend')
+    var legendRural = svg.selectAll('.legend')
     .data(color.domain())
     .enter()
     .append('g')
@@ -94,7 +90,7 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
       return 'translate(' + horz + ',' + vert + ')';
     });
 
-    legend.append('rect')
+    legendRural.append('rect')
     .attr('width', legendRectSize)
     .attr('height', legendRectSize)
     .style('fill', color)
@@ -115,8 +111,8 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
       }
 
       pie.value(function(d) {
-        if (d.label === label) d.enabled = enabled;
-        return (d.enabled) ? d.value : 0;
+        if (d.metrics === label) d.enabled = enabled;
+        return (d.enabled) ? d.mean : 0;
       });
 
       path = path.data(pie(dataset));
@@ -132,7 +128,7 @@ function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
       });
     });
 
-    legend.append('text')
+    legendRural.append('text')
     .attr('x', legendRectSize + legendSpacing)
     .attr('y', legendRectSize - legendSpacing)
     .text(function(d) { return d; })
